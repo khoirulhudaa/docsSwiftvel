@@ -8,11 +8,11 @@ const Homepage = () => {
   return (
       <div>    
       {/* Annouchment */}
-        <div className='w-screen font-normal bg-indigo-500 py-2 h-max text-white text-center flex items-center justify-center'>
+        <div className='w-screen relative lg:shadow-none shadow-lg z-20 lg:z-[0] font-normal bg-indigo-500 py-2 h-max lg:h-max text-white text-center flex items-center justify-center'>
             <div>
-                <p className='font-normal mt-auto relative top-2'>Dragme from Indonesia - Product for build web 🔥🇮🇩</p>
+                <p className='font-normal text-[12px] lg:text-[16px] mt-auto relative top-2'>Dragme from Indonesia - Product for build web 🔥🇮🇩</p>
             </div>
-            <div className='flex ml-6 items-center'>
+            <div className='lg:flex ml-6 items-center hidden'>
                 <Button text={"Sign in"} style={"mr-3"} padding={"py-1 px-4"} textColor='indigo-500' type={"outline"} />
                 <Button text={"Sign up"} padding={"py-1 px-4"} />
             </div>

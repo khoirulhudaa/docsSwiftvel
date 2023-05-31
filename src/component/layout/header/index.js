@@ -3,7 +3,7 @@ import { Button } from '../../atom'
 
 const Header = () => {
   return (
-    <header className='flex min-h-[80px] max-h-[70px] py-4 items-center px-[80px] justify-between'>
+    <header className='flex lg:min-h-[80px] lg:max-h-[70px] py-4 items-center px-[80px] justify-between'>
         <div>
             <h2 className='text-[24px]'>DragmeBuilder</h2>
         </div>
