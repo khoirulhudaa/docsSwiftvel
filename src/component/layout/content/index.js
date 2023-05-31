@@ -66,7 +66,7 @@ return (
 
             {/* <img src={Purple} alt="particel" className='absolute z-[-10] mt-[-420px] right-0 w-[300px] h-[300px]' /> */}
 
-            <div data-aos="fade-up" data-aos-duration='1000' className='block lg:flex lg:ml-0 lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] rounded-[30px] p-4 bg-slate-100'>
+            <div data-aos="fade-up" data-aos-duration='1000' className='hidden lg:flex lg:ml-0 lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] rounded-[30px] p-4 bg-slate-100'>
                 <div className='w-[90%] lg:w-[30%]' data-aos="fade-up" data-aos-duration='1000'>
                     <h2 className='w-[100%] lg:w-[200px] text-[30px] text-black font-bold'>Components vary</h2>
                     <p className='font-normal text-slate-400 w-[90%] lg:w-[100%] text-[14px] leading-6 mt-4'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, illum.</p>
