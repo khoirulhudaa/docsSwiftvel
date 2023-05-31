@@ -140,7 +140,7 @@ return (
             <p data-aos="fade-up" data-aos-duration='1000' className='font-normal lg:w-max w-[70%] text-[12px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
-        <section className='w-[100%] relative mt-[50px] lg:mt-[100px] pb-[60px] lg:pb-[90px] h-max ml-auto mr-auto bg-[#0055C0] overflow-hidden'>
+        <section className='w-[100%] relative mt-[65px] lg:mt-[100px] pb-[60px] lg:pb-[90px] h-max ml-auto mr-auto bg-[#0055C0] overflow-hidden'>
             <img src={BgLine} className='absolute w-full h-full' alt="bg-section" />
             <h2 data-aos="fade-up" className='text-white z-10 relative ml-[30px] lg:ml-[120px] mt-[80px] font-bold'>Get started</h2>
             <div className='w-[90%] lg:w-[82%] lg:flex overflow-hidden relative z-10 h-max lg:h-[460px] ml-auto mr-auto mt-5 bg-white rounded-md p-8 lg:p-11'>
