@@ -51,7 +51,7 @@ return (
     <div className='mb-12 mt-[0px] lg:mt-[-20px]'>
         <section className='lg:flex h-max lg:min-h-[300px] lg:px-[120px] w-screen lg:w-full items-center justify-center'>
             <div className='w-[90vw] flex lg:inline lg:ml-0 lg:mr-0 mr-auto ml-auto lg:w-[35%] h-max' data-aos="fade-up">
-                <div className='relative text-white overflow-hidden px-4 py-10 rounded-[30px] w-full lg:w-[85%] h-max bg-[#0041E8]'>
+                <div className='relative text-white overflow-hidden px-4 py-10 rounded-[30px] w-full lg:w-[85%] h-max bg-indigo-500'>
                     <small className='font-normal'>Let's Developmnent</small>
                     <h2 className='font-bold w-[65%] mt-3'>Work <br /> With Us</h2>
                     <p className='font-normal w-[70%] text-[14px] relative top-4 text-slate-200'>
