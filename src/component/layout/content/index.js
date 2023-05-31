@@ -88,7 +88,7 @@ return (
         </section>
 
         <section className='w-full h-max relative z-[20] flex flex-col mt-[70px] lg:mt-[105px] items-center justify-center'>
-            <div data-aos="fade-up" className='rounded-full text-white text-[12px] mb-[25px] font-normal w-max h-max px-3 py-1 text-center bg-green-500 shadow-lg'>
+            <div data-aos="fade-up" className='rounded-full text-white text-[12px] mb-[25px] font-normal w-[70vw] lg:w-max h-max px-3 py-1 text-center bg-green-500 shadow-lg'>
                 Benefits for you!  
             </div>
             <h2 className='font-600' data-aos="fade-up" data-aos-duration='1000'>Success website</h2>
