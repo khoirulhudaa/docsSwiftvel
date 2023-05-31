@@ -88,7 +88,7 @@ return (
         </section>
 
         <section className='w-full h-max relative z-[20] flex flex-col mt-[70px] lg:mt-[105px] items-center justify-center'>
-            <div data-aos="fade-up" className='rounded-full text-white text-[12px] mb-[25px] font-normal w-[50vw] lg:w-max h-max px-3 py-1 text-center bg-green-500 shadow-lg'>
+            <div data-aos="fade-up" className='rounded-full text-white text-[12px] mb-[25px] font-normal w-max h-max px-3 py-1 text-center bg-green-500 shadow-lg'>
                 Benefits for you!  
             </div>
             <h2 className='font-600' data-aos="fade-up" data-aos-duration='1000'>Success website</h2>
@@ -106,7 +106,7 @@ return (
                 </div>
             </div>
             <div className='w-[90%] lg:w-[82%] lg:flex items-center justify-between h-[400px] lg:h-[460px] p-2'>
-                <div data-aos="fade-up" data-aos-duration='1000' className='h-[100%] relative overflow-hidden w-[100%] lg:w-[49%] bg-[#EDF5FE] rounded-[20px] p-2'>
+                <div data-aos="fade-up" data-aos-duration='1000' className='h-[100%] lg:mt-0 mt-[20px] relative overflow-hidden w-[100%] lg:w-[49%] bg-[#EDF5FE] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-14px]'>
                         <img src={Fast} className='absolute left-8 bottom-[160px] w-[30px]' alt="icon" />
                         <h2 className='text-black font-bold mb-3 ml-8 mt-[120px]'>Faster</h2>
@@ -114,7 +114,7 @@ return (
                     </div>
                     <img className='absolute w-[60%] bottom-0 left-0' src={Benefit2} alt="img" />
                 </div>
-                <div data-aos="fade-up" data-aos-duration='1500' className='h-[100%] relative overflow-hidden w-[100%] lg:mt-0 mt-[20px] lg:w-[49%] bg-[#000000] rounded-[20px] p-2'>
+                <div data-aos="fade-up" data-aos-duration='1500' className='h-[100%] relative overflow-hidden w-[100%] lg:mt-0 mt-[40px] lg:w-[49%] bg-[#000000] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-14px]'>
                         <img src={Flexibel} className='absolute left-8 bottom-[160px] w-[30px]' alt="icon" />
                         <h2 className='text-white font-bold mb-3 ml-8 mt-[120px]'>FLexibel</h2>
@@ -129,7 +129,7 @@ return (
             <small className='text-[14px] text-slate-400 font-normal' data-aos="fade-up">What our customer say</small>
             <h2 className='mt-4 mb-3 font-bold text-[34px]' data-aos="fade-up" data-aos-duration='1000'>Testimonial</h2>
             <p className='text-slate-400 text-[14px] lg:inline hidden font-normal' data-aos="fade-up" data-aos-duration='1300'>Dragme web user reactions</p>
-            <img src={Partner} alt="logo" className='w-[180px] ml-auto mr-auto my-7' data-aos="fade-up" data-aos-duration='1500' />
+            <img src={Partner} alt="logo" className='lg:inline hidden w-[180px] ml-auto mr-auto my-7' data-aos="fade-up" data-aos-duration='1500' />
             <img src={Petik} className='lg:inline hidden w-[70px] left-[160px] mb-[120px] absolute' alt="img" />
             <img src={Petik} className='lg:inline hidden w-[70px] right-[160px] mb-[320px] absolute' alt="img" />
             <h1 className='ml-auto mr-auto text-[20px] lg:text-[28px] w-[90%] lg:w-[65%] leading-[1.8em] lg:leading-[2em] font-normal' data-aos="fade-up">
