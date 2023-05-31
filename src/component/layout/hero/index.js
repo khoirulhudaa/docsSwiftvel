@@ -13,7 +13,7 @@ const Hero = () => {
     }, []);
 
   return (
-    <div className='text-center h-[100vh] flex items-center justify-center flex-col'>
+    <div className='text-center h-max lg:h-[100vh] flex items-center justify-center flex-col'>
 
         {/* Particels */}
         <img data-aos="fade-up" data-aos-duration='1000' className='absolute top-[90px] lg:top-[120px] left-[100px] lg:left-[160px]' src={Particel1} alt="particel-img" />
