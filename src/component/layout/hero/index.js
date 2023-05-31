@@ -22,7 +22,7 @@ const Hero = () => {
         <img data-aos="fade-up" data-aos-duration='3000' className='absolute top-[45%] w-[170px] left-[100px] lg:inline hidden rotate-[20deg]' src={Particel4} alt="particel-img" />
         {/* End Particels */}
 
-      <h1 data-aos="fade-up" className='text-[44px] lg:text-[64px] w-[90%] lg:mt-[0] mt-[-50px] lg:w-[60%]'>Brings <span className='text-indigo-500'>Speed</span> ​​in <span className='text-indigo-500'>creating</span> your <span className='text-indigo-500'>website.</span></h1>
+      <h1 data-aos="fade-up" className='text-[44px] lg:text-[64px] w-[90%] lg:mt-[0] mt-[-100px] lg:w-[60%]'>Brings <span className='text-indigo-500'>Speed</span> ​​in <span className='text-indigo-500'>creating</span> your <span className='text-indigo-500'>website.</span></h1>
       <p data-aos="fade-up" data-aos-duration='1500' className='font-normal w-[80%] lg:w-[50%] text-[14px] lg:text-[17px] leading-6 lg:leading-8 mt-6 lg:mt-8'>Enjoy your time and don't have to spend a lot of effort in building a design display that is tailored to your best taste at all times and affairs</p>
       <div className='flex my-[14px] lg:my-[40px] items-center justify-between px-8'>
         <ul className='lg:flex hidden items-center w-full' data-aos="fade-up" data-aos-duration='2000'>
