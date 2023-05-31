@@ -125,7 +125,7 @@ return (
             </div>
         </section>
 
-        <section className='w-full relative mt-[460px] lg:mt-[90px] h-max text-center flex flex-col justify-center'>
+        <section className='w-full relative mt-[500px] lg:mt-[90px] h-max text-center flex flex-col justify-center'>
             <small className='text-[14px] text-slate-400 font-normal' data-aos="fade-up">What our customer say</small>
             <h2 className='mt-4 mb-3 font-bold text-[34px]' data-aos="fade-up" data-aos-duration='1000'>Testimonial</h2>
             <p className='text-slate-400 text-[14px] lg:inline hidden font-normal' data-aos="fade-up" data-aos-duration='1300'>Dragme web user reactions</p>
@@ -140,7 +140,7 @@ return (
             <p data-aos="fade-up" data-aos-duration='1000' className='font-normal lg:w-max w-[70%] text-[12px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
-        <section className='w-[100%] relative mt-[40px] lg:mt-[100px] pb-[60px] lg:pb-[90px] h-max ml-auto mr-auto bg-[#0055C0] overflow-hidden'>
+        <section className='w-[100%] relative mt-[50px] lg:mt-[100px] pb-[60px] lg:pb-[90px] h-max ml-auto mr-auto bg-[#0055C0] overflow-hidden'>
             <img src={BgLine} className='absolute w-full h-full' alt="bg-section" />
             <h2 data-aos="fade-up" className='text-white z-10 relative ml-[30px] lg:ml-[120px] mt-[80px] font-bold'>Get started</h2>
             <div className='w-[90%] lg:w-[82%] lg:flex overflow-hidden relative z-10 h-max lg:h-[460px] ml-auto mr-auto mt-5 bg-white rounded-md p-8 lg:p-11'>
@@ -169,11 +169,11 @@ return (
         <section className='w-full h-max mt-5'>
             <div className='lg:flex items-center'>
                 <div className='w-[90%] lg:w-[80%] items-start pl-[30px] lg:pl-[120px] flex flex-col'>
-                    <h2 className='font-600 text-[26px] lg:text-[32px]' data-aos="fade-up">Our product - <b>Valclass</b></h2>
+                    <h2 className='font-600 text-[26px] lg:text-[32px]' data-aos="fade-up">Our product <span className='lg:inline hidden'>-</span> <b>Valclass</b></h2>
                     <p data-aos="fade-up" data-aos-duration='1000' className='text-[14px] font-normal w-[96%] lg:w-[55%] mt-4 text-slate-400 leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
                 </div>
                 <div className='w-[100%] lg:w-[20%] pr-0 lg:pl-0 pl-[30px] lg:pr-[120px] flex flex-col lg:items-center' data-aos="fade-up" data-aos-duration='1300'>
-                    <a href="https://valclassui-v1.vercel.app" target="_blank">
+                    <a href="https://valclassui-v1.vercel.app" target="_blank" className='no-underline'>
                         <Button text={'Try valclass'} padding={'px-4 py-3'} />
                     </a>
                 </div>
