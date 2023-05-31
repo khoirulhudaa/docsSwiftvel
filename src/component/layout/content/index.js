@@ -137,7 +137,7 @@ return (
             but really need it or they don't have enough time. Then it really works for him
             </h1>
             <h3 data-aos="fade-up" className='mt-[40px] text-[18px] font-bold'>Muhammad Khoirulhuda</h3>
-            <p data-aos="fade-up" data-aos-duration='1000' className='font-normal lg:w-max w-[70%] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
+            <p data-aos="fade-up" data-aos-duration='1000' className='font-normal lg:w-max w-[70%] text-[12px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
         <section className='w-[100%] relative mt-[40px] lg:mt-[100px] pb-[60px] lg:pb-[90px] h-max ml-auto mr-auto bg-[#0055C0] overflow-hidden'>
