@@ -1,0 +1,282 @@
+import React, { Component } from 'react';
+import Data from '../../dataComponent/index.json';
+import Swal from 'sweetalert2';
+import 'boxicons';
+import Add from '../../assets/images/svg/add.svg';
+import HTML5 from '../../assets/images/svg/html5.svg';
+import PHP from '../../assets/images/svg/php.svg';
+import Download from '../../assets/images/svg/donlot.svg';
+
+export default class MenuComponent extends Component {
+constructor(props) {
+  super(props)
+
+  this.state = {
+    data: [],
+    active: 'HTML',
+    bgColor1: 'white',
+    bgColor2: 'indigo-500',
+    textColor1: 'black',
+    textColor2: 'white',
+  };
+};
+
+componentDidMount = () => {
+    this.setState({
+        data: Data
+    })
+    console.log('data:', Data)
+
+    document.querySelector('.fa-times').addEventListener('click', () => {
+        document.querySelector('.menu1').classList.remove('show1')
+    })
+
+    document.querySelector('.fa-times2').addEventListener('click', () => {
+        document.querySelector('.menu2').classList.remove('show2')
+    })
+
+    document.querySelector('.fa-times3').addEventListener('click', () => {
+        document.querySelector('.menu3').classList.remove('show3')
+    })
+
+    document.querySelector('.fa-times4').addEventListener('click', () => {
+        document.querySelector('.menu4').classList.remove('show4')
+    })
+
+    document.querySelector('.fa-times5').addEventListener('click', () => {
+        document.querySelector('.menu5').classList.remove('show5')
+    })
+
+    document.getElementById('navbar').addEventListener('click', () => {
+        document.querySelector('.menu1').classList.add('show1')
+        document.querySelector('.menu2').classList.remove('show2')
+        document.querySelector('.menu3').classList.remove('show3')
+        document.querySelector('.menu4').classList.remove('show4')
+        document.querySelector('.menu5').classList.remove('show5')
+    })
+
+    document.getElementById('heroes').addEventListener('click', () => {
+        document.querySelector('.menu1').classList.remove('show1')
+        document.querySelector('.menu2').classList.add('show2')
+        document.querySelector('.menu3').classList.remove('show3')
+        document.querySelector('.menu4').classList.remove('show4')
+        document.querySelector('.menu5').classList.remove('show5')
+    })
+
+    document.getElementById('content').addEventListener('click', () => {
+        document.querySelector('.menu1').classList.remove('show1')
+        document.querySelector('.menu2').classList.remove('show2')
+        document.querySelector('.menu3').classList.add('show3')
+        document.querySelector('.menu4').classList.remove('show4')
+        document.querySelector('.menu5').classList.remove('show5')
+    })
+
+    document.getElementById('footer').addEventListener('click', () => {
+        document.querySelector('.menu1').classList.remove('show1')
+        document.querySelector('.menu2').classList.remove('show2')
+        document.querySelector('.menu3').classList.remove('show3')
+        document.querySelector('.menu4').classList.add('show4')
+        document.querySelector('.menu5').classList.remove('show5')
+    })
+
+    // document.getElementById('pages').addEventListener('click', () => {
+    //     document.querySelector('.menu1').classList.remove('show1')
+    //     document.querySelector('.menu2').classList.remove('show2')
+    //     document.querySelector('.menu3').classList.remove('show3')
+    //     document.querySelector('.menu4').classList.remove('show4')
+    //     document.querySelector('.menu5').classList.add('show5')
+    // })
+}
+
+download = (e) => {
+    const name = e;
+    const header = 
+    `
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    `
+    const sourceHTML = header + document.querySelector(`.${name}`).innerHTML ;
+
+    const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+    const fileDownload = document.createElement("a");
+    document.body.appendChild(fileDownload);
+    fileDownload.href = source;
+    fileDownload.download = `webBuilder.${this.state.active === 'HTML' ? 'html' : 'php'}`;
+    fileDownload.click();
+    document.body.removeChild(fileDownload);
+
+    Swal.fire({
+        icon: "success",
+        timer: 1160,
+        title: "Download Successfully", 
+        showConfirmButton: false 
+    });
+}
+
+notOpen = () => {
+    Swal.fire({
+        icon: "warning",
+        timer: 1160,
+        title: "Belum tersedia gaes", 
+        showConfirmButton: false 
+    });
+}
+
+handleChangeActive = (e) => {
+    if(e === 'HTML') {
+      this.setState({
+        active: e,
+        bgColor1: 'white',
+        bgColor2: 'indigo-500',
+        textColor1: 'black',
+        textColor2: 'white',
+      })
+    }else {
+      this.setState({
+        active: e,
+        bgColor1: 'indigo-500',
+        bgColor2: 'white',
+        textColor1: 'white',
+        textColor2: 'black',
+      })
+    }
+  }
+
+  render() {
+    return (
+        <>
+            <div className='flex items-center absolute top-4 right-7'>
+            <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-full border-[1px] py-[1.5] bg-${this.state.bgColor1} text-${this.state.textColor1} border-slate-300 mx-2 w-max h-max px-4 py-1 text-center cursor-pointer`}>
+                <img src={PHP} alt="img" className='bg-white rounded-full w-[20px] px-1 h-[20px] mr-2' /> PHP language
+            </div>
+            <div onClick={() => this.handleChangeActive('HTML')} className={`d-flex items-center justify-center rounded-full border-[1px] py-[1.5] bg-${this.state.bgColor2} text-${this.state.textColor2} border-slate-300 mx-2 w-max h-max px-4 py-1 text-center cursor-pointer`}>
+            <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> HTML code
+            </div>
+            </div>
+            <div className="menuComponents">
+                <div className="menuAll">
+                    <div className="card-menu menu1">
+                        <i className='fas fa-times'></i>
+                        <div className='child-card-menu'>
+                        {
+                            this.state.data.map((data, index) => {
+                                if(data.title === "navbar") {
+                                    return (
+                                        <div className="cardImage-navbar" key={index}>
+                                            <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
+                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#4BFFD4'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                            </div>
+                                            {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
+                                        </div>
+                                        )
+                                    }
+                                })
+                            }
+                        </div>
+                    </div>
+                    <div className="card-menu menu2">
+                        <i className='fas fa-times fa-times2'></i>
+                        <div className='child-card-menu'>
+                       {
+                            this.state.data.map((data, index) => {
+                                if(data.title === "hero") {
+                                return (
+                                    <div className="cardImage" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
+                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#4BFFD4'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                            </div>
+                                        {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' style={{transform: 'scale(1)'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
+                                    </div>
+                                    )
+                                }
+                            })
+                        }
+                        </div>
+                    </div>
+                    <div className="card-menu menu3">
+                        <i className='fas fa-times fa-times3'></i>
+                        <div className='child-card-menu'>
+                       {
+                            this.state.data.map((data, index) => {
+                                if(data.title === "content") {
+                                return (
+                                    <div className="cardImage-content" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
+                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#4BFFD4'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                            </div>
+                                        {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' style={{transform: 'scale(1)'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
+                                    </div>
+                                    )
+                                }
+                            })
+                        }
+                        </div>
+                    </div>
+                    <div className="card-menu menu4">
+                        <i className='fas fa-times fa-times4'></i>
+                        <div className='child-card-menu'>
+                       {
+                            this.state.data.map((data, index) => {
+                                if(data.title === "footer") {
+                                return (
+                                    <div className="cardImage-footer" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
+                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#4BFFD4'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                            </div>
+                                        {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' style={{transform: 'scale(1)'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
+                                    </div>
+                                    )
+                                }
+                            })
+                        }
+                        </div>
+                    </div>
+                    <div className="card-menu menu5">
+                        <i className='fas fa-times fa-times5'></i>
+                        <div className='child-card-menu'>
+                       {
+                            this.state.data.map((data, index) => {
+                                return (
+                                    <div className="cardImage" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
+                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#4BFFD4'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                            </div>
+                                        {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' style={{transform: 'scale(1)'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
+                                    </div>
+                                )
+                            })
+                        }
+                        </div>
+                    </div>
+                </div>
+                <div className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: 'rgb(99 102 241)', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+                    {/* <box-icon type="icon" style={{color: 'white'}} name="download" onClick={() => this.download("templateCurrent")} /> */}
+                    <img src={Download} alt="icon-download" style={{width: '47%'}} onClick={() => this.download("templateCurrent")} />
+                </div>
+                <div className="squareComponents" id='navbar'>
+                    <box-icon type="icon" name="collection" />
+                    <b><p>Navbar</p></b>
+                </div>
+                <div className="squareComponents" id='heroes'>
+                    <box-icon type="icon" name="collection" />
+                    <b><p>Heroes</p></b>
+                </div>
+                <div className="squareComponents" id='content'>
+                    <box-icon type="icon" name="collection" />
+                    <b><p>Content</p></b>
+                </div>
+                <div className="squareComponents" id='footer'>
+                    <box-icon type="icon" name="collection" />
+                    <b><p>Footer</p></b>
+                </div>
+                {/* <div className="squareComponents" onClick={() => this.notOpen()}>
+                    <box-icon type="icon" name="collection" />
+                    <b><p>Pages</p></b>
+                </div> */}
+            </div>
+        </>
+    );
+  }
+}
