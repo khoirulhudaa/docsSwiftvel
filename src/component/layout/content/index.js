@@ -183,13 +183,13 @@ return (
                 <div className='nominaly absolute right-[0px] bottom-[30px] bg-[#a683dd] shadow-saweria rotate-[-15deg] w-max h-max rounded-lg px-3 py-2 text-center'>
                     50.000
                 </div>
-                <img src={Saweria} className='absolute w-[400px] filter grayscale-[60%] my-4' alt='img' />
-                <h1 className='titleSawer font-bold text-[220px] text-center z-[-2]'>SAWERIA</h1>
+                <img src={Saweria} className='absolute w-[300px] lg:w-[400px] filter grayscale-[60%] my-4' alt='img' />
+                <h1 className='titleSawer font-bold text-[70px] lg:text-[220px] text-center z-[-2]'>SAWERIA</h1>
                 <div>
                     <div className='finger absolute right-[40px] top-[50px] text-[30px] rotate-[-15deg]'>👈</div>
                     <a href="https://saweria.co/dragmeTEam" target='__blank'>
-                        <div className='nih absolute border border-1 bg-orange-500 hover:brightness-[94%] border-white px-3 py-2 rounded-lg shadow-lg right-[120px] top-[70px] w-max h-max cursor-pointer text-center text-white active:scale-[0.98]'>
-                            Nih duit
+                        <div className='nih absolute border border-1 bg-orange-500 hover:brightness-[94%] border-white px-3 py-2 rounded-lg shadow-lg right-[40px] top-[70px] w-max h-max cursor-pointer text-center text-white active:scale-[0.98]'>
+                            Kasih duit
                         </div>
                     </a>
                 </div>
@@ -210,8 +210,8 @@ return (
                 </div>
             </div>
 
-            <div data-aos="fade-up" className='flex overflow-hidden w-[100%] lg:w-[82%] ml-auto mr-auto rounded-[2px] lg:rounded-lg shadow-lg items-center mt-16 justify-center'>
-                <img src={Products} className='rounded-[20px]' alt="img" />
+            <div data-aos="fade-up" className='flex overflow-hidden w-[100%] lg:w-[82%] ml-auto mr-auto rounded-[2px] lg:rounded-lg shadow-lg items-center lg:mt-16 justify-center'>
+                <img src={Products} className='lg:rounded-[20px]' alt="img" />
             </div>
         </section>
     </div>

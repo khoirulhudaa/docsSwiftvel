@@ -60,7 +60,7 @@ const Homepage = () => {
       {/* Footer */}
 
       {/* Back to top */}
-        <div onClick={scrollToTop} className={`fixed z-40 w-[60px] h-[60px] right-[50px] bottom-[50px] rounded-full bg-indigo-500 text-white flex items-center justify-center cursor-pointer shadow-lg`}>
+        <div onClick={scrollToTop} className={`fixed z-40 w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] right-[100px] lg:right-[50px] bottom-[50px] rounded-full bg-indigo-500 text-white flex items-center justify-center cursor-pointer shadow-lg`}>
             <img src={Chevron} className='chevronAnim w-[18px]' alt="icon" />
         </div>
       {/* Back to top */}
