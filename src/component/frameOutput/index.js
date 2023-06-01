@@ -71,6 +71,7 @@ export default class FrameOutput extends Component {
   }
 
   remove = (index) => {
+    console.log(index)
     for( let i = 0; i < this.props.dataHTML.length; i++){ 
       this.props.dataHTML.splice(index, 1)
     }

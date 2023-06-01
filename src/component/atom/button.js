@@ -13,7 +13,7 @@ const Button = ({
 }) => {
     switch(type) {
         case "outline": 
-        return (
+        return (    
             <div className={`border-[1px] border-solid text-white rounded-md border-white active:scale-[0.97] hover:bg-indigo-500 hover:text-white cursor-pointer text-center ${height} ${width} ${padding} shadow-md ${style}`}>
                 {text}
             </div>

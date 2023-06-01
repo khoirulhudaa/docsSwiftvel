@@ -13,6 +13,7 @@ import Right from '../../../assets/images/svg/right.svg';
 import Powerful from '../../../assets/images/svg/powerful.svg';
 import Check from '../../../assets/images/svg/check.svg';
 import Products from '../../../assets/images/svg/products.svg';
+import Saweria from '../../../assets/images/svg/saweria.svg';
 import Video from '../../../assets/video/tutorialVideo.webm';
 import { Button } from '../../atom';
 import Aos from 'aos';
@@ -142,7 +143,7 @@ return (
             <p data-aos="fade-up" data-aos-duration='1000' className='font-normal lg:w-max w-[70%] text-[12px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
-        <section className='w-[100%] relative mt-[60px] lg:mt-[100px] pb-[60px] lg:pb-[90px] h-max ml-auto mr-auto bg-[#0055C0] overflow-hidden'>
+        <section className='w-[100%] relative mt-[60px] lg:mt-[100px] pb-[60px] lg:pb-[90px] h-max ml-auto mr-auto bg-indigo-500 overflow-hidden'>
             <img src={BgLine} className='absolute w-full h-full' alt="bg-section" />
             <h2 data-aos="fade-up" className='text-white z-10 relative ml-[30px] lg:ml-[120px] mt-[80px] font-bold'>Get started</h2>
             <div className='w-[90%] lg:w-[82%] lg:flex overflow-hidden relative z-10 h-max lg:h-[460px] ml-auto mr-auto mt-5 bg-white rounded-md p-8 lg:p-11'>
@@ -168,19 +169,48 @@ return (
             </div>
         </section>
 
-        <section className='w-full h-max mt-5'>
-            <div className='lg:flex items-center'>
-                <div className='w-[90%] lg:w-[80%] items-start pl-[30px] lg:pl-[120px] flex flex-col'>
-                    <h2 className='font-600 text-[26px] lg:text-[32px]' data-aos="fade-up">Our product <span className='lg:inline hidden'>-</span> <b>Valclass</b></h2>
-                    <p data-aos="fade-up" data-aos-duration='1000' className='text-[14px] font-normal w-[96%] lg:w-[55%] mt-4 text-slate-400 leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
+        <section className='w-full h-max pb-8 flex mt-[55px] flex-col justify-center items-center text-center'>
+            <div className='relative h-[500px] flex flex-col items-center justify-center'>
+                <div className='nominaly absolute left-0 top-[30px] bg-[#8bd3dd] shadow-saweria rotate-[-15deg] w-max h-max rounded-lg px-3 py-2 text-center'>
+                    5.000
                 </div>
-                <div className='w-[100%] lg:w-[20%] pr-0 lg:pl-0 pl-[30px] lg:pr-[120px] flex flex-col lg:items-center' data-aos="fade-up" data-aos-duration='1300'>
-                    <a href="https://valclassui-v1.vercel.app" target="_blank" className='no-underline'>
-                        <Button text={'Try valclass'} padding={'px-4 py-3'} />
+                <div className='nominaly absolute left-0 bottom-[30px] bg-[#faae2b] shadow-saweria rotate-[15deg] w-max h-max rounded-lg px-3 py-2 text-center'>
+                    10.000
+                </div>
+                <div className='nominaly absolute right-[-100px] top-[30px] bg-[#a683dd] shadow-saweria rotate-[15deg] w-max h-max rounded-lg px-3 py-2 text-center'>
+                    50.000
+                </div>
+                <div className='nominaly absolute right-[0px] bottom-[30px] bg-[#a683dd] shadow-saweria rotate-[-15deg] w-max h-max rounded-lg px-3 py-2 text-center'>
+                    50.000
+                </div>
+                <img src={Saweria} className='absolute w-[400px] filter grayscale-[60%] my-4' alt='img' />
+                <h1 className='titleSawer font-bold text-[220px] text-center z-[-2]'>SAWERIA</h1>
+                <div>
+                    <div className='finger absolute right-[40px] top-[50px] text-[30px] rotate-[-15deg]'>👈</div>
+                    <a href="https://saweria.co/dragmeTEam" target='__blank'>
+                        <div className='nih absolute border border-1 bg-orange-500 hover:brightness-[94%] border-white px-3 py-2 rounded-lg shadow-lg right-[120px] top-[70px] w-max h-max cursor-pointer text-center text-white active:scale-[0.98]'>
+                            Nih duit
+                        </div>
                     </a>
                 </div>
             </div>
-            <div data-aos="fade-up" className='flex overflow-hidden w-[100%] lg:w-[82%] ml-auto mr-auto rounded-[2px] lg:rounded-lg shadow-lg items-center mt-12 justify-center'>
+        </section>
+
+        <section className='w-full h-max mt-5'>
+            
+            <div className='lg:flex items-center text-white bg-indigo-500 pt-12 pb-10'>
+                <div className='w-[90%] lg:w-[80%] items-start pl-[30px] lg:pl-[120px] flex flex-col'>
+                    <h2 className='font-600 text-[26px] lg:text-[32px]' data-aos="fade-up">Our product <span className='lg:inline hidden'>-</span> <b>Valclass</b></h2>
+                    <p data-aos="fade-up" data-aos-duration='1000' className='text-[14px] font-normal w-[96%] lg:w-[55%] mt-3 text-slate-300 leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
+                </div>
+                <div className='w-[100%] lg:w-[20%] pr-0 lg:pl-0 pl-[30px] lg:pr-[120px] flex flex-col lg:items-center' data-aos="fade-up" data-aos-duration='1300'>
+                    <a href="https://valclassui-v1.vercel.app" target="_blank" className='no-underline'>
+                        <Button text={'Try valclass'} type={'outline'} padding={'px-4 py-3'} />
+                    </a>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" className='flex overflow-hidden w-[100%] lg:w-[82%] ml-auto mr-auto rounded-[2px] lg:rounded-lg shadow-lg items-center mt-16 justify-center'>
                 <img src={Products} className='rounded-[20px]' alt="img" />
             </div>
         </section>

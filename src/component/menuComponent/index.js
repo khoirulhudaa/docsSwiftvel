@@ -271,15 +271,15 @@ handleChangeActive = (e) => {
                     <b><p>Navbar</p></b>
                 </div>
                 <div className="squareComponents" id='heroes'>
-                    <box-icon type="icon" name="collection" />
+                    <box-icon name='objects-vertical-bottom'></box-icon>
                     <b><p>Heroes</p></b>
                 </div>
                 <div className="squareComponents" id='content'>
-                    <box-icon type="icon" name="collection" />
+                    <box-icon name='objects-horizontal-center'></box-icon>
                     <b><p>Content</p></b>
                 </div>
                 <div className="squareComponents" id='footer'>
-                    <box-icon type="icon" name="collection" />
+                    <box-icon name='objects-vertical-top' ></box-icon>
                     <b><p>Footer</p></b>
                 </div>
                 {/* <div className="squareComponents" onClick={() => this.notOpen()}>
