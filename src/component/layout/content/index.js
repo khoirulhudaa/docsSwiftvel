@@ -44,11 +44,13 @@ const Contents = () => {
         video.play().catch(error => {
         // Penanganan kesalahan jika video tidak dapat dimainkan otomatis
         console.error('Tidak dapat memainkan video otomatis:', error);
-        });
+    });
     };
 
 return (
     <div className='mb-12 mt-[0px] lg:mt-[-20px]'>
+        <h1 className='textStroke absolute text-stroke right-[190px] mt-[-60px] lg:inline hidden font-bold text-[82px]'>1440</h1>
+        <h1 className='textStroke absolute rotate-[180deg] text-stroke right-[190px] mt-[260px] lg:inline hidden font-bold text-[82px]'>1440</h1>
         <section className='lg:flex h-max lg:min-h-[300px] lg:px-[120px] w-screen lg:w-full items-center justify-center'>
             <div className='w-[90vw] flex lg:inline lg:ml-0 lg:mr-0 mr-auto ml-auto lg:w-[35%] h-max' data-aos="fade-up">
                 <div className='relative text-white overflow-hidden px-4 py-10 rounded-[30px] w-full lg:w-[85%] h-max bg-indigo-500'>
@@ -66,7 +68,7 @@ return (
 
             {/* <img src={Purple} alt="particel" className='absolute z-[-10] mt-[-420px] right-0 w-[300px] h-[300px]' /> */}
 
-            <div data-aos="fade-up" data-aos-duration='1000' className='hidden lg:flex lg:ml-0 lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] rounded-[30px] p-4 bg-slate-100'>
+            <div data-aos="fade-up" data-aos-duration='1000' className='relative hidden lg:flex lg:ml-0 lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] rounded-[30px] p-4 bg-slate-100'>
                 <div className='w-[90%] lg:w-[30%]' data-aos="fade-up" data-aos-duration='1000'>
                     <h2 className='w-[100%] lg:w-[200px] text-[30px] text-black font-bold'>Components vary</h2>
                     <p className='font-normal text-slate-400 w-[90%] lg:w-[100%] text-[14px] leading-6 mt-4'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, illum.</p>
