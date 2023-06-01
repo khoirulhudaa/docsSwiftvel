@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         cyanHover: 'rgb(175, 255, 255)',
         cyan: 'rgb(0, 226, 226)',
+      },
+      boxShadow: {
+        saweria: '0.4rem 0.4rem 0 #222'
       }
     },
   },
