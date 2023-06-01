@@ -144,7 +144,7 @@ return (
         </section>
 
         <section className='w-[100%] relative mt-[60px] lg:mt-[100px] pb-[60px] lg:pb-[90px] h-max ml-auto mr-auto bg-indigo-500 overflow-hidden'>
-            <img src={BgLine} className='absolute w-full h-full' alt="bg-section" />
+            {/* <img src={BgLine} className='absolute w-full h-full' alt="bg-section" /> */}
             <h2 data-aos="fade-up" className='text-white z-10 relative ml-[30px] lg:ml-[120px] mt-[80px] font-bold'>Get started</h2>
             <div className='w-[90%] lg:w-[82%] lg:flex overflow-hidden relative z-10 h-max lg:h-[460px] ml-auto mr-auto mt-5 bg-white rounded-md p-8 lg:p-11'>
                <div className='lg:h-max h-[480px]'>
@@ -188,7 +188,7 @@ return (
                 <div>
                     <div className='finger absolute right-[40px] top-[50px] text-[30px] rotate-[-15deg]'>👈</div>
                     <a href="https://saweria.co/dragmeTEam" target='__blank'>
-                        <div className='nih absolute border border-1 bg-orange-500 hover:brightness-[94%] border-white px-3 py-2 rounded-lg shadow-lg right-[40px] top-[70px] w-max h-max cursor-pointer text-center text-white active:scale-[0.98]'>
+                        <div className='nih absolute border border-1 bg-orange-500 hover:brightness-[94%] border-white px-3 py-2 rounded-lg shadow-lg lg:right-[110px] right-[40px] top-[70px] w-max h-max cursor-pointer text-center text-white active:scale-[0.98]'>
                             Kasih duit
                         </div>
                     </a>
