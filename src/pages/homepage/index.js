@@ -1,9 +1,33 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Contents, Footer, Header, Hero } from '../../component/layout'
 import Chevron from '../../assets/images/svg/chevron.svg'
 import { Button } from '../../component'
 
 const Homepage = () => {
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
     
   return (
       <div>    
@@ -36,7 +60,7 @@ const Homepage = () => {
       {/* Footer */}
 
       {/* Back to top */}
-        <div className='fixed z-40 w-[60px] h-[60px] right-[50px] bottom-[50px] rounded-full bg-indigo-500 text-white flex items-center justify-center cursor-pointer shadow-lg'>
+        <div onClick={scrollToTop} className={`fixed z-40 w-[60px] h-[60px] right-[50px] bottom-[50px] rounded-full bg-indigo-500 text-white flex items-center justify-center cursor-pointer shadow-lg`}>
             <img src={Chevron} className='chevronAnim w-[18px]' alt="icon" />
         </div>
       {/* Back to top */}

@@ -51,7 +51,7 @@ return (
     <div className='mb-12 mt-[0px] lg:mt-[-20px]'>
         <section className='lg:flex h-max lg:min-h-[300px] lg:px-[120px] w-screen lg:w-full items-center justify-center'>
             <div className='w-[90vw] flex lg:inline lg:ml-0 lg:mr-0 mr-auto ml-auto lg:w-[35%] h-max' data-aos="fade-up">
-                <div className='relative text-white overflow-hidden px-4 py-10 rounded-[30px] w-full lg:w-[85%] h-max bg-[#0041E8]'>
+                <div className='relative text-white overflow-hidden px-4 py-10 rounded-[30px] w-full lg:w-[85%] h-max bg-indigo-500'>
                     <small className='font-normal'>Let's Developmnent</small>
                     <h2 className='font-bold w-[65%] mt-3'>Work <br /> With Us</h2>
                     <p className='font-normal w-[70%] text-[14px] relative top-4 text-slate-200'>
@@ -66,9 +66,9 @@ return (
 
             {/* <img src={Purple} alt="particel" className='absolute z-[-10] mt-[-420px] right-0 w-[300px] h-[300px]' /> */}
 
-            <div data-aos="fade-up" data-aos-duration='1000' className='block lg:flex lg:ml-0 lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] rounded-[30px] p-4 bg-slate-100'>
+            <div data-aos="fade-up" data-aos-duration='1000' className='hidden lg:flex lg:ml-0 lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] rounded-[30px] p-4 bg-slate-100'>
                 <div className='w-[90%] lg:w-[30%]' data-aos="fade-up" data-aos-duration='1000'>
-                    <h2 className='w-[100%] lg:w-[200px] text-[30px] text-indigo-500 font-600'>Components vary</h2>
+                    <h2 className='w-[100%] lg:w-[200px] text-[30px] text-black font-bold'>Components vary</h2>
                     <p className='font-normal text-slate-400 w-[90%] lg:w-[100%] text-[14px] leading-6 mt-4'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, illum.</p>
                 </div>
                 <div className='w-[25%] text-center' data-aos="fade-up" data-aos-duration='1500'>
@@ -106,7 +106,7 @@ return (
                 </div>
             </div>
             <div className='w-[90%] lg:w-[82%] lg:flex items-center justify-between h-[400px] lg:h-[460px] p-2'>
-                <div data-aos="fade-up" data-aos-duration='1000' className='h-[100%] relative overflow-hidden w-[100%] lg:w-[49%] bg-[#EDF5FE] rounded-[20px] p-2'>
+                <div data-aos="fade-up" data-aos-duration='1000' className='h-[100%] lg:mt-0 mt-[20px] relative overflow-hidden w-[100%] lg:w-[49%] bg-[#EDF5FE] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-14px]'>
                         <img src={Fast} className='absolute left-8 bottom-[160px] w-[30px]' alt="icon" />
                         <h2 className='text-black font-bold mb-3 ml-8 mt-[120px]'>Faster</h2>
@@ -114,7 +114,7 @@ return (
                     </div>
                     <img className='absolute w-[60%] bottom-0 left-0' src={Benefit2} alt="img" />
                 </div>
-                <div data-aos="fade-up" data-aos-duration='1500' className='h-[100%] relative overflow-hidden w-[100%] lg:mt-0 mt-[20px] lg:w-[49%] bg-[#000000] rounded-[20px] p-2'>
+                <div data-aos="fade-up" data-aos-duration='1500' className='h-[100%] relative overflow-hidden w-[100%] lg:mt-0 mt-[40px] lg:w-[49%] bg-[#000000] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-14px]'>
                         <img src={Flexibel} className='absolute left-8 bottom-[160px] w-[30px]' alt="icon" />
                         <h2 className='text-white font-bold mb-3 ml-8 mt-[120px]'>FLexibel</h2>
@@ -125,11 +125,11 @@ return (
             </div>
         </section>
 
-        <section className='w-full relative mt-[460px] lg:mt-[90px] h-max text-center flex flex-col justify-center'>
+        <section className='w-full relative mt-[500px] lg:mt-[90px] h-max text-center flex flex-col justify-center'>
             <small className='text-[14px] text-slate-400 font-normal' data-aos="fade-up">What our customer say</small>
             <h2 className='mt-4 mb-3 font-bold text-[34px]' data-aos="fade-up" data-aos-duration='1000'>Testimonial</h2>
             <p className='text-slate-400 text-[14px] lg:inline hidden font-normal' data-aos="fade-up" data-aos-duration='1300'>Dragme web user reactions</p>
-            <img src={Partner} alt="logo" className='w-[180px] ml-auto mr-auto my-7' data-aos="fade-up" data-aos-duration='1500' />
+            <img src={Partner} alt="logo" className='lg:inline hidden w-[180px] ml-auto mr-auto my-7' data-aos="fade-up" data-aos-duration='1500' />
             <img src={Petik} className='lg:inline hidden w-[70px] left-[160px] mb-[120px] absolute' alt="img" />
             <img src={Petik} className='lg:inline hidden w-[70px] right-[160px] mb-[320px] absolute' alt="img" />
             <h1 className='ml-auto mr-auto text-[20px] lg:text-[28px] w-[90%] lg:w-[65%] leading-[1.8em] lg:leading-[2em] font-normal' data-aos="fade-up">
@@ -137,12 +137,12 @@ return (
             but really need it or they don't have enough time. Then it really works for him
             </h1>
             <h3 data-aos="fade-up" className='mt-[40px] text-[18px] font-bold'>Muhammad Khoirulhuda</h3>
-            <p data-aos="fade-up" data-aos-duration='1000' className='font-normal lg:w-max w-[70%] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
+            <p data-aos="fade-up" data-aos-duration='1000' className='font-normal lg:w-max w-[70%] text-[12px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
-        <section className='w-[100%] relative mt-[40px] lg:mt-[100px] pb-[60px] lg:pb-[90px] h-max ml-auto mr-auto bg-[#0055C0] overflow-hidden'>
+        <section className='w-[100%] relative mt-[60px] lg:mt-[100px] pb-[60px] lg:pb-[90px] h-max ml-auto mr-auto bg-[#0055C0] overflow-hidden'>
             <img src={BgLine} className='absolute w-full h-full' alt="bg-section" />
-            <h2 data-aos="fade-up" className='text-white z-10 relative ml-[30px] lg:ml-[120px] mt-[100px] font-bold'>Get started</h2>
+            <h2 data-aos="fade-up" className='text-white z-10 relative ml-[30px] lg:ml-[120px] mt-[80px] font-bold'>Get started</h2>
             <div className='w-[90%] lg:w-[82%] lg:flex overflow-hidden relative z-10 h-max lg:h-[460px] ml-auto mr-auto mt-5 bg-white rounded-md p-8 lg:p-11'>
                <div className='lg:h-max h-[480px]'>
                     <img src={Powerful} className='w-[50px] mt-4 mb-4' alt="img" />
@@ -169,11 +169,11 @@ return (
         <section className='w-full h-max mt-5'>
             <div className='lg:flex items-center'>
                 <div className='w-[90%] lg:w-[80%] items-start pl-[30px] lg:pl-[120px] flex flex-col'>
-                    <h2 className='font-600 text-[26px] lg:text-[32px]' data-aos="fade-up">Our product - <b>Valclass</b></h2>
+                    <h2 className='font-600 text-[26px] lg:text-[32px]' data-aos="fade-up">Our product <span className='lg:inline hidden'>-</span> <b>Valclass</b></h2>
                     <p data-aos="fade-up" data-aos-duration='1000' className='text-[14px] font-normal w-[96%] lg:w-[55%] mt-4 text-slate-400 leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
                 </div>
                 <div className='w-[100%] lg:w-[20%] pr-0 lg:pl-0 pl-[30px] lg:pr-[120px] flex flex-col lg:items-center' data-aos="fade-up" data-aos-duration='1300'>
-                    <a href="https://valclassui-v1.vercel.app" target="_blank">
+                    <a href="https://valclassui-v1.vercel.app" target="_blank" className='no-underline'>
                         <Button text={'Try valclass'} padding={'px-4 py-3'} />
                     </a>
                 </div>
