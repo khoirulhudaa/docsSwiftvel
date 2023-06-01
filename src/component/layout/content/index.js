@@ -160,7 +160,7 @@ return (
                         Video dalam mode repeat
                     </div>
                     <div className='overflow-hidden w-full lg:w-max h-max absolute rounded-[16px] right-0 lg:right-[50px] p-4 bottom-[55px] lg:bottom-[44px]'>
-                        <video ref={videoRef} data-aos="fade-up" data-aos-duration='1000' muted loop controls={false} className='w-[600px] shadow-lg rounded-[18px]'>
+                        <video ref={videoRef} data-aos="fade-up" data-aos-duration='1000' muted loop controls={false} className='w-[600px] rounded-[18px]'>
                             <source src={Video} type="video/mp4" />
                             Maaf, browser Anda tidak mendukung pemutaran video.
                         </video>
