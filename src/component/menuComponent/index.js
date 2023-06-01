@@ -6,6 +6,7 @@ import Add from '../../assets/images/svg/add.svg';
 import HTML5 from '../../assets/images/svg/html5.svg';
 import PHP from '../../assets/images/svg/php.svg';
 import Download from '../../assets/images/svg/donlot.svg';
+import Saweria from '../../assets/images/png/saweria.png';
 
 export default class MenuComponent extends Component {
 constructor(props) {
@@ -146,13 +147,23 @@ handleChangeActive = (e) => {
   render() {
     return (
         <>
-            <div className='flex items-center absolute top-4 right-7'>
-            <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-full border-[1px] py-[1.5] bg-${this.state.bgColor1} text-${this.state.textColor1} border-slate-300 mx-2 w-max h-max px-4 py-1 text-center cursor-pointer`}>
-                <img src={PHP} alt="img" className='bg-white rounded-full w-[20px] px-1 h-[20px] mr-2' /> PHP language
-            </div>
-            <div onClick={() => this.handleChangeActive('HTML')} className={`d-flex items-center justify-center rounded-full border-[1px] py-[1.5] bg-${this.state.bgColor2} text-${this.state.textColor2} border-slate-300 mx-2 w-max h-max px-4 py-1 text-center cursor-pointer`}>
-            <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> HTML code
-            </div>
+            <div className='flex items-center absolute top-3 right-7'>
+                <div className='flex items-center relative mr-2 hover:text-black'>
+                    <a href="https://saweria.co/dragmeTEam" target='__blank' className='no-underline hover:text-black text-black'>
+                        <div className='rounded-md px-3 flex items-center justify-center py-[5.5px] border border-[1] hover:text-black border-black cursor-pointer active:scale-[0.97] duration-100'>
+                            <img src={Saweria} className='w-[30px]' alt="icon" />
+                            <span className='sawer hover:text-black'>
+                                Saweria
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-md border-[1px] py-2 bg-${this.state.bgColor1} text-${this.state.textColor1} border-slate-300 mx-2 w-max h-max px-4 py-1 text-center cursor-pointer`}>
+                    <img src={PHP} alt="img" className='bg-white rounded-full    w-[20px] px-1 h-[20px] mr-2' /> PHP language
+                </div>
+                <div onClick={() => this.handleChangeActive('HTML')} className={`d-flex items-center justify-center rounded-md border-[1px] py-2 bg-${this.state.bgColor2} text-${this.state.textColor2} border-slate-300 mx-2 w-max h-max px-4 py-1 text-center cursor-pointer`}>
+                    <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> HTML code
+                </div>
             </div>
             <div className="menuComponents">
                 <div className="menuAll">
