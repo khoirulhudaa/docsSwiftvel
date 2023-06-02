@@ -15,6 +15,14 @@
   display: none;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .btn-downloadsss:hover {
   transform: scale(0.96);
 }
