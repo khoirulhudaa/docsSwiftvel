@@ -97,25 +97,25 @@ return (
             <p data-aos-duration='1000' className='font-normal lg:w-max w-[70%] text-[12px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
-        <section className='w-[100%] rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] pt-1 lg:pt-0 lg:mt-[100px] pb-[200px] lg:pb-[160px] h-max ml-auto mr-auto bg-[#023430]'>
-            <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-[400px] lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md p-8 lg:p-2'>
+        <section className='w-[100%] rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] pt-1 lg:pt-4 lg:mt-[100px] pb-[200px] lg:pb-[140px] h-max ml-auto mr-auto bg-[#023430]'>
+            <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-[400px] lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
                <div className='lg:h-max w-max h-[480px] relative'>
                     <img src={Powerful} className='absolute right-0 bottom-0 w-[150px] mt-4 mb-4' alt="img" />
                     <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[45px] lg:text-[70px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>
                     <a href="/dragmeBuilder" className='w-max text-lightMongo no-underline'>
                         <p className='text-lightMongo mt-4 w-max cursor-pointer flex items-center'>Try dragme now <img src={Right} className='text-indigo-500 w-[14px] ml-3' alt="icon" /></p>
                     </a>
-                    <p className='text-[16px] leading-[2em] mt-5 w-[25%] font-normal text-slate-200'>It's very easy to use, just choose the components you want and arrange them all into 1 perfect homepage according to the web appearance you want</p>
+                    <p className='text-[16px] leading-[2em] mt-5 w-[25%] lg:w-[45%] font-normal text-slate-200'>It's very easy to use, just choose the components you want and arrange them all into 1 perfect homepage according to the web appearance you want</p>
                </div>
             </div>
             <div className='relative ml-auto mr-auto hidden lg:inline w-[84%] flex justify-between'>
-               <div className='w-[100%] overflow-hidden rounded-[30px] border-solid border-[12px] border-[#023430]'>
+               <div className='w-[100%] lg:w-[84%] overflow-hidden mt-4 ml-auto mr-auto rounded-[30px] border-solid border-[12px] border-[#023430]'>
                     <img src={Tutor} className='w-[102%]' alt="img" />
                </div>
             </div>
         </section>
 
-        <section className='w-full h-max pb-2 lg:pb-8 flex mt-[10px] lg:mt-[55px] flex-col justify-center items-center text-center'>
+        <section className='w-full h-max pb-2 lg:pb-8 flex mt-[10px] lg:mt-[35px] flex-col justify-center items-center text-center'>
             <h1 className='text-[50px] lg:text-[65px] w-[85%] lg:w-[60%] text-center text-black mt-5 mb-4 leading-[1.4em]'>Become a dragme premium user</h1>
             <p className='text-[15px] w-[70%] lg:w-max font-normal'>Get more components that are better and varied in design</p>
             <div className='w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
