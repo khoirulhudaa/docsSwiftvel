@@ -8,11 +8,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Sawarabi Mincho', serif;
   font-weight: bold;
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p, small, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .btn-downloadsss:hover {
@@ -505,8 +517,105 @@
   -webkit-text-stroke: 2px #000000;
 }
 
-.sawer {
+.userSI {
+  animation: si 3s ease-in-out infinite;
+}
+
+.userWP {
+  animation: wp 3s ease-in-out infinite;
+}
+
+.userNF {
+  animation: nf 3s ease-in-out infinite;
+}
+
+.userTME {
+  animation: tme 3s ease-in-out infinite;
+}
+
+@keyframes si {
+  0% {
+    left: 200px;
+    top: 160px;
+  }
+  50% {
+    left: 190px;
+    top: 150px;
+  }
+  100% {
+    left: 200px;
+    top: 160px;
+  }
+}
+
+@keyframes wp {
+  0% {
+    left: -200px;
+    top: 200px;
+  }
+  50% {
+    left: -210px;
+    top: 220px;
+  }
+  100% {
+    left: -200px;
+    top: 200px;
+  }
+}
+
+@keyframes nf {
+  0% {
+    left: 180px;
+    bottom: 170px;
+  }
+  50% {
+    left: 190px;
+    bottom: 190px;
+  }
+  100% {
+    left: 180px;
+    bottom: 170px;
+  }
+}
+
+@keyframes tme {
+  0% {
+    left: -100px;
+    bottom: 170px;
+  }
+  50% {
+    left: -90px;
+    bottom: 190px;
+  }
+  100% {
+    left: -100px;
+    bottom: 170px;
+  }
+}
+
+.finger {
+  animation: finger 2s ease-in-out infinite;
+}
+
+@keyframes finger {
+  0% {
+    right: 40px;
+  }
+  50% {
+    right: 60px;
+  }
+  100% {
+    right: 40px;
+  }
+}
+
+.sawer, .titleSawer, .nih, .nominaly {
   font-family: 'IBM Plex Mono', monospace;
+}
+
+.titleSawer {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #242424;
 }
 
 .chevronAnim {
@@ -541,7 +650,6 @@
   margin-bottom: 40px;
   background-color: rgb(255, 255, 255);
 }
-
 .fa-list-alt {
   position: absolute;
   border-radius: 999px;
