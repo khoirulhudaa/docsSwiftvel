@@ -48,8 +48,8 @@ return (
                 Benefits for you!  
             </div>
             <h2 className='font-600 text-[50px] lg:text-left text-center' data-aos-duration='1000'>Success website</h2>
-            <p data-aos-duration='500' className='text-[15px] font-normal w-[90%] lg:w-[45%] mt-4 text-center text-slate-400 leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
-            <div className='flex w-screen justify-center items-center mt-3'>
+            <p data-aos-duration='500' className='text-[14px] font-normal w-[88%] lg:w-[45%] mt-4 text-center text-black lg:text-slate-400 leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
+            <div className='flex w-screen justify-center items-center mt-4 lg:mt-3'>
                 <div className='w-[90%] lg:w-[82%] h-[360px] p-2'>
                     <div className='w-full relative overflow-hidden h-full overflow-hidden rounded-[30px] bg-darkMongo'>
                         <div className='relative lg:left-[30px] lg:top-8'>
@@ -85,11 +85,11 @@ return (
             <div className='rounded-full text-white text-[15px] mb-[25px] font-normal w-max h-max px-3 flex ml-auto mr-auto py-1 text-center bg-green-500 shadow-lg'>
                 What our customer say
             </div>
-            <h2 className='mt-4 mb-3 font-normal text-[40px] lg:text-[50px]' data-aos-duration='1000'>Testimonial</h2>
+            <h2 className='mt-4 mb-3 font-normal text-[38px] lg:text-[50px]' data-aos-duration='1000'>Special greeting</h2>
             <img src={Partner} alt="logo" className='lg:inline hidden w-[180px] ml-auto mr-auto my-7' />
             <img src={Petik} className='lg:inline hidden w-[70px] left-[160px] mb-[180px] absolute' alt="img" />
             <img src={Petik} className='lg:inline hidden w-[70px] right-[160px] mb-[320px] absolute' alt="img" />
-            <h1 className='ml-auto mr-auto text-[18px] lg:text-[28px] w-[90%] lg:w-[65%] leading-[1.8em] lg:leading-[2em] font-normal'>
+            <h1 className='ml-auto mr-auto text-[16px] lg:text-[28px] w-[90%] lg:w-[65%] leading-[1.8em] lg:leading-[2em] font-normal'>
             It's very convenient for those who don't have the skills to make a website 
             but really need it or they don't have enough time. Then it really works for him
             </h1>
@@ -97,18 +97,18 @@ return (
             <p data-aos-duration='1000' className='font-normal lg:w-max w-[70%] text-[12px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
-        <section className='w-[100%] rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] lg:mt-[100px] pb-[80px] lg:pb-[160px] h-max ml-auto mr-auto bg-[#023430] overflow-hidden'>
-            <div className='w-[90%] relative lg:w-max lg:flex overflow-hidden relative z-10 h-[400px] lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md p-8 lg:p-2'>
+        <section className='w-[100%] rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] pt-1 lg:pt-0 lg:mt-[100px] pb-[200px] lg:pb-[160px] h-max ml-auto mr-auto bg-[#023430]'>
+            <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-[400px] lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md p-8 lg:p-2'>
                <div className='lg:h-max w-max h-[480px] relative'>
                     <img src={Powerful} className='absolute right-0 bottom-0 w-[150px] mt-4 mb-4' alt="img" />
-                    <h2 className='w-[80%] lg:w-[60%] text-white font-normal text-[50px] lg:text-[70px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>
+                    <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[45px] lg:text-[70px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>
                     <a href="/dragmeBuilder" className='w-max text-lightMongo no-underline'>
                         <p className='text-lightMongo mt-4 w-max cursor-pointer flex items-center'>Try dragme now <img src={Right} className='text-indigo-500 w-[14px] ml-3' alt="icon" /></p>
                     </a>
-                    <p className='text-[16px] leading-[2em] mt-5 w-[50%] font-normal text-slate-200'>It's very easy to use, just choose the components you want and arrange them all into 1 perfect homepage according to the web appearance you want</p>
+                    <p className='text-[16px] leading-[2em] mt-5 w-[25%] font-normal text-slate-200'>It's very easy to use, just choose the components you want and arrange them all into 1 perfect homepage according to the web appearance you want</p>
                </div>
             </div>
-            <div className='relative ml-auto mr-auto w-[84%] flex justify-between'>
+            <div className='relative ml-auto mr-auto hidden lg:inline w-[84%] flex justify-between'>
                <div className='w-[100%] overflow-hidden rounded-[30px] border-solid border-[12px] border-[#023430]'>
                     <img src={Tutor} className='w-[102%]' alt="img" />
                </div>
