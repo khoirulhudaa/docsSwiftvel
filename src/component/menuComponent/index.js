@@ -17,7 +17,7 @@ constructor(props) {
     data: [],
     active: 'HTML',
     bgColor1: 'white',
-    bgColor2: 'indigo-500',
+    bgColor2: '#001E2B',
     textColor1: 'black',
     textColor2: 'white',
   };
@@ -130,14 +130,14 @@ handleChangeActive = (e) => {
       this.setState({
         active: e,
         bgColor1: 'white',
-        bgColor2: 'indigo-500',
+        bgColor2: '#001E2B',
         textColor1: 'black',
         textColor2: 'white',
       })
     }else {
       this.setState({
         active: e,
-        bgColor1: 'indigo-500',
+        bgColor1: '#001E2B',
         bgColor2: 'white',
         textColor1: 'white',
         textColor2: 'black',
@@ -149,7 +149,7 @@ handleChangeActive = (e) => {
     return (
         <>
             <a href="/">
-                <div className='absolute left-7 active:scale-[0.96] top-3 w-max p-[10px] border border-[1] border-black cursor-pointer hover:brightness-[95%] duration-100 h-max rounded-full flex items-center justify-center'>
+                <div className='absolute left-7 active:scale-[0.96] bg-mongo top-3 w-max p-[10px] border border-[1] border-black cursor-pointer hover:brightness-[95%] duration-100 h-max rounded-full flex items-center justify-center'>
                     <img src={Right} className='rotate-[180deg] w-[20px] h-[20px]' alt='icon' />
                 </div>
             </a>
@@ -170,11 +170,11 @@ handleChangeActive = (e) => {
                 <div className='h-[20px] w-[1px] bg-slate-400 ml-1'></div>
                 <div className='h-[30px] w-[1px] bg-slate-400 mx-2'></div>
                 <div className='h-[20px] w-[1px] bg-slate-400 mr-3'></div>
-                <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-md border-[1px] py-2 bg-${this.state.bgColor1} text-${this.state.textColor1} border-slate-300 mx-2 w-max h-max px-4 py-1 text-center cursor-pointer`}>
-                    <img src={PHP} alt="img" className='bg-white rounded-full    w-[20px] px-1 h-[20px] mr-2' /> PHP language
+                <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor1}] text-${this.state.textColor1} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
+                    <img src={PHP} alt="img" className='bg-white rounded-full w-[20px] px-1 h-[20px] mr-2' /> <p className='mt-3'>PHP language</p>
                 </div>
-                <div onClick={() => this.handleChangeActive('HTML')} className={`d-flex items-center justify-center rounded-md border-[1px] py-2 bg-${this.state.bgColor2} text-${this.state.textColor2} border-slate-300 mx-2 w-max h-max px-4 py-1 text-center cursor-pointer`}>
-                    <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> HTML code
+                <div onClick={() => this.handleChangeActive('HTML')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor2}] text-${this.state.textColor2} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
+                    <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> <p className='mt-3'>HTML code</p>
                 </div>
             </div>
             <div className="menuComponents">
@@ -188,7 +188,7 @@ handleChangeActive = (e) => {
                                     return (
                                         <div className="cardImage-navbar" key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
-                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#4BFFD4'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#001E2B'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
                                                 <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                             </div>
                                             {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
@@ -207,7 +207,7 @@ handleChangeActive = (e) => {
                                 if(data.title === "hero") {
                                 return (
                                     <div className="cardImage" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
-                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#4BFFD4'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#001E2B'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
                                                 <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                             </div>
                                         {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' style={{transform: 'scale(1)'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
@@ -226,7 +226,7 @@ handleChangeActive = (e) => {
                                 if(data.title === "content") {
                                 return (
                                     <div className="cardImage-content" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
-                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#4BFFD4'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#001E2B'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
                                                 <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                             </div>
                                         {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' style={{transform: 'scale(1)'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
@@ -245,7 +245,7 @@ handleChangeActive = (e) => {
                                 if(data.title === "footer") {
                                 return (
                                     <div className="cardImage-footer" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
-                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#4BFFD4'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#001E2B'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
                                                 <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                             </div>
                                         {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' style={{transform: 'scale(1)'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
@@ -263,10 +263,9 @@ handleChangeActive = (e) => {
                             this.state.data.map((data, index) => {
                                 return (
                                     <div className="cardImage" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
-                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#4BFFD4'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
-                                                <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                            </div>
-                                        {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' style={{transform: 'scale(1)'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
+                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#001E2B'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                            <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                        </div>
                                     </div>
                                 )
                             })
@@ -274,7 +273,7 @@ handleChangeActive = (e) => {
                         </div>
                     </div>
                 </div>
-                <div className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: 'rgb(99 102 241)', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+                <div className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#001E2B', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
                     {/* <box-icon type="icon" style={{color: 'white'}} name="download" onClick={() => this.download("templateCurrent")} /> */}
                     <img src={Download} alt="icon-download" style={{width: '47%'}} onClick={() => this.download("templateCurrent")} />
                 </div>

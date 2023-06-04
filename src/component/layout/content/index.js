@@ -35,7 +35,7 @@ return (
         <div className='w-[40px] h-[40px] bg-mongo rounded-full absolute bottom-7 right-8 shadow-lg'>
         </div>
 
-        <section className='lg:flex h-max overflow-hidden lg:min-h-[300px] mb-[70px] lg:px-[120px] lg:ml-6 w-screen lg:w-full items-center mt-0 lg:mt-14 justify-between'>
+        <section className='lg:flex h-max relative overflow-hidden lg:min-h-[300px] mb-[70px] lg:px-[120px] lg:ml-6 w-screen lg:w-full items-center mt-0 lg:mt-14 justify-between'>
             <img src={Component} className='w-[55%] flex ml-auto mr-auto lg:ml-0 lg:mr-0 lg:w-[280px] rotate-[-10deg]' alt="icon" />
             <div data-aos-duration='1000' className='relative bottom-2 hidden lg:block lg:ml-[40px] lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] pl-10 pr-4 py-7'>
                 <h1 className='text-[44px] leading-[1.5em] w-[100%] text-black'>Many designs and there is a choice of code language</h1>
@@ -43,7 +43,7 @@ return (
             </div>
         </section>
 
-        <section className='w-full h-max relative z-[20] flex flex-col mt-[70px] lg:mt-[120px] items-center justify-center'>
+        <section className='w-full h-max relative z-[20] flex flex-col mt-[70px] lg:mt-[100px] items-center justify-center'>
             <div className='rounded-full text-white text-[15px] mb-[25px] font-normal w-[57%] lg:w-max h-max px-3 py-1 text-center bg-green-500 shadow-lg'>
                 Benefits for you!  
             </div>
@@ -97,7 +97,7 @@ return (
             <p data-aos-duration='1000' className='font-normal lg:w-max w-[70%] text-[12px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
-        <section className='w-[100%] rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] pt-1 lg:pt-4 lg:mt-[100px] pb-[20px] lg:pb-[140px] h-max ml-auto mr-auto bg-[#023430]'>
+        <section className='w-[100%] overflow-hidden rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] pt-1 lg:pt-4 lg:mt-[100px] pb-[20px] lg:pb-[140px] h-max ml-auto mr-auto bg-[#023430]'>
             <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-max lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
                <div className='lg:h-max w-max h-max relative'>
                     <img src={Powerful} className='absolute right-0 bottom-0 w-[150px] mt-4 mb-4' alt="img" />

@@ -7,7 +7,6 @@
 *{
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   box-sizing: border-box;
   font-family: 'Sawarabi Mincho', serif;
   font-weight: bold;
@@ -664,7 +663,7 @@ html {
   height: 36px;
   z-index: 44;
   cursor: pointer;
-  background-color: rgb(99 102 241);
+  background-color: #001E2B;
   color: white;
   top: 20px;
   transition: 0.4s;
@@ -672,7 +671,7 @@ html {
 }
 
 .fa-list-alt:hover {
-  transform: scale(1.12);
+  transform: scale(1.4);
   transition: 0.4s;
 }
 
