@@ -39,7 +39,7 @@ return (
             <img src={Component} className='w-[55%] flex ml-auto mr-auto lg:ml-0 lg:mr-0 lg:w-[280px] rotate-[-10deg]' alt="icon" />
             <div data-aos-duration='1000' className='relative bottom-2 hidden lg:block lg:ml-[40px] lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] pl-10 pr-4 py-7'>
                 <h1 className='text-[44px] leading-[1.5em] w-[100%] text-black'>Many designs and there is a choice of code language</h1>
-                <p className='text-slate-400 leading-[2em] text-[15px] font-normal w-[70%] mt-4'>We make it easy for anyone to create a website in order to meet the needs of every business. And we want to spoil those who are not very good at making web</p>
+                <p className='text-slate-400 leading-[2em] lg:ml-1 text-[15px] font-normal w-[70%] mt-4'>We make it easy for anyone to create a website in order to meet the needs of every business. And we want to spoil those who are not very good at making web</p>
             </div>
         </section>
 
@@ -53,7 +53,7 @@ return (
                 <div className='w-[90%] lg:w-[82%] h-[360px] p-2'>
                     <div className='w-full relative overflow-hidden h-full overflow-hidden rounded-[30px] bg-darkMongo'>
                         <div className='relative lg:left-[30px] lg:top-8'>
-                            <img src={Component1} className='absolute left-8 top-[55px] lg:top-[-85px] w-[40px]' alt="icon" />
+                            <img src={Component1} className='absolute left-8 top-[55px] lg:top-[25px] w-[40px]' alt="icon" />
                             <h2 className='text-lightMongo text-[32px] lg:text-[44px] font-bold mb-3 ml-8 mt-[140px] lg:mt-[110px]'>Comp-to-Comp</h2>
                             <p className='text-slate-300 font-normal leading-6 ml-8 text-[12px] lg:text-[14px] w-[80%] lg:w-[305px]'>Bringing together various components to form one homepage that is ready to download</p>
                         </div>
