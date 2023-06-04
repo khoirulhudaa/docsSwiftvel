@@ -35,7 +35,7 @@ const Hero = () => {
         </ul>
       </div>
       <a href="/dragmeBuilder" className='no-underline font-bold'>
-        <Button text="Try dragme" padding={'lg:px-5 lg:py-3 px-3 py-3'} textColor='text-[#00684A]' width={'lg:w-[190px] w-[50vw]'} style={'font-normal mt-2'} />
+        <Button text="Try dragme" padding={'lg:px-5 lg:py-3 px-3 py-3'} textColor='text-[#00684A]' width={'lg:w-[190px] w-[50vw] mb-12'} style={'font-normal mt-2'} />
       </a>
     </div>  
   )
