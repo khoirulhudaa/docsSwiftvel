@@ -48,7 +48,7 @@ return (
                 Benefits for you!  
             </div>
             <h2 className='font-600 text-[50px] lg:text-left text-center' data-aos-duration='1000'>Success website</h2>
-            <p data-aos-duration='500' className='text-[14px] font-normal w-[88%] lg:w-[45%] mt-4 text-center text-black lg:text-slate-400 leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
+            <p data-aos-duration='500' className='text-[14px] font-normal w-[88%] lg:w-[45%] mt-4 text-center text-black lg:text-slate-400 leading-7 lg:leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
             <div className='flex w-screen justify-center items-center mt-4 lg:mt-3'>
                 <div className='w-[90%] lg:w-[82%] h-[360px] p-2'>
                     <div className='w-full relative overflow-hidden h-full overflow-hidden rounded-[30px] bg-darkMongo'>
