@@ -47,14 +47,14 @@ return (
             <div className='rounded-full text-white text-[15px] mb-[25px] font-normal w-[57%] lg:w-max h-max px-3 py-1 text-center bg-green-500 shadow-lg'>
                 Benefits for you!  
             </div>
-            <h2 className='font-600 text-[50px] lg:text-left text-center' data-aos-duration='1000'>Success website</h2>
+            <h2 className='font-600 text-[36px] lg:text-[50px] lg:text-left text-center' data-aos-duration='1000'>Success website</h2>
             <p data-aos-duration='500' className='text-[14px] font-normal w-[88%] lg:w-[45%] mt-4 text-center text-black lg:text-slate-400 leading-7 lg:leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
             <div className='flex w-screen justify-center items-center mt-4 lg:mt-3'>
                 <div className='w-[90%] lg:w-[82%] h-[360px] p-2'>
                     <div className='w-full relative overflow-hidden h-full overflow-hidden rounded-[30px] bg-darkMongo'>
                         <div className='relative lg:left-[30px] lg:top-8'>
-                            <img src={Component1} className='absolute left-8 top-[-65px] lg:top-[-85px] w-[40px]' alt="icon" />
-                            <h2 className='text-lightMongo text-[32px] lg:text-[44px] font-bold mb-3 ml-8 mt-[120px] lg:mt-[110px]'>Comp-to-Comp</h2>
+                            <img src={Component1} className='absolute left-8 top-[55px] lg:top-[-85px] w-[40px]' alt="icon" />
+                            <h2 className='text-lightMongo text-[32px] lg:text-[44px] font-bold mb-3 ml-8 mt-[140px] lg:mt-[110px]'>Comp-to-Comp</h2>
                             <p className='text-slate-300 font-normal leading-6 ml-8 text-[12px] lg:text-[14px] w-[80%] lg:w-[305px]'>Bringing together various components to form one homepage that is ready to download</p>
                         </div>
                         <img className='hidden lg:flex absolute w-[70%] opacity-[0.4] lg:opacity-[1] lg:w-[40%] bottom-0 right-0' src={Benefit1} alt="img" />
@@ -63,16 +63,16 @@ return (
             </div>
             <div className='w-[90%] lg:w-[82%] lg:flex items-center justify-between h-max lg:h-[460px] p-2'>
                 <div data-aos-duration='1000' className='h-[100%] lg:mt-0 mt-[20px] relative overflow-hidden w-[100%] lg:w-[49%] bg-[#EDF5FE] rounded-[20px] p-2'>
-                    <div className='relative lg:left-[30px] top-[-14px]'>
-                        <img src={Fast} className='absolute left-8 bottom-[180px] w-[30px]' alt="icon" />
+                    <div className='relative lg:left-[30px] top-[-30px] lg:top-[-14px]'>
+                        <img src={Fast} className='absolute left-8 bottom-[200px] w-[30px]' alt="icon" />
                         <h2 className='text-black text-[32px] lg:text-[44px] font-bold mb-3 ml-8 mt-[140px]'>Faster</h2>
                         <p className='text-black font-normal leading-6 ml-8 text-[15px] w-[80%] lg:w-[60%]'>Bringing together various components to form one homepage that is ready to download</p>
                     </div>
                     <img className='hidden lg:flex absolute opacity-[0.5] w-[60%] bottom-0 left-0' src={Benefit2} alt="img" />
                 </div>
                 <div data-aos-duration='1000' className='h-[100%] relative overflow-hidden w-[100%] lg:mt-0 mt-[40px] lg:w-[49%] bg-[#000000] rounded-[20px] p-2'>
-                    <div className='relative lg:left-[30px] top-[-14px]'>
-                        <img src={Flexibel} className='absolute left-8 bottom-[180px] w-[30px]' alt="icon" />
+                    <div className='relative lg:left-[30px] top-[-30px] lg:top-[-14px]'>
+                        <img src={Flexibel} className='absolute left-8 bottom-[200px] w-[30px]' alt="icon" />
                         <h2 className='text-white text-[32px] lg:text-[44px] font-bold mb-3 ml-8 mt-[140px]'>Flexibel</h2>
                         <p className='text-slate-300 font-normal leading-6 ml-8 text-[15px] w-[80%] lg:w-[60%]'>Bringing together various components to form one homepage that is ready to download</p>
                     </div>
@@ -97,9 +97,9 @@ return (
             <p data-aos-duration='1000' className='font-normal lg:w-max w-[70%] text-[12px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
-        <section className='w-[100%] rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] pt-1 lg:pt-4 lg:mt-[100px] pb-[40px] lg:pb-[140px] h-max ml-auto mr-auto bg-[#023430]'>
+        <section className='w-[100%] rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] pt-1 lg:pt-4 lg:mt-[100px] pb-[20px] lg:pb-[140px] h-max ml-auto mr-auto bg-[#023430]'>
             <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-max lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
-               <div className='lg:h-max w-max h-[480px] relative'>
+               <div className='lg:h-max w-max h-max relative'>
                     <img src={Powerful} className='absolute right-0 bottom-0 w-[150px] mt-4 mb-4' alt="img" />
                     <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[45px] lg:text-[70px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>
                     <a href="/dragmeBuilder" className='w-max text-lightMongo no-underline'>
