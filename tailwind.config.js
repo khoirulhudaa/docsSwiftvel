@@ -9,6 +9,19 @@ module.exports = {
       },
       boxShadow: {
         saweria: '0.4rem 0.4rem 0 #222'
+      },
+      textColor: {
+        mongo: '#00684A',
+        lightMongo: '#00ED64',
+        darkMongo: '#001E2B',
+      },
+      backgroundColor: {
+        mongo: '#00ED64',
+        darkMongo: '#001E2B',
+        hoverMongo: '#00c251'
+      },
+      borderColor: {
+        mongo: '#00ED64'
       }
     },
   },
