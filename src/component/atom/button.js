@@ -5,22 +5,22 @@ const Button = ({
     text,
     onClick,
     style,
-    bgColor="bg-indigo-500",
+    bgColor="bg-[#00ED64]",
     width="w-max",
     height="h-max",
     padding="px-3 py-1",
-    textColor="white"
+    textColor="text-[#00ED64]"
 }) => {
     switch(type) {
         case "outline": 
         return (    
-            <div className={`border-[1px] border-solid text-white rounded-md border-white active:scale-[0.97] hover:bg-indigo-500 hover:text-white cursor-pointer text-center ${height} ${width} ${padding} shadow-md ${style}`}>
+            <div onClick={onClick} className={`border-[1px] font-bold border-mongo ${textColor} rounded-md active:scale-[0.97] hvover:text-white hover:bg-hoverMongo hover:text-white cursor-pointer text-center ${height} ${width} ${padding} shadow-md ${style}`}>
                 {text}
             </div>
         )
         default: 
         return (
-            <div className={`${bgColor} text-center rounded-md text-${textColor} hover:bg-indigo-400 active:scale-[0.97] hover:text-white ${height} ${width} ${padding} cursor-pointer shadow-md ${style}`}>
+            <div onClick={onClick} className={`${bgColor} text-center font-bold rounded-md text-mongo hover:bg-hoverMongo hover:text-white active:scale-[0.97] hover:text-white ${height} ${width} ${padding} cursor-pointer shadow-md ${style}`}>
                 {text}
             </div>
         )
