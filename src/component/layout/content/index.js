@@ -135,7 +135,7 @@ return (
                     Call servicer
                 </div>
             </div>
-            <div className='relative w-[100%] lg:w-[50%] h-max overflow-hidden lg:h-[500px] mt-[10px] lg:mt-[30px] flex justify-center items-center'>
+            <div className='relative w-[100%] lg:w-[50%] h-max overflow-hidden lg:h-max mt-[10px] lg:mt-[-40px] flex justify-center items-center'>
                 <div className='z-10 relative rounded-[20px] p-4 mt-[30px] lg:mt-[150px] shadow-lg bg-darkMongo w-[84%] lg:w-[65%] h-[100%]'>
                     <p className='text-lightMongo text-[13px] mb-5 ml-1 lg:ml-3 mt-4 lg:mt-3 font-normal'>Get started with :</p>
                     <ul className='list-none'>
