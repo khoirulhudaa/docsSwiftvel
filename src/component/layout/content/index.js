@@ -35,7 +35,7 @@ return (
         <div className='w-[40px] h-[40px] bg-mongo rounded-full absolute bottom-7 right-8 shadow-lg'>
         </div>
 
-        <section className='lg:flex h-max lg:min-h-[300px] mb-[70px] lg:px-[120px] lg:ml-6 w-screen lg:w-full items-center mt-8 lg:mt-14 justify-between'>
+        <section className='lg:flex h-max overflow-hidden lg:min-h-[300px] mb-[70px] lg:px-[120px] lg:ml-6 w-screen lg:w-full items-center mt-0 lg:mt-14 justify-between'>
             <img src={Component} className='w-[55%] flex ml-auto mr-auto lg:ml-0 lg:mr-0 lg:w-[280px] rotate-[-10deg]' alt="icon" />
             <div data-aos-duration='1000' className='relative bottom-2 hidden lg:block lg:ml-[40px] lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] pl-10 pr-4 py-7'>
                 <h1 className='text-[44px] leading-[1.5em] w-[100%] text-black'>Many designs and there is a choice of code language</h1>
@@ -44,7 +44,7 @@ return (
         </section>
 
         <section className='w-full h-max relative z-[20] flex flex-col mt-[70px] lg:mt-[120px] items-center justify-center'>
-            <div className='rounded-full text-white text-[15px] mb-[25px] font-normal w-max h-max px-3 py-1 text-center bg-green-500 shadow-lg'>
+            <div className='rounded-full text-white text-[15px] mb-[25px] font-normal w-[57%] lg:w-max h-max px-3 py-1 text-center bg-green-500 shadow-lg'>
                 Benefits for you!  
             </div>
             <h2 className='font-600 text-[50px] lg:text-left text-center' data-aos-duration='1000'>Success website</h2>
@@ -61,7 +61,7 @@ return (
                     </div>
                 </div>
             </div>
-            <div className='w-[90%] lg:w-[82%] lg:flex items-center justify-between h-[400px] lg:h-[460px] p-2'>
+            <div className='w-[90%] lg:w-[82%] lg:flex items-center justify-between h-max lg:h-[460px] p-2'>
                 <div data-aos-duration='1000' className='h-[100%] lg:mt-0 mt-[20px] relative overflow-hidden w-[100%] lg:w-[49%] bg-[#EDF5FE] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-14px]'>
                         <img src={Fast} className='absolute left-8 bottom-[180px] w-[30px]' alt="icon" />
@@ -81,7 +81,7 @@ return (
             </div>
         </section>
 
-        <section className='w-full relative mt-[500px] lg:mt-[90px] h-max text-center flex flex-col justify-center'>
+        <section className='w-full relative mt-[50px] lg:mt-[90px] h-max text-center flex flex-col justify-center'>
             <div className='rounded-full text-white text-[15px] mb-[25px] font-normal w-max h-max px-3 flex ml-auto mr-auto py-1 text-center bg-green-500 shadow-lg'>
                 What our customer say
             </div>
@@ -97,8 +97,8 @@ return (
             <p data-aos-duration='1000' className='font-normal lg:w-max w-[70%] text-[12px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
-        <section className='w-[100%] rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] pt-1 lg:pt-4 lg:mt-[100px] pb-[200px] lg:pb-[140px] h-max ml-auto mr-auto bg-[#023430]'>
-            <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-[400px] lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
+        <section className='w-[100%] rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] pt-1 lg:pt-4 lg:mt-[100px] pb-[40px] lg:pb-[140px] h-max ml-auto mr-auto bg-[#023430]'>
+            <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-max lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
                <div className='lg:h-max w-max h-[480px] relative'>
                     <img src={Powerful} className='absolute right-0 bottom-0 w-[150px] mt-4 mb-4' alt="img" />
                     <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[45px] lg:text-[70px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>
@@ -123,7 +123,7 @@ return (
             </div>
         </section>
 
-        <section className='relative w-full mt-[80px] lg:mt-[110px] pb-[90px] pt-8 lg:pt-[0] lg:pb-[30px] bg-[#023430] h-max lg:flex'>
+        <section className='relative w-full mt-[80px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[30px] bg-[#023430] h-max lg:flex'>
             <img src={Wave} className='absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
             <div className='w-[100%] lg:w-[50%] h-max p-[30px] lg:p-[120px] lg:mt-[10px]'>
                 <h1 className='text-[45px] lg:text-[55px] text-white w-[90%] leading-[1.4em]'>Get started with Dragme today</h1>
@@ -135,9 +135,9 @@ return (
                     Call servicer
                 </div>
             </div>
-            <div className='relative w-[100%] lg:w-[50%] h-[500px] mt-[10px] lg:mt-[30px] flex justify-center items-center'>
-                <div className='z-10 relative rounded-[20px] p-4 mt-[50px] lg:mt-[150px] shadow-lg bg-darkMongo w-[84%] lg:w-[65%] h-[100%]'>
-                    <p className='text-lightMongo text-[13px] mb-5 ml-1 lg:ml-3 mt-3 font-normal'>Get started with :</p>
+            <div className='relative w-[100%] lg:w-[50%] h-max overflow-hidden lg:h-[500px] mt-[10px] lg:mt-[30px] flex justify-center items-center'>
+                <div className='z-10 relative rounded-[20px] p-4 mt-[30px] lg:mt-[150px] shadow-lg bg-darkMongo w-[84%] lg:w-[65%] h-[100%]'>
+                    <p className='text-lightMongo text-[13px] mb-5 ml-1 lg:ml-3 mt-4 lg:mt-3 font-normal'>Get started with :</p>
                     <ul className='list-none'>
                         <li className='list-none mb-[50px] lg:ml-0 ml-[-20px] flex items-center'>
                             <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
