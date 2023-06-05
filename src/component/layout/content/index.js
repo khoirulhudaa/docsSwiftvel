@@ -54,7 +54,7 @@ return (
                 <div className='w-[90%] lg:w-[82%] h-[360px] p-2'>
                     <div className='w-full relative overflow-hidden h-full overflow-hidden rounded-[30px] bg-darkMongo'>
                         <div className='relative lg:left-[30px] lg:top-8'>
-                            <img src={Component1} className='absolute left-8 top-[55px] lg:top-[25px] w-[40px]' alt="icon" />
+                            <img src={Component1} className='absolute left-8 top-[55px] lg:top-[-92px] w-[40px]' alt="icon" />
                             <h2 className='text-lightMongo text-[32px] lg:text-[44px] font-bold mb-3 ml-8 mt-[140px] lg:mt-[110px]'>Comp-to-Comp</h2>
                             <p className='text-slate-300 font-normal leading-6 ml-8 text-[12px] lg:text-[14px] w-[80%] lg:w-[305px]'>Bringing together various components to form one homepage that is ready to download</p>
                         </div>
