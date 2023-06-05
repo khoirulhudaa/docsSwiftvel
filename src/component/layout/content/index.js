@@ -20,10 +20,11 @@ import Video from '../../../assets/video/tutorialVideo.webm';
 import { Button } from '../../atom';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-
-// 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
+import { useNavigate } from 'react-router-dom';
 
 const Contents = () => {
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         Aos.init();
@@ -118,7 +119,7 @@ return (
         <section className='w-full h-max pb-2 lg:pb-8 flex mt-[10px] lg:mt-[35px] flex-col justify-center items-center text-center'>
             <h1 className='text-[50px] lg:text-[65px] w-[85%] lg:w-[60%] text-center text-black mt-5 mb-4 leading-[1.4em]'>Become a dragme premium user</h1>
             <p className='text-[15px] w-[70%] lg:w-max font-normal'>Get more components that are better and varied in design</p>
-            <div className='w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
+            <div onClick={() => navigate('/pricing')} className='w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
                 Get now
             </div>
         </section>
@@ -131,9 +132,11 @@ return (
                     It's easy to use and will really help you in making websites, 
                     easier than CMS and has affordable prices for premium accounts
                 </p>
-                <div className='w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-5 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
-                    Call servicer
-                </div>
+                <a target='__blank' href="https://api.whatsapp.com/send?phone=6289513093406&text=Hallo admin, saya dragmers." className='no-underline'>
+                    <div className='w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-5 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
+                        Call servicer
+                    </div>
+                </a>
             </div>
             <div className='relative w-[100%] lg:w-[50%] h-max overflow-hidden lg:h-max mt-[10px] lg:mt-[-40px] flex justify-center items-center'>
                 <div className='z-10 relative rounded-[20px] p-4 mt-[30px] lg:mt-[150px] shadow-lg bg-darkMongo w-[84%] lg:w-[65%] h-[100%]'>

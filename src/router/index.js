@@ -3,6 +3,7 @@ import Homepage from '../pages/homepage';
 import App from '../App';
 import Login from "../pages/auth/login";
 import Register from "../pages/auth/register";
+import Pricing from "../pages/pricing";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/signUp",
     element: <Register />,
+  },
+  {
+    path: "/pricing",
+    element: <Pricing />,
   },
 ]);
 
