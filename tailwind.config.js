@@ -18,7 +18,8 @@ module.exports = {
       backgroundColor: {
         mongo: '#00ED64',
         darkMongo: '#001E2B',
-        hoverMongo: '#00c251'
+        hoverMongo: '#00c251',
+        bgMongo: '#00684A',
       },
       borderColor: {
         mongo: '#00ED64'
