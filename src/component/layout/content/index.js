@@ -34,7 +34,7 @@ return (
             <img src={Component} className='w-[55%] flex ml-auto mr-auto lg:ml-0 lg:mr-0 lg:w-[280px] rotate-[-10deg]' alt="icon" />
             <div data-aos-duration='1000' className='relative bottom-2 hidden lg:block lg:ml-[40px] lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] pl-10 pr-4 py-7'>
                 <h1 className='text-[44px] leading-[1.5em] w-[100%] text-black'>Many designs and there is a choice of code language</h1>
-                <p className='text-slate-400 leading-[2em] lg:ml-1 text-[15px] font-normal w-[70%] mt-4'>We make it easy for anyone to create a website in order to meet the needs of every business. And we want to spoil those who are not very good at making web</p>
+                <p className='text-slate-500 leading-[2em] lg:ml-1 text-[15px] font-normal w-[70%] mt-4'>We make it easy for anyone to create a website in order to meet the needs of every business. And we want to spoil those who are not very good at making web</p>
             </div>
         </section>
 
@@ -43,7 +43,7 @@ return (
                 Benefits for you!  
             </div>
             <h2 className='font-600 text-[36px] lg:text-[50px] lg:text-left text-center' data-aos-duration='1000'>Success website</h2>
-            <p data-aos-duration='500' className='text-[14px] font-normal w-[88%] lg:w-[45%] mt-4 text-center text-black lg:text-slate-400 leading-7 lg:leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
+            <p data-aos-duration='500' className='text-[14px] font-normal w-[88%] lg:w-[45%] mt-4 text-center text-slate-500 leading-7 lg:leading-8'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
             <div className='flex w-screen justify-center items-center mt-4 lg:mt-3'>
                 <div className='w-[90%] lg:w-[82%] h-[360px] p-2'>
                     <div className='w-full relative overflow-hidden h-full overflow-hidden rounded-[30px] bg-darkMongo'>

@@ -47,20 +47,20 @@ const Contributors = () => {
                                 <img src={Github} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
                             </div>
                         </a>
-                        <p className='relative mx-4 top-2 font-normal'>Imzzan</p>
+                        <p className='relative mx-4 top-2 font-normal'>imzzan</p>
                         <div className='w-[30px] h-[30px] rounded-full overflow-hidden'>
                             <img src={G1} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
                         </div>
                     </div>
                 </a>
-                <a href="https://github.com/khoirulhudaa" className='no-underline text-black' target='__blank'>
+                <a href="https://github.com/justnotiyann" className='no-underline text-black' target='__blank'>
                     <div className='mx-5 my-4 lg:my-0 flex ml-auto mr-auto lg:ml-0 lg:mr-0 hover:brightness-[90%] hover:scale-[0.98] active:scale-[0.96] cursor-pointer items-center overflow-hidden justify-between w-[70vw] lg:w-max px-6 py-1 h-max bg-white rounded-full'>
-                        <a href="https://github.com/imzzan" target='__blank'>
+                        <a href="https://github.com/justnotiyann" target='__blank'>
                             <div className='w-[30px] h-[30px] overflow-hidden'>
                                 <img src={Github} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
                             </div>
                         </a>
-                        <p className='relative mx-4 top-2 font-normal'>Imzzan</p>
+                        <p className='relative mx-4 top-2 font-normal'>justnotiyann</p>
                         <div className='w-[30px] h-[30px] rounded-full overflow-hidden'>
                             <img src={G1} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
                         </div>
@@ -73,7 +73,7 @@ const Contributors = () => {
                                 <img src={Github} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
                             </div>
                         </a>
-                        <p className='relative mx-4 top-2 font-normal'>Khoirulhudaa</p>
+                        <p className='relative mx-4 top-2 font-normal'>khoirulhudaa</p>
                         <div className='w-[30px] h-[30px] rounded-full overflow-hidden'>
                             <img src={G2} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
                         </div>

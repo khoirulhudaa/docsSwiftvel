@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Contents, Footer, Hero } from '../../component/layout'
 import Chevron from '../../assets/images/svg/chevron.svg'
-import G1 from '../../assets/images/png/g1.png'
-import G2 from '../../assets/images/png/g2.png'
-
 import { Button } from '../../component'
 import { useNavigate } from 'react-router-dom'
 
@@ -74,36 +71,15 @@ const Homepage = () => {
         <Footer />
       {/* Footer */}
 
-      <div className='bg-darkMongo fixed z-30 right-10 bottom-[35px] w-max flex rounded-[10px] py-2 shadow-lg ml-auto mr-auto px-6 items-center justify-between'>
-          <p className='text-white font-normal relative top-2 mr-6'>Contributors</p>
-          <div className='flex items-center'>
-              <a href="https://github.com/khoirulhudaa" target='__blank'>
-                  <div className='w-[30px] rounded-full h-[30px] overflow-hidden'>
-                      <img src={G2} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
-                  </div>
-              </a>
-              <a href="https://github.com/imzzan" target='__blank'>
-                  <div className='w-[30px] rounded-full mx-3 h-[30px] overflow-hidden'>
-                      <img src={G1} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
-                  </div>
-              </a>
-              <a href="https://github.com/imzzan" target='__blank'>
-                  <div className='w-[30px] rounded-full mr-4 h-[30px] overflow-hidden'>
-                      <img src={G1} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
-                  </div>
-              </a>
-          </div>
-      </div>
-
       {/* Back to top */}
-      {/* {
+      {
         isVisible ? (
           <div onClick={scrollToTop} className={`duration-100 fixed z-40 w-[45px] h-[45px] lg:w-[60px] lg:h-[60px] right-[30px] lg:right-[50px] bottom-[70px] lg:bottom-[50px] rounded-full bg-mongo text-white flex items-center justify-center cursor-pointer shadow-lg`}>
               <img src={Chevron} className='chevronAnim w-[18px]' alt="icon" />
           </div>
         ) : 
           <></>
-      } */}
+      }
       {/* Back to top */}
     </div>
   )
