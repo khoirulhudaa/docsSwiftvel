@@ -4,6 +4,8 @@ import App from '../App';
 import Login from "../pages/auth/login";
 import Register from "../pages/auth/register";
 import Pricing from "../pages/pricing";
+import PrivacyPolicy from "../pages/privacyPolicy";
+import TermService from "../pages/TermService";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
   {
     path: "/pricing",
     element: <Pricing />,
+  },
+  {
+    path: "/privacy-policy",
+    element: <PrivacyPolicy />,
+  },
+  {
+    path: "/terms-of-service",
+    element: <TermService />,
   },
 ]);
 

@@ -3,6 +3,9 @@ import { Button } from '../../component'
 import { useNavigate } from 'react-router-dom'
 import { Footer } from '../../component/layout'
 import Wave from '../../assets/images/png/wave.png'
+import Success from '../notifications/success'
+import Pending from '../notifications/pending'
+import Cancel from '../notifications/cancel'
 
 const Pricing = () => {
 
@@ -10,8 +13,8 @@ const Pricing = () => {
 
   return (
     <>
-     {/* Annouchment */}
-     <div className='w-screen relative lg:shadow-none shadow-lg z-20 lg:z-[0] overflow-hidden font-normal bg-white py-2 h-max lg:h-max text-white text-center flex items-center justify-center'>
+    {/* Annouchment */}
+    <div className='w-screen relative lg:shadow-none shadow-lg z-20 lg:z-[0] overflow-hidden font-normal bg-white py-2 h-max lg:h-max text-white text-center flex items-center justify-center'>
         <div>
             <p className='font-normal text-[12px] lg:text-[16px] mt-auto text-mongo relative top-2'>Dragme from Indonesia - Product for build web 🔥🇮🇩</p>
         </div>
@@ -22,7 +25,7 @@ const Pricing = () => {
     </div>
     {/* Annouchment */}
 
-    <div className='w-full lg:flex h-max pt-6 lg:pt-10 pb-12 overflow-hidden relative items-center justify-center bg-[#023430]'>
+    {/* <div className='w-full lg:flex h-max pt-6 lg:pt-10 pb-12 overflow-hidden relative items-center justify-center bg-[#023430]'>
         <img src={Wave} className='w-[50%] absolute top-0 right-0' alt='img' />
         <div className='w-[100%] lg:w-[50%] pl-[30px] lg:pl-[120px] h-screen pr-5 lg:pr-4 pt-1 lg:pt-3 pb-4 flex flex-col justify-center'>
             <small className='text-lightMongo font-normal mb-4'>Dragme official</small>
@@ -68,6 +71,11 @@ const Pricing = () => {
                 </ul>
             </div>
         </div>
+    </div> */}
+    <div className='z-[-10] relative overflow-hidden'>
+    {/* <Success />  */}
+    {/* <Pending /> */}
+    <Cancel />
     </div>
 
     <Footer />

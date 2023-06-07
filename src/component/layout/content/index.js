@@ -57,7 +57,7 @@ return (
                             <img src={Component1} className='absolute left-8 top-[55px] lg:top-[-92px] w-[40px]' alt="icon" />
                             <h2 className='text-lightMongo text-[32px] lg:text-[44px] font-bold mb-3 ml-8 mt-[140px] lg:mt-[110px]'>Comp-to-Comp</h2>
                             <p className='text-slate-300 font-normal leading-6 ml-8 text-[12px] lg:text-[14px] w-[80%] lg:w-[305px]'>Bringing together various components to form one homepage that is ready to download</p>
-                        </div>
+                        </div>  
                         <img className='hidden lg:flex absolute w-[70%] opacity-[0.4] lg:opacity-[1] lg:w-[40%] bottom-0 right-0' src={Benefit1} alt="img" />
                     </div>
                 </div>
