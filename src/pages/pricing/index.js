@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Pricing = () => {
 
-    const navigate = useNavigate()
+ const navigate = useNavigate()
 
   return (
     <>

@@ -13,6 +13,7 @@ const currentYear = new Date().getFullYear();
         &copy; {currentYear} Dragme. All rights reserved.
         </small>
         <div className='text-white hidden lg:flex items-center'>
+          <small onClick={() => navigate('/contributors')} className='hover:brightness-[90%] cursor-pointer mr-8 font-normal'>Contributors</small>
           <small onClick={() => navigate('/privacy-policy')} className='hover:brightness-[90%] cursor-pointer mr-8 font-normal'>Privacy policy</small>
           <small onClick={() => navigate('/terms-of-service')} className='hover:brightness-[90%] cursor-pointer font-normal'>Terms of service</small>
         </div>

@@ -6,6 +6,7 @@ import Register from "../pages/auth/register";
 import Pricing from "../pages/pricing";
 import PrivacyPolicy from "../pages/privacyPolicy";
 import TermService from "../pages/TermService";
+import Contributors from "../pages/contributors";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/terms-of-service",
     element: <TermService />,
+  },
+  {
+    path: "/contributors",
+    element: <Contributors />,
   },
 ]);
 

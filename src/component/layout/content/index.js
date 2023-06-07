@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Benefit1 from '../../../assets/images/svg/benefit1.svg';
 import Benefit2 from '../../../assets/images/svg/benefit2.svg';
 import Benefit3 from '../../../assets/images/svg/benefit3.svg';
@@ -12,12 +12,7 @@ import Powerful from '../../../assets/images/svg/powerful.svg';
 import Wave2 from '../../../assets/images/svg/wave.svg';
 import Wave from '../../../assets/images/png/wave.png';
 import Tutor from '../../../assets/images/svg/tutor.svg';
-import Check from '../../../assets/images/svg/check.svg';
-import Products from '../../../assets/images/svg/products.svg';
-import Saweria from '../../../assets/images/svg/saweria.svg';
 import Component from '../../../assets/images/png/componets.png';
-import Video from '../../../assets/video/tutorialVideo.webm';
-import { Button } from '../../atom';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useNavigate } from 'react-router-dom';
@@ -35,7 +30,6 @@ return (
         <img src={Wave2} className='absolute hidden lg:inline w-[100%] z-[-1] top-0 left-0' alt="img" />
         <div className='w-[40px] h-[40px] bg-mongo rounded-full absolute bottom-7 right-8 shadow-lg'>
         </div>
-
         <section className='lg:flex h-max relative overflow-hidden lg:min-h-[300px] mb-[70px] lg:px-[120px] lg:ml-6 w-screen lg:w-full items-center mt-0 lg:mt-14 justify-between'>
             <img src={Component} className='w-[55%] flex ml-auto mr-auto lg:ml-0 lg:mr-0 lg:w-[280px] rotate-[-10deg]' alt="icon" />
             <div data-aos-duration='1000' className='relative bottom-2 hidden lg:block lg:ml-[40px] lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] pl-10 pr-4 py-7'>
@@ -124,7 +118,7 @@ return (
             </div>
         </section>
 
-        <section className='relative w-full mt-[80px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[30px] bg-[#023430] h-max lg:flex'>
+        <section className='relative w-full mt-[80px] rounded-tl-[110px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[30px] bg-[#023430] h-max lg:flex'>
             <img src={Wave} className='absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
             <div className='w-[100%] lg:w-[50%] h-max p-[30px] lg:p-[120px] lg:mt-[10px]'>
                 <h1 className='text-[45px] lg:text-[55px] text-white w-[90%] leading-[1.4em]'>Get started with Dragme today</h1>
