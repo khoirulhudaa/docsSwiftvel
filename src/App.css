@@ -663,11 +663,7 @@ html {
   height: 36px;
   z-index: 44;
   cursor: pointer;
-<<<<<<< HEAD
-  background-color: #00684A;
-=======
   background-color: #001E2B;
->>>>>>> 88bfd29c04633ac9ba9129cbfd082b931d3293f7
   color: white;
   top: 20px;
   transition: 0.4s;
