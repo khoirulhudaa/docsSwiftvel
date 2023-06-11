@@ -72,15 +72,10 @@ export default class FrameOutput extends Component {
 
   remove = (index) => {
     console.log(index)
-    for( let i = 0; i < this.props.dataHTML.length; i++){ 
-      this.props.dataHTML.splice(index, 1)
-    }
-    for( let i = 0; i < this.props.dataStyle.length; i++){ 
-      this.props.dataStyle.splice(index, 1)
-    }
-    for( let i = 0; i < this.props.dataComponentUsed.length; i++){ 
-      this.props.dataComponentUsed.splice(index, 1)
-    }
+    console.log(index)
+    this.props.dataHTML.splice(index, 1)
+    this.props.dataStyle.splice(index, 1)
+    this.props.dataComponentUsed.splice(index, 1)
     this.setState({
       situation: true,
       situation2: true,
