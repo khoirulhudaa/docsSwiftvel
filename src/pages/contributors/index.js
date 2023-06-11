@@ -46,7 +46,11 @@ const Contributors = () => {
                             <div className='w-[30px] h-[30px] overflow-hidden'>
                                 <img src={Github} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
                             </div>
+<<<<<<< HEAD
                         </a>    
+=======
+                        </a>
+>>>>>>> 88bfd29c04633ac9ba9129cbfd082b931d3293f7
                         <p className='relative mx-4 top-2 font-normal'>imzzan</p>
                         <div className='w-[30px] h-[30px] rounded-full overflow-hidden'>
                             <img src={G1} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
