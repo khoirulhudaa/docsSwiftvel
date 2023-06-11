@@ -50,12 +50,6 @@ const Homepage = () => {
                 <Button onClick={() => navigate('/signIn')} text={"Sign in"} style={"mr-3"} padding={"py-1 px-4"} textColor='text-mongo' type={"outline"} />
                 <Button onClick={() => navigate('/signUp')} text={"Sign up"} padding={"py-1 px-4"} />
             </div>
-            {/* <div className='bg-gradient-to-r absolute from-green-400 to-indigo-400 shadow-lg rounded-md right-10 w-max h-maz px-3 py-1 text-center text-white'>
-              Freemium
-            </div> */}
-            {/* <div className='bg-gradient-to-r absolute from-blue-400 to-green-300 shadow-lg rounded-md right-10 w-max h-maz px-3 py-1 text-center text-white'>
-              Premium
-            </div> */}
         </div>
       {/* Annouchment */}
 
