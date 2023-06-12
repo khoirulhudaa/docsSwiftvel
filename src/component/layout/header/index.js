@@ -14,39 +14,28 @@ const Header = () => {
 
   const handleLogout = async () => {
     try {
-      // Kirim permintaan ke endpoint logout di server
-      const response = await fetch('/logout', {
-        method: 'GET',
-        credentials: 'include', // Menggunakan credentials: 'include' untuk mengirimkan kuki atau token autentikasi
-      });
-
-      if (response.status === 201) {
-        // Setelah logout berhasil, dispatch action untuk logout
+        // Kirim permintaan ke endpoint logout di server
         dispatch(unSetUser({payload: ""}));
         Cookies.remove('status');
         navigate('/signIn')
-        // Redirect ke halaman login atau halaman yang sesuai
-      } else {
-        // Handling jika logout gagal
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 4000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.addEventListener('mouseenter', Swal.stopTimer)
-              toast.addEventListener('mouseleave', Swal.resumeTimer)
+    } catch (error) {
+    // Handling jika logout gagal
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 4000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
-          })
-          
-          Toast.fire({
+        })
+        
+        Toast.fire({
             icon: 'error',
             title: 'Sorry, logout failed!'
-          })
-      }
-    } catch (error) {
-      console.log(error);
+        })
     }
   };
 
