@@ -8,7 +8,7 @@ import Human3 from '../../assets/images/svg/human3.png'
 import Google from '../../assets/images/png/google.png'
 import Swal from 'sweetalert2'
 import { useDispatch } from 'react-redux'
-import { setUser } from '../../redux/authSlice'
+import { setUser, setToken } from '../../redux/authSlice'
 
 const Login = () => {
 

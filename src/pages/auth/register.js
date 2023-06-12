@@ -6,12 +6,10 @@ import Human3 from '../../assets/images/svg/human3.png'
 import Google from '../../assets/images/png/google.png'
 import Swal from 'sweetalert2'
 import { useDispatch } from 'react-redux'
-import { setUser, setToken } from '../../redux/authSlice'
 
 const Login = () => {
   const BASE_URL = 'https://api-dragme.vercel.app/api/users'  
   const navigate = useNavigate()
-  const dispatch = useDispatch()
   
   const [data, setData] = useState({
     username: '',
@@ -36,8 +34,6 @@ const Login = () => {
       const datass = await response.status;
       console.log(datass)
       if(datass === 200) {
-        console.log('respon:', data)
-        dispatch(setUser({payload: data}))
         navigate('/signIn')
       }else if(datass === 500) {
         const Toast = Swal.mixin({
