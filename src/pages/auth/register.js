@@ -32,7 +32,7 @@ const Login = () => {
       
       
       const datass = await response.status;
-      console.log(datass)
+      
       if(datass === 200) {
         navigate('/signIn')
       }else if(datass === 500) {

@@ -9,6 +9,7 @@ import Google from '../../assets/images/png/google.png'
 import Swal from 'sweetalert2'
 import { useDispatch } from 'react-redux'
 import { setUser, setToken } from '../../redux/authSlice'
+import Cookies from 'js-cookie';
 
 const Login = () => {
 
@@ -36,13 +37,12 @@ const Login = () => {
       });
       
       const datass = await response.status;
-      const token = await response.json();
-      console.log(datass)
 
       if(datass === 201) {
-        console.log('respon:', await response.json())
+        console.log(await response.json())
         dispatch(setUser({payload: data}))
-        dispatch(setToken({payload: token}))
+        dispatch(setToken({payload: await response.json}))
+        Cookies.set('status', true);
         navigate('/')
       }else if(datass === 500) {
         const Toast = Swal.mixin({

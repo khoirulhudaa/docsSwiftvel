@@ -424,10 +424,10 @@ html {
 
 @keyframes menu {
   0% {
-   bottom: -100%;
+   left: -10%;
   }
   100% {
-    bottom: 0;
+    left: 0;
   }
 }
 
