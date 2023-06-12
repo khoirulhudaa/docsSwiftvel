@@ -1,17 +1,54 @@
 import React from 'react'
 import { Button } from '../../atom'
 import { useNavigate } from 'react-router-dom'
+import { unSetUser } from '../../../redux/authSlice';
+import { useDispatch } from 'react-redux';
 import Cookies from 'js-cookie';
-
+import Swal from 'sweetalert2';
 
 const Header = () => {
 
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const valueCookie = Cookies.get('status');
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    try {
+      // Kirim permintaan ke endpoint logout di server
+      const response = await fetch('/logout', {
+        method: 'GET',
+        credentials: 'include', // Menggunakan credentials: 'include' untuk mengirimkan kuki atau token autentikasi
+      });
 
-  }
+      if (response.status === 201) {
+        // Setelah logout berhasil, dispatch action untuk logout
+        dispatch(unSetUser({payload: ""}));
+        Cookies.remove('status');
+        navigate('/signIn')
+        // Redirect ke halaman login atau halaman yang sesuai
+      } else {
+        // Handling jika logout gagal
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'error',
+            title: 'Sorry, logout failed!'
+          })
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className='w-screen relative lg:shadow-none shadow-lg z-20 lg:z-[0] overflow-hidden font-normal bg-white py-2 h-max lg:h-max text-white text-center flex items-center justify-center'>
