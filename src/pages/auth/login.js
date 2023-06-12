@@ -76,6 +76,23 @@ const Login = () => {
           icon: 'error',
           title: 'Wrong email or password!'
         })
+      }else if(datass === 401) {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'bottom-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        
+        Toast.fire({
+          icon: 'warning',
+          title: 'User not found!'
+        })
       }else {
         const Toast = Swal.mixin({
           toast: true,
