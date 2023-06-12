@@ -36,18 +36,20 @@ const Login = () => {
       });
       
       const datass = await response.status;
+      const token = await response.json();
       console.log(datass)
 
       if(datass === 201) {
-        console.log('respon:', data)
+        console.log('respon:', await response.json())
         dispatch(setUser({payload: data}))
-        // navigate('/')
+        dispatch(setToken({payload: token}))
+        navigate('/')
       }else if(datass === 500) {
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
           showConfirmButton: false,
-          timer: 3000,
+          timer: 4000,
           timerProgressBar: true,
           didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -64,7 +66,7 @@ const Login = () => {
           toast: true,
           position: 'bottom-end',
           showConfirmButton: false,
-          timer: 3000,
+          timer: 4000,
           timerProgressBar: true,
           didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -74,14 +76,14 @@ const Login = () => {
         
         Toast.fire({
           icon: 'error',
-          title: 'Wrong email or password!'
+          title: 'Wrong password!'
         })
-      }else if(datass === 401) {
+      }else if(datass === 404) {
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
           showConfirmButton: false,
-          timer: 3000,
+          timer: 4000,
           timerProgressBar: true,
           didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -98,7 +100,7 @@ const Login = () => {
           toast: true,
           position: 'bottom-end',
           showConfirmButton: false,
-          timer: 3000,
+          timer: 4000,
           timerProgressBar: true,
           didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -108,7 +110,7 @@ const Login = () => {
         
         Toast.fire({
           icon: 'error',
-          title: 'Sorry, register failed!'
+          title: `Sorry, login failed! (${datass})`
         })
       }
     } catch (error) {

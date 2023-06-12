@@ -35,7 +35,7 @@ const Login = () => {
       
       const datass = await response.status;
       console.log(datass)
-      if(datass === 201) {
+      if(datass === 200) {
         console.log('respon:', data)
         dispatch(setUser({payload: data}))
         navigate('/signIn')
@@ -44,7 +44,7 @@ const Login = () => {
           toast: true,
           position: 'bottom-end',
           showConfirmButton: false,
-          timer: 3000,
+          timer: 4000,
           timerProgressBar: true,
           didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -56,12 +56,63 @@ const Login = () => {
           icon: 'error',
           title: 'Internal server error'
         })
+      }else if(datass === 400) {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'bottom-end',
+          showConfirmButton: false,
+          timer: 4000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        
+        Toast.fire({
+          icon: 'warning',
+          title: 'Username already exists'
+        })
+      }else if(datass === 401) {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'bottom-end',
+          showConfirmButton: false,
+          timer: 4000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        
+        Toast.fire({
+          icon: 'warning',
+          title: 'Username minimal 3 characters'
+        })
+      }else if(datass === 402) {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'bottom-end',
+          showConfirmButton: false,
+          timer: 4000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        
+        Toast.fire({
+          icon: 'warning',
+          title: 'Password minimal 5 characters'
+        })
       }else {
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
           showConfirmButton: false,
-          timer: 3000,
+          timer: 4000,
           timerProgressBar: true,
           didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -71,7 +122,7 @@ const Login = () => {
         
         Toast.fire({
           icon: 'error',
-          title: 'Sorry, register failed!'
+          title: `Sorry, register failed! (${datass})`
         })
       }
     } catch (error) {
