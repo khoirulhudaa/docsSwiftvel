@@ -1,45 +1,90 @@
-import React, { useEffect, useState } from 'react'
-import {Button, Input} from '../../component/'
-import bgLine from '../../assets/images/svg/bgLine.svg'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Human1 from '../../assets/images/svg/human1.png'
 import Human2 from '../../assets/images/svg/human2.png'
 import Human3 from '../../assets/images/svg/human3.png'
 import Google from '../../assets/images/png/google.png'
+import Swal from 'sweetalert2'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../../redux/authSlice'
 
 const Login = () => {
   const BASE_URL = 'https://api-dragme.vercel.app/api/users'  
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-  const [textError, setTextError] = useState("SIGN IN")
+  const [data, setData] = useState({
+    username: '',
+    email: '',
+    password: ''
+  })
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-
+    
     try {
-      const response = await fetch(`${BASE_URL}/signIn`, {
+      const {username, email, password} = data;
+      const response = await fetch(`${BASE_URL}/signUp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, email, password }),
       });
-
-      const data = await response.status;
-      if(data === 200) {
-        navigate('/')
-      }else if(data === 401) {
-        setTextError("WERONG PAZZWOT!")
+      
+      
+      const datass = await response.status;
+      console.log(datass)
+      if(datass === 201) {
+        console.log('respon:', data)
+        dispatch(setUser({payload: data}))
+        navigate('/signIn')
+      }else if(datass === 500) {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'bottom-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        
+        Toast.fire({
+          icon: 'error',
+          title: 'Internal server error'
+        })
       }else {
-        setTextError("USER NOT-FON")
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'bottom-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        
+        Toast.fire({
+          icon: 'error',
+          title: 'Sorry, register failed!'
+        })
       }
-      // Store the token in localStorage or cookies
-      console.log(data);
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
+  }
+
+  const handleChange = (e) => {
+    setData({
+      ...data,
+      [e.target.name]:e.target.value
+    })
+    console.log(data)
   }
 
   return (
@@ -56,17 +101,17 @@ const Login = () => {
         </div>
         <div className='w-full mb-4 mt-4'>
             <label htmlFor="username" className='mb-1 text-white font-normal'>Username</label>
-            <input type="text" placeholder='Enter username' name='username' className='font-normal text-[14px] outline-0 rounded-lg py-[10px] px-3 w-[90%]' />
+            <input onChange={(e) => handleChange(e)} type="text" placeholder='Enter username' name='username' className='font-normal text-[14px] outline-0 rounded-lg py-[10px] px-3 w-[90%]' />
         </div>
         <div className='w-full mb-4 mt-4'>
             <label htmlFor="email" className='mb-1 text-white font-normal'>Email</label>
-            <input type="text" name='email' placeholder='Enter email' className='font-normal text-[14px] outline-0 rounded-lg py-[10px] px-3 w-[90%]' />
+            <input onChange={(e) => handleChange(e)} type="text" name='email' placeholder='Enter email' className='font-normal text-[14px] outline-0 rounded-lg py-[10px] px-3 w-[90%]' />
         </div>
         <div className='w-full mb-4 mt-4'>
             <label htmlFor="password" className='mb-1 text-white font-normal'>Password</label>
-            <input type="password" name='password' placeholder='Enter password' className='font-normal text-[14px] outline-0 rounded-lg py-[10px] px-3 w-[90%]' />
+            <input onChange={(e) => handleChange(e)} type="password" name='password' placeholder='Enter password' className='font-normal text-[14px] outline-0 rounded-lg py-[10px] px-3 w-[90%]' />
         </div>
-        <div className='rounded-lg border-[1px] border-white text-center py-2 w-max mb-3 lg:mb-0 px-3 cursor-pointer active:scale-[0.97] text-white'>
+        <div onClick={(e) => handleSubmit(e)} className='rounded-lg border-[1px] border-white text-center py-2 w-max mb-3 lg:mb-0 px-3 cursor-pointer active:scale-[0.97] text-white'>
           Enter now
         </div>
         <a onClick={() => navigate('/signIn')} className='inline lg:hidden'>
