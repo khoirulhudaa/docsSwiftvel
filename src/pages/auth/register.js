@@ -20,22 +20,22 @@ const Login = () => {
   const handleSubmit = async(e) => {
     e.preventDefault()
     
-    try {
-      const {username, email, password} = data;
-      const response = await fetch(`${BASE_URL}/signUp`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, email, password }),
-      });
-      
-      
-      const datass = await response.status;
-      
-      if(datass === 200) {
+    const {username, email, password} = data;
+    const response = await fetch(`${BASE_URL}/signUp`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, email, password }),
+    }) 
+    .then((response) => response.json())
+    .then((data) => {
+      if(data.status === 200) {
+        
         navigate('/signIn')
-      }else if(datass === 500) {
+
+      }else if(data.status === 500) {
+        
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -51,8 +51,10 @@ const Login = () => {
         Toast.fire({
           icon: 'error',
           title: 'Internal server error'
+        
         })
-      }else if(datass === 400) {
+      }else if(data.status === 400) {
+        
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -69,7 +71,9 @@ const Login = () => {
           icon: 'warning',
           title: 'Username already exists'
         })
-      }else if(datass === 401) {
+      
+      }else if(data.status === 401) {
+      
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -86,7 +90,9 @@ const Login = () => {
           icon: 'warning',
           title: 'Username minimal 3 characters'
         })
-      }else if(datass === 402) {
+      
+      }else if(data.status === 402) {
+      
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -103,7 +109,9 @@ const Login = () => {
           icon: 'warning',
           title: 'Password minimal 5 characters'
         })
+      
       }else {
+      
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -118,12 +126,11 @@ const Login = () => {
         
         Toast.fire({
           icon: 'error',
-          title: `Sorry, register failed! (${datass})`
+          title: `Sorry, register failed! (${data.status})`
         })
       }
-    } catch (error) {
-      console.log(error);
-    }
+    });
+
   }
 
   const handleChange = (e) => {

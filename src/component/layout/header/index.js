@@ -5,12 +5,14 @@ import { unSetUser } from '../../../redux/authSlice';
 import { useDispatch } from 'react-redux';
 import Cookies from 'js-cookie';
 import Swal from 'sweetalert2';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const valueCookie = Cookies.get('status');
+  const status = useSelector((state) => state.authReducers.user.payload.status)
 
   const handleLogout = async () => {
     try {
@@ -51,7 +53,16 @@ const Header = () => {
                     <>
                         <Button onClick={() => handleLogout()} text={"Logout"} style={"mr-3"} padding={"py-1 px-4"} textColor='text-mongo' type={"outline"} />
                         <div className='w-max cursor-pointer hover:brightness-[90%] active:scale-[0.98] h-max rounded-lg px-[19.1px] py-[5px] text-white shadow-lg bg-bgMongo'>
-                            Premium
+                            {
+                                status !== "standar" ? (
+                                    <>
+                                        Premium
+                                    </>
+                                ):
+                                    <>
+                                        Standar
+                                    </>
+                            }
                         </div> 
                     </>
                 ):

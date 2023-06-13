@@ -135,6 +135,22 @@ html {
   transition: 0.4s;
 }
 
+.cardImage-standar {
+  position: relative;
+  width: 90%;
+  height: 150px;
+  border-radius: 14px;
+  cursor: not-allowed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 14px 7px 20px 15px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.4s;
+}
+
 .cardImage-navbar {
   position: relative;
   width: 90%;
@@ -150,6 +166,24 @@ html {
   background-size: contain;
   background-repeat: no-repeat;
   transition: 0.4s;
+}
+
+.cardImage-navbar-standar {
+  position: relative;
+  width: 90%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 14px auto 30px 15px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.4s;
+
 }
 
 .cardImage-content {
@@ -169,12 +203,46 @@ html {
   transition: 0.4s;
 }
 
+.cardImage-content-standar {
+  position: relative;
+  width: 90%;
+  height: 150px;
+  cursor: not-allowed;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 14px auto 20px 15px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.4s;
+}
+
 .cardImage-footer {
   position: relative;
   width: 90%;
   height: 120px;
   border-radius: 14px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 14px auto 0px 15px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.4s;
+}
+
+.cardImage-footer-standar {
+  position: relative;
+  width: 90%;
+  height: 120px;
+  border-radius: 14px;
+  display: flex;
+  cursor: not-allowed;
   justify-content: center;
   align-items: center;
   margin: 14px auto 0px 15px;
@@ -274,6 +342,10 @@ html {
   filter: brightness(96%);
 }
 
+.cardImage-standar:hover {
+  cursor: not-allowed;
+}
+
 .cardImage:active {
   transform: scale(0.8);
   transition: 0.7s;
@@ -291,6 +363,10 @@ html {
   transform: scale(0.96);
   transition: 0.4s;
   filter: brightness(96%);
+}
+
+.cardImage-footer-standar:hover {
+  cursor: not-allowed;
 }
 
 .cardImage-footer:active {
@@ -312,6 +388,10 @@ html {
   filter: brightness(96%);
 }
 
+.cardImage-content-standar:hover {
+  cursor: not-allowed;
+}
+
 .cardImage-content:active {
   transform: scale(0.8);
   transition: 0.7s;
@@ -329,6 +409,14 @@ html {
   transform: scale(0.96);
   transition: 0.4s;
   filter: brightness(96%);
+}
+
+.cardImage-navbar-standar:hover {
+  cursor: not-allowed;
+}
+
+.cardImage-navbar-standar:active {
+  transform: scale(1);
 }
 
 .cardImage-navbar:active {

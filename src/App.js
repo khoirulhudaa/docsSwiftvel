@@ -4,8 +4,10 @@ import MenuComponent from './component/menuComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FrameOutput from './component/frameOutput';
 import Alert1 from './assets/images/png/alert1.png';
+import Water from './assets/images/png/water.png';
+import Cookies from 'js-cookie';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props)
 
@@ -14,12 +16,17 @@ export default class App extends React.Component {
       dataHTML: [],
       dataStyle: [],
       dataImages: [],
-      screen: window.innerWidth
+      screen: window.innerWidth,
+      status: false
     };
 
   };
-
+  
   componentDidMount = () => {
+    this.setState({
+      status: Cookies.get('status')
+    })
+
     const data = {
       datas: `<section>
       <div class='container pt-4'>
@@ -104,30 +111,45 @@ export default class App extends React.Component {
     const {createComponent} = this;
     const {dataStyle, dataHTML, dataImages} = this.state;
     return (
-      <>
-        {
-          // kode untuk menampilkan alert ketika lebar layar dibawah 1240px
-          this.state.screen < 1239 ? (
-            <div className="alert-page">
-              <img src={Alert1} alt="alert-logo" />
-              <h1>Sorry, the page cannot be accessed</h1>
-              <p>can only be accessed on screen widths above 1240px, while those below that size cannot access including mobile phones</p>
+      this.state.status ? (
+        <>
+          {
+            // kode untuk menampilkan alert ketika lebar layar dibawah 1240px
+            this.state.screen < 1239 ? (
+              <div className="alert-page">
+                <img src={Alert1} alt="alert-logo" />
+                <h1>Sorry, the page cannot be accessed</h1>
+                <p>can only be accessed on screen widths above 1240px, while those below that size cannot access including mobile phones</p>
+              </div>
+            ):
+            null
+          }
+          <div className="row d-flex">
+            <div className="col-sm-0 col-12">
+              {/* Menu komponent */}
+              <MenuComponent createComponent ={createComponent}/>
             </div>
-          ):
-          null
-        }
-        <div className="row d-flex">
-          <div className="col-sm-0 col-12">
-            {/* Menu komponent */}
-            <MenuComponent createComponent ={createComponent}/>
+            <div className='col-sm-12 col-12' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+              {/* frame yang akan menampilkan semua component terpilih */}
+              <FrameOutput dataStyle={dataStyle} dataHTML={dataHTML} dataComponentUsed={dataImages} />
+            </div>
           </div>
-          <div className='col-sm-12 col-12' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            {/* frame yang akan menampilkan semua component terpilih */}
-            <FrameOutput dataStyle={dataStyle} dataHTML={dataHTML} dataComponentUsed={dataImages} />
-          </div>
+        </>
+      ):
+      <>
+        <div className='w-screen h-[105vh] lg:h-screen flex flex-col items-center justify-center'>
+            <img src={Water} className='w-[60%] lg:w-[26%] mb-4' alt="img" />
+            <p className='font-normal w-[75%] lg:w-[50%] text-center ml-auto mr-auto relative leading-[1.4em]'>Don't forget to log in before creating your desired website, thank you.</p>
+            <a href="/signIn" className='no-underline'>
+              <div className='bg-darkMongo w-max px-[26px] py-[16px] h-max font-normal text-white rounded-md shadow-lg mt-5 cursor-pointer hover:brightness-[90%] active:scale-[0.97] duration-100'>
+                Login now
+              </div>
+            </a>
         </div>
       </>
     );
   }
 }
 
+
+export default App;

@@ -26,25 +26,26 @@ const Login = () => {
   const handleSubmit = async(e) => {
     e.preventDefault()
 
-    try {
-      const {email, password} = data;
-      const response = await fetch(`${BASE_URL}/signIn`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
-      
-      const datass = await response.status;
-
-      if(datass === 201) {
-        console.log(await response.json())
-        dispatch(setUser({payload: data}))
-        dispatch(setToken({payload: await response.json}))
+    const {email, password} = data;
+    await fetch(`${BASE_URL}/signIn`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      // Process the received data
+      if(data.status === 201) {
+        
+        dispatch(setUser({payload: data.data}))
+        dispatch(setToken({payload: data.token}))
         Cookies.set('status', true);
         navigate('/')
-      }else if(datass === 500) {
+
+      }else if(data.status === 500) {
+        
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -61,7 +62,9 @@ const Login = () => {
           icon: 'error',
           title: 'Internal server error'
         })
-      }else if(datass === 401) {
+
+      }else if(data.status === 401) {
+        
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -78,7 +81,9 @@ const Login = () => {
           icon: 'error',
           title: 'Wrong password!'
         })
-      }else if(datass === 404) {
+
+      }else if(data.status === 404) {
+        
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -95,7 +100,9 @@ const Login = () => {
           icon: 'warning',
           title: 'User not found!'
         })
+
       }else {
+       
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -110,12 +117,15 @@ const Login = () => {
         
         Toast.fire({
           icon: 'error',
-          title: `Sorry, login failed! (${datass})`
+          title: `Sorry, login failed! (${data.status})`
         })
       }
-    } catch (error) {
-      console.log(error);
-    }
+
+    })
+    .catch((error) => {
+      console.error('Error retrieving data', error);
+    });
+
   }
 
   const handleChange = (e) => {

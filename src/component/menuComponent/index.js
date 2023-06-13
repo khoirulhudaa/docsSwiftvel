@@ -8,8 +8,11 @@ import PHP from '../../assets/images/svg/php.svg';
 import Download from '../../assets/images/svg/donlot.svg';
 import Saweria from '../../assets/images/png/saweria.png';
 import Right from '../../assets/images/svg/right.svg';
+import Crown from '../../assets/images/png/crown.png';
+import Padlock from '../../assets/images/png/padlock.png';
+import { connect } from 'react-redux';
 
-export default class MenuComponent extends Component {
+class MenuComponent extends Component {
 constructor(props) {
   super(props)
 
@@ -137,6 +140,8 @@ handleChangeActive = (e) => {
   }
 
   render() {
+    const { status } = this.props.data;
+    console.log('user state redux:', status)
     return (
         <>
             <a href="/">
@@ -185,12 +190,18 @@ handleChangeActive = (e) => {
                             this.state.data.map((data, index) => {
                                 if(data.title === "navbar") {
                                     return (
-                                        <div className="cardImage-navbar" key={index}>
+                                        <div className={`${data.type === 'premium' ? 'cardImage-navbar-standar' : 'cardImage-navbar'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
-                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
-                                                <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                            </div>
-                                            {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
+                                            {
+                                                status !== 'premium' && data.type === "premium" ? (
+                                                    <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[40px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                        <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                    </div>
+                                                ):
+                                                    <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                    </div>
+                                            }
                                         </div>
                                         )
                                     }
@@ -204,13 +215,20 @@ handleChangeActive = (e) => {
                        {
                             this.state.data.map((data, index) => {
                                 if(data.title === "hero") {
-                                return (
-                                    <div className="cardImage" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
-                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
-                                                <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                            </div>
-                                        {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' style={{transform: 'scale(1)'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
-                                    </div>
+                                    return (
+                                        <div className={`${data.type === 'premium' ? 'cardImage-standar' : 'cardImage'}`} key={index}>
+                                            <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
+                                            {
+                                                status !== 'premium' && data.type === "premium" ? (
+                                                    <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[40px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                        <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                    </div>
+                                                ):
+                                                    <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                    </div>
+                                            }
+                                        </div>
                                     )
                                 }
                             })
@@ -223,13 +241,20 @@ handleChangeActive = (e) => {
                        {
                             this.state.data.map((data, index) => {
                                 if(data.title === "content") {
-                                return (
-                                    <div className="cardImage-content" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
-                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
-                                                <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                            </div>
-                                        {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' style={{transform: 'scale(1)'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
-                                    </div>
+                                    return (
+                                        <div className={`${data.type === 'premium' ? 'cardImage-content-standar' : 'cardImage-content'}`} key={index}>
+                                            <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
+                                            {
+                                                status !== 'premium' && data.type === "premium" ? (
+                                                    <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[40px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                        <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                    </div>
+                                                ):
+                                                    <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                    </div>
+                                            }
+                                        </div>
                                     )
                                 }
                             })
@@ -242,13 +267,25 @@ handleChangeActive = (e) => {
                        {
                             this.state.data.map((data, index) => {
                                 if(data.title === "footer") {
-                                return (
-                                    <div className="cardImage-footer" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
-                                            <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
-                                                <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                            </div>
-                                        {/* <FontAwesomeIcon icon={faPlus} className='plusIcon' style={{transform: 'scale(1)'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)} /> */}
-                                    </div>
+                                    return (
+                                        <div className={`${data.type === 'premium' ? 'cardImage-footer-standar' : 'cardImage-footer'}`} key={index}>
+                                            <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
+                                            {
+                                                status !== 'premium' && data.type === "premium" ? (
+                                                    <>
+                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                            <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
+                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                            <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
+                                                    </>
+                                                ):
+                                                    <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                    </div>
+                                            }
+                                        </div>
                                     )
                                 }
                             })
@@ -301,3 +338,11 @@ handleChangeActive = (e) => {
     );
   }
 }
+
+const mapStateToProps = state => {
+    return {
+      data: state.authReducers.user.payload // Replace 'data' with the actual state slice you want to access
+    };
+};
+
+export default connect(mapStateToProps)(MenuComponent);

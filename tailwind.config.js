@@ -13,7 +13,7 @@ module.exports = {
       textColor: {
         mongo: '#00684A',
         lightMongo: '#00ED64',
-        darkMongo: '#001E2B',
+        darkMongo: '  ',
       },
       backgroundColor: {
         mongo: '#00ED64',
