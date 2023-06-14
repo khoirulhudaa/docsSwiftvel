@@ -141,7 +141,7 @@ return (
                     It's easy to use and will really help you in making websites, 
                     easier than CMS and has affordable prices for premium accounts
                 </p>
-                <a target='__blank' href="https://api.whatsapp.com/send?phone=6289513093406&text=Hallo admin, saya dragmers." className='no-underline'>
+                <a target='__blank' href="https://api.whatsapp.com/send?phone=6289513093406&text=Hallo admin, saya dragmers." className='no-underline text-white'>
                     <div className='w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-5 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
                         Call servicer
                     </div>
