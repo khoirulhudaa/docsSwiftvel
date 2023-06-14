@@ -23,9 +23,15 @@ class App extends React.Component {
   };
   
   componentDidMount = () => {
-    this.setState({
-      status: Cookies.get('status')
-    })
+    if(Cookies.get('status')) {
+      this.setState({
+        status: Cookies.get('status')
+      })
+    }else {
+      this.setState({
+        status: false
+      })
+    }
 
     const data = {
       datas: `<section>
