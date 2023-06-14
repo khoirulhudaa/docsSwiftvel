@@ -13,7 +13,7 @@ const Pricing = () => {
 
  const [statusNew, setStatusNew] = useState('')
 
- const email = useSelector((state) => state.authReducers.user.payload.email)
+ const email = useSelector((state) => state.authReducers.user.payload)
  console.log(email)
  const BASE_URL2 = `https://api-dragme.vercel.app/api/users/${email}`  
  const BASE_URL = `https://api-dragme.vercel.app`  
