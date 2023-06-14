@@ -217,19 +217,25 @@ handleChangeActive = (e) => {
                                         <div className={`${data.type === 'premium' ? 'cardImage-navbar-standar' : 'cardImage-navbar'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
-                                                status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
-                                                    <>
-                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
-                                                            <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                data.type === 'premium' ? (
+                                                    status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
+                                                        <>
+                                                            <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                                <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                            </div>
+                                                            <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                                <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                            </div>
+                                                        </>
+                                                    ):
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                            <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
-                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
-                                                            <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                                        </div>
-                                                    </>
+
                                                 ):
-                                                    <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
-                                                        <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                                    </div>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                            <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
                                             }
                                         </div>
                                         )
@@ -248,22 +254,28 @@ handleChangeActive = (e) => {
                                         <div className={`${data.type === 'premium' ? 'cardImage-standar' : 'cardImage'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
-                                                status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
-                                                    <>
-                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
-                                                            <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                data.type === 'premium' ? (
+                                                    status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
+                                                        <>
+                                                            <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                                <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                            </div>
+                                                            <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                                <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                            </div>
+                                                        </>
+                                                    ):
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                            <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
-                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
-                                                            <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                                        </div>
-                                                    </>
+
                                                 ):
-                                                    <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
-                                                        <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                                    </div>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                            <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
                                             }
                                         </div>
-                                    )
+                                        )
                                 }
                             })
                         }
@@ -279,22 +291,28 @@ handleChangeActive = (e) => {
                                         <div className={`${data.type === 'premium' ? 'cardImage-content-standar' : 'cardImage-content'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
-                                                status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
-                                                    <>
-                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
-                                                            <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                data.type === 'premium' ? (
+                                                    status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
+                                                        <>
+                                                            <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                                <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                            </div>
+                                                            <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                                <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                            </div>
+                                                        </>
+                                                    ):
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                            <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
-                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
-                                                            <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                                        </div>
-                                                    </>
+
                                                 ):
-                                                    <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
-                                                        <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                                    </div>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                            <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
                                             }
                                         </div>
-                                    )
+                                        )
                                 }
                             })
                         }
@@ -310,22 +328,28 @@ handleChangeActive = (e) => {
                                         <div className={`${data.type === 'premium' ? 'cardImage-footer-standar' : 'cardImage-footer'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
-                                                status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
-                                                    <>
-                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
-                                                            <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                data.type === 'premium' ? (
+                                                    status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
+                                                        <>
+                                                            <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                                <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                            </div>
+                                                            <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                                <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                            </div>
+                                                        </>
+                                                    ):
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                            <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
-                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
-                                                            <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                                        </div>
-                                                    </>
+
                                                 ):
-                                                    <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
-                                                        <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                                    </div>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                            <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
                                             }
                                         </div>
-                                    )
+                                        )
                                 }
                             })
                         }

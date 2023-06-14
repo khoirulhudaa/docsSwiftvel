@@ -77,7 +77,6 @@ const Pricing = () => {
     }
 
  }
-
   return (
     <>
     {/* Header */}
