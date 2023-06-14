@@ -142,19 +142,15 @@ const Login = () => {
         </div>
         <h2 className='text-white text-[40px] lg:text-[50px] mb-[30px] lg:mb-[40px]'>Log in to your account</h2>
         <div className='w-[90%] h-[1px] bg-white my-1'></div>
-        <div className='border-[1px] lg:scale-[1] scale-[0.8] px-4 lg:ml-0 ml-[-25px] py-1 mt-4 lg:mt-12 border-white text-white w-[90%] rounded-lg cursor-pointer hover:shadow-saweria active:scale-[0.97] flex items-center justify-center'>
-          <img src={Google} className='w-[34px] h-[34px] mr-3' alt='icon' />
-          <p className='relative top-2'>Google</p>
-        </div>
         <div className='w-full mb-4 mt-4'>
-            <label htmlFor="email" className='mb-1 text-white font-normal'>Email</label>
+            <label htmlFor="email" className='mb-3 text-white font-normal'>Email</label>
             <input onChange={(e) => handleChange(e)} type="text" name='email' placeholder='Enter email' className='font-normal text-[14px] outline-0 rounded-lg py-[10px] px-3 w-[90%]' />
         </div>
         <div className='w-full mb-4 mt-4'>
-            <label htmlFor="password" className='mb-1 text-white font-normal'>Password</label>
+            <label htmlFor="password" className='mb-3 text-white font-normal'>Password</label>
             <input onChange={(e) => handleChange(e)} type="password" name='password' placeholder='Enter password' className='font-normal text-[14px] outline-0 rounded-lg py-[10px] px-3 w-[90%]' />
         </div>
-        <div onClick={(e) => handleSubmit(e)} className='rounded-lg border-[1px] border-white text-center py-2 w-max mb-3 lg:mb-0 px-3 cursor-pointer active:scale-[0.97] text-white'>
+        <div onClick={(e) => handleSubmit(e)} className='rounded-lg border-[1px] border-white text-center py-2 w-max mb-3 lg:mb-0 px-3 cursor-pointer active:scale-[0.97] mt-5 text-white'>
           Enter now
         </div>
         <a onClick={() => navigate('/signUp')} className='inline lg:hidden'>
