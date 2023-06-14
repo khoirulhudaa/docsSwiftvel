@@ -1,21 +1,21 @@
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Component from '../../../assets/images/png/componets.png';
+import Wave from '../../../assets/images/png/wave.png';
 import Benefit1 from '../../../assets/images/svg/benefit1.svg';
 import Benefit2 from '../../../assets/images/svg/benefit2.svg';
 import Benefit3 from '../../../assets/images/svg/benefit3.svg';
 import Component1 from '../../../assets/images/svg/component1.png';
 import Fast from '../../../assets/images/svg/fast.svg';
 import Flexibel from '../../../assets/images/svg/flexibel.svg';
-import Partner from '../../../assets/images/svg/v.svg';
 import Petik from '../../../assets/images/svg/petik.svg';
-import Right from '../../../assets/images/svg/right.svg';
 import Powerful from '../../../assets/images/svg/powerful.svg';
-import Wave2 from '../../../assets/images/svg/wave.svg';
-import Wave from '../../../assets/images/png/wave.png';
+import Right from '../../../assets/images/svg/right.svg';
 import Tutor from '../../../assets/images/svg/tutor.svg';
-import Component from '../../../assets/images/png/componets.png';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-import { useNavigate } from 'react-router-dom';
+import Partner from '../../../assets/images/svg/v.svg';
+import Wave2 from '../../../assets/images/svg/wave.svg';
 
 const Contents = () => {
 

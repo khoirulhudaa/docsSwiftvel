@@ -1,8 +1,8 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import authSlice from './authSlice';
 import { persistReducer, persistStore } from 'redux-persist';
 import { encryptTransform } from 'redux-persist-transform-encrypt';
 import storage from "redux-persist/lib/storage";
+import authSlice from './authSlice';
 
 const persistConfig = {
     key: "root",

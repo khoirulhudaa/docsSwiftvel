@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { Contents, Footer, Header, Hero } from '../../component/layout'
-import Chevron from '../../assets/images/svg/chevron.svg'
-import { Button } from '../../component'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import Chevron from '../../assets/images/svg/chevron.svg';
+import { Contents, Footer, Header, Hero } from '../../component/layout';
 
 const Homepage = () => {
-  const navigate = useNavigate();
 
   const [isVisible, setIsVisible] = useState(false);
 

@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import Google from '../../assets/images/png/google.png'
 import Human1 from '../../assets/images/svg/human1.png'
 import Human2 from '../../assets/images/svg/human2.png'
 import Human3 from '../../assets/images/svg/human3.png'
-import Google from '../../assets/images/png/google.png'
-import Swal from 'sweetalert2'
-import { useDispatch } from 'react-redux'
 
 const Login = () => {
   const BASE_URL = 'https://api-dragme.vercel.app/api/users'  
@@ -21,7 +20,7 @@ const Login = () => {
     e.preventDefault()
     
     const {username, email, password} = data;
-    const response = await fetch(`${BASE_URL}/signUp`, {
+    await fetch(`${BASE_URL}/signUp`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,12 +29,12 @@ const Login = () => {
     }) 
     .then((response) => response.json())
     .then((data) => {
-      if(data.status === 200) {
+      if(data.status === 201) {
         
         navigate('/signIn')
 
       }else if(data.status === 500) {
-        
+        console.log(data)
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -129,6 +128,9 @@ const Login = () => {
           title: `Sorry, register failed! (${data.status})`
         })
       }
+    })
+    .catch((err) => {
+      console.log('error register :',err)
     });
 
   }

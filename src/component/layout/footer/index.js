@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import G1 from '../../../assets/images/png/g1.png'
-import G2 from '../../../assets/images/png/g2.png'
-import G3 from '../../../assets/images/png/g3.png'
+import G1 from '../../../assets/images/png/g1.png';
+import G2 from '../../../assets/images/png/g2.png';
+import G3 from '../../../assets/images/png/g3.png';
 
 const Footer = () => {
 

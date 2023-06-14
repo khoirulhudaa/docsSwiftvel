@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button } from '../../component'
 import { Footer, Header } from '../../component/layout'
 import Github from '../../assets/images/svg/github.svg'
 import G1 from '../../assets/images/png/g1.png'

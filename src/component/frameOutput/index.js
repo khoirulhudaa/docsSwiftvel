@@ -71,8 +71,6 @@ export default class FrameOutput extends Component {
   }
 
   remove = (index) => {
-    console.log(index)
-    console.log(index)
     this.props.dataHTML.splice(index, 1)
     this.props.dataStyle.splice(index, 1)
     this.props.dataComponentUsed.splice(index, 1)
@@ -94,7 +92,6 @@ export default class FrameOutput extends Component {
     document.querySelector('.template').innerHTML = web;
     document.querySelector('.styles').innerHTML = webStyle;
 
-    console.log(this.props.dataComponentUsed)
   }
 
   render() {

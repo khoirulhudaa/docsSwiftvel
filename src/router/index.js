@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-import Homepage from '../pages/homepage';
 import App from '../App';
+import TermService from "../pages/TermService";
 import Login from "../pages/auth/login";
 import Register from "../pages/auth/register";
+import Contributors from "../pages/contributors";
+import Homepage from '../pages/homepage';
 import Pricing from "../pages/pricing";
 import PrivacyPolicy from "../pages/privacyPolicy";
-import TermService from "../pages/TermService";
-import Contributors from "../pages/contributors";
 
 const router = createBrowserRouter([
   {

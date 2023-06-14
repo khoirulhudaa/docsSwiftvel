@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import Data from '../../dataComponent/index.json';
-import Swal from 'sweetalert2';
 import 'boxicons';
-import Add from '../../assets/images/svg/add.svg';
-import HTML5 from '../../assets/images/svg/html5.svg';
-import PHP from '../../assets/images/svg/php.svg';
-import Download from '../../assets/images/svg/donlot.svg';
-import Saweria from '../../assets/images/png/saweria.png';
-import Right from '../../assets/images/svg/right.svg';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Swal from 'sweetalert2';
 import Crown from '../../assets/images/png/crown.png';
 import Padlock from '../../assets/images/png/padlock.png';
-import { connect } from 'react-redux';
+import Saweria from '../../assets/images/png/saweria.png';
+import Add from '../../assets/images/svg/add.svg';
+import Download from '../../assets/images/svg/donlot.svg';
+import HTML5 from '../../assets/images/svg/html5.svg';
+import PHP from '../../assets/images/svg/php.svg';
+import Right from '../../assets/images/svg/right.svg';
+import Data from '../../dataComponent/index.json';
 
 class MenuComponent extends Component {
 constructor(props) {
@@ -23,14 +23,34 @@ constructor(props) {
     bgColor2: '#00684A',
     textColor1: 'black',
     textColor2: 'white',
+    username: ''
   };
 };
 
 componentDidMount = () => {
+
     this.setState({
         data: Data
     })
-    console.log('data:', Data)
+
+    const BASE_URL2 = `https://api-dragme.vercel.app/api/users/${this.props.data.email}`  
+    
+    fetch(`${BASE_URL2}`, {
+        method: 'GET',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        this.setState({
+           statusNew: data.message.status,
+           username: data.message.username  
+        })
+    })
+    .catch((error) => {
+        console.log(error)
+    })
 
     document.querySelector('.fa-times').addEventListener('click', () => {
         document.querySelector('.menu1').classList.remove('show1')
@@ -141,7 +161,6 @@ handleChangeActive = (e) => {
 
   render() {
     const { status } = this.props.data;
-    console.log('user state redux:', status)
     return (
         <>
             <a href="/">
@@ -151,12 +170,17 @@ handleChangeActive = (e) => {
             </a>
             <div className='flex items-center absolute top-3 right-7'>
                 <a href="/pricing">
-                    <div className='flex items-center relative bg-bgMongo text-white border-[1] mr-4 border border-black px-4 w-max h-max py-[8.6px] rounded-md hover:text-black'>
-                        Go premium
-                    </div>
+                    {
+                        status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
+                            <div className='flex items-center relative bg-bgMongo text-white border-[1] mr-4 border border-black px-4 w-max h-max py-[8.6px] rounded-md hover:text-black'>
+                                Go premium
+                            </div>
+                        ):
+                            <></>
+                    }
                 </a>
                 <div className='flex items-center relative mr-2 border-[1] border border-black px-4 w-max h-max py-[8.6px] rounded-md hover:text-black'>
-                    Robinson
+                    {this.state.username}
                 </div>
                 <div className='h-[20px] w-[1px] bg-slate-400 ml-1'></div>
                 <div className='h-[30px] w-[1px] bg-slate-400 mx-2'></div>
@@ -193,10 +217,15 @@ handleChangeActive = (e) => {
                                         <div className={`${data.type === 'premium' ? 'cardImage-navbar-standar' : 'cardImage-navbar'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
-                                                status !== 'premium' && data.type === "premium" ? (
-                                                    <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[40px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
-                                                        <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                                    </div>
+                                                status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
+                                                    <>
+                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                            <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
+                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                            <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
+                                                    </>
                                                 ):
                                                     <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
                                                         <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
@@ -219,10 +248,15 @@ handleChangeActive = (e) => {
                                         <div className={`${data.type === 'premium' ? 'cardImage-standar' : 'cardImage'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
-                                                status !== 'premium' && data.type === "premium" ? (
-                                                    <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[40px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
-                                                        <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                                    </div>
+                                                status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
+                                                    <>
+                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                            <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
+                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                            <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
+                                                    </>
                                                 ):
                                                     <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
                                                         <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
@@ -245,10 +279,15 @@ handleChangeActive = (e) => {
                                         <div className={`${data.type === 'premium' ? 'cardImage-content-standar' : 'cardImage-content'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
-                                                status !== 'premium' && data.type === "premium" ? (
-                                                    <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[40px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
-                                                        <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
-                                                    </div>
+                                                status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
+                                                    <>
+                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                            <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
+                                                        <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
+                                                            <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                        </div>
+                                                    </>
                                                 ):
                                                     <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
                                                         <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
@@ -271,7 +310,7 @@ handleChangeActive = (e) => {
                                         <div className={`${data.type === 'premium' ? 'cardImage-footer-standar' : 'cardImage-footer'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
-                                                status !== 'premium' && data.type === "premium" ? (
+                                                status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
                                                     <>
                                                         <div className="w-[40px] h-[39px] border-[1px] border-slate-400 absolute ml-[-80px] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px] bg-white shadow-lg">
                                                             <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />

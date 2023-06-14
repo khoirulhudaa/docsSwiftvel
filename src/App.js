@@ -85,7 +85,6 @@ class App extends React.Component {
       </div>
   </section>`
     }
-    console.log(data)
   }
 
   createComponent =(title, img, html, style) => {

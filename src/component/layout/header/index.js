@@ -1,11 +1,10 @@
-import React from 'react'
-import { Button } from '../../atom'
-import { useNavigate } from 'react-router-dom'
-import { unSetUser } from '../../../redux/authSlice';
-import { useDispatch } from 'react-redux';
 import Cookies from 'js-cookie';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { useSelector } from 'react-redux';
+import { unSetUser } from '../../../redux/authSlice';
+import { Button } from '../../atom';
 
 const Header = () => {
 
@@ -13,6 +12,26 @@ const Header = () => {
   const navigate = useNavigate()
   const valueCookie = Cookies.get('status');
   const status = useSelector((state) => state.authReducers.user.payload.status)
+  const email = useSelector((state) => state.authReducers.user.payload.email)
+  const [statusNew, setStatusNew] = useState('')
+
+  const BASE_URL2 = `https://api-dragme.vercel.app/api/users/${email}`  
+  
+  useEffect(() => {
+    fetch(`${BASE_URL2}`, {
+        method: 'GET',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        setStatusNew(data.message.status)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+  })
 
   const handleLogout = async () => {
     try {
@@ -54,7 +73,7 @@ const Header = () => {
                         <Button onClick={() => handleLogout()} text={"Logout"} style={"mr-3"} padding={"py-1 px-4"} textColor='text-mongo' type={"outline"} />
                         <div className='w-max cursor-pointer hover:brightness-[90%] active:scale-[0.98] h-max rounded-lg px-[19.1px] py-[5px] text-white shadow-lg bg-bgMongo'>
                             {
-                                status !== "standar" ? (
+                                status !== "standar" || statusNew === 'settlement' ? (
                                     <>
                                         Premium
                                     </>

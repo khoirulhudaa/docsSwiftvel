@@ -1,11 +1,11 @@
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 import React, { useEffect } from 'react'
-import { Button } from '../../atom'
 import Particel1 from '../../../assets/images/svg/particel1.svg'
 import Particel2 from '../../../assets/images/svg/particel2.svg'
 import Particel3 from '../../../assets/images/svg/particel3.svg'
 import Particel4 from '../../../assets/images/svg/particel4.svg'
-import Aos from 'aos'
-import 'aos/dist/aos.css';
+import { Button } from '../../atom'
 
 const Hero = () => {
     useEffect(() => {

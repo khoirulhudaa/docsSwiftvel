@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import {Button, Input} from '../../component/'
-import bgLine from '../../assets/images/svg/bgLine.svg'
+import Cookies from 'js-cookie'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import Google from '../../assets/images/png/google.png'
 import Human1 from '../../assets/images/svg/human1.png'
 import Human2 from '../../assets/images/svg/human2.png'
 import Human3 from '../../assets/images/svg/human3.png'
-import Google from '../../assets/images/png/google.png'
-import Swal from 'sweetalert2'
-import { useDispatch } from 'react-redux'
-import { setUser, setToken } from '../../redux/authSlice'
-import Cookies from 'js-cookie';
+import { setToken, setUser } from '../../redux/authSlice'
 
 const Login = () => {
 
@@ -37,6 +35,7 @@ const Login = () => {
     .then((response) => response.json())
     .then((data) => {
       // Process the received data
+      console.log('reponse login:', data)
       if(data.status === 201) {
         
         dispatch(setUser({payload: data.data}))
@@ -98,7 +97,7 @@ const Login = () => {
         
         Toast.fire({
           icon: 'warning',
-          title: 'User not found!'
+          title: 'Email not found!'
         })
 
       }else {
@@ -133,7 +132,6 @@ const Login = () => {
       ...data,
       [e.target.name]:e.target.value
     })
-    console.log(data)
   }
 
   return (
