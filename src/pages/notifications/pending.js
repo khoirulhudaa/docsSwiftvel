@@ -53,6 +53,10 @@ const Pending = () => {
 
   }
 
+  const handleRedresh = () => {
+    window.location.reload()
+  }
+
   return (
     <div className='w-screen bg-bgMongo h-max lg:h-[92vh] lg:flex py-[80px] lg:py-3 items-center justify-center'>
         <img src={Wave} className='w-[50%] opacity-[0.4] absolute top-0 hidden lg:inline right-0' alt='img' />
@@ -60,8 +64,13 @@ const Pending = () => {
         <div className='flex flex-col text-center lg:text-left z-10'>
             <h1 className='font-normal text-center lg:text-left w-[80%] text-[40px] mt-3 ml-auto mr-auto lg:ml-[-38px] lg:mr-0 lg:text-[70px] text-white mb-20'>You are almost a premium user</h1>
             <p className='font-normal text-[15px] ml-auto mr-auto lg:ml-[-2px] lg:mr-0 flex leading-[1.5em] text-white'>Complete your payment immediately</p>
-            <div onClick={(e) => handleCancel(e)} className='border-[1px] border-white rounded-lg text-white cursor-pointer active:scale-[0.97] hover:brightness-[90%] px-5 bg-red-500 py-[13px] w-max h-max'>
-              Cancel
+            <div className='flex items-center'>
+              <div onClick={(e) => handleCancel(e)} className='border-[1px] border-white rounded-lg text-white cursor-pointer active:scale-[0.97] hover:brightness-[90%] px-5 bg-red-500 py-[13px] w-max h-max'>
+                Cancel
+              </div>
+              <div onClick={() => handleRedresh()} className=' ml-6 border-[1px] border-white rounded-lg text-white cursor-pointer active:scale-[0.97] hover:brightness-[90%] px-4 py-[13px] w-max h-max'>
+                Refresh status
+              </div>
             </div>
         </div>
     </div>

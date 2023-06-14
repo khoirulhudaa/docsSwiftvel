@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Chevron from '../../assets/images/svg/chevron.svg';
-import { Contents, Footer, Header, Hero } from '../../component/layout';
+import { Contents, Footer, Header, HeaderBasic, Hero } from '../../component/layout';
+import Cookies from 'js-cookie';
 
 const Homepage = () => {
 
@@ -31,7 +32,12 @@ const Homepage = () => {
   return (
       <div>    
       {/* Header */}
-        <Header />
+      {
+        Cookies.get('status') ? (
+          <Header />
+        ):
+          <HeaderBasic />
+      }
       {/* Header */}
 
       {/* Hero */}

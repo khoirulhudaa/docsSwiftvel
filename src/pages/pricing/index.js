@@ -11,9 +11,9 @@ import Success from '../notifications/success'
 
 const Pricing = () => {
 
- const [statusNew, setStatusNew] = useState('')
+ const [statusNew, setStatusNew] = useState('standar')
 
- const email = useSelector((state) => state.authReducers.user.payload)
+ const email = useSelector((state) => state.authReducers.user.payload.email)
  console.log(email)
  const BASE_URL2 = `https://api-dragme.vercel.app/api/users/${email}`  
  const BASE_URL = `https://api-dragme.vercel.app`  
@@ -27,7 +27,12 @@ const Pricing = () => {
     })
     .then(response => response.json())
     .then(data => {
-        setStatusNew(data.message.status)
+        console.log(data)
+        if(data.status === 404 || data === undefined) {
+            setStatusNew('standar')
+        }else {
+            setStatusNew(data.message.status)
+        }
     })
     .catch((error) => {
         console.log(error)
@@ -97,7 +102,7 @@ const Pricing = () => {
                         <h2 className='text-[42px] lg:text-[50px] text-white w-[96%] leading-[1.2em] lg:leading-[1.5em] mb-6'>Premium users get more access from us</h2>
                         <p className='text-[14px] lg:text-[15px] font-normal leading-[2em] text-white w-[90%] lg:w-[80%]'>At this price you can enjoy all the dragme components in full with our unlimited number of component frames. Be our best customer with dragme team, thank you very much :)</p>
                         <div className='flex items-center'>
-                            <div onClick={(e) => handlePayment(e)} className='scale-[0.9] lg:scale-[1] w-[155px] lg:w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-[12px] ml-[-10px] lg:ml-0 lg:py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
+                            <div onClick={(e) => handlePayment(e)} className='scale-[0.9] lg:scale-[1] w-[155px] lg:w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-[12px] ml-[-10px] lg:ml-0 lg:py-3 hover:brightness-[90%] active:scale-[0.97] text-center border-[#001E2B] border-[1px]'>
                                 Subscribe
                             </div>
                             <p className='hidden lg:inline text-red-400 line-through ml-5 text-[16px] relative top-[14px] '>Rp. 199.999</p>

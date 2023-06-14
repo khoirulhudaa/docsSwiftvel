@@ -11,8 +11,7 @@ const Header = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const valueCookie = Cookies.get('status');
-  const status = useSelector((state) => state.authReducers.user.payload)
-  const email = useSelector((state) => state.authReducers.user.payload)
+  const email = useSelector((state) => state.authReducers.user.payload.email)
   const [statusNew, setStatusNew] = useState('')
 
   const BASE_URL2 = `https://api-dragme.vercel.app/api/users/${email}`  
@@ -71,9 +70,9 @@ const Header = () => {
                 valueCookie ? (
                     <>
                         <Button onClick={() => handleLogout()} text={"Logout"} style={"mr-3"} padding={"py-1 px-4"} textColor='text-mongo' type={"outline"} />
-                        <div className={`w-max cursor-pointer hover:brightness-[90%] active:scale-[0.98] h-max rounded-lg px-[19.1px] py-[5px] text-white shadow-lg ${status !== "standar" || statusNew === 'settlement' ? 'bg-gradient-to-r from-blue-400 to-green-400' : 'bg-bgMongo'}`}>
+                        <div className={`w-max cursor-pointer hover:brightness-[90%] active:scale-[0.98] h-max rounded-lg px-[19.1px] py-[5px] text-white shadow-lg ${statusNew === 'settlement' ? 'bg-gradient-to-r from-blue-400 to-green-400' : 'bg-bgMongo'}`}>
                             {
-                                status !== "standar" || statusNew === 'settlement' ? (
+                                statusNew === 'settlement' ? (
                                     <>
                                         Premium
                                     </>

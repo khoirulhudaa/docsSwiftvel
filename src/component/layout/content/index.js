@@ -16,6 +16,8 @@ import Right from '../../../assets/images/svg/right.svg';
 import Tutor from '../../../assets/images/svg/tutor.svg';
 import Partner from '../../../assets/images/svg/v.svg';
 import Wave2 from '../../../assets/images/svg/wave.svg';
+import Cookies from 'js-cookie';
+import Swal from 'sweetalert2';
 
 const Contents = () => {
 
@@ -24,6 +26,19 @@ const Contents = () => {
     useEffect(() => {
         Aos.init();
     }, []);
+
+    const handlePricing = (e) => {
+        e.preventDefault()
+        if(Cookies.get('status')) {
+            navigate('/pricing')
+        }else {
+            Swal.fire(
+                'Subscribe now?',
+                'You must login first :)',
+                'warning'
+            )
+        }
+    }
     
 return (
     <div className='relative h-max mt-[70px] lg:mt-[70px]'>
@@ -113,7 +128,7 @@ return (
         <section className='w-full h-max pb-2 lg:pb-8 flex mt-[10px] lg:mt-[35px] flex-col justify-center items-center text-center'>
             <h1 className='text-[50px] lg:text-[65px] w-[85%] lg:w-[60%] text-center text-black mt-5 mb-4 leading-[1.4em]'>Become a dragme premium user</h1>
             <p className='text-[15px] w-[70%] lg:w-max font-normal'>Get more components that are better and varied in design</p>
-            <div onClick={() => navigate('/pricing')} className='w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
+            <div onClick={(e) => handlePricing(e)} className='w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
                 Get now
             </div>
         </section>

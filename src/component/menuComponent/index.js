@@ -214,7 +214,7 @@ handleChangeActive = (e) => {
                             this.state.data.map((data, index) => {
                                 if(data.title === "navbar") {
                                     return (
-                                        <div className={`${data.type === 'premium' ? 'cardImage-navbar-standar' : 'cardImage-navbar'}`} key={index}>
+                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-navbar-standar' : 'cardImage-navbar'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
                                                 data.type === 'premium' ? (
@@ -251,7 +251,7 @@ handleChangeActive = (e) => {
                             this.state.data.map((data, index) => {
                                 if(data.title === "hero") {
                                     return (
-                                        <div className={`${data.type === 'premium' ? 'cardImage-standar' : 'cardImage'}`} key={index}>
+                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-standar' : 'cardImage'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
                                                 data.type === 'premium' ? (
@@ -288,7 +288,7 @@ handleChangeActive = (e) => {
                             this.state.data.map((data, index) => {
                                 if(data.title === "content") {
                                     return (
-                                        <div className={`${data.type === 'premium' ? 'cardImage-content-standar' : 'cardImage-content'}`} key={index}>
+                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-content-standar' : 'cardImage-content'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
                                                 data.type === 'premium' ? (
@@ -325,7 +325,7 @@ handleChangeActive = (e) => {
                             this.state.data.map((data, index) => {
                                 if(data.title === "footer") {
                                     return (
-                                        <div className={`${data.type === 'premium' ? 'cardImage-footer-standar' : 'cardImage-footer'}`} key={index}>
+                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-footer-standar' : 'cardImage-footer'}`} key={index}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
                                                 data.type === 'premium' ? (
