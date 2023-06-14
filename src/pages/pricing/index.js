@@ -13,12 +13,15 @@ import { useNavigate } from 'react-router-dom'
 const Pricing = () => {
 
  const navigate = useNavigate()
+ 
  useEffect(() => {
-     if(Cookies.get('status')) navigate('/')
+     if(!Cookies.get('status')) navigate('/')
  })
+ 
+ const email = useSelector((state) => state.authReducers.user.payload.email)
+ 
  const [statusNew, setStatusNew] = useState('standar')
 
- const email = useSelector((state) => state.authReducers.user.payload.email)
  console.log(email)
  const BASE_URL2 = `https://api-dragme.vercel.app/api/users/${email}`  
  const BASE_URL = `https://api-dragme.vercel.app`  
