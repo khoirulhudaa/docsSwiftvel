@@ -23,6 +23,7 @@ class App extends React.Component {
   };
   
   componentDidMount = () => {
+    
     this.setState({
       status: Cookies.get('status')
     })

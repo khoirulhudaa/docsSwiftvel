@@ -11,8 +11,8 @@ const Header = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const valueCookie = Cookies.get('status');
-  const status = useSelector((state) => state.authReducers.user.payload.status)
-  const email = useSelector((state) => state.authReducers.user.payload.email)
+  const status = useSelector((state) => state.authReducers.user.payload)
+  const email = useSelector((state) => state.authReducers.user.payload)
   const [statusNew, setStatusNew] = useState('')
 
   const BASE_URL2 = `https://api-dragme.vercel.app/api/users/${email}`  
