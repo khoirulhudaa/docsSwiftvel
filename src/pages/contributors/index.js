@@ -1,9 +1,10 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Footer, Header } from '../../component/layout'
+import { Footer, Header, HeaderBasic } from '../../component/layout'
 import Github from '../../assets/images/svg/github.svg'
 import G1 from '../../assets/images/png/g1.png'
 import G2 from '../../assets/images/png/g2.png'
+import Cookies from 'js-cookie'
 
 const Contributors = () => {
 
@@ -15,9 +16,12 @@ const Contributors = () => {
 
     return (
     <>
-        {/* Header */}
-            <Header />
-        {/* Header */}
+         {
+        Cookies.get('status') ? (
+          <Header />
+        ):
+          <HeaderBasic />
+      }
         <section className='w-full h-[93vh] bg-bgMongo lg:pb-[0px] pb-4 pt-[50px] lg:pt-[80px] text-center'>
             <h1 className='text-[43px] lg:text-[80px] w-[70%] text-white ml-auto mr-auto font-normal leading-[1.5em] mb-4'>Those who <span className='text-lightMongo'>contributed</span> to dragme</h1>
             <div className='lg:flex justify-center mt-[50px] lg:mt-[80px] w-screnn items-center'>

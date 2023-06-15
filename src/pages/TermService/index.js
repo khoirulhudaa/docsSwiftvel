@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Footer, Header } from '../../component/layout'
+import { Footer, Header, HeaderBasic } from '../../component/layout'
+import Cookies from 'js-cookie'
 
 const TermService = () => {
 
@@ -8,9 +9,12 @@ const TermService = () => {
     
     return (
     <div className='w-screen h-max bg-bgMongo'>
-        {/* Header */}
-            <Header />
-        {/* Header */}
+         {
+        Cookies.get('status') ? (
+          <Header />
+        ):
+          <HeaderBasic />
+      }
         <div className='lg:w-[80vw] lg:mb-20 mb-10 bg-white shadow-lg rounded-lg pt-12 pb-[90px] px-9 w-screen h-max bg-white flex ml-auto mr-auto py-[40px] flex-col justify-center justify-center'>
             
             <h1 className='font-normal lg:text-center mb-[40px] text-[32px] lg:text-[50px] text-dakMongo'>Terms of Service</h1>
@@ -24,7 +28,7 @@ const TermService = () => {
             <hr />
             <h2 className='text-[28px] font-bold mt-3 mb-4 text-darkMongo'>Intellectual Property Rights</h2>
 
-            <p className='text-[14px] w-[94%] lg:w-[90%] lg:text-[16px] mb-4 font-normal leading-[1.5em]'>The content, features, and functionality of our web application, including but not limited to text, graphics, logos, icons, images, audio clips, video clips, and software, are the property of Dragme and are protected by applicable intellectual property laws.</p>
+            <p className='text-[14px] w-[94%] lg:w-[90%] lg:text-[16px] mb-4 font-normal leading-[1.5em]'>The content, features, and functionality of our web application, including but not limited to text, graphics, logos, icons, images, audio clips, video clips, and software, are the property of Swiftvel and are protected by applicable intellectual property laws.</p>
            
             <hr />
             <h2 className='text-[28px] font-bold mt-3 mb-4 text-darkMongo'>Prohibited Activities</h2>

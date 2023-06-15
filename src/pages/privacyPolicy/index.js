@@ -1,7 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../../component'
-import { Footer, Header } from '../../component/layout'
+import { Footer, Header, HeaderBasic } from '../../component/layout'
+import Cookies from 'js-cookie'
 
 const ServicePolicy = () => {
 
@@ -9,14 +10,17 @@ const ServicePolicy = () => {
     
     return (
     <div className='w-screen h-max bg-bgMongo'>
-        {/* Header */}
-            <Header />
-        {/* Header */}
+        {
+        Cookies.get('status') ? (
+          <Header />
+        ):
+          <HeaderBasic />
+      }
         <div className='lg:w-[80vw] mb-10 lg:mb-20 bg-white shadow-lg rounded-lg pt-12 pb-[90px] px-9 w-screen h-max bg-white flex ml-auto mr-auto py-[40px] flex-col justify-center justify-center'>
             
             <h1 className='font-normal lg:text-center mb-[40px] text-[32px] lg:text-[50px] text-dakMongo'>Privacy Policy</h1>
 
-            <p className='text-[14px] w-[94%] lg:w-[90%] lg:text-[16px] mb-4 w-[80%] font-normal leading-[1.5em]'>At Dragme, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you use our web application.</p>
+            <p className='text-[14px] w-[94%] lg:w-[90%] lg:text-[16px] mb-4 w-[80%] font-normal leading-[1.5em]'>At Swiftvel, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you use our web application.</p>
             <hr />
             <h2 className='text-[28px] font-bold mt-3 mb-4 text-darkMongo'>Information We Collect</h2>
 
@@ -50,7 +54,7 @@ const ServicePolicy = () => {
             <hr />
             <h2 className='text-[28px] font-bold mt-3 mb-4 text-darkMongo'>Cookie Policy</h2>
 
-            <p className='text-[14px] w-[94%] lg:w-[90%] lg:text-[16px] mb-4 font-normal leading-[1.5em]'>Our web applications may use cookies to improve your browsing experience. You only have the option to accept cookies. Because we need some data that must be stored temporarily while you are logged in or using features during dragme</p>
+            <p className='text-[14px] w-[94%] lg:w-[90%] lg:text-[16px] mb-4 font-normal leading-[1.5em]'>Our web applications may use cookies to improve your browsing experience. You only have the option to accept cookies. Because we need some data that must be stored temporarily while you are logged in or using features during Swiftvel</p>
             <hr />
             <h2 className='text-[28px] font-bold mt-3 mb-4 text-darkMongo'>Changes to Privacy Policy</h2>
 

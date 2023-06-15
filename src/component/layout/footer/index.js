@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear();
   return (
     <footer className='w-full lg:flex items-center px-10 justify-between text-center h-max py-8 bg-darkMongo'>
         <small className='font-normal text-white text-center'>
-        &copy; {currentYear} Dragme. All rights reserved.
+        &copy; {currentYear} Swiftvel. All rights reserved.
         </small>
         <div className='text-white hidden lg:flex items-center'>
           <p className='text-white font-normal relative top-2 mr-6'>Contributors</p>

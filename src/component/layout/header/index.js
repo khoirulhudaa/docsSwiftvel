@@ -1,10 +1,11 @@
 import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { unSetUser } from '../../../redux/authSlice';
 import { Button } from '../../atom';
+import Right from '../../../assets/images/svg/right.svg';
 
 const Header = () => {
 
@@ -31,6 +32,13 @@ const Header = () => {
         console.log(error)
     })
   })
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const currentPath = location.pathname;
+    console.log('Path saat ini:', currentPath);
+  }, [location]);
 
   const handleLogout = async () => {
     try {
@@ -61,6 +69,14 @@ const Header = () => {
 
   return (
     <div className='w-screen relative lg:shadow-none shadow-lg z-20 lg:z-[9999] overflow-hidden font-normal bg-white py-2 h-max lg:h-max text-white text-center flex items-center justify-center'>
+        {
+        location.pathname !== '/' ? (
+          <div onClick={() => navigate('/')} className='w-[55px] h-[80%] flex items-center justify-center border-r-[1px] border-slate-500 active:scale-[0.97] cursor-pointer hover:h-[50%] duration-300 absolute left-0 p-1 bg-white'>
+            <img src={Right} alt="icon" className='rotate-[180deg] w-[15px]' />
+          </div>
+        ):
+        <></>
+       }
         <div>
             <p className='font-normal text-[12px] lg:text-[16px] mt-auto text-mongo relative top-2'>Dragme from Indonesia - Product for build web 🔥🇮🇩</p>
         </div>
@@ -70,7 +86,7 @@ const Header = () => {
                 valueCookie ? (
                     <>
                         <Button onClick={() => handleLogout()} text={"Logout"} style={"mr-3"} padding={"py-1 px-4"} textColor='text-mongo' type={"outline"} />
-                        <div className={`w-max cursor-pointer hover:brightness-[90%] active:scale-[0.98] h-max rounded-lg px-[19.1px] py-[5px] text-white shadow-lg ${statusNew === 'settlement' ? 'bg-gradient-to-r from-blue-400 to-green-400' : 'bg-bgMongo'}`}>
+                        <div className={`w-max cursor-pointer h-max rounded-lg px-[19.1px] py-[5px] text-white shadow-lg ${statusNew === 'settlement' ? 'bg-gradient-to-r from-blue-400 to-green-400' : 'bg-bgMongo'}`}>
                             {
                                 statusNew === 'settlement' ? (
                                     <>

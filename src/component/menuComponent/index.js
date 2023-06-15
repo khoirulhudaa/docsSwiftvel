@@ -23,7 +23,7 @@ constructor(props) {
     bgColor2: '#00684A',
     textColor1: 'black',
     textColor2: 'white',
-    username: ''
+    username: '',
   };
 };
 
@@ -103,20 +103,23 @@ componentDidMount = () => {
         document.querySelector('.menu4').classList.add('show4')
         document.querySelector('.menu5').classList.remove('show5')
     })
-
-    // document.getElementById('pages').addEventListener('click', () => {
-    //     document.querySelector('.menu1').classList.remove('show1')
-    //     document.querySelector('.menu2').classList.remove('show2')
-    //     document.querySelector('.menu3').classList.remove('show3')
-    //     document.querySelector('.menu4').classList.remove('show4')
-    //     document.querySelector('.menu5').classList.add('show5')
-    // })
 }
+
 
 download = (e) => {
     const name = e;
     const header = 
     `
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ini adalah deskripsi halaman Anda." />
+    <meta name="keywords" content="kata kunci, yang, relevan, dengan, halaman, Anda" />
+    <meta name="keywords" content="kata kunci, yang, relevan, dengan, halaman, Anda" />
+    <meta name="language" content="en" />
+    <meta name="contributor" content="Nama Penyusun" />
+    <meta name="copyright" content="Tahun Hak Cipta, Pemilik Hak Cipta" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
