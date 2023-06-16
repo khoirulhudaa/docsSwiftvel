@@ -1,3 +1,5 @@
+import { faCompress, faExpand } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -11,6 +13,7 @@ import HTML5 from '../../assets/images/svg/html5.svg';
 import PHP from '../../assets/images/svg/php.svg';
 import Right from '../../assets/images/svg/right.svg';
 import Data from '../../dataComponent/index.json';
+import Cookies from 'js-cookie';
 
 class MenuComponent extends Component {
 constructor(props) {
@@ -24,6 +27,7 @@ constructor(props) {
     textColor1: 'black',
     textColor2: 'white',
     username: '',
+    screen: false
   };
 };
 
@@ -160,17 +164,47 @@ handleChangeActive = (e) => {
         textColor2: 'black',
       })
     }
-  }
+}
+
+handleScreen = () => {
+
+    this.setState({
+        screen: !this.state.screen
+    })
+}
 
   render() {
     const { status } = this.props.data;
+    console.log(this.state.screen)
     return (
         <>
             <a href="/">
-                <div className='absolute left-7 active:scale-[0.96] bg-mongo top-3 w-max p-[10px] border border-[1] border-black cursor-pointer hover:brightness-[95%] duration-100 h-max rounded-full flex items-center justify-center'>
+                <div className='absolute left-12 active:scale-[0.96] bg-mongo top-3 w-max p-[10px] border border-[1] border-black cursor-pointer hover:brightness-[95%] duration-100 h-max rounded-full flex items-center justify-center'>
                     <img src={Right} className='rotate-[180deg] w-[20px] h-[20px]' alt='icon' />
                 </div>
             </a>
+            <div className='flex top-[13px] absolute left-[120px] items-center'>
+                {
+                    this.state.screen ? (
+                        <>
+                            <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                                <FontAwesomeIcon icon={faExpand} /> 
+                            </div>
+                            <small className='ml-3 font-normal'>
+                                Full screen
+                            </small>
+                        </>
+                    ):
+                        <>
+                            <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                                <FontAwesomeIcon icon={faCompress} /> 
+                            </div>
+                            <small className='ml-3 font-normal'>
+                                Normal screen
+                            </small>
+                        </>
+                }
+            </div>
             <div className='flex items-center absolute top-3 right-7'>
                 <a href="/pricing">
                     {
@@ -208,7 +242,7 @@ handleChangeActive = (e) => {
                     <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> <p className='mt-3'>HTML code</p>
                 </div>
             </div>
-            <div className="menuComponents">
+            <div className={`${!this.state.screen ? 'menuComponents': 'menuComponentsSide'}`}>
                 <div className="menuAll">
                     <div className="card-menu menu1">
                         <i className='fas fa-times'></i>
@@ -375,9 +409,9 @@ handleChangeActive = (e) => {
                         </div>
                     </div>
                 </div>
-                <div className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+                <div onClick={() => this.download("templateCurrent")} className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
                     {/* <box-icon type="icon" style={{color: 'white'}} name="download" onClick={() => this.download("templateCurrent")} /> */}
-                    <img src={Download} alt="icon-download" style={{width: '47%'}} onClick={() => this.download("templateCurrent")} />
+                    <img src={Download} alt="icon-download" style={{width: '47%'}} />
                 </div>
                 <div className="squareComponents" id='navbar'>
                     <box-icon type="icon" name="collection" />

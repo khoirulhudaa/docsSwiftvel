@@ -140,19 +140,19 @@ const Login = () => {
         <div onClick={() => navigate('/')} className='lg:hidden absolute right-5 lg:left-8 top-5 lg:top-8 bg-white rounded-full p-2 w-[40px] h-[40px] shadow-lg cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>
           <box-icon name='home-alt'></box-icon>
         </div>
-        <h2 className='text-white text-[40px] lg:text-[50px] mb-[30px] lg:mb-[40px]'>Log in to your account</h2>
+        <h2 className='text-white text-[40px] 2xl:text-[70px] lg:text-[50px] mb-[30px] lg:mb-[40px]'>Log in to your account</h2>
         <div className='w-[90%] h-[1px] bg-white my-1'></div>
         <div className='w-full lg:block mb-4 mt-4'>
-            <label htmlFor="email" className='mb-3 text-white font-normal'>Email</label>
+            <label htmlFor="email" className='2xl:text-[22px] mb-3 2xl:mb-6 text-white font-normal'>Email</label>
             <br />
-            <input onChange={(e) => handleChange(e)} type="text" name='email' placeholder='Enter email' className='font-normal text-[14px] outline-0 rounded-lg py-[10px] px-3 w-[90%]' />
+            <input onChange={(e) => handleChange(e)} type="text" name='email' placeholder='Enter email' className='font-normal text-[14px] outline-0 rounded-lg 2xl:py-[16px] py-[10px] px-3 2xl:w-[94%] w-[90%]' />
         </div>
         <div className='w-full lg:block mb-4 mt-4'>
-            <label htmlFor="password" className='mb-3 text-white font-normal'>Password</label>
+            <label htmlFor="password" className='2xl:text-[22px] mb-3 2xl:mb-6 text-white font-normal'>Password</label>
             <br />
-            <input onChange={(e) => handleChange(e)} type="password" name='password' placeholder='Enter password' className='font-normal text-[14px] outline-0 rounded-lg py-[10px] px-3 w-[90%]' />
+            <input onChange={(e) => handleChange(e)} type="password" name='password' placeholder='Enter password' className='font-normal text-[14px] outline-0 rounded-lg 2xl:py-[16px] py-[10px] px-3 2xl:w-[94%] w-[90%]' />
         </div>
-        <div onClick={(e) => handleSubmit(e)} className='rounded-lg border-[1px] border-white text-center py-2 w-max mb-3 lg:mb-0 px-3 cursor-pointer active:scale-[0.97] mt-5 text-white'>
+        <div onClick={(e) => handleSubmit(e)} className='rounded-lg 2xl:scale-[1.3] border-[1px] border-white text-center py-2 w-max mb-3 lg:mb-0 px-3 2xl:ml-[14px] cursor-pointer active:scale-[0.97] mt-5 text-white'>
           Enter now
         </div>
         <a onClick={() => navigate('/signUp')} className='inline lg:hidden'>
@@ -162,14 +162,14 @@ const Login = () => {
         </a>
       </div>
       <div className='w-[70%] hidden lg:inline relative h-[100vh] flex items-center justify-center ml-auto overflow-hidden'>
-        <img src={Human1} className='w-[300px] bottom-0 left-10 absolute' alt="human" />
-        <img src={Human2} className='w-[260px] absolute top-0 left-[340px] rotate-[180deg]' alt="human" />
-        <img src={Human3} className='w-[300px] absolute bottom-0 right-[0px]' alt="human" />
+        <img src={Human1} className='w-[300px] 2xl:w-[450px] bottom-0 left-10 absolute' alt="human" />
+        <img src={Human2} className='w-[260px] 2xl:w-[450px] absolute top-0 left-[340px] rotate-[180deg]' alt="human" />
+        <img src={Human3} className='w-[300px] 2xl:w-[450px] absolute bottom-0 right-[0px]' alt="human" />
         <div onClick={() => navigate('/')} className='absolute left-8 top-8 bg-white rounded-full p-2 w-[40px] h-[40px] shadow-lg cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>
           <box-icon name='home-alt'></box-icon>
         </div>
         <div className='lg:inline hidden'>
-          <span className='absolute top-10 text-white text-[16px] right-10'>
+          <span className='absolute 2xl:top-12 top-10 text-white text-[16px] 2xl:text-[22px] 2xl:right-12 right-10'>
             Don't have an account? <span className='text-blue-500 cursor-pointer' onClick={() => navigate('/signUp')}>Sign In</span>
           </span>
         </div>

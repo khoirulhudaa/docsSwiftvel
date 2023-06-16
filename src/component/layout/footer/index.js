@@ -18,7 +18,7 @@ const currentYear = new Date().getFullYear();
         <div className='text-white hidden lg:flex items-center'>
           <p className='text-white font-normal relative top-2 mr-6'>Contributors</p>
           <div className='flex items-center'>
-              <a href="https://github.com/khoirulhudaa" target='__blank'>
+              <a href="https://github.com/khoirulhudaa" title="owner swiftvel" target='__blank'>
                   <div className='w-[30px] rounded-full h-[30px] overflow-hidden'>
                       <img src={G2} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
                   </div>

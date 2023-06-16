@@ -47,11 +47,31 @@ html {
 
 .menuComponents {
   position: fixed;
-  width: 100px;
-  height: 90%;
-  bottom: 0;
-  left: 0%;
-  border-radius: 0px 14px 0 0;
+  width: 90px;
+  height: 84%;
+  bottom: 15px;
+  transition: 0.5s ease-in;
+  left: 2%;
+  border-radius: 55px;
+  background-color: white;
+  --tw-shadow: 10px 0px 40px rgba(92,128,162,0.1);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  animation: menu 1s ease-in;
+  align-items: center;
+}
+
+.menuComponentsSide {
+  position: fixed;
+  width: 90px;
+  height: 84%;
+  bottom: 15px;
+  left: -10%;
+  transition: 1s ease-out;
+  border-radius: 55px;
   background-color: white;
   --tw-shadow: 10px 0px 40px rgba(92,128,162,0.1);
   box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
@@ -110,10 +130,10 @@ html {
   top: 8%;
 }
 
-
 .wrap-ListComponent {
   width: 100%;
   height: 85vh;
+  padding-bottom: 30px;
   position: relative;
   border-radius: 20px;
   scroll-behavior: smooth;
@@ -566,7 +586,7 @@ html {
 
 .frameOutput {
   position: fixed;
-  width: 91%;
+  width: 100%;
   border-radius: 12px 0 0 0;
   height: 90vh;
   bottom: 0;
@@ -574,7 +594,7 @@ html {
   overflow: auto;
   padding-bottom: 0px;
   z-index: -4;
-  right: 0;
+  right: 0px;
   display: flex;
   flex-direction: column;
   background-color: rgb(247, 247, 247);
@@ -727,31 +747,35 @@ html {
 
 .listComponentUsed {
   position: fixed;
-  transition: 0.4s ease-in;
+  transition: 0.5s ease-in;
   right: -270px;
   padding-top: 40px;
-  top: 60px;
+  padding-bottom: 60px;
+  top: 90px;
   width: 310px;
-  height: 600px;
-  border-radius: 16px 16px 0px 0px;
+  height: 90vh;
+  border-radius: 16px 16px;
   --tw-shadow: 10px 0px 40px rgba(151, 151, 151, 0.151);
   box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
-  margin-bottom: 40px;
+  margin-bottom: 140px;
   background-color: rgb(255, 255, 255);
 }
+
 .fa-list-alt {
   position: absolute;
   border-radius: 999px;
   text-align: center;
   left: -16px;
   display: flex;
+  margin-top: 70%;
   justify-content: center;
   align-items: center;
   width: 36px;
   height: 36px;
+  transform: scale(1.4);
   z-index: 44;
   cursor: pointer;
-  background-color: #001E2B;
+  background-color: #00684A;
   color: white;
   top: 20px;
   transition: 0.4s;
@@ -759,7 +783,7 @@ html {
 }
 
 .fa-list-alt:hover {
-  transform: scale(1.4);
+  filter: brightness(90%);
   transition: 0.4s;
 }
 
@@ -820,5 +844,87 @@ html {
 
   .alert-page p {
     width: 90vw;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .fa-list-alt {
+    position: absolute;
+    border-radius: 999px;
+    text-align: center;
+    left: -16px;
+    display: flex;
+    margin-top: 140%;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    transform: scale(1.4);
+    z-index: 44;
+    cursor: pointer;
+    background-color: #00684A;
+    color: white;
+    top: 20px;
+    transition: 0.4s;
+    font-size: 18px;
+  }
+  .card-menu {
+    position: absolute;
+    width: 310px;
+    top: 0;
+    height: 80vh;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+    --tw-shadow: 10px 0px 40px rgba(151, 151, 151, 0.151);
+    box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
+    margin-bottom: 40px;
+    background-color: rgb(255, 255, 255);
+  }
+  .card-menu::before {
+    position: absolute;
+    left: -3%;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(45deg);
+    content: '';
+    top: 8%;
+  }
+  .listComponentUsed {
+    position: fixed;
+    transition: 0.5s ease-in;
+    right: -270px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    top: 160px;
+    width: 310px;
+    height: 80vh;
+    border-radius: 16px 16px;
+    --tw-shadow: 10px 0px 40px rgba(151, 151, 151, 0.151);
+    box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
+    margin-bottom: 140px;
+    background-color: rgb(255, 255, 255);
+  }
+  .showUsed {
+    right: 0;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+    transform: scale(1);
+  }
+
+  .listNonUsed {
+    right: 0px;
+    transition: 0.4s ease-in;
+  }
+  .wrap-ListComponent {
+    width: 100%;
+    height: 78vh;
+    padding-bottom: 30px;
+    position: relative;
+    border-radius: 20px;
+    scroll-behavior: smooth;
+    overflow: scroll;
   }
 }
