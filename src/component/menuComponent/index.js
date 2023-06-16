@@ -191,7 +191,7 @@ handleScreen = () => {
                                 <FontAwesomeIcon icon={faExpand} /> 
                             </div>
                             <small className='ml-3 font-normal'>
-                                Full screen
+                                Normal screen
                             </small>
                         </>
                     ):
@@ -200,7 +200,7 @@ handleScreen = () => {
                                 <FontAwesomeIcon icon={faCompress} /> 
                             </div>
                             <small className='ml-3 font-normal'>
-                                Normal screen
+                                Full screen
                             </small>
                         </>
                 }
