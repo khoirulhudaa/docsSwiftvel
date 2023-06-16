@@ -1,8 +1,9 @@
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import Cookies from 'js-cookie';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Component from '../../../assets/images/png/componets.png';
+import Swal from 'sweetalert2';
 import Wave from '../../../assets/images/png/wave.png';
 import Benefit1 from '../../../assets/images/svg/benefit1.svg';
 import Benefit2 from '../../../assets/images/svg/benefit2.svg';
@@ -16,8 +17,6 @@ import Right from '../../../assets/images/svg/right.svg';
 import Tutor from '../../../assets/images/svg/tutor.svg';
 import Partner from '../../../assets/images/svg/v.svg';
 import Wave2 from '../../../assets/images/svg/wave.svg';
-import Cookies from 'js-cookie';
-import Swal from 'sweetalert2';
 
 const Contents = () => {
 
@@ -112,7 +111,7 @@ return (
             <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-max lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
                <div className='lg:h-max w-max h-max relative'>
                     <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[40px] lg:text-[70px] 2xl:text-[80px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>
-                    <a href="/dragmeBuilder" className='w-max text-lightMongo no-underline'>
+                    <a href="/swiftvelBuilder" className='w-max text-lightMongo no-underline'>
                         <p className='text-lightMongo mt-4 w-max cursor-pointer flex items-center'>Try dragme now <img src={Right} className='text-indigo-500 w-[14px] ml-3' alt="icon" /></p>
                     </a>
                     <p className='text-[15px] 2xl:text-[23px] 2xl:leading-[2.2em] leading-[2em] mt-5 w-[25%] lg:w-[45%] font-normal text-slate-200'>It's very easy to use, just choose the components you want and arrange them all into 1 perfect homepage according to the web appearance you want</p>

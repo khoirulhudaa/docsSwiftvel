@@ -20,7 +20,7 @@ const Button = ({
         )
         default: 
         return (
-            <div onClick={onClick} className={`${bgColor} text-center font-bold rounded-md text-mongo hover:bg-hoverMongo hover:text-white active:scale-[0.97] hover:text-white ${height} ${width} ${padding} cursor-pointer shadow-md ${style}`}>
+            <div onClick={onClick} className={`${bgColor} text-center font-bold rounded-md ${textColor} hover:bg-hoverMongo hover:text-white active:scale-[0.97] hover:text-white ${height} ${width} ${padding} cursor-pointer shadow-md ${style}`}>
                 {text}
             </div>
         )

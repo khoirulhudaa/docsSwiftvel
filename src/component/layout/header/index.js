@@ -78,7 +78,7 @@ const Header = () => {
         <></>
        }
         <div>
-            <p className='font-normal text-[12px] lg:text-[16px] 2xl:text-[20px] mt-auto text-mongo relative top-2'>Dragme from Indonesia - Product for build web 🔥🇮🇩</p>
+            <p className='font-normal text-[12px] lg:text-[16px] 2xl:text-[20px] mt-auto text-mongo relative top-2'>Swiftvel from Indonesia - Platform for build web 🔥🇮🇩</p>
         </div>
         <div className='lg:flex 2xl:ml-10 ml-6 items-center hidden'>
             
@@ -102,7 +102,7 @@ const Header = () => {
                 ):
                     <>
                         <Button onClick={() => navigate('/signIn')} text={"Sign in"} style={"mr-3"} padding={"py-1 px-4"} textColor='text-mongo' type={"outline"} />
-                        <Button onClick={() => navigate('/signUp')} text={"Sign up"} padding={"py-1 px-4"} />
+                        <Button onClick={() => navigate('/signUp')} textColor='text-white' text={"Sign up"} padding={"py-1 px-4"} />
                     </>
             }
         </div>

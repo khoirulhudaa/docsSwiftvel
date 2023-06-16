@@ -179,7 +179,7 @@ handleScreen = () => {
     return (
         <>
             <a href="/">
-                <div className='absolute left-12 active:scale-[0.96] bg-mongo top-3 w-max p-[10px] border border-[1] border-black cursor-pointer hover:brightness-[95%] duration-100 h-max rounded-full flex items-center justify-center'>
+                <div className='absolute left-12 active:scale-[0.96] bg-white top-3 w-max p-[10px] border border-[1] border-black cursor-pointer hover:brightness-[95%] duration-100 h-max rounded-full flex items-center justify-center'>
                     <img src={Right} className='rotate-[180deg] w-[20px] h-[20px]' alt='icon' />
                 </div>
             </a>
@@ -206,11 +206,11 @@ handleScreen = () => {
                 }
             </div>
             <div className='flex items-center absolute top-3 right-7'>
-                <a href="/pricing">
+                <a href="/pricing" className='no-underline text-white'>
                     {
                         status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
-                            <div className='flex items-center relative bg-bgMongo text-white border-[1] mr-4 border border-black px-4 w-max h-max py-[8.6px] rounded-md hover:text-black'>
-                                Go premium
+                            <div className='flex items-center relative bg-yellow-500 hover:brightness-[90%] text-white border-[1] mr-4 border border-black pr-4 pl-[15px] w-max h-max py-[8.6px] rounded-md hover:text-black'>
+                                <img src={Crown} style={{width: '20px', height: '20px', marginRight: '10px'}} alt="icon add" /> Go premium
                             </div>
                         ):
                             <></>

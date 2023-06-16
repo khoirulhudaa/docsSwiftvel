@@ -34,8 +34,8 @@ const Hero = () => {
             <li className='list-disc 2xl:text-[17px] text-white mx-10 font-normal'>Support beginners</li>
         </ul>
       </div>
-      <a href="/dragmeBuilder" className='no-underline font-bold'>
-        <Button text="Try dragme" padding={'lg:px-5 lg:py-3 2xl:py-4 px-3 py-3'} textColor='text-[#00684A]' width={'lg:w-[190px] w-[50vw] 2xl:w-[220px] lg:mb-0 mb-12'} style={'font-normal mt-2'} />
+      <a href="/swiftvelBuilder" className='no-underline text-white font-bold'>
+        <Button text="Try dragme" padding={'lg:px-5 lg:py-3 2xl:py-4 px-3 py-3'} textColor='text-white' width={'lg:w-[190px] w-[50vw] 2xl:w-[220px] lg:mb-0 mb-12'} style={'font-normal mt-2'} />
       </a>
     </div>  
   )

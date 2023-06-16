@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
+import Logo from '../../assets/images/svg/logoSwiftvel.svg';
 import Data from '../../dataComponent/index.json';
-import Logo from '../../assets/images/drag/Drag-me-JPG-logoonly.jpg';
-import HTML5 from '../../assets/images/svg/html5.svg';
-import PHP from '../../assets/images/svg/php.svg';
 
 export default class FrameOutput extends Component {
   constructor(props) {
@@ -175,12 +173,12 @@ export default class FrameOutput extends Component {
           </div>
         }
         <div className='frameOutput'>
-          {
+          {/* {
             !this.props.dataHTML.length ? (
               <img src={Logo} alt="logo-dragMe" className="logo-drag" />
                 ):
               null
-          }
+          } */}
               <div className="templateCurrent">
                 <style className="styles">
                 </style>

@@ -577,7 +577,6 @@ html {
   width: 100px;
   height: 100px;
   position: absolute;
-  border-radius: 99999px;
   left: 50%;
   top: 50%;
   opacity: 0.7;

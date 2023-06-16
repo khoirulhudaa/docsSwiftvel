@@ -70,7 +70,7 @@ const Pricing = () => {
             headers: {
             'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, order_id:generateRandomCode(), gross_amount: 100000 }),
+            body: JSON.stringify({ email, order_id:generateRandomCode(), gross_amount: 1000 }),
         })
         .then(response => response.json())
         .then(data => {

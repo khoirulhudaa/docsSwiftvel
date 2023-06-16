@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <Homepage />,
   },
   {
-    path: "/dragmeBuilder",
+    path: "/swiftvelBuilder",
     element: <App />,
   },
   {
