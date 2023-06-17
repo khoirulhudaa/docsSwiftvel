@@ -160,6 +160,7 @@ const Login = () => {
             Forgot password? <span className='text-blue-500 cursor-pointer'>Here</span>
           </span>
         </a>
+        <br />
         <a onClick={() => navigate('/signUp')} className='inline lg:hidden'>
           <span className='text-white text-[14px]'>
             Don't have an account? <span className='text-blue-500 cursor-pointer'>Sign In</span>

@@ -123,11 +123,6 @@ const Login = () => {
         <div onClick={(e) => handleSubmit(e)} className='rounded-lg 2xl:scale-[1.3] border-[1px] border-white text-center py-2 w-max mb-3 lg:mb-0 px-3 2xl:ml-[14px] cursor-pointer active:scale-[0.97] mt-5 text-white'>
           Enter now
         </div>
-        <a onClick={() => navigate('/forgot-password')} className='no-underline'>
-          <span className='text-white text-[14px] mt-3'>
-            Forgot password? <span className='text-blue-500 cursor-pointer'>Here</span>
-          </span>
-        </a>
         <a onClick={() => navigate('/signUp')} className='inline lg:hidden'>
           <span className='text-white text-[14px]'>
             Don't have an account? <span className='text-blue-500 cursor-pointer'>Sign In</span>
