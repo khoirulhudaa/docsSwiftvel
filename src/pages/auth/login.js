@@ -142,9 +142,9 @@ const Login = () => {
         <h2 className='text-white text-[40px] 2xl:text-[70px] lg:text-[50px] mb-[30px] lg:mb-[40px]'>Log in to your account</h2>
         <div className='w-[90%] h-[1px] bg-white my-1'></div>
         <div className='w-full lg:block mb-4 mt-4'>
-            <label htmlFor="email" className='2xl:text-[22px] mb-3 2xl:mb-6 text-white font-normal'>Email</label>
+            <label htmlFor="email" className='2xl:text-[22px] mb-3 2xl:mb-6 text-white font-normal'>Email or username</label>
             <br />
-            <input onChange={(e) => handleChange(e)} type="text" name='email' placeholder='Enter email' className='font-normal text-[14px] outline-0 rounded-lg 2xl:py-[16px] py-[10px] px-3 2xl:w-[94%] w-[90%]' />
+            <input onChange={(e) => handleChange(e)} type="text" name='email' placeholder='Enter here' className='font-normal text-[14px] outline-0 rounded-lg 2xl:py-[16px] py-[10px] px-3 2xl:w-[94%] w-[90%]' />
         </div>
         <div className='w-full lg:block mb-4 mt-4'>
             <label htmlFor="password" className='2xl:text-[22px] mb-3 2xl:mb-6 text-white font-normal'>Password</label>
