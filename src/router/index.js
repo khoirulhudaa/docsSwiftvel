@@ -7,6 +7,8 @@ import Contributors from "../pages/contributors";
 import Homepage from '../pages/homepage';
 import Pricing from "../pages/pricing";
 import PrivacyPolicy from "../pages/privacyPolicy";
+import ForgotPassword from "../pages/auth/forgotPassword";
+import CheckEmail from "../pages/auth/checkEmail";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
   {
     path: "/contributors",
     element: <Contributors />,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />,
+  },
+  {
+    path: "/check-email",
+    element: <CheckEmail />,
   },
 ]);
 
