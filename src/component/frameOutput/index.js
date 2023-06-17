@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Logo from '../../assets/images/svg/logoSwiftvel.svg';
 import Data from '../../dataComponent/index.json';
+
 
 export default class FrameOutput extends Component {
   constructor(props) {

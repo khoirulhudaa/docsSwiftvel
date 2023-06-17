@@ -1,7 +1,7 @@
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Cookies from 'js-cookie';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Wave from '../../../assets/images/png/wave.png';
@@ -21,6 +21,7 @@ import Wave2 from '../../../assets/images/svg/wave.svg';
 const Contents = () => {
 
     const navigate = useNavigate()
+    const [feedback, setFeedback] = useState('');
 
     useEffect(() => {
         Aos.init();
@@ -37,6 +38,52 @@ const Contents = () => {
                 'warning'
             )
         }
+    }
+
+    const BASE_URL = 'https://api-dragme.vercel.app/api/users'  
+    const handleFeedback = async(e) => {
+        e.preventDefault()
+        const {feedback} = this.state;
+        await fetch(`${BASE_URL}/feedback/create`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ feedback }),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          // Process the received data
+          console.log('reponse login:', data)
+          if(data.status === 201) {
+            Swal.fire(
+                'Thank you for the suggestion',
+                'We want to be better than now:)',
+                'success'
+            )
+          }else {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'bottom-end',
+              showConfirmButton: false,
+              timer: 4000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              }
+            })
+            
+            Toast.fire({
+              icon: 'error',
+              title: 'Sorry, failed to post an answer'
+            })
+          }
+    
+        })
+        .catch((error) => {
+          console.error('Error retrieving data', error);
+        });
     }
     
 return (
@@ -132,7 +179,7 @@ return (
             </div>
         </section>
 
-        <section className='relative w-full mt-[80px] rounded-tl-[110px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[30px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
+        <section className='relative w-full mt-[80px] rounded-tl-[110px] rounded-br-[110px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[30px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
             <img src={Wave} className='absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
             <div className='w-[100%] lg:w-[50%] h-max p-[30px] lg:p-[120px] lg:mt-[10px]'>
                 <h1 className='text-[45px] 2xl:text-[80px] lg:text-[55px] text-white w-[90%] leading-[1.4em]'>Get started with swiftvel today</h1>
@@ -174,6 +221,17 @@ return (
                 </div>
             </div>
         </section>
+
+        <section className='w-creen h-max pt-[90px] pb-[120px] px-6 text-center jusitfy-center flex flex-col item-center'>
+            <h1 className='text-[64px] w-[50%] ml-auto mr-auto leading-[1.5em]'>Your advice is what we need</h1>
+            <div className='w-[45vw] border-[1px] border-slate-300 flex items-center justify-center ml-auto mr-auto h-[50px] my-4 rounded-[12px] overflow-hidden bg-white shadow-lg'>
+                <input type="text" name='feedback' placeholder='Type in your suggestions...' className='border-none outline-0 w-full h-max py-2 px-3 font-normal text-[15px]' />
+            </div>
+            <div onClick={(e) => handleFeedback(e)} className='ml-auto mr-auto w-[180px] 2xl:scale-[1.4] 2xl:top-[30px] 2xl:relative lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
+                Send now
+            </div>
+        </section>
+
     </div>
   )
 }
