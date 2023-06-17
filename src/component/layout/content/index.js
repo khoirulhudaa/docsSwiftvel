@@ -48,7 +48,7 @@ const Contents = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ username, feedback }),
+          body: JSON.stringify({ feedback }),
         })
         .then((response) => response.json())
         .then((data) => {
