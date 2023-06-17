@@ -225,9 +225,9 @@ return (
             </div>
         </section>
 
-        <section className='w-creen h-max pt-[90px] pb-[120px] px-6 text-center jusitfy-center flex flex-col item-center'>
-            <h1 className='text-[64px] w-[50%] ml-auto mr-auto leading-[1.5em]'>Your advice is what we need</h1>
-            <div className='w-[45vw] border-[1px] border-slate-300 flex items-center justify-center ml-auto mr-auto h-[50px] my-4 rounded-[12px] overflow-hidden bg-white shadow-lg'>
+        <section className='w-creen h-max pt-[40px] lg:pt-[90px] pb-[60px] lg:pb-[120px] px-4 lg:px-6 text-center jusitfy-center flex flex-col item-center'>
+            <h1 className='text-[44px] lg:text-[64px] w-[90%] lg:w-[50%] ml-auto mr-auto leading-[1.5em]'>Your advice is what we need</h1>
+            <div className='w-[90%] lg:w-[45vw] border-[1px] border-slate-300 flex items-center justify-center ml-auto mr-auto h-[50px] my-4 rounded-[12px] overflow-hidden bg-white shadow-lg'>
                 <input type="text" name='feedback' onChange={(e) => handleChangeFeed(e)} placeholder='Type in your suggestions...' className='border-none outline-0 w-full h-max py-2 px-3 font-normal text-[15px]' />
             </div>
             <div onClick={(e) => handleFeedback(e)} className='ml-auto mr-auto w-[180px] 2xl:scale-[1.4] 2xl:top-[30px] 2xl:relative lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
