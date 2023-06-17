@@ -9,6 +9,7 @@ import Pricing from "../pages/pricing";
 import PrivacyPolicy from "../pages/privacyPolicy";
 import ForgotPassword from "../pages/auth/forgotPassword";
 import CheckEmail from "../pages/auth/checkEmail";
+import ConfirmPassword from "../pages/auth/confirmPassword";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/check-email",
     element: <CheckEmail />,
+  },
+  {
+    path: "/reset-password/swfitveler1635dsd3290",
+    element: <ConfirmPassword />,
   },
 ]);
 

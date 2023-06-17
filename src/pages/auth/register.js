@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
-import Google from '../../assets/images/png/google.png'
 import Human1 from '../../assets/images/svg/human1.png'
 import Human2 from '../../assets/images/svg/human2.png'
 import Human3 from '../../assets/images/svg/human3.png'
