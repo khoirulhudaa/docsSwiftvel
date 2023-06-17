@@ -75,7 +75,7 @@ return (
                     <div className='relative lg:left-[30px] top-[-30px] lg:top-[-14px]'>
                         <img src={Fast} className='absolute left-8 bottom-[200px] w-[30px]' alt="icon" />
                         <h2 className='text-black text-[32px] lg:text-[44px] 2xl:text-[52px] font-bold mb-3 ml-8 mt-[140px]'>Faster</h2>
-                        <p className='text-black font-normal 2xl:leading-10 leading-6 ml-8 text-[15px] 2xl:text-[18px] w-[80%] lg:w-[60%]'>Bringing together various components to form one homepage that is ready to download</p>
+                        <p className='text-black font-normal 2xl:leading-10 leading-6 ml-8 lg:mt-8 text-[15px] 2xl:text-[18px] w-[80%] lg:w-[65%]'>Be fast in creating your own website, shorten the process of working on your website and start from swiftvel</p>
                     </div>
                     <img className='hidden lg:flex absolute opacity-[0.5] w-[60%] bottom-0 left-0' src={Benefit2} alt="img" />
                 </div>
@@ -83,7 +83,7 @@ return (
                     <div className='relative lg:left-[30px] top-[-30px] lg:top-[-14px]'>
                         <img src={Flexibel} className='absolute left-8 bottom-[200px] w-[30px]' alt="icon" />
                         <h2 className='text-white text-[32px] lg:text-[44px] 2xl:text-[52px] font-bold mb-3 ml-8 mt-[140px]'>Flexibel</h2>
-                        <p className='text-slate-300 font-normal 2xl:leading-10 leading-6 ml-8 text-[15px] 2xl:text-[18px] w-[80%] lg:w-[60%]'>Bringing together various components to form one homepage that is ready to download</p>
+                        <p className='text-slate-300 font-normal 2xl:leading-10 leading-6 ml-8 lg:mt-8 text-[15px] 2xl:text-[18px] w-[80%] lg:w-[60%]'>flexible design and components, premium components provide advantages such as being responsive in terms of mobile devices</p>
                     </div>
                     <img className='hidden lg:flex absolute opacity-[0.3] w-[70%] bottom-0 left-0' src={Benefit3} alt="img" />
                 </div>
