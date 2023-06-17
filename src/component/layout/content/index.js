@@ -40,16 +40,15 @@ const Contents = () => {
         }
     }
 
-    const BASE_URL = 'https://api-dragme.vercel.app/api/users'  
+    const BASE_URL = 'https://api-dragme.vercel.app/feedback'  
     const handleFeedback = async(e) => {
         e.preventDefault()
-        const {feedback} = this.state;
-        await fetch(`${BASE_URL}/feedback/create`, {
+        await fetch(`${BASE_URL}/create`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ feedback }),
+          body: JSON.stringify({ username, feedback }),
         })
         .then((response) => response.json())
         .then((data) => {
@@ -84,6 +83,10 @@ const Contents = () => {
         .catch((error) => {
           console.error('Error retrieving data', error);
         });
+    }
+
+    const handleChangeFeed = (e) => {
+        setFeedback(e.target.value)
     }
     
 return (
@@ -225,7 +228,7 @@ return (
         <section className='w-creen h-max pt-[90px] pb-[120px] px-6 text-center jusitfy-center flex flex-col item-center'>
             <h1 className='text-[64px] w-[50%] ml-auto mr-auto leading-[1.5em]'>Your advice is what we need</h1>
             <div className='w-[45vw] border-[1px] border-slate-300 flex items-center justify-center ml-auto mr-auto h-[50px] my-4 rounded-[12px] overflow-hidden bg-white shadow-lg'>
-                <input type="text" name='feedback' placeholder='Type in your suggestions...' className='border-none outline-0 w-full h-max py-2 px-3 font-normal text-[15px]' />
+                <input type="text" name='feedback' onChange={(e) => handleChangeFeed(e)} placeholder='Type in your suggestions...' className='border-none outline-0 w-full h-max py-2 px-3 font-normal text-[15px]' />
             </div>
             <div onClick={(e) => handleFeedback(e)} className='ml-auto mr-auto w-[180px] 2xl:scale-[1.4] 2xl:top-[30px] 2xl:relative lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
                 Send now
