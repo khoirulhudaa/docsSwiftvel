@@ -71,16 +71,16 @@ const Header = () => {
     <div className='w-screen relative lg:shadow-none shadow-lg z-20 lg:z-[9999] overflow-hidden font-normal bg-white py-2 2xl:py-4 h-max lg:h-max text-white text-center flex items-center justify-center'>
         {
         location.pathname !== '/' ? (
-          <div onClick={() => navigate('/')} className='w-[55px] h-[80%] flex items-center justify-center border-r-[1px] border-slate-500 active:scale-[0.97] cursor-pointer hover:h-[50%] duration-300 absolute left-0 p-1 bg-white'>
+          <div onClick={() => navigate('/')} className='w-[45px] lg:w-[55px] h-[80%] flex mr-8 lg:mr-0 items-center justify-center border-r-[1px] border-slate-500 active:scale-[0.97] cursor-pointer hover:h-[50%] duration-300 relative lg:absolute left-[-20px] lg:left-0 p-1 bg-white'>
             <img src={Right} alt="icon" className='rotate-[180deg] w-[15px]' />
           </div>
         ):
         <></>
        }
-        <div>
+        <div className='hidden lg:inline'>
             <p className='font-normal text-[12px] lg:text-[16px] 2xl:text-[20px] mt-auto text-mongo relative top-2'>Swiftvel from Indonesia - Platform for build web 🔥🇮🇩</p>
         </div>
-        <div className='lg:flex 2xl:ml-10 ml-6 items-center hidden'>
+        <div className='lg:flex 2xl:ml-10 ml-0 flex items-center'>
             
             {
                 valueCookie ? (
