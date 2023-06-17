@@ -92,8 +92,6 @@ const Contents = () => {
 return (
     <div className='relative h-max mt-[60px] 2xl:mt-[120px] lg:mt-[70px]'>
         <img src={Wave2} className='absolute hidden opacity-[0.5] lg:inline w-[100%] z-[-1] top-0 left-0' alt="img" />
-        <div className='w-[40px] h-[40px] bg-mongo rounded-full absolute bottom-7 right-8 shadow-lg'>
-        </div>
         <section className='lg:flex h-max relative overflow-hidden lg:min-h-[300px] mb-[70px] lg:px-[120px] lg:ml-6 w-screen lg:w-full items-center mt-0 lg:mt-14 justify-between'>
             <img src={Powerful} className='w-[55%] 2xl:w-[400px] flex ml-auto mr-auto lg:ml-0 lg:mr-0 lg:w-[280px] rotate-[-10deg]' alt="icon" />
             <div data-aos-duration='1000' className='relative bottom-2 hidden lg:block lg:ml-[40px] lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] 2xl:h-[340px] pl-10 pr-4 py-7'>
