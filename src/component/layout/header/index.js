@@ -80,7 +80,7 @@ const Header = () => {
         <div className='hidden lg:inline'>
             <p className='font-normal text-[12px] lg:text-[16px] 2xl:text-[20px] mt-auto text-mongo relative top-2'>Swiftvel from Indonesia - Platform for build web 🔥🇮🇩</p>
         </div>
-        <div className='lg:flex 2xl:ml-10 ml-0 flex items-center'>
+        <div className='lg:flex lg:ml-4 2xl:ml-10 ml-0 flex items-center'>
             
             {
                 valueCookie ? (

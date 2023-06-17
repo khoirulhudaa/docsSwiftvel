@@ -115,11 +115,11 @@ class App extends React.Component {
         <>
           {
             // kode untuk menampilkan alert ketika lebar layar dibawah 1240px
-            this.state.screen < 1239 ? (
+            this.state.screen < 1200 ? (
               <div className="alert-page">
                 <img src={Alert1} alt="alert-logo" />
                 <h1>Open in laptop/pc or desktop mode</h1>
-                <p>can only be accessed on screen widths above 1240px, while those below that size cannot access including mobile phones</p>
+                <p>can only be accessed on screen widths above 1200px, while those below that size cannot access including mobile phones</p>
               </div>
             ):
             null

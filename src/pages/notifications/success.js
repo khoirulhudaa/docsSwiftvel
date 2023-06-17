@@ -14,7 +14,7 @@ const Success = () => {
         <div className='flex flex-col z-10'>
             <h1 className='font-normal text-center lg:text-left w-[80%] text-[40px] mt-3 ml-auto mr-auto lg:ml-[-38px] lg:mr-0 lg:text-[70px] text-white mb-20 2xl:ml-[-110px]'>Now you are a premium user</h1>
             <p className='font-normal text-[15px] ml-auto mr-auto lg:ml-0 lg:mr-0 flex leading-[1.5em] text-white'>Payment successfully made</p>
-            <div onClick={() => navigate('/') } className='border-[1px] border-white rounded-lg text-white cursor-pointer active:scale-[0.97] hover:brightness-[90%] px-5 bg-darkMongo py-[13px] w-max h-max'>
+            <div onClick={() => navigate('/') } className='border-[1px] border-white rounded-lg text-white cursor-pointer active:scale-[0.97] hover:brightness-[90%] px-5 bg-darkMongo py-[13px] ml-auto mr-auto lg:ml-0 lg:mr-0 w-max h-max'>
               Back now
             </div>
         </div>

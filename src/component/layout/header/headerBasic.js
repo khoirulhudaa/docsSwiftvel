@@ -27,7 +27,7 @@ const Header = () => {
         <div>
             <p className='font-normal text-[12px] 2xl:text-[20px] lg:text-[16px] mt-auto text-mongo relative top-2'>Swiftvel from Indonesia - Platform for build web 🔥🇮🇩</p>
         </div>
-        <div className='lg:flex ml-6 2xl:ml-10 items-center hidden'>
+        <div className='lg:flex ml-6 lg:ml-4 2xl:ml-10 items-center hidden'>
             <Button onClick={() => navigate('/signIn')} text={"Sign in"} style={"mr-3 2xl:scale-[1.2]"} padding={"py-1 px-4"} textColor='text-mongo' type={"outline"} />
             <Button onClick={() => navigate('/signUp')} textColor='text-white' style={"2xl:scale-[1.2] 2xl:ml-8"} text={"Sign up"} padding={"py-1 px-4"} />
         </div>
