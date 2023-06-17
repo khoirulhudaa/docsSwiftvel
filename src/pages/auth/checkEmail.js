@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import G1 from '../../assets/images/png/g1.png'
 import G2 from '../../assets/images/png/g2.png'
 import Github from '../../assets/images/svg/github.svg'
+import Water from '../../assets/images/png/water.png';
 import { Footer, Header, HeaderBasic } from '../../component/layout'
 
 const CheckEmail = () => {
@@ -15,22 +16,15 @@ const CheckEmail = () => {
     }
 
     return (
-    <>
-         {
-        Cookies.get('status') ? (
-          <Header />
-        ):
-          <HeaderBasic />
-      }
-        <section className='w-full 2xl:h-[80vh] h-[93vh] bg-bgMongo lg:pb-[0px] pb-4 pt-[50px] lg:pt-[80px] text-center'>
-            <h1 className='text-[43px] lg:text-[80px] 2xl:text-[100px] 2xl:mt-10 w-[70%] text-white ml-auto mr-auto font-normal leading-[1.5em] mb-4'>Please check <span className='text-lightMongo'>your</span> email</h1>
-            <div className='w-max mt-6 ml-auto mr-auto h-max rounded-lg px-4 py-2 bg-darkMongo text-white text-center cursor-pointer hover:brightness-[90%] duration-100 active:scale-[0.97]'>
+        <div className='w-screen h-[105vh] lg:h-screen flex flex-col items-center justify-center'>
+            <img src={Water} className='w-[60%] lg:w-[26%] mb-4' alt="img" />
+            <p className='font-normal w-[75%] lg:w-[50%] text-center ml-auto mr-auto relative leading-[1.4em]'>Please check your email.</p>
+            <a href="/signIn" className='no-underline'>
+            <div className='bg-darkMongo w-max px-[26px] py-[16px] h-max font-normal text-white rounded-md shadow-lg mt-5 cursor-pointer hover:brightness-[90%] active:scale-[0.97] duration-100'>
                 Back now
             </div>
-        </section>
-
-        <Footer />
-    </>
+            </a>
+        </div>
   )
 }
 
