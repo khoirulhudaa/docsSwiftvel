@@ -112,7 +112,7 @@ return (
                <div className='lg:h-max w-max h-max relative'>
                     <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[40px] lg:text-[70px] 2xl:text-[80px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>
                     <a href="/swiftvelBuilder" className='w-max text-lightMongo no-underline'>
-                        <p className='text-lightMongo mt-4 w-max cursor-pointer flex items-center'>Try dragme now <img src={Right} className='text-indigo-500 w-[14px] ml-3' alt="icon" /></p>
+                        <p className='text-lightMongo mt-4 w-max cursor-pointer flex items-center'>Try swiftvel now <img src={Right} className='text-indigo-500 w-[14px] ml-3' alt="icon" /></p>
                     </a>
                     <p className='text-[15px] 2xl:text-[23px] 2xl:leading-[2.2em] leading-[2em] mt-5 w-[25%] lg:w-[45%] font-normal text-slate-200'>It's very easy to use, just choose the components you want and arrange them all into 1 perfect homepage according to the web appearance you want</p>
                </div>
@@ -125,7 +125,7 @@ return (
         </section>
 
         <section className='w-full 2xl:h-[560px] h-max pb-2 lg:pb-8 flex mt-[10px] lg:mt-[35px] flex-col justify-center items-center text-center'>
-            <h1 className='text-[50px] lg:text-[65px] 2xl:text-[76px] w-[85%] lg:w-[60%] text-center text-black mt-5 mb-4 leading-[1.4em]'>Become a dragme premium user</h1>
+            <h1 className='text-[50px] lg:text-[65px] 2xl:text-[76px] w-[85%] lg:w-[60%] text-center text-black mt-5 mb-4 leading-[1.4em]'>Become a swiftvel premium user</h1>
             <p className='text-[15px] 2xl:text-[23px] w-[70%] lg:w-max font-normal'>Get more components that are better and varied in design</p>
             <div onClick={(e) => handlePricing(e)} className='w-[180px] 2xl:scale-[1.4] 2xl:top-[30px] 2xl:relative lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
                 Get now
@@ -135,12 +135,12 @@ return (
         <section className='relative w-full mt-[80px] rounded-tl-[110px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[30px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
             <img src={Wave} className='absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
             <div className='w-[100%] lg:w-[50%] h-max p-[30px] lg:p-[120px] lg:mt-[10px]'>
-                <h1 className='text-[45px] 2xl:text-[80px] lg:text-[55px] text-white w-[90%] leading-[1.4em]'>Get started with Dragme today</h1>
+                <h1 className='text-[45px] 2xl:text-[80px] lg:text-[55px] text-white w-[90%] leading-[1.4em]'>Get started with swiftvel today</h1>
                 <p className='w-[100%] font-normal 2xl:text-[23px] text-slate-200 2xl:leading-[2.2em] leading-[2em] mt-4'>
                     It's easy to use and will really help you in making websites, 
                     easier than CMS and has affordable prices for premium accounts
                 </p>
-                <a target='__blank' href="https://api.whatsapp.com/send?phone=6289513093406&text=Hallo admin, saya dragmers." className='no-underline text-white'>
+                <a target='__blank' href="https://api.whatsapp.com/send?phone=6289513093406&text=Hallo admin, saya swiftvelers." className='no-underline text-white'>
                     <div className='w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-5 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
                         Call servicer
                     </div>

@@ -49,7 +49,7 @@ const TermService = () => {
             <hr />
             <h2 className='text-[28px] font-bold mt-3 mb-4 text-darkMongo'>Limitation of Liability</h2>
 
-            <p className='text-[14px] w-[94%] lg:w-[90%] lg:text-[16px] mb-4 font-normal leading-[1.5em]'>In no event shall [Nama Aplikasi] or its directors, employees, or affiliates be liable for any indirect, consequential, special, or incidental damages arising out of or related to your use of our web application.</p>
+            <p className='text-[14px] w-[94%] lg:w-[90%] lg:text-[16px] mb-4 font-normal leading-[1.5em]'>In no event shall Swiftvel or its directors, employees, or affiliates be liable for any indirect, consequential, special, or incidental damages arising out of or related to your use of our web application.</p>
             <hr />
             <h2 className='text-[28px] font-bold mt-3 mb-4 text-darkMongo'>Changes to the Terms</h2>
 
