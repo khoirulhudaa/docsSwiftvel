@@ -3,17 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Swal from 'sweetalert2';
 import Crown from '../../assets/images/png/crown.png';
 import Padlock from '../../assets/images/png/padlock.png';
 import Saweria from '../../assets/images/png/saweria.png';
+import Swal from 'sweetalert2';
 import Add from '../../assets/images/svg/add.svg';
 import Download from '../../assets/images/svg/donlot.svg';
 import HTML5 from '../../assets/images/svg/html5.svg';
 import PHP from '../../assets/images/svg/php.svg';
 import Right from '../../assets/images/svg/right.svg';
 import Data from '../../dataComponent/index.json';
-import Cookies from 'js-cookie';
 
 class MenuComponent extends Component {
 constructor(props) {
@@ -27,7 +26,7 @@ constructor(props) {
     textColor1: 'black',
     textColor2: 'white',
     username: '',
-    screen: false
+    screen: false,
   };
 };
 
@@ -175,7 +174,7 @@ handleScreen = () => {
 
   render() {
     const { status } = this.props.data;
-    console.log(this.state.screen)
+    console.log(this.props.limit)
     return (
         <>
             <a href="/">
@@ -190,7 +189,7 @@ handleScreen = () => {
                             <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                                 <FontAwesomeIcon icon={faExpand} /> 
                             </div>
-                            <small className='ml-3 font-normal'>
+                            <small className='ml-3 font-normal text-[15px]'>
                                 Normal screen
                             </small>
                         </>
@@ -199,7 +198,7 @@ handleScreen = () => {
                             <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                                 <FontAwesomeIcon icon={faCompress} /> 
                             </div>
-                            <small className='ml-3 font-normal'>
+                            <small className='ml-3 font-normal text-[15px]'>
                                 Full screen
                             </small>
                         </>
@@ -236,10 +235,10 @@ handleScreen = () => {
                 <div className='h-[30px] w-[1px] bg-slate-400 mx-2'></div>
                 <div className='h-[20px] w-[1px] bg-slate-400 mr-3'></div>
                 <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor1}] text-${this.state.textColor1} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
-                    <img src={PHP} alt="img" className='bg-white rounded-full w-[20px] px-1 h-[20px] mr-2' /> <p className='mt-3'>PHP language</p>
+                    <img src={PHP} alt="img" className='bg-white rounded-full w-[20px] px-1 h-[20px] mr-2' /> <p className='mt-0'>PHP language</p>
                 </div>
                 <div onClick={() => this.handleChangeActive('HTML')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor2}] text-${this.state.textColor2} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
-                    <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> <p className='mt-3'>HTML code</p>
+                    <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> <p className='mt-0'>HTML code</p>
                 </div>
             </div>
             <div className={`${!this.state.screen ? 'menuComponents': 'menuComponentsSide'}`}>
@@ -251,7 +250,16 @@ handleScreen = () => {
                             this.state.data.map((data, index) => {
                                 if(data.title === "navbar") {
                                     return (
-                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-navbar-standar' : 'cardImage-navbar'}`} key={index}>
+                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-navbar-standar' : 'cardImage-navbar'}`} key={index} onClick={() => {
+                                                if (this.props.limit !== 6) {
+                                                    this.props.handleAdd(1);
+                                                    if (this.props.limit !== 5) {
+                                                        this.props.createComponent(data.title, data.img, data.html, data.style);
+                                                    }
+                                                }else if(this.props.limit === 6) {
+                                                    this.props.showModal()
+                                                }
+                                            }}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
                                                 data.type === 'premium' ? (
@@ -265,12 +273,26 @@ handleScreen = () => {
                                                             </div>
                                                         </>
                                                     ):
-                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}}
+                                                            onMouseEnter={(e) => {
+                                                                e.target.style.transform = 'scale(0.96)';
+                                                            }}
+                                                            onMouseLeave={(e) => {
+                                                                e.target.style.transform = 'scale(1)';
+                                                            }}
+                                                        >
                                                             <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
 
                                                 ):
-                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}}
+                                                            onMouseEnter={(e) => {
+                                                                e.target.style.transform = 'scale(0.96)';
+                                                            }}
+                                                            onMouseLeave={(e) => {
+                                                                e.target.style.transform = 'scale(1)';
+                                                            }}
+                                                        >
                                                             <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
                                             }
@@ -288,7 +310,16 @@ handleScreen = () => {
                             this.state.data.map((data, index) => {
                                 if(data.title === "hero") {
                                     return (
-                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-standar' : 'cardImage'}`} key={index}>
+                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-standar' : 'cardImage'}`} key={index} onClick={() => {
+                                                if (this.props.limit !== 6) {
+                                                    this.props.handleAdd(1);
+                                                    if (this.props.limit !== 5) {
+                                                    this.props.createComponent(data.title, data.img, data.html, data.style);
+                                                }
+                                                }else if(this.props.limit === 6) {
+                                                    this.props.showModal()
+                                                }
+                                            }}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
                                                 data.type === 'premium' ? (
@@ -302,12 +333,26 @@ handleScreen = () => {
                                                             </div>
                                                         </>
                                                     ):
-                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}}
+                                                            onMouseEnter={(e) => {
+                                                                e.target.style.transform = 'scale(0.96)';
+                                                            }}
+                                                            onMouseLeave={(e) => {
+                                                                e.target.style.transform = 'scale(1)';
+                                                            }}
+                                                        >
                                                             <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
 
                                                 ):
-                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}}
+                                                            onMouseEnter={(e) => {
+                                                                e.target.style.transform = 'scale(0.96)';
+                                                            }}
+                                                            onMouseLeave={(e) => {
+                                                                e.target.style.transform = 'scale(1)';
+                                                            }}
+                                                        >
                                                             <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
                                             }
@@ -325,7 +370,16 @@ handleScreen = () => {
                             this.state.data.map((data, index) => {
                                 if(data.title === "content") {
                                     return (
-                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-content-standar' : 'cardImage-content'}`} key={index}>
+                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-content-standar' : 'cardImage-content'}`} key={index} onClick={() => {
+                                                if (this.props.limit !== 6) {
+                                                    this.props.handleAdd(1);
+                                                    if (this.props.limit !== 5) {
+                                                    this.props.createComponent(data.title, data.img, data.html, data.style);
+                                                }
+                                                }else if(this.props.limit === 6) {
+                                                    this.props.showModal()
+                                                }
+                                            }}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
                                                 data.type === 'premium' ? (
@@ -339,12 +393,26 @@ handleScreen = () => {
                                                             </div>
                                                         </>
                                                     ):
-                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}}
+                                                            onMouseEnter={(e) => {
+                                                                e.target.style.transform = 'scale(0.96)';
+                                                            }}
+                                                            onMouseLeave={(e) => {
+                                                                e.target.style.transform = 'scale(1)';
+                                                            }}
+                                                        >
                                                             <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
 
                                                 ):
-                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}}
+                                                            onMouseEnter={(e) => {
+                                                                e.target.style.transform = 'scale(0.96)';
+                                                            }}
+                                                            onMouseLeave={(e) => {
+                                                                e.target.style.transform = 'scale(1)';
+                                                            }}
+                                                        >
                                                             <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
                                             }
@@ -362,7 +430,16 @@ handleScreen = () => {
                             this.state.data.map((data, index) => {
                                 if(data.title === "footer") {
                                     return (
-                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-footer-standar' : 'cardImage-footer'}`} key={index}>
+                                        <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-footer-standar' : 'cardImage-footer'}`} key={index} onClick={() => {
+                                                if (this.props.limit !== 6) {
+                                                    this.props.handleAdd(1);
+                                                    if (this.props.limit !== 5) {
+                                                    this.props.createComponent(data.title, data.img, data.html, data.style);
+                                                }
+                                                }else if(this.props.limit === 6) {
+                                                    this.props.showModal()
+                                                }
+                                            }}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
                                                 data.type === 'premium' ? (
@@ -376,12 +453,26 @@ handleScreen = () => {
                                                             </div>
                                                         </>
                                                     ):
-                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}}
+                                                            onMouseEnter={(e) => {
+                                                                e.target.style.transform = 'scale(0.96)';
+                                                            }}
+                                                            onMouseLeave={(e) => {
+                                                                e.target.style.transform = 'scale(1)';
+                                                            }}
+                                                        >
                                                             <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
 
                                                 ):
-                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}}
+                                                            onMouseEnter={(e) => {
+                                                                e.target.style.transform = 'scale(0.96)';
+                                                            }}
+                                                            onMouseLeave={(e) => {
+                                                                e.target.style.transform = 'scale(1)';
+                                                            }}
+                                                        >
                                                             <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                                         </div>
                                             }
@@ -399,7 +490,14 @@ handleScreen = () => {
                             this.state.data.map((data, index) => {
                                 return (
                                     <div className="cardImage" key={index}><img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
-                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}} onClick={() => this.props.createComponent(data.title, data.img, data.html, data.style)}>
+                                        <div style={{width: '40px', position: 'absolute', height: '40px', borderRadius: '99px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', padding: '4px', backgroundColor: '#00684A'}}
+                                            onMouseEnter={(e) => {
+                                                                e.target.style.transform = 'scale(0.96)';
+                                                            }}
+                                                            onMouseLeave={(e) => {
+                                                                e.target.style.transform = 'scale(1)';
+                                                            }}
+                                        >
                                             <img src={Add} style={{width: '20px', height: '20px'}} alt="icon add" />
                                         </div>
                                     </div>
@@ -409,7 +507,8 @@ handleScreen = () => {
                         </div>
                     </div>
                 </div>
-                <div onClick={() => this.download("templateCurrent")} className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+                <p className='relative bottom-5 flex items-center'>{this.props.limit}/6</p>
+                    <div onClick={() => this.download("templateCurrent")} className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
                     {/* <box-icon type="icon" style={{color: 'white'}} name="download" onClick={() => this.download("templateCurrent")} /> */}
                     <img src={Download} alt="icon-download" style={{width: '47%'}} />
                 </div>

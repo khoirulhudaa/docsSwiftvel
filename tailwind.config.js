@@ -8,7 +8,7 @@ module.exports = {
         cyan: 'rgb(0, 226, 226)',
       },
       boxShadow: {
-        saweria: '0.4rem 0.4rem 0 #222'
+        saweria: '1rem 1rem 0 #ffff'
       },
       textColor: {
         mongo: '#00684A',

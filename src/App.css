@@ -4,13 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Sawarabi Mincho', serif;
-  font-weight: bold;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -160,7 +161,7 @@ html {
   width: 90%;
   height: 150px;
   border-radius: 14px;
-  cursor: not-allowed;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -194,6 +195,7 @@ html {
   height: 40px;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
   border-radius: 14px;
   display: flex;
   justify-content: center;
@@ -230,6 +232,7 @@ html {
   cursor: not-allowed;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
   border-radius: 14px;
   display: flex;
   justify-content: center;
@@ -262,7 +265,7 @@ html {
   height: 120px;
   border-radius: 14px;
   display: flex;
-  cursor: not-allowed;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   margin: 14px auto 0px 15px;
@@ -363,7 +366,8 @@ html {
 }
 
 .cardImage-standar:hover {
-  cursor: not-allowed;
+  cursor: pointer;
+  transform: scale(0.96);
 }
 
 .cardImage:active {
@@ -386,7 +390,8 @@ html {
 }
 
 .cardImage-footer-standar:hover {
-  cursor: not-allowed;
+  cursor: pointer;
+  transform: scale(0.96);
 }
 
 .cardImage-footer:active {
@@ -409,7 +414,8 @@ html {
 }
 
 .cardImage-content-standar:hover {
-  cursor: not-allowed;
+  cursor: pointer;
+  transform: scale(0.96);
 }
 
 .cardImage-content:active {
@@ -432,7 +438,8 @@ html {
 }
 
 .cardImage-navbar-standar:hover {
-  cursor: not-allowed;
+  cursor: pointer;
+  transform: scale(0.96);
 }
 
 .cardImage-navbar-standar:active {

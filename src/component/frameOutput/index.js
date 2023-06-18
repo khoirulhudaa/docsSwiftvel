@@ -115,19 +115,31 @@ export default class FrameOutput extends Component {
                     this.props.dataComponentUsed.map((data, index) => {
                       if(data.title === 'navbar') {
                         return (
-                            <div className="cardImage-navbar" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => this.remove(index)}></i></div>
+                            <div className="cardImage-navbar" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
+                              this.remove(index)
+                              this.props.handleMinus(1)
+                            }}></i></div>
                           )
                         }else if(data.title === 'hero') {
                           return (
-                            <div className="cardImage" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => this.remove(index)}></i></div>
+                            <div className="cardImage" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
+                              this.remove(index)
+                              this.props.handleMinus(1)
+                            }}></i></div>
                         )
                         }else if(data.title === 'content') {
                           return (
-                            <div className="cardImage-content" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => this.remove(index)}></i></div>
+                            <div className="cardImage-content" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
+                              this.remove(index)
+                              this.props.handleMinus(1)
+                            }}></i></div>
                         )
                         }else if(data.title === 'footer') {
                           return (
-                            <div className="cardImage-footer" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => this.remove(index)}></i></div>
+                            <div className="cardImage-footer" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
+                              this.remove(index)
+                              this.props.handleMinus(1)
+                            }}></i></div>
                         )
                       }
                     })
@@ -152,19 +164,31 @@ export default class FrameOutput extends Component {
                   this.props.dataComponentUsed.map((data, index) => {
                     if(data.title === 'navbar') {
                       return (
-                          <div className="cardImage-navbar" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => this.remove(index)}></i></div>
+                          <div className="cardImage-navbar" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
+                            this.remove(index)
+                            this.props.handleMinus(1)
+                          }}></i></div>
                         )
                       }else if(data.title === 'hero') {
                         return (
-                          <div className="cardImage" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => this.remove(index)}></i></div>
+                          <div className="cardImage" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
+                            this.remove(index)
+                            this.props.handleMinus(1)
+                          }}></i></div>
                       )
                       }else if(data.title === 'content') {
                         return (
-                          <div className="cardImage-content" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => this.remove(index)}></i></div>
+                          <div className="cardImage-content" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
+                            this.remove(index)
+                            this.props.handleMinus(1)
+                          }}></i></div>
                       )
                       }else if(data.title === 'footer') {
                         return (
-                          <div className="cardImage-footer" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => this.remove(index)}></i></div>
+                          <div className="cardImage-footer" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
+                            this.remove(index)
+                            this.props.handleMinus(1)
+                          }}></i></div>
                       )
                     }
                   })

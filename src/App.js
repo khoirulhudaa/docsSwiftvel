@@ -1,11 +1,11 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Cookies from 'js-cookie';
 import React from 'react';
 import './App.css';
-import MenuComponent from './component/menuComponent';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import FrameOutput from './component/frameOutput';
 import Alert1 from './assets/images/png/alert1.png';
 import Water from './assets/images/png/water.png';
-import Cookies from 'js-cookie';
+import FrameOutput from './component/frameOutput';
+import MenuComponent from './component/menuComponent';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +17,10 @@ class App extends React.Component {
       dataStyle: [],
       dataImages: [],
       screen: window.innerWidth,
-      status: false
+      status: false,
+      limit: 0,
+      statusLimit: false,
+      limitStatus: true
     };
 
   };
@@ -106,6 +109,36 @@ class App extends React.Component {
 
   }
 
+handleAdd = (e) => {
+  if (this.state.limit !== 6) {
+    this.setState(prevState => ({
+      limit: prevState.limit + e
+    }));
+  }
+  if(this.state.limit === 6) this.setState({ statusLimit: true })
+}
+
+handleMinus = (e) => {
+  if (this.state.limit !== 0) {
+    this.setState(prevState => ({
+      limit: prevState.limit - e
+    }));
+  }
+  if(this.state.limit !== 6) this.setState({ statusLimit: false })
+}
+
+showModal = () => {
+  this.setState({
+      limitStatus: true
+  })
+};
+
+closeModal = () => {
+  this.setState({
+      limitStatus: false
+  })
+}
+
   render() {
     // state dan function yang dikirim ke html
     const {createComponent} = this;
@@ -124,14 +157,67 @@ class App extends React.Component {
             ):
             null
           }
+          {
+            this.state.limitStatus ? (
+              <div className='w-screen z-[9999999999] fixed h-screen bg-[#00000073]'>
+                <div className='w-[70vw] h-[70vh] relative z-[999999] bg-darkMongo rounded-[20px] duration p-12 shadow-lg flex ml-auto mr-auto mt-[8%]'>
+                  <div className='w-[50%] h-full flex flex-col pl-8 justify-center'>
+                    <h3 className='text-white text-[48px] font-normal leading-[1.5em]'>Come on, be premium for no limits</h3>
+                    <div className='flex items-center'>
+                      <a href="/pricing" target='__blank'>
+                        <div className='rounded-[4px] mt-5 w-max h-max px-4 py-2 cursor-pointer hover:brightness-[90%] active:scale-[0.98] bg-mongo text-white'>
+                          Go premium
+                        </div>
+                      </a>
+                      <div onClick={this.closeModal} className='rounded-[4px] ml-6 mt-5 w-max h-max px-4 py-2 cursor-pointer hover:brightness-[90%] active:scale-[0.98] border-[1px] border-slate-500 text-white'>
+                        Decline
+                      </div>
+                    </div>
+                  </div>
+                  <div className='w-[50%] h-full flex items-center justify-center'>
+                  <div className='z-10 overflow-hidden relative rounded-[20px] px-8 border-[3px] shadow-saweria border-[#00ED64] pb-4 pt-[35px] lg:pt-[45px] lg:mt-[-10px] bg-white w-[96%] lg:w-[70%] h-max lg:h-max'>
+                      <ul className='list-none'>
+                          <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                              <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                              </div>
+                              <p className='text-mongo ml-4 lg:ml-7 text-[15px] lg:text-[17px] relative top-1 font-normal'>All Components</p>
+                          </li>
+                          <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                              <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                              </div>
+                              <p className='text-mongo ml-4 lg:ml-7 text-[15px] lg:text-[17px] relative top-1 font-normal'>No component limit</p>
+                          </li>
+                          <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                              <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                              </div>
+                              <p className='text-mongo ml-4 lg:ml-7 text-[15px] lg:text-[17px] relative top-1 font-normal'>No download limit</p>
+                          </li>
+                          <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                              <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                              </div>
+                              <p className='text-mongo ml-4 lg:ml-7 text-[15px] lg:text-[17px] relative top-1 font-normal'>Responsive Design</p>
+                          </li>
+                          <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                              <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                              </div>
+                              <p className='text-mongo ml-4 lg:ml-7 text-[15px] lg:text-[17px] relative top-1 font-normal'>Premium account label</p>
+                          </li>
+                      </ul>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            ):
+            null
+          }
           <div className="row d-flex">
             <div className="col-sm-0 col-12">
               {/* Menu komponent */}
-              <MenuComponent createComponent ={createComponent}/>
+              <MenuComponent showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
             </div>
             <div className='col-sm-12 col-12' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               {/* frame yang akan menampilkan semua component terpilih */}
-              <FrameOutput dataStyle={dataStyle} dataHTML={dataHTML} dataComponentUsed={dataImages} />
+              <FrameOutput dataStyle={dataStyle} handleMinus={this.handleMinus} dataHTML={dataHTML} dataComponentUsed={dataImages} />
             </div>
           </div>
         </>
