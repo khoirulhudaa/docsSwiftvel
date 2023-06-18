@@ -20,7 +20,7 @@ class App extends React.Component {
       status: false,
       limit: 0,
       statusLimit: false,
-      limitStatus: true
+      limitStatus: false
     };
 
   };
