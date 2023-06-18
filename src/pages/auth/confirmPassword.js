@@ -136,15 +136,15 @@ const ConfirmPassword = () => {
         </a>
       </div>
       <div className='w-[70%] hidden lg:inline relative h-[100vh] flex items-center justify-center ml-auto overflow-hidden'>
-        <img src={Human1} className='w-[300px] 2xl:w-[450px] bottom-0 left-10 absolute' alt="human" />
-        <img src={Human2} className='w-[260px] 2xl:w-[450px] absolute top-0 left-[340px] rotate-[180deg]' alt="human" />
-        <img src={Human3} className='w-[300px] 2xl:w-[450px] absolute bottom-0 right-[0px]' alt="human" />
-        <div onClick={() => navigate('/')} className='absolute left-8 top-8 bg-white rounded-full p-2 w-[40px] h-[40px] shadow-lg cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>
+        <img src={Human1} className='w-[300px] 2xl:w-[450px] bottom-0 left-[33%] fixed' alt="human" />
+        <img src={Human2} className='w-[260px] 2xl:w-[450px] fixed top-0 left-[54.9%] rotate-[180deg]' alt="human" />
+        <img src={Human3} className='w-[300px] 2xl:w-[450px] fixed bottom-0 right-[0%]' alt="human" />
+        <div onClick={() => navigate('/')} className='fixed left-[32.3%] top-[4.8%] bg-white rounded-full p-2 w-[40px] h-[40px] shadow-lg cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>
           <box-icon name='home-alt'></box-icon>
         </div>
         <div className='lg:inline hidden'>
-          <span className='absolute 2xl:top-12 top-10 text-white text-[16px] 2xl:text-[22px] 2xl:right-12 right-10'>
-            Don't have an account? <span className='text-blue-500 cursor-pointer' onClick={() => navigate('/signUp')}>Sign In</span>
+          <span className='fixed 2xl:top-12 top-10 text-white text-[16px] 2xl:text-[22px] 2xl:right-12 right-10'>
+            Don't have an account? <span className='text-blue-500 cursor-pointer' onClick={() => navigate('/signIn')}>Sign In</span>
           </span>
         </div>
       </div>
