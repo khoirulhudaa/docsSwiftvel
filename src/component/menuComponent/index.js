@@ -251,14 +251,19 @@ handleScreen = () => {
                                 if(data.title === "navbar") {
                                     return (
                                         <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-navbar-standar' : 'cardImage-navbar'}`} key={index} onClick={() => {
+                                            if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
+                                                this.props.handleAdd(1);
                                                 if (this.props.limit !== 6) {
-                                                    this.props.handleAdd(1);
-                                                    if (this.props.limit !== 5) {
-                                                        this.props.createComponent(data.title, data.img, data.html, data.style);
-                                                    }
+                                                    this.props.createComponent(data.title, data.img, data.html, data.style);
                                                 }else if(this.props.limit === 6) {
                                                     this.props.showModal()
                                                 }
+                                            }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
+                                                this.props.handleAdd(1);
+                                                if (this.props.limit !== 100) {
+                                                    this.props.createComponent(data.title, data.img, data.html, data.style);
+                                                }
+                                            }
                                             }}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
@@ -311,14 +316,19 @@ handleScreen = () => {
                                 if(data.title === "hero") {
                                     return (
                                         <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-standar' : 'cardImage'}`} key={index} onClick={() => {
+                                            if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
+                                                this.props.handleAdd(1);
                                                 if (this.props.limit !== 6) {
-                                                    this.props.handleAdd(1);
-                                                    if (this.props.limit !== 5) {
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
-                                                }
                                                 }else if(this.props.limit === 6) {
                                                     this.props.showModal()
                                                 }
+                                            }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
+                                                this.props.handleAdd(1);
+                                                if (this.props.limit !== 100) {
+                                                    this.props.createComponent(data.title, data.img, data.html, data.style);
+                                                }
+                                            }
                                             }}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
@@ -371,14 +381,19 @@ handleScreen = () => {
                                 if(data.title === "content") {
                                     return (
                                         <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-content-standar' : 'cardImage-content'}`} key={index} onClick={() => {
+                                            if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
+                                                this.props.handleAdd(1);
                                                 if (this.props.limit !== 6) {
-                                                    this.props.handleAdd(1);
-                                                    if (this.props.limit !== 5) {
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
-                                                }
                                                 }else if(this.props.limit === 6) {
                                                     this.props.showModal()
                                                 }
+                                            }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
+                                                this.props.handleAdd(1);
+                                                if (this.props.limit !== 100) {
+                                                    this.props.createComponent(data.title, data.img, data.html, data.style);
+                                                }
+                                            }
                                             }}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
@@ -431,14 +446,19 @@ handleScreen = () => {
                                 if(data.title === "footer") {
                                     return (
                                         <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-footer-standar' : 'cardImage-footer'}`} key={index} onClick={() => {
+                                            if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
+                                                this.props.handleAdd(1);
                                                 if (this.props.limit !== 6) {
-                                                    this.props.handleAdd(1);
-                                                    if (this.props.limit !== 5) {
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
-                                                }
                                                 }else if(this.props.limit === 6) {
                                                     this.props.showModal()
                                                 }
+                                            }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
+                                                this.props.handleAdd(1);
+                                                if (this.props.limit !== 100) {
+                                                    this.props.createComponent(data.title, data.img, data.html, data.style);
+                                                }
+                                            }
                                             }}>
                                             <img src={`https://images-builder.vercel.app/img/${data.img}`} alt="img-component" />
                                             {
@@ -507,7 +527,12 @@ handleScreen = () => {
                         </div>
                     </div>
                 </div>
-                <p className='relative bottom-5 flex items-center'>{this.props.limit}/6</p>
+                {
+                    status !== 'settlement' || this.state.statusNew !== 'settlement' ? (
+                        <p className='relative bottom-5 flex items-center'>{this.props.limit}/6</p>
+                    ): 
+                    <></>
+                }
                     <div onClick={() => this.download("templateCurrent")} className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
                     {/* <box-icon type="icon" style={{color: 'white'}} name="download" onClick={() => this.download("templateCurrent")} /> */}
                     <img src={Download} alt="icon-download" style={{width: '47%'}} />
