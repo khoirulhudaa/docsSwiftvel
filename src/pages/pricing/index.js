@@ -70,7 +70,7 @@ const Pricing = () => {
             headers: {
             'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, order_id:generateRandomCode(), gross_amount: 50000 }),
+            body: JSON.stringify({ email, order_id:generateRandomCode(), gross_amount: 1000 }),
         })
         .then(response => response.json())
         .then(data => {
@@ -115,7 +115,7 @@ const Pricing = () => {
                                 Subscribe
                             </div>
                             <p className='hidden lg:inline text-red-400 line-through ml-5 text-[16px] relative top-[14px] '>Rp. 99.999</p>
-                            <p className='text-white ml-2 lg:ml-5 text-[16px] lg:text-[22px] relative top-[14px] '>Rp. 49.999/month</p>
+                            <p className='text-white ml-2 lg:ml-5 text-[16px] lg:text-[22px] relative top-[14px] '>Rp. 1k/month</p>
                         </div>
                     </div>
                     <div className='w-[100%] lg:w-[50%] h-max p-4 flex flex-col items-center justify-center'>
@@ -187,7 +187,7 @@ const Pricing = () => {
                                 Subscribe
                             </div>
                             <p className='hidden lg:inline text-red-400 line-through ml-5 text-[16px] relative top-[14px] '>Rp. 99.999</p>
-                            <p className='text-white ml-2 lg:ml-5 text-[16px] lg:text-[22px] relative top-[14px] '>Rp. 49.999/month</p>
+                            <p className='text-white ml-2 lg:ml-5 text-[16px] lg:text-[22px] relative top-[14px] '>Rp. 1k/month</p>
                         </div>
                     </div>
                     <div className='w-[100%] lg:w-[50%] h-max p-4 flex flex-col items-center justify-center'>
