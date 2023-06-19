@@ -64,7 +64,7 @@ const Pending = () => {
         <div className='flex flex-col text-center lg:text-left z-10'>
             <h1 className='font-normal text-center lg:text-left w-[80%] text-[40px] mt-3 ml-auto mr-auto lg:ml-[-38px] lg:mr-0 lg:text-[70px] text-white mb-20 2xl:ml-[-110px]'>You are almost a premium user</h1>
             <p className='font-normal text-[15px] ml-auto mr-auto lg:ml-[-2px] lg:mr-0 flex leading-[1.5em] text-white'>Complete your payment immediately</p>
-            <div className='flex items-center'>
+            <div className='flex items-center my-4'>
               <div onClick={(e) => handleCancel(e)} className='border-[1px] border-white rounded-lg text-white cursor-pointer active:scale-[0.97] hover:brightness-[90%] px-5 bg-red-500 py-[13px] w-max h-max'>
                 Cancel
               </div>
