@@ -122,10 +122,6 @@ download = (e) => {
     <meta name="contributor" content="Nama Penyusun" />
     <meta name="copyright" content="Tahun Hak Cipta, Pemilik Hak Cipta" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     `
     const sourceHTML = header + document.querySelector(`.${name}`).innerHTML;
 
@@ -187,16 +183,16 @@ handleScreen = () => {
                     this.state.screen ? (
                         <>
                             <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
-                                <FontAwesomeIcon icon={faExpand} /> 
+                                <FontAwesomeIcon icon={faCompress} /> 
                             </div>
                             <small className='ml-3 font-normal text-[15px]'>
                                 Normal screen
                             </small>
                         </>
                     ):
-                        <>
+                    <>
                             <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
-                                <FontAwesomeIcon icon={faCompress} /> 
+                                <FontAwesomeIcon icon={faExpand} /> 
                             </div>
                             <small className='ml-3 font-normal text-[15px]'>
                                 Full screen

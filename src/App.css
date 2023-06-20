@@ -468,6 +468,7 @@ html {
   transform: scale(1);
   margin-left: -20px;
   opacity: 1;
+  padding-bottom: 40px;
   z-index: 44;
   transition: 0.4s;
 }
@@ -483,6 +484,7 @@ html {
 .show2 {
   transform: scale(1);
   margin-left: -20px;
+  padding-bottom: 55px;
   opacity: 1;
   z-index: 44;
   transition: 0.4s;
@@ -500,6 +502,7 @@ html {
 .show3 {
   transform: scale(1);
   margin-left: -20px;
+  padding-bottom: 50px;
   opacity: 1;
   z-index: 44;
   transition: 0.4s;
@@ -516,6 +519,7 @@ html {
 .show4 {
   transform: scale(1);
   margin-left: -20px;
+  padding-bottom: 70px;
   opacity: 1;
   z-index: 44;
   transition: 0.4s;
@@ -592,8 +596,7 @@ html {
 
 .frameOutput {
   position: fixed;
-  width: 100%;
-  border-radius: 12px 0 0 0;
+  width: 100vw;
   height: 90vh;
   bottom: 0;
   padding-top: 0px;
