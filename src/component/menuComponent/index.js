@@ -248,10 +248,10 @@ handleScreen = () => {
                                     return (
                                         <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-navbar-standar' : 'cardImage-navbar'}`} key={index} onClick={() => {
                                             if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
-                                                this.props.handleAdd(1);
-                                                if (this.props.limit !== 6) {
+                                                if (this.props.limit !== 6 && data.type !== 'premium') {
+                                                    this.props.handleAdd(1);
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
-                                                }else if(this.props.limit === 6) {
+                                                }else if(this.props.limit === 6 && data.type !== 'premium') {
                                                     this.props.showModal()
                                                 }
                                             }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
@@ -312,11 +312,11 @@ handleScreen = () => {
                                 if(data.title === "hero") {
                                     return (
                                         <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-standar' : 'cardImage'}`} key={index} onClick={() => {
-                                            if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
-                                                this.props.handleAdd(1);
-                                                if (this.props.limit !== 6) {
+                                             if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
+                                                 if (this.props.limit !== 6 && data.type !== 'premium') {
+                                                    this.props.handleAdd(1);
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
-                                                }else if(this.props.limit === 6) {
+                                                }else if(this.props.limit === 6 && data.type !== 'premium') {
                                                     this.props.showModal()
                                                 }
                                             }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
@@ -377,11 +377,11 @@ handleScreen = () => {
                                 if(data.title === "content") {
                                     return (
                                         <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-content-standar' : 'cardImage-content'}`} key={index} onClick={() => {
-                                            if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
-                                                this.props.handleAdd(1);
-                                                if (this.props.limit !== 6) {
+                                             if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
+                                                 if (this.props.limit !== 6 && data.type !== 'premium') {
+                                                    this.props.handleAdd(1);
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
-                                                }else if(this.props.limit === 6) {
+                                                }else if(this.props.limit === 6 && data.type !== 'premium') {
                                                     this.props.showModal()
                                                 }
                                             }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
@@ -442,11 +442,11 @@ handleScreen = () => {
                                 if(data.title === "footer") {
                                     return (
                                         <div className={`${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'cardImage-footer-standar' : 'cardImage-footer'}`} key={index} onClick={() => {
-                                            if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
-                                                this.props.handleAdd(1);
-                                                if (this.props.limit !== 6) {
+                                             if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
+                                                 if (this.props.limit !== 6 && data.type !== 'premium') {
+                                                    this.props.handleAdd(1);
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
-                                                }else if(this.props.limit === 6) {
+                                                }else if(this.props.limit === 6 && data.type !== 'premium') {
                                                     this.props.showModal()
                                                 }
                                             }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
