@@ -181,42 +181,43 @@ handleScreen = () => {
                 <div onClick={() => this.props.handleAutomaticBuild()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                     <FontAwesomeIcon icon={faWandMagicSparkles} /> 
                 </div>
-                {/* <small className='ml-3 font-normal text-[15px]'>
+                <small className='ml-3 font-normal text-[15px]'>
                     Automatic build
-                </small> */}
+                </small>
             </div>
 
-            <div className='flex top-[13px] absolute left-[190px] items-center'>
+            <div className='flex top-[13px] absolute left-[320px] items-center'>
+                <div onClick={() => window.location.reload()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                    <FontAwesomeIcon icon={faArrowsRotate} /> 
+                </div>
+                <small className='ml-3 font-normal text-[15px]'>
+                    Refresh
+                </small>
+            </div>
+
+            <div className='flex top-[13px] absolute left-[455px] items-center'>
                 {
                     this.state.screen ? (
                         <>
                             <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                                 <FontAwesomeIcon icon={faCompress} /> 
                             </div>
-                            {/* <small className='ml-3 font-normal text-[15px]'>
+                            <small className='ml-3 font-normal text-[15px]'>
                                 Normal screen
-                            </small> */}
+                            </small>
                         </>
                     ):
                     <>
                             <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                                 <FontAwesomeIcon icon={faExpand} /> 
                             </div>
-                            {/* <small className='ml-3 font-normal text-[15px]'>
+                            <small className='ml-3 font-normal text-[15px]'>
                                 Full screen
-                            </small> */}
+                            </small>
                         </>
                 }
             </div>
 
-            <div className='flex top-[13px] absolute left-[260px] items-center'>
-                <div onClick={() => window.location.reload()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
-                    <FontAwesomeIcon icon={faArrowsRotate} /> 
-                </div>
-                {/* <small className='ml-3 font-normal text-[15px]'>
-                    Refresh
-                </small> */}
-            </div>
             <div className='flex items-center absolute top-3 right-7'>
                 <a href="/pricing" className='no-underline text-white'>
                     {
@@ -228,17 +229,11 @@ handleScreen = () => {
                             <></>
                     }
                 </a>
-                <div className='flex items-center relative mr-2 border-[1] border border-black px-4 w-max h-max py-[8.6px] rounded-md hover:text-black'>
-                    {this.state.username}
-                </div>
-                <div className='h-[20px] w-[1px] bg-slate-400 ml-1'></div>
-                <div className='h-[30px] w-[1px] bg-slate-400 mx-2'></div>
-                <div className='h-[20px] w-[1px] bg-slate-400 mr-3'></div>
-                <div className='flex items-center relative mr-2 hover:text-black'>
+                <div className='flex items-center relative mr-2 hovetext-[14px]r:text-black'>
                     <a href="https://saweria.co/dragmeTEam" target='__blank' className='no-underline hover:text-black text-black'>
-                        <div className='rounded-md px-3 flex items-center justify-center py-[5.5px] border border-[1] hover:text-black border-black cursor-pointer active:scale-[0.97] duration-100'>
-                            <img src={Saweria} className='w-[30px]' alt="icon" />
-                            <span className='sawer hover:text-black'>
+                        <div className='rounded-md px-3 flex items-center justify-center py-[6.4px] border border-[1] hover:text-black border-black cursor-pointer active:scale-[0.97] duration-100'>
+                            <img src={Saweria} className='w-[26px] relative top-[-1px]' alt="icon" />
+                            <span className='text-[15px] sawer hover:text-black relative top-[1px] ml-1'>
                                 Saweria
                             </span>
                         </div>
@@ -248,10 +243,10 @@ handleScreen = () => {
                 <div className='h-[30px] w-[1px] bg-slate-400 mx-2'></div>
                 <div className='h-[20px] w-[1px] bg-slate-400 mr-3'></div>
                 <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor1}] text-${this.state.textColor1} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
-                    <img src={PHP} alt="img" className='bg-white rounded-full w-[20px] px-1 h-[20px] mr-2' /> <p className='mt-0'>PHP language</p>
+                    <img src={PHP} alt="img" className='bg-white rounded-full w-[20px] px-1 h-[20px] mr-2' /> <p className='text-[14px] mt-0'>PHP language</p>
                 </div>
                 <div onClick={() => this.handleChangeActive('HTML')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor2}] text-${this.state.textColor2} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
-                    <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> <p className='mt-0'>HTML code</p>
+                    <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> <p className='text-[14px] mt-0'>HTML code</p>
                 </div>
             </div>
             <div className={`${!this.state.screen ? 'menuComponents': 'menuComponentsSide'}`}>
@@ -552,19 +547,19 @@ handleScreen = () => {
                 </div>
                 <div className="squareComponents" id='navbar'>
                     <box-icon type="icon" name="collection" />
-                    <b><p>Navbar</p></b>
+                    <p>Navbar</p>
                 </div>
                 <div className="squareComponents" id='heroes'>
                     <box-icon name='objects-vertical-bottom'></box-icon>
-                    <b><p>Heroes</p></b>
+                    <p>Heroes</p>
                 </div>
                 <div className="squareComponents" id='content'>
                     <box-icon name='objects-horizontal-center'></box-icon>
-                    <b><p>Content</p></b>
+                    <p>Content</p>
                 </div>
                 <div className="squareComponents" id='footer'>
                     <box-icon name='objects-vertical-top' ></box-icon>
-                    <b><p>Footer</p></b>
+                    <p>Footer</p>
                 </div>
             </div>
         </>

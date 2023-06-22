@@ -556,8 +556,6 @@ html {
   margin-left: auto;
   padding-top: 20px;
   margin-right: auto;
-  font-weight: bold;
-  /* border-radius: 50px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -565,13 +563,20 @@ html {
   font-family: 'Poppins', sans-serif;
   height: max-content;
   transition: 0.7s;
+  font-size: 14px;
 }
 
 .squareComponents:hover {
   transition: 0.4s;
   cursor: pointer;
-  /* box-shadow: 1px 4px 12px rgba(194, 194, 194, 0.589); */
-  transform: scale(0.88);
+}
+
+.squareComponents:active {
+  transform: scale(0.96);
+}
+
+.squareComponents p {
+  margin-top: 3px;
 }
 
 .plusIcon {
