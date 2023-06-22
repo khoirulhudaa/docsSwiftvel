@@ -97,7 +97,7 @@ const Pricing = () => {
         <Header />
     {/* Header */}
     {
-       statusNew === 'standar' ? (
+       statusNew === 'standar' || statusNew === 'expire' ? (
             <>
                 <div className='w-full lg:flex h-max pt-6 lg:pt-10 pb-12 overflow-hidden relative items-center justify-center bg-[#023430]'>
                     <a href="/" className='text-mongo lg:text-white'> 
