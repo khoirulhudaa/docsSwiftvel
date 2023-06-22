@@ -252,7 +252,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 14px auto 0px 15px;
+  margin: 14px 7px 45px 15px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -268,7 +268,7 @@ html {
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  margin: 14px auto 0px 15px;
+  margin: 14px 7px 45px 15px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
