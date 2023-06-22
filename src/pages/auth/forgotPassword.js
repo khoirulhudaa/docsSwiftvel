@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import Human1 from '../../assets/images/svg/human1.png'
 import Human2 from '../../assets/images/svg/human2.png'
 import Human3 from '../../assets/images/svg/human3.png'
+import Spin from '../../assets/images/svg/spin.svg'
 
 const Login = () => {
 
@@ -13,11 +14,12 @@ const Login = () => {
   
   const [data, setData] = useState({
     email: '',
+    isLoading: false
   })
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-
+    setData({ ...data, isLoading: true });
     const {email} = data;
     await fetch(`${BASE_URL}/forgotPassword`, {
       method: 'POST',
@@ -28,6 +30,7 @@ const Login = () => {
     })
     .then((response) => response.json())
     .then((data) => {
+      setData({ ...data, isLoading: false });
       // Process the received data
       console.log('reponse forgot password:', data)
       if(data.status === 201) {
@@ -36,7 +39,7 @@ const Login = () => {
         navigate('/check-email')
 
       }else if(data.status === 500) {
-        
+        setData({ ...data, isLoading: false });
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -55,7 +58,7 @@ const Login = () => {
         })
 
       }else if(data.status === 404) {
-        
+        setData({ ...data, isLoading: false });
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -74,7 +77,7 @@ const Login = () => {
         })
 
       }else {
-       
+        setData({ ...data, isLoading: false });
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -95,6 +98,7 @@ const Login = () => {
 
     })
     .catch((error) => {
+      setData({ ...data, isLoading: false });
       console.error('Error retrieving data', error);
     });
 
@@ -120,9 +124,16 @@ const Login = () => {
             <br />
             <input onChange={(e) => handleChange(e)} type="text" name='email' placeholder='Enter email' className='font-normal text-[14px] outline-0 rounded-lg 2xl:py-[16px] py-[10px] px-3 2xl:w-[94%] w-[90%]' />
         </div>
-        <div onClick={(e) => handleSubmit(e)} className='rounded-lg 2xl:scale-[1.3] border-[1px] border-white text-center py-2 w-max mb-3 lg:mb-0 px-3 2xl:ml-[14px] cursor-pointer active:scale-[0.97] mt-5 text-white'>
-          Enter now
-        </div>
+        <button type="submit" onClick={(e) => handleSubmit(e)} className='rounded-lg 2xl:scale-[1.3] border-[1px] border-white text-center h-[40px] w-[120px] flex items-center justify-center mb-3 lg:mb-0 px-3 2xl:ml-[14px] cursor-pointer active:scale-[0.97] mt-4 text-white'>
+            {
+              data.isLoading ? (
+                <img src={Spin} className='w-[14px] animate-spin' alt="spin" />
+              ):
+              <span>
+                Enter now
+              </span>
+            }
+        </button>
         <a onClick={() => navigate('/signUp')} className='inline lg:hidden'>
           <span className='text-white text-[14px]'>
             Don't have an account? <span className='text-blue-500 cursor-pointer'>Sign In</span>

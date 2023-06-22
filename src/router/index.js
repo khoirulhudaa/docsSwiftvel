@@ -53,7 +53,7 @@ const router = createBrowserRouter([
     element: <CheckEmail />,
   },
   {
-    path: "/reset-password/swfitveler1635dsd3290",
+    path: "/reset-password/swfitveler1635dsd3290ADHGWYGDXVVXCV16215651HSCHXZCY67YCHSOCIXslskjdsh781d655cxhcjxmnkzcx",
     element: <ConfirmPassword />,
   },
 ]);

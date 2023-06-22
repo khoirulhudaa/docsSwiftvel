@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 import Human1 from '../../assets/images/svg/human1.png'
 import Human2 from '../../assets/images/svg/human2.png'
 import Human3 from '../../assets/images/svg/human3.png'
+import Spin from '../../assets/images/svg/spin.svg'
 
 const Login = () => {
   const BASE_URL = 'https://api-dragme.vercel.app/api/users'  
@@ -12,12 +13,13 @@ const Login = () => {
   const [data, setData] = useState({
     username: '',
     email: '',
-    password: ''
+    password: '',
+    isLoading: false
   })
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-    
+    setData({ ...data, isLoading: true });
     const {username, email, password} = data;
     await fetch(`${BASE_URL}/signUp`, {
       method: 'POST',
@@ -28,6 +30,7 @@ const Login = () => {
     }) 
     .then((response) => response.json())
     .then((data) => {
+      setData({ ...data, isLoading: false });
       if(data.status === 201) {
         
         navigate('/signIn')
@@ -51,8 +54,8 @@ const Login = () => {
           title: 'Internal server error'
         
         })
-      }else if(data.status === 400) {
-        
+      }else if(data.status === 400)   {
+
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -71,7 +74,7 @@ const Login = () => {
         })
       
       }else if(data.status === 401) {
-      
+        setData({ ...data, isLoading: false });
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -90,7 +93,7 @@ const Login = () => {
         })
       
       }else if(data.status === 402) {
-      
+        setData({ ...data, isLoading: false });
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -109,7 +112,7 @@ const Login = () => {
         })
       
       }else {
-      
+        setData({ ...data, isLoading: false });
         const Toast = Swal.mixin({
           toast: true,
           position: 'bottom-end',
@@ -129,6 +132,7 @@ const Login = () => {
       }
     })
     .catch((err) => {
+      setData({ ...data, isLoading: false });
       console.log('error register :',err)
     });
 
@@ -150,35 +154,45 @@ const Login = () => {
         </div>
         <h2 className='text-white 2xl:text-[70px] text-[40px] mb-[30px]'>Create your account</h2>
         <div className='w-[90%] h-[1px] bg-white my-1'></div>
-        <div className='w-full lg:block mb-4 mt-4'>
-            <label htmlFor="username" className='2xl:text-[22px] mb-3 2xl:mb-6 text-white font-normal'>Username</label>
-            <br />
-            <input onChange={(e) => handleChange(e)} type="text" placeholder='Enter username' name='username' className='font-normal text-[14px] outline-0 rounded-lg  2xl:py-[16px] py-[10px] px-3 2xl:w-[94%] w-[90%]' />
-        </div>
-        <div className='w-full lg:block mb-4 mt-4'>
-            <label htmlFor="email" className='2xl:text-[22px] mb-3 2xl:mb-6 text-white font-normal'>Email</label>
-            <br />
-            <input onChange={(e) => handleChange(e)} type="text" name='email' placeholder='Enter email' className='font-normal text-[14px] outline-0 rounded-lg  2xl:py-[16px] py-[10px] px-3 2xl:w-[94%] w-[90%]' />
-        </div>
-        <div className='w-full lg:block mb-4 mt-4'>
-            <label htmlFor="password" className='2xl:text-[22px] mb-3 2xl:mb-6 text-white font-normal'>Password</label>
-            <br />
-            <input onChange={(e) => handleChange(e)} type="password" name='password' placeholder='Enter password' className='font-normal text-[14px] outline-0 rounded-lg  2xl:py-[16px] py-[10px] px-3 2xl:w-[94%] w-[90%]' />
-        </div>
-        <div onClick={(e) => handleSubmit(e)} className='rounded-lg 2xl:scale-[1.3] 2xl:ml-[14px] border-[1px] border-white text-center py-2 w-max mb-3 lg:mb-0 px-3 cursor-pointer active:scale-[0.97] text-white mt-5'>
-          Enter now
-        </div>
-        <a onClick={() => navigate('/forgot-password')} className='no-underline'>
-        <span className='text-white text-[14px] mt-3 2xl:relative 2xl:top-7'>
-            Forgot password? <span className='text-blue-500 cursor-pointer'>Here</span>
-          </span>
-        </a>
-        <br />
-        <a onClick={() => navigate('/signIn')} className='inline lg:hidden'>
-          <span className='text-white text-[14px]'>
-            Don't have an account? <span className='text-blue-500 cursor-pointer'>Sign In</span>
-          </span>
-        </a>
+        <form onSubmit={handleSubmit}>
+          <div className='w-full lg:block mb-4 mt-4'>
+              <label htmlFor="username" className='2xl:text-[22px] mb-3 2xl:mb-6 text-white font-normal'>Username</label>
+              <br />
+              <input onChange={(e) => handleChange(e)} type="text" placeholder='Enter username' name='username' className='font-normal text-[14px] outline-0 rounded-lg  2xl:py-[16px] py-[10px] px-3 2xl:w-[94%] w-[90%]' />
+          </div>
+          <div className='w-full lg:block mb-4 mt-4'>
+              <label htmlFor="email" className='2xl:text-[22px] mb-3 2xl:mb-6 text-white font-normal'>Email</label>
+              <br />
+              <input onChange={(e) => handleChange(e)} type="text" name='email' placeholder='Enter email' className='font-normal text-[14px] outline-0 rounded-lg  2xl:py-[16px] py-[10px] px-3 2xl:w-[94%] w-[90%]' />
+          </div>
+          <div className='w-full lg:block mb-4 mt-4'>
+              <label htmlFor="password" className='2xl:text-[22px] mb-3 2xl:mb-6 text-white font-normal'>Password</label>
+              <br />
+              <input onChange={(e) => handleChange(e)} type="password" name='password' placeholder='Enter password' className='font-normal text-[14px] outline-0 rounded-lg  2xl:py-[16px] py-[10px] px-3 2xl:w-[94%] w-[90%]' />
+          </div>
+          <button type="submit" onClick={(e) => handleSubmit(e)} className='rounded-lg 2xl:scale-[1.3] border-[1px] border-white text-center h-[40px] w-[120px] flex items-center justify-center mb-3 lg:mb-0 px-3 2xl:ml-[14px] cursor-pointer active:scale-[0.97] mt-4 text-white'>
+            {
+              data.isLoading ? (
+                <img src={Spin} className='w-[14px] animate-spin' alt="spin" />
+              ):
+              <span>
+                Enter now
+              </span>
+            }
+          </button>
+          <br />
+          <a onClick={() => navigate('/forgot-password')} className='no-underline'>
+          <span className='text-white text-[14px] mt-3 2xl:relative 2xl:top-7'>
+              Forgot password? <span className='text-blue-500 cursor-pointer'>Here</span>
+            </span>
+          </a>
+          <br />
+          <a onClick={() => navigate('/signIn')} className='inline lg:hidden'>
+            <span className='text-white text-[14px]'>
+            Already have an account? <span className='text-blue-500 cursor-pointer'>Sign In</span>
+            </span>
+          </a>
+        </form>
       </div>
       <div className='w-[70%] hidden lg:inline relative h-[100vh] flex items-center justify-center ml-auto overflow-hidden'>
         <img src={Human1} className='w-[300px] 2xl:w-[450px] bottom-0 left-[33%] fixed' alt="human" />
@@ -189,7 +203,7 @@ const Login = () => {
         </div>
         <div className='lg:inline hidden'>
           <span className='fixed 2xl:top-12 top-10 text-white text-[16px] 2xl:text-[22px] 2xl:right-12 right-10'>
-            Don't have an account? <span className='text-blue-500 cursor-pointer' onClick={() => navigate('/signIn')}>Sign In</span>
+          Already have an account? <span className='text-blue-500 cursor-pointer' onClick={() => navigate('/signIn')}>Sign In</span>
           </span>
         </div>
       </div>
