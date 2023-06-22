@@ -6,6 +6,7 @@ import Alert1 from './assets/images/png/alert1.png';
 import Water from './assets/images/png/water.png';
 import FrameOutput from './component/frameOutput';
 import MenuComponent from './component/menuComponent';
+import jsonData from './dataComponent/index.json';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,94 +21,97 @@ class App extends React.Component {
       status: false,
       limit: 0,
       statusLimit: false,
-      limitStatus: false
+      limitStatus: false,
+      jenisWeb: '',
+      selectedObjects: [],
+      mode: 'manually'
     };
 
-  };
+};
   
-  componentDidMount = () => {
-    
-    this.setState({
-      status: Cookies.get('status')
-    })
+componentDidMount = () => {
+  
+  this.setState({
+    status: Cookies.get('status')
+  })
 
-    const data = {
-      datas: `<section>
-      <div class='container pt-4'>
-          <div class='row'>
-              <div class='col-lg-3'>
-                  <div class='footer-brand'>
-                      <img src='assets/icon/logo.svg' alt=''>
-                      <h5 class='footer-product my-auto'>Product</h5>
-                  </div>
-                  <div class='socmed'>
-                      <div class='socmed-icon'>
-                          <img class='mr-3' src='assets/icon/ig.svg' alt='ig'>
-                      </div>
-                      <div class='socmed-icon'>
-                          <img class='mr-3' src='assets/icon/fb.svg' alt='fb'>
-                      </div>
-                      <div class='socmed-icon'>
-                          <img class='mr-3' src='assets/icon/twt.svg' alt='twitter' />
-                      </div>
-                  </div>
-              </div>
-              <div class='col-lg-3'>
-                  <div class='footer-nav'>
-                      <ul>
-                          <li><span class='fw-bold'>Resource</span></li>
-                          <li><a href=''>About Us</a></li>
-                          <li><a href=''>Blog</a></li>
-                          <li><a href=''>Contact</a></li>
-                          <li><a href=''>FAQ</a></li>
-                      </ul>
-                  </div>
-              </div>
-              <div class='col-lg-3'>
-                  <div class='footer-nav'>
-                      <ul>
-                          <li><span class='fw-bold'>Legal Stuff</span></li>
-                          <li><a href=''>Disclaimer</a></li>
-                          <li><a href=''>Financing</a></li>
-                          <li><a href=''>Privacy Policy</a></li>
-                          <li><a href=''>Terms of Service</a></li>
-                      </ul>
-                  </div>
-              </div>
-              <div class='col-lg-3'>
-                  <p class='footer-desc'>knowing you're always on the best energy deal.</p>
-                  <form action=''>
-                      <input type='text' class='form-control shadow' id='signup' />
-                      <label class='btn px-0' for='signup'>
-                          <a class='nav-link px-4 py-2 btn-signup'>Sign up now</a>
-                      </label>
-                  </form>
-              </div>
-          </div>
-          <p class='copyright text-center'>Made With Love By Figmaland All Right Reserved
-          </p>
-      </div>
-  </section>`
-    }
+  const data = {
+    datas: `<section>
+    <div class='container pt-4'>
+        <div class='row'>
+            <div class='col-lg-3'>
+                <div class='footer-brand'>
+                    <img src='assets/icon/logo.svg' alt=''>
+                    <h5 class='footer-product my-auto'>Product</h5>
+                </div>
+                <div class='socmed'>
+                    <div class='socmed-icon'>
+                        <img class='mr-3' src='assets/icon/ig.svg' alt='ig'>
+                    </div>
+                    <div class='socmed-icon'>
+                        <img class='mr-3' src='assets/icon/fb.svg' alt='fb'>
+                    </div>
+                    <div class='socmed-icon'>
+                        <img class='mr-3' src='assets/icon/twt.svg' alt='twitter' />
+                    </div>
+                </div>
+            </div>
+            <div class='col-lg-3'>
+                <div class='footer-nav'>
+                    <ul>
+                        <li><span class='fw-bold'>Resource</span></li>
+                        <li><a href=''>About Us</a></li>
+                        <li><a href=''>Blog</a></li>
+                        <li><a href=''>Contact</a></li>
+                        <li><a href=''>FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class='col-lg-3'>
+                <div class='footer-nav'>
+                    <ul>
+                        <li><span class='fw-bold'>Legal Stuff</span></li>
+                        <li><a href=''>Disclaimer</a></li>
+                        <li><a href=''>Financing</a></li>
+                        <li><a href=''>Privacy Policy</a></li>
+                        <li><a href=''>Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class='col-lg-3'>
+                <p class='footer-desc'>knowing you're always on the best energy deal.</p>
+                <form action=''>
+                    <input type='text' class='form-control shadow' id='signup' />
+                    <label class='btn px-0' for='signup'>
+                        <a class='nav-link px-4 py-2 btn-signup'>Sign up now</a>
+                    </label>
+                </form>
+            </div>
+        </div>
+        <p class='copyright text-center'>Made With Love By Figmaland All Right Reserved
+        </p>
+    </div>
+</section>`
   }
+}
 
-  createComponent =(title, img, html, style) => {
+createComponent =(title, img, html, style) => {
 
-    // kode add data kode html dan css ke frame
-    let joinedHTML = this.state.dataHTML.concat(`${html}`)
-    this.setState({ dataHTML: joinedHTML })
-    let joinedStyle = this.state.dataStyle.concat(`${style}`)
-    this.setState({ dataStyle: joinedStyle })
+  // kode add data kode html dan css ke frame
+  let joinedHTML = this.state.dataHTML.concat(`${html}`)
+  this.setState({ dataHTML: joinedHTML })
+  let joinedStyle = this.state.dataStyle.concat(`${style}`)
+  this.setState({ dataStyle: joinedStyle })
 
-    // kode add data component yang sudah ditambah ke frame
-    let dataUsed = {
-      image: `https://images-builder.vercel.app/img/${img}`,
-      title: title
-    }
-    let dataImg = this.state.dataImages.concat(dataUsed)
-    this.setState({ dataImages: dataImg })
-
+  // kode add data component yang sudah ditambah ke frame
+  let dataUsed = {
+    image: `https://images-builder.vercel.app/img/${img}`,
+    title: title
   }
+  let dataImg = this.state.dataImages.concat(dataUsed)
+  this.setState({ dataImages: dataImg })
+
+}
 
 handleAdd = (e) => {
   if (this.state.limit !== 6) {
@@ -136,13 +140,61 @@ showModal = () => {
 closeModal = () => {
   this.setState({
       limitStatus: false
-  })
-}
+    })
+  }
+  
+  // Fungsi untuk mengacak array
+shuffleArray = (array) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+};
+
+handleAutomaticBuild = () => {
+  this.setState({ mode: 'automaticaly' })
+  // Mengambil objek-objek dengan jenisWeb yang sama dengan pilihan user
+    const filteredObjects = jsonData.filter((obj) => obj.type === "premium");
+    
+    // Mengacak array objek
+    const shuffledObjects = this.shuffleArray(filteredObjects);
+
+    // Memilih objek-objek dengan kriteria yang ditentukan
+    const selectedNavbar = shuffledObjects.find((obj) => obj.title === 'navbar');
+    const selectedHero = shuffledObjects.find((obj) => obj.title === 'hero');
+    const selectedContent = shuffledObjects.filter((obj) => obj.title === 'content').slice(0, 2);
+    const selectedFooter = shuffledObjects.find((obj) => obj.title === 'footer');
+
+    // Menyimpan objek-objek yang dipilih dalam state array
+    this.setState({
+      selectedObjects: [selectedNavbar, selectedHero, ...selectedContent, selectedFooter],
+    });
+
+    this.handleAuthBuildCompoennt([selectedNavbar, selectedHero, ...selectedContent, selectedFooter])
+
+  }
+  
+  handleAuthBuildCompoennt = (e) => {
+    // Menyimpan semua object ke props HMTL dan Styles
+    this.setState({
+      dataHTML: e,
+      dataStyle: e,
+      dataImages: e,
+    })
+  }
+
 
   render() {
     // state dan function yang dikirim ke html
-    const {createComponent} = this;
-    const {dataStyle, dataHTML, dataImages} = this.state;
+    const { createComponent, handleAutomaticBuild } = this;
+    const { selectedObjects } = this.state;
+    const { dataStyle, dataHTML, dataImages } = this.state;
+    console.log('style:', this.state.dataStyle[0])
+    console.log('html', this.state.dataHTML)
+    console.log('images', this.state.dataImages)
+    console.log('selected objects:', this.state.selectedObjects)
     return (
       this.state.status ? (
         <>
@@ -213,11 +265,11 @@ closeModal = () => {
           <div className="row d-flex">
             <div className="col-sm-0 col-12">
               {/* Menu komponent */}
-              <MenuComponent showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
+              <MenuComponent selectedObjects={selectedObjects} handleAutomaticBuild={handleAutomaticBuild} showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
             </div>
             <div className='col-sm-12 col-12' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               {/* frame yang akan menampilkan semua component terpilih */}
-              <FrameOutput dataStyle={dataStyle} handleMinus={this.handleMinus} dataHTML={dataHTML} dataComponentUsed={dataImages} />
+              <FrameOutput mode={this.state.mode} selectedObjects={selectedObjects} dataStyle={dataStyle} handleMinus={this.handleMinus} dataHTML={dataHTML} dataComponentUsed={dataImages} />
             </div>
           </div>
         </>

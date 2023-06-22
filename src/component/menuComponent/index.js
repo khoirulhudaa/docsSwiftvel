@@ -1,12 +1,12 @@
-import { faCompress, faExpand } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faCompress, faExpand, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Swal from 'sweetalert2';
 import Crown from '../../assets/images/png/crown.png';
 import Padlock from '../../assets/images/png/padlock.png';
 import Saweria from '../../assets/images/png/saweria.png';
-import Swal from 'sweetalert2';
 import Add from '../../assets/images/svg/add.svg';
 import Download from '../../assets/images/svg/donlot.svg';
 import HTML5 from '../../assets/images/svg/html5.svg';
@@ -170,7 +170,6 @@ handleScreen = () => {
 
   render() {
     const { status } = this.props.data;
-    console.log(this.props.limit)
     return (
         <>
             <a href="/">
@@ -179,26 +178,44 @@ handleScreen = () => {
                 </div>
             </a>
             <div className='flex top-[13px] absolute left-[120px] items-center'>
+                <div onClick={() => this.props.handleAutomaticBuild()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                    <FontAwesomeIcon icon={faWandMagicSparkles} /> 
+                </div>
+                {/* <small className='ml-3 font-normal text-[15px]'>
+                    Automatic build
+                </small> */}
+            </div>
+
+            <div className='flex top-[13px] absolute left-[190px] items-center'>
                 {
                     this.state.screen ? (
                         <>
                             <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                                 <FontAwesomeIcon icon={faCompress} /> 
                             </div>
-                            <small className='ml-3 font-normal text-[15px]'>
+                            {/* <small className='ml-3 font-normal text-[15px]'>
                                 Normal screen
-                            </small>
+                            </small> */}
                         </>
                     ):
                     <>
                             <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                                 <FontAwesomeIcon icon={faExpand} /> 
                             </div>
-                            <small className='ml-3 font-normal text-[15px]'>
+                            {/* <small className='ml-3 font-normal text-[15px]'>
                                 Full screen
-                            </small>
+                            </small> */}
                         </>
                 }
+            </div>
+
+            <div className='flex top-[13px] absolute left-[260px] items-center'>
+                <div onClick={() => window.location.reload()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                    <FontAwesomeIcon icon={faArrowsRotate} /> 
+                </div>
+                {/* <small className='ml-3 font-normal text-[15px]'>
+                    Refresh
+                </small> */}
             </div>
             <div className='flex items-center absolute top-3 right-7'>
                 <a href="/pricing" className='no-underline text-white'>
@@ -549,10 +566,6 @@ handleScreen = () => {
                     <box-icon name='objects-vertical-top' ></box-icon>
                     <b><p>Footer</p></b>
                 </div>
-                {/* <div className="squareComponents" onClick={() => this.notOpen()}>
-                    <box-icon type="icon" name="collection" />
-                    <b><p>Pages</p></b>
-                </div> */}
             </div>
         </>
     );

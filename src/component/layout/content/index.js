@@ -17,11 +17,13 @@ import Right from '../../../assets/images/svg/right.svg';
 import Tutor from '../../../assets/images/svg/tutor.svg';
 import Partner from '../../../assets/images/svg/v.svg';
 import Wave2 from '../../../assets/images/svg/wave.svg';
+import Spin from '../../../assets/images/svg/spin.svg';
 
 const Contents = () => {
 
     const navigate = useNavigate()
     const [feedback, setFeedback] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         Aos.init();
@@ -43,6 +45,7 @@ const Contents = () => {
     const BASE_URL = 'https://api-dragme.vercel.app/feedback'  
     const handleFeedback = async(e) => {
         e.preventDefault()
+        setIsLoading(true);
         await fetch(`${BASE_URL}/create`, {
           method: 'POST',
           headers: {
@@ -52,6 +55,7 @@ const Contents = () => {
         })
         .then((response) => response.json())
         .then((data) => {
+        setIsLoading(false);
           // Process the received data
           console.log('reponse login:', data)
           if(data.status === 201) {
@@ -61,6 +65,7 @@ const Contents = () => {
                 'success'
             )
           }else {
+            setIsLoading(false);
             const Toast = Swal.mixin({
               toast: true,
               position: 'bottom-end',
@@ -81,6 +86,7 @@ const Contents = () => {
     
         })
         .catch((error) => {
+            setIsLoading(false);
           console.error('Error retrieving data', error);
         });
     }
@@ -228,8 +234,15 @@ return (
             <div className='w-[90%] lg:w-[45vw] border-[1px] border-slate-400 flex items-center justify-center ml-auto mr-auto 2xl:h-[60px] h-[50px] my-4 rounded-[12px] overflow-hidden bg-white'>
                 <input type="text" name='feedback' onChange={(e) => handleChangeFeed(e)} placeholder='Type in your suggestions...' className='border-none outline-0 w-full h-max py-2 px-3 font-normal 2xl:text-[17px] text-[15px]' />
             </div>
-            <div onClick={(e) => handleFeedback(e)} className='ml-auto mr-auto w-[180px] 2xl:scale-[1.4] 2xl:top-[30px] 2xl:relative lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
+            <div onClick={(e) => handleFeedback(e)} className='ml-auto mr-auto w-[180px] 2xl:scale-[1.4] 2xl:top-[30px] 2xl:relative lg:w-[160px] h-[58px] font-normal cursor-pointer flex items-center justify-center flex-col text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
+            {
+              isLoading ? (
+                <img src={Spin} className='w-[14px] animate-spin' alt="spin" />
+              ):
+              <span>
                 Send now
+              </span>
+            }
             </div>
         </section>
 

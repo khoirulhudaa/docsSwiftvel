@@ -81,15 +81,35 @@ export default class FrameOutput extends Component {
   componentDidUpdate = () => {
     let web = '';
     let webStyle = '';
-    this.props.dataHTML.forEach(function(data) {
-        web += data;
-    }); 
-    this.props.dataStyle.forEach(function(data2) {
-        webStyle += data2;
-    }); 
-    document.querySelector('.template').innerHTML = web;
-    document.querySelector('.styles').innerHTML = webStyle;
+   
+    if(this.props.mode === 'automaticaly') {
 
+      if(this.props.dataHTML[0]?.html) {
+          for(let i = 0;i < this.props.dataHTML.length;i++) {
+          web += this.props.dataHTML[i]?.html;
+          console.log(this.props.dataHTML[i]?.html)
+        } 
+      }
+      
+      if(this.props.dataStyle[0]?.style) {
+        for(let i = 0;i < this.props.dataStyle.length;i++) {
+          webStyle += this.props.dataStyle[i]?.style;
+          console.log(this.props.dataStyle[i]?.style)
+        } 
+      }
+      document.querySelector('.template').innerHTML = web;
+      document.querySelector('.styles').innerHTML = webStyle;
+    }else {
+      
+       this.props.dataHTML.forEach(function(data) {
+           web += data;
+       }); 
+       this.props.dataStyle.forEach(function(data2) {
+           webStyle += data2;
+       }); 
+       document.querySelector('.template').innerHTML = web;
+       document.querySelector('.styles').innerHTML = webStyle;
+    }
   }
 
   render() {
@@ -111,39 +131,69 @@ export default class FrameOutput extends Component {
             }
               <div className='wrap-listComponentUsed'>
                 <div className='wrap-ListComponent'>                  
-                  {
-                    this.props.dataComponentUsed.map((data, index) => {
-                      if(data.title === 'navbar') {
-                        return (
-                            <div className="cardImage-navbar" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
-                              this.remove(index)
-                              this.props.handleMinus(1)
-                            }}></i></div>
-                          )
-                        }else if(data.title === 'hero') {
-                          return (
-                            <div className="cardImage" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
-                              this.remove(index)
-                              this.props.handleMinus(1)
-                            }}></i></div>
-                        )
-                        }else if(data.title === 'content') {
-                          return (
-                            <div className="cardImage-content" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
-                              this.remove(index)
-                              this.props.handleMinus(1)
-                            }}></i></div>
-                        )
-                        }else if(data.title === 'footer') {
-                          return (
-                            <div className="cardImage-footer" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
-                              this.remove(index)
-                              this.props.handleMinus(1)
-                            }}></i></div>
-                        )
-                      }
-                    })
-                  }
+                {
+                this.props.mode === 'automaticaly' && this.props.dataComponentUsed[0] ? (
+                  <div style={{border: '1px dashed black', borderRadius: '12px', padding: '26px 12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>
+                    <p style={{textAlign: 'center', fontSize: '12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>There is no component list for the <strong>automatic build feature</strong></p>
+                  </div>
+                ) : (
+                  this.props.dataComponentUsed.map((data, index) => {
+                    if (data.title === 'navbar') {
+                      return (
+                        <div className="cardImage-navbar" key={index}>
+                          <img src={`${data.image}`} alt="img-component" />
+                          <i
+                            className="fas fa-trash"
+                            onClick={() => {
+                              this.remove(index);
+                              this.props.handleMinus(1);
+                            }}
+                          ></i>
+                        </div>
+                      );
+                    } else if (data.title === 'hero') {
+                      return (
+                        <div className="cardImage" key={index}>
+                          <img src={`${data.image}`} alt="img-component" />
+                          <i
+                            className="fas fa-trash"
+                            onClick={() => {
+                              this.remove(index);
+                              this.props.handleMinus(1);
+                            }}
+                          ></i>
+                        </div>
+                      );
+                    } else if (data.title === 'content') {
+                      return (
+                        <div className="cardImage-content" key={index}>
+                          <img src={`${data.image}`} alt="img-component" />
+                          <i
+                            className="fas fa-trash"
+                            onClick={() => {
+                              this.remove(index);
+                              this.props.handleMinus(1);
+                            }}
+                          ></i>
+                        </div>
+                      );
+                    } else if (data.title === 'footer') {
+                      return (
+                        <div className="cardImage-footer" key={index}>
+                          <img src={`${data.image}`} alt="img-component" />
+                          <i
+                            className="fas fa-trash"
+                            onClick={() => {
+                              this.remove(index);
+                              this.props.handleMinus(1);
+                            }}
+                          ></i>
+                        </div>
+                      );
+                    }
+                  })
+                )
+              }
                 </div>
               </div>
           </div>
@@ -161,48 +211,72 @@ export default class FrameOutput extends Component {
             }
               <div className='wrap-listComponentUsed'>
               {
+                this.props.mode === 'automaticaly' && this.props.dataComponentUsed[0] ? (
+                  <div style={{border: '1px dashed black', borderRadius: '12px', padding: '26px 12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>
+                    <p style={{textAlign: 'center', fontSize: '12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>There is no component list for the <strong>automatic build feature</strong></p>
+                  </div>
+                ) : (
                   this.props.dataComponentUsed.map((data, index) => {
-                    if(data.title === 'navbar') {
+                    if (data.title === 'navbar') {
                       return (
-                          <div className="cardImage-navbar" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
-                            this.remove(index)
-                            this.props.handleMinus(1)
-                          }}></i></div>
-                        )
-                      }else if(data.title === 'hero') {
-                        return (
-                          <div className="cardImage" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
-                            this.remove(index)
-                            this.props.handleMinus(1)
-                          }}></i></div>
-                      )
-                      }else if(data.title === 'content') {
-                        return (
-                          <div className="cardImage-content" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
-                            this.remove(index)
-                            this.props.handleMinus(1)
-                          }}></i></div>
-                      )
-                      }else if(data.title === 'footer') {
-                        return (
-                          <div className="cardImage-footer" key={index}><img src={`${data.image}`} alt="img-component" /><i className='fas fa-trash' onClick={() => {
-                            this.remove(index)
-                            this.props.handleMinus(1)
-                          }}></i></div>
-                      )
+                        <div className="cardImage-navbar" key={index}>
+                          <img src={`${data.image}`} alt="img-component" />
+                          <i
+                            className="fas fa-trash"
+                            onClick={() => {
+                              this.remove(index);
+                              this.props.handleMinus(1);
+                            }}
+                          ></i>
+                        </div>
+                      );
+                    } else if (data.title === 'hero') {
+                      return (
+                        <div className="cardImage" key={index}>
+                          <img src={`${data.image}`} alt="img-component" />
+                          <i
+                            className="fas fa-trash"
+                            onClick={() => {
+                              this.remove(index);
+                              this.props.handleMinus(1);
+                            }}
+                          ></i>
+                        </div>
+                      );
+                    } else if (data.title === 'content') {
+                      return (
+                        <div className="cardImage-content" key={index}>
+                          <img src={`${data.image}`} alt="img-component" />
+                          <i
+                            className="fas fa-trash"
+                            onClick={() => {
+                              this.remove(index);
+                              this.props.handleMinus(1);
+                            }}
+                          ></i>
+                        </div>
+                      );
+                    } else if (data.title === 'footer') {
+                      return (
+                        <div className="cardImage-footer" key={index}>
+                          <img src={`${data.image}`} alt="img-component" />
+                          <i
+                            className="fas fa-trash"
+                            onClick={() => {
+                              this.remove(index);
+                              this.props.handleMinus(1);
+                            }}
+                          ></i>
+                        </div>
+                      );
                     }
                   })
-                }
+                )
+              }
               </div>
           </div>
         }
         <div className='frameOutput'>
-          {/* {
-            !this.props.dataHTML.length ? (
-              <img src={Logo} alt="logo-dragMe" className="logo-drag" />
-                ):
-              null
-          } */}
               <div className="templateCurrent">
                 <style className="styles">
                 </style>

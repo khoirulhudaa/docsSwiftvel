@@ -9,10 +9,12 @@ import { Footer, Header } from '../../component/layout'
 import Pending from '../notifications/pending'
 import Success from '../notifications/success'
 import { useNavigate } from 'react-router-dom'
+import Spin from '../../assets/images/svg/spin.svg'
 
 const Pricing = () => {
 
  const navigate = useNavigate()
+ const [isLoading, setIsLoading] = useState(false)
  
  useEffect(() => {
      if(!Cookies.get('status')) navigate('/')
@@ -50,9 +52,9 @@ const Pricing = () => {
  
  const handlePayment = async (e) => {
     e.preventDefault()
-    
+    setIsLoading(true);
     const generateRandomCode = () => {
-       const length = 5;
+        const length = 5;
        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
        let code = '';
    
@@ -63,8 +65,9 @@ const Pricing = () => {
    
        return code;
      };
-
-    if(Cookies.get('status')) {
+     
+     if(Cookies.get('status')) {
+        setIsLoading(true);
         await fetch(`${BASE_URL}/payment/`, {
             method: 'POST',
             headers: {
@@ -74,15 +77,18 @@ const Pricing = () => {
         })
         .then(response => response.json())
         .then(data => {
+            setIsLoading(false);
             console.log(data.message)
             Cookies.set('order_id', generateRandomCode())
             if(data.status === 201) window.open(data.message, '_blank')
             window.location.reload();
         })
         .catch((error) => {
+            setIsLoading(false);
             console.log(error)
         })
     }else {
+        setIsLoading(false);
         Swal.fire(
             'Subscribe now?',
             'You must login first :)',
@@ -112,7 +118,14 @@ const Pricing = () => {
                         <p className='text-[14px] lg:text-[15px] font-normal leading-[2em] text-white w-[90%] lg:w-[80%]'>At this price you can enjoy all the dragme components in full with our unlimited number of component frames. Be our best customer with dragme team, thank you very much :)</p>
                         <div className='flex items-center'>
                             <div onClick={(e) => handlePayment(e)} className='scale-[0.9] lg:scale-[1] w-[155px] lg:w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-[12px] ml-[-10px] lg:ml-0 lg:py-3 hover:brightness-[90%] active:scale-[0.97] text-center border-[#001E2B] border-[1px]'>
-                                Subscribe
+                            {
+                                isLoading ? (
+                                    <img src={Spin} className='w-[14px] animate-spin' alt="spin" />
+                                ):
+                                <span>
+                                    Subscribe
+                                </span>
+                            }
                             </div>
                             <p className='hidden lg:inline text-red-400 line-through ml-5 text-[16px] relative top-[14px] '>Rp. 99.999</p>
                             <p className='text-white ml-2 lg:ml-5 text-[16px] lg:text-[22px] relative top-[14px] '>Rp. 49.999/month</p>
