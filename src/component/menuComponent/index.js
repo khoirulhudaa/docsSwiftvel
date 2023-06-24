@@ -181,55 +181,44 @@ handleScreen = () => {
                 <div onClick={() => this.props.handleAutomaticBuild()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                     <FontAwesomeIcon icon={faWandMagicSparkles} /> 
                 </div>
-                <small className='ml-3 font-normal text-[15px]'>
-                    Automatic build
-                </small>
             </div>
 
-            <div className='flex top-[13px] absolute left-[320px] items-center'>
+            <div className='flex top-[13px] absolute left-[260px] items-center'>
                 <div onClick={() => window.location.reload()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                     <FontAwesomeIcon icon={faArrowsRotate} /> 
                 </div>
-                <small className='ml-3 font-normal text-[15px]'>
-                    Refresh
-                </small>
             </div>
 
-            <div className='flex top-[13px] absolute left-[455px] items-center'>
+            <div className='flex top-[13px] absolute left-[190px] items-center'>
                 {
                     this.state.screen ? (
                         <>
                             <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                                 <FontAwesomeIcon icon={faCompress} /> 
                             </div>
-                            <small className='ml-3 font-normal text-[15px]'>
-                                Normal screen
-                            </small>
                         </>
                     ):
                     <>
                             <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                                 <FontAwesomeIcon icon={faExpand} /> 
                             </div>
-                            <small className='ml-3 font-normal text-[15px]'>
-                                Full screen
-                            </small>
                         </>
                 }
             </div>
 
+            <a href="/pricing" className='absolute no-underline text-white left-[330px] top-[13px]'>
+                {
+                    status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
+                        <div className='active:scale-[0.96] w-[41px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                            <img src={Crown} style={{width: '18px', height: '18px'}} alt="icon add" />
+                        </div>
+                    ):
+                        <></>
+                }
+            </a>
+
             <div className='flex items-center absolute top-3 right-7'>
-                <a href="/pricing" className='no-underline text-white'>
-                    {
-                        status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
-                            <div className='flex items-center relative bg-yellow-500 hover:brightness-[90%] text-white border-[1] mr-4 border border-black pr-4 pl-[15px] w-max h-max py-[8.6px] rounded-md hover:text-black'>
-                                <img src={Crown} style={{width: '20px', height: '20px', marginRight: '10px'}} alt="icon add" /> Go premium
-                            </div>
-                        ):
-                            <></>
-                    }
-                </a>
-                <div className='flex items-center relative mr-2 hovetext-[14px]r:text-black'>
+                <div className='flex items-center relative ml-1 mr-2 hovetext-[14px]r:text-black'>
                     <a href="https://saweria.co/dragmeTEam" target='__blank' className='no-underline hover:text-black text-black'>
                         <div className='rounded-md px-3 flex items-center justify-center py-[6.4px] border border-[1] hover:text-black border-black cursor-pointer active:scale-[0.97] duration-100'>
                             <img src={Saweria} className='w-[26px] relative top-[-1px]' alt="icon" />
@@ -239,7 +228,7 @@ handleScreen = () => {
                         </div>
                     </a>
                 </div>
-                <div className='h-[20px] w-[1px] bg-slate-400 ml-1'></div>
+                <div className='h-[20px] w-[1px] bg-slate-400 ml-2'></div>
                 <div className='h-[30px] w-[1px] bg-slate-400 mx-2'></div>
                 <div className='h-[20px] w-[1px] bg-slate-400 mr-3'></div>
                 <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor1}] text-${this.state.textColor1} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>

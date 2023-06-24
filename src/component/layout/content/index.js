@@ -99,7 +99,7 @@ return (
     <div className='relative h-max mt-[60px] 2xl:mt-[120px] lg:mt-[70px]'>
         <img src={Wave2} className='absolute hidden opacity-[0.5] lg:inline w-[100%] z-[-1] top-0 left-0' alt="img" />
         <section className='lg:flex h-max relative overflow-hidden lg:min-h-[300px] mb-[70px] lg:px-[120px] lg:ml-6 w-screen lg:w-full items-center mt-0 lg:mt-14 justify-between'>
-            <img src={Powerful} className='w-[55%] 2xl:w-[400px] flex ml-auto mr-auto lg:ml-0 lg:mr-0 lg:w-[280px] rotate-[-10deg]' alt="icon" />
+            <img src={Powerful} className='w-[55%] 2xl:w-[320px] flex ml-auto mr-auto lg:ml-0 lg:mr-0 lg:w-[280px] rotate-[-10deg]' alt="icon" />
             <div data-aos-duration='1000' className='relative bottom-2 hidden lg:block lg:ml-[40px] lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] 2xl:h-[340px] pl-10 pr-4 py-7'>
                 <h1 className='text-[44px] 2xl:text-[62px] leading-[1.5em] w-[100%] text-black'>Many components and there is a choice of code language</h1>
                 <p className='text-slate-500 leading-[2em] lg:ml-1 text-[15px] 2xl:text-[22px] font-normal w-[70%] 2xl:w-[90%] mt-4'>We make it easy for anyone to create a website in order to meet the needs of every business. And we want to spoil those who are not very good at making web</p>
@@ -127,16 +127,16 @@ return (
             <div className='w-[90%] mt-2 lg:w-[86%] lg:flex items-center justify-between h-max 2xl:h-[500px] lg:h-[460px] p-2'>
                 <div data-aos-duration='1000' className='h-[100%] lg:mt-0 mt-[20px] relative overflow-hidden w-[100%] lg:w-[49%] bg-[#EDF5FE] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-30px] lg:top-[-14px]'>
-                        <img src={Fast} className='absolute left-8 bottom-[200px] w-[30px]' alt="icon" />
-                        <h2 className='text-black text-[32px] lg:text-[44px] 2xl:text-[52px] font-bold mb-3 ml-8 mt-[140px]'>Faster</h2>
+                        <img src={Fast} className='absolute left-8 bottom-[200px] 2xl:bottom-[270px] 2xl:w-[40px] w-[30px]' alt="icon" />
+                        <h2 className='text-black text-[32px] lg:text-[44px] 2xl:text-[52px] font-bold mb-3 ml-8 2xl:mt-[180px] mt-[140px]'>Faster</h2>
                         <p className='text-black font-normal 2xl:leading-10 leading-6 ml-8 lg:mt-8 text-[15px] 2xl:text-[18px] w-[80%] lg:w-[65%]'>Be fast in creating your own website, shorten the process of working on your website and start from swiftvel</p>
                     </div>
                     <img className='hidden lg:flex absolute opacity-[0.5] w-[60%] bottom-0 left-0' src={Benefit2} alt="img" />
                 </div>
                 <div data-aos-duration='1000' className='h-[100%] relative overflow-hidden w-[100%] lg:mt-0 mt-[40px] lg:w-[49%] bg-[#000000] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-30px] lg:top-[-14px]'>
-                        <img src={Flexibel} className='absolute left-8 bottom-[200px] w-[30px]' alt="icon" />
-                        <h2 className='text-white text-[32px] lg:text-[44px] 2xl:text-[52px] font-bold mb-3 ml-8 mt-[140px]'>Flexibel</h2>
+                        <img src={Flexibel} className='absolute left-8 bottom-[200px] 2xl:bottom-[270px] 2xl:w-[40px] w-[30px]' alt="icon" />
+                        <h2 className='text-white text-[32px] lg:text-[44px] 2xl:text-[52px] font-bold mb-3 ml-8 2xl:mt-[180px] mt-[140px]'>Flexibel</h2>
                         <p className='text-slate-300 font-normal 2xl:leading-10 leading-6 ml-8 lg:mt-8 text-[15px] 2xl:text-[18px] w-[80%] lg:w-[60%]'>flexible design and components, premium components provide advantages such as being responsive in terms of mobile devices</p>
                     </div>
                     <img className='hidden lg:flex absolute opacity-[0.3] w-[70%] bottom-0 left-0' src={Benefit3} alt="img" />

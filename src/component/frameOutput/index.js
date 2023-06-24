@@ -293,7 +293,7 @@ export default class FrameOutput extends Component {
           {
             this.props.mode === 'automaticaly' && (
               this.props.isLoadingBuild === 'run' && (
-                <div className="overlayLoad">
+                <div className="overlayLoad2">
                   <FontAwesomeIcon icon={faSpinner} spin />
                   <p className='text-[16px] mt-4'>Memuat component</p>
                 </div>
