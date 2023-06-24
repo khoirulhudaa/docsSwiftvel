@@ -189,7 +189,7 @@ const Login = () => {
         </form>
       </div>
       <div className='w-[70%] hidden lg:inline relative h-[100vh] flex items-center justify-center ml-auto overflow-hidden'>
-        <img src={Human1} className='w-[300px] 2xl:w-[450px] bottom-0 left-[33%] fixed' alt="human" />
+        <img src={Human1} className='w-[300px] 2xl:w-[  450px] bottom-0 left-[33%] fixed' alt="human" />
         <img src={Human2} className='w-[260px] 2xl:w-[450px] fixed top-0 left-[54.9%] rotate-[180deg]' alt="human" />
         <img src={Human3} className='w-[300px] 2xl:w-[450px] fixed bottom-0 right-[0%]' alt="human" />
         <div onClick={() => navigate('/')} className='fixed left-[32.3%] top-[4.8%] bg-white rounded-full p-2 w-[40px] h-[40px] shadow-lg cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>
