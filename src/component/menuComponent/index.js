@@ -209,7 +209,7 @@ handleScreen = () => {
             <a href="/pricing" className='absolute no-underline text-white left-[330px] top-[13px]'>
                 {
                     status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
-                        <div className='active:scale-[0.96] w-[41px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                        <div className='active:scale-[0.96] w-[40.6px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                             <img src={Crown} style={{width: '18px', height: '18px'}} alt="icon add" />
                         </div>
                     ):
