@@ -1,6 +1,7 @@
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
 import Data from '../../dataComponent/index.json';
-
 
 export default class FrameOutput extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ export default class FrameOutput extends Component {
        bgColor2: 'orange-500',
        textColor1: 'black',
        textColor2: 'white',
+       ok: false
     };
   };
 
@@ -83,32 +85,43 @@ export default class FrameOutput extends Component {
     let webStyle = '';
    
     if(this.props.mode === 'automaticaly') {
-
-      if(this.props.dataHTML[0]?.html) {
-          for(let i = 0;i < this.props.dataHTML.length;i++) {
-          web += this.props.dataHTML[i]?.html;
-          console.log(this.props.dataHTML[i]?.html)
-        } 
-      }
-      
-      if(this.props.dataStyle[0]?.style) {
-        for(let i = 0;i < this.props.dataStyle.length;i++) {
-          webStyle += this.props.dataStyle[i]?.style;
-          console.log(this.props.dataStyle[i]?.style)
-        } 
-      }
+      if(this.props.isLoadingBuild === 'success') {
+    
+        if(this.props.dataHTML[0]?.html) {
+            for(let i = 0;i < this.props.dataHTML.length;i++) {
+            web += this.props.dataHTML[i]?.html;
+            console.log(this.props.dataHTML[i]?.html)
+          } 
+        }
+        
+        if(this.props.dataStyle[0]?.style) {
+          for(let i = 0;i < this.props.dataStyle.length;i++) {
+            webStyle += this.props.dataStyle[i]?.style;
+            console.log(this.props.dataStyle[i]?.style)
+          } 
+        }
+        document.querySelector('.template').innerHTML = web;
+        document.querySelector('.styles').innerHTML = webStyle;
+  
+      }else {
+         this.props.dataHTML.forEach(function(data) {
+             web += data;
+         }); 
+         this.props.dataStyle.forEach(function(data2) {
+             webStyle += data2;
+         }); 
+         document.querySelector('.template').innerHTML = web;
+         document.querySelector('.styles').innerHTML = webStyle;
+        }
+    }else {
+      this.props.dataHTML.forEach(function(data) {
+          web += data;
+      }); 
+      this.props.dataStyle.forEach(function(data2) {
+          webStyle += data2;
+      }); 
       document.querySelector('.template').innerHTML = web;
       document.querySelector('.styles').innerHTML = webStyle;
-    }else {
-      
-       this.props.dataHTML.forEach(function(data) {
-           web += data;
-       }); 
-       this.props.dataStyle.forEach(function(data2) {
-           webStyle += data2;
-       }); 
-       document.querySelector('.template').innerHTML = web;
-       document.querySelector('.styles').innerHTML = webStyle;
     }
   }
 
@@ -277,13 +290,23 @@ export default class FrameOutput extends Component {
           </div>
         }
         <div className='frameOutput'>
-              <div className="templateCurrent">
-                <style className="styles">
-                </style>
-                <div className="template">
+          {
+            this.props.mode === 'automaticaly' && (
+              this.props.isLoadingBuild === 'run' && (
+                <div className="overlayLoad">
+                  <FontAwesomeIcon icon={faSpinner} spin />
+                  <p className='text-[16px] mt-4'>Memuat component</p>
                 </div>
-                <script src={this.state.js} integrity={this.state.integrity} crossorigin={this.state.cross}></script>
-            </div>
+              )
+            )
+          }
+          <div className="templateCurrent">
+              <style className="styles">
+              </style>
+              <div className="template">
+              </div>
+              <script src={this.state.js} integrity={this.state.integrity} crossorigin={this.state.cross}></script>
+          </div>
         </div>
       </>
     );

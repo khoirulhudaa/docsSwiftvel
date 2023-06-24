@@ -27,7 +27,8 @@ class App extends React.Component {
       jenisWeb: '',
       selectedObjects: [],
       mode: 'manually',
-      isLoading: true
+      isLoading: true,
+      isLoadingBuild: 'stop'
     };
 
 };
@@ -108,11 +109,15 @@ shuffleArray = (array) => {
 };
 
 handleAutomaticBuild = () => {
+  this.setState({
+    isLoadingBuild: 'run'
+  })
   setTimeout(() => {
     this.setState({
-      isLoading: true
+      isLoadingBuild: 'success'
     })
-  }, 1000)
+  }, 2000)
+
   setTimeout(() => {
     this.setState({ mode: 'automaticaly' })
       // Mengambil objek-objek dengan jenisWeb yang sama dengan pilihan user
@@ -232,7 +237,7 @@ handleAuthBuildCompoennt = (e) => {
             </div>
             <div className='col-sm-12 col-12' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               {/* frame yang akan menampilkan semua component terpilih */}
-              <FrameOutput mode={this.state.mode} selectedObjects={selectedObjects} dataStyle={dataStyle} handleMinus={this.handleMinus} dataHTML={dataHTML} dataComponentUsed={dataImages} />
+              <FrameOutput isLoadingBuild={this.state.isLoadingBuild} mode={this.state.mode} selectedObjects={selectedObjects} dataStyle={dataStyle} handleMinus={this.handleMinus} dataHTML={dataHTML} dataComponentUsed={dataImages} />
             </div>
           </div>
         </>
