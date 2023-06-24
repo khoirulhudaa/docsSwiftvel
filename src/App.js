@@ -116,7 +116,7 @@ handleAutomaticBuild = () => {
     this.setState({
       isLoadingBuild: 'success'
     })
-  }, 2000)
+  }, 3500)
 
   setTimeout(() => {
     this.setState({ mode: 'automaticaly' })
