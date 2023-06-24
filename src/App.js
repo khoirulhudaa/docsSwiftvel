@@ -7,6 +7,8 @@ import Water from './assets/images/png/water.png';
 import FrameOutput from './component/frameOutput';
 import MenuComponent from './component/menuComponent';
 import jsonData from './dataComponent/index.json';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +26,8 @@ class App extends React.Component {
       limitStatus: false,
       jenisWeb: '',
       selectedObjects: [],
-      mode: 'manually'
+      mode: 'manually',
+      isLoading: true
     };
 
 };
@@ -34,66 +37,17 @@ componentDidMount = () => {
   this.setState({
     status: Cookies.get('status')
   })
-
-  const data = {
-    datas: `<section>
-    <div class='container pt-4'>
-        <div class='row'>
-            <div class='col-lg-3'>
-                <div class='footer-brand'>
-                    <img src='assets/icon/logo.svg' alt=''>
-                    <h5 class='footer-product my-auto'>Product</h5>
-                </div>
-                <div class='socmed'>
-                    <div class='socmed-icon'>
-                        <img class='mr-3' src='assets/icon/ig.svg' alt='ig'>
-                    </div>
-                    <div class='socmed-icon'>
-                        <img class='mr-3' src='assets/icon/fb.svg' alt='fb'>
-                    </div>
-                    <div class='socmed-icon'>
-                        <img class='mr-3' src='assets/icon/twt.svg' alt='twitter' />
-                    </div>
-                </div>
-            </div>
-            <div class='col-lg-3'>
-                <div class='footer-nav'>
-                    <ul>
-                        <li><span class='fw-bold'>Resource</span></li>
-                        <li><a href=''>About Us</a></li>
-                        <li><a href=''>Blog</a></li>
-                        <li><a href=''>Contact</a></li>
-                        <li><a href=''>FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class='col-lg-3'>
-                <div class='footer-nav'>
-                    <ul>
-                        <li><span class='fw-bold'>Legal Stuff</span></li>
-                        <li><a href=''>Disclaimer</a></li>
-                        <li><a href=''>Financing</a></li>
-                        <li><a href=''>Privacy Policy</a></li>
-                        <li><a href=''>Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class='col-lg-3'>
-                <p class='footer-desc'>knowing you're always on the best energy deal.</p>
-                <form action=''>
-                    <input type='text' class='form-control shadow' id='signup' />
-                    <label class='btn px-0' for='signup'>
-                        <a class='nav-link px-4 py-2 btn-signup'>Sign up now</a>
-                    </label>
-                </form>
-            </div>
-        </div>
-        <p class='copyright text-center'>Made With Love By Figmaland All Right Reserved
-        </p>
-    </div>
-</section>`
-  }
+  window.addEventListener('load', this.handleLoad);
 }
+
+componentWillUnmount() {
+  window.removeEventListener('load', this.handleLoad);
+}
+
+handleLoad = () => {
+  this.setState({ isLoading: false });
+};
+
 
 createComponent =(title, img, html, style) => {
 
@@ -141,9 +95,9 @@ closeModal = () => {
   this.setState({
       limitStatus: false
     })
-  }
+}
   
-  // Fungsi untuk mengacak array
+// Fungsi untuk mengacak array
 shuffleArray = (array) => {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -154,50 +108,59 @@ shuffleArray = (array) => {
 };
 
 handleAutomaticBuild = () => {
-  this.setState({ mode: 'automaticaly' })
-  // Mengambil objek-objek dengan jenisWeb yang sama dengan pilihan user
-    const filteredObjects = jsonData.filter((obj) => obj.type === "premium");
-    
-    // Mengacak array objek
-    const shuffledObjects = this.shuffleArray(filteredObjects);
-
-    // Memilih objek-objek dengan kriteria yang ditentukan
-    const selectedNavbar = shuffledObjects.find((obj) => obj.title === 'navbar');
-    const selectedHero = shuffledObjects.find((obj) => obj.title === 'hero');
-    const selectedContent = shuffledObjects.filter((obj) => obj.title === 'content').slice(0, 3);
-    const selectedFooter = shuffledObjects.find((obj) => obj.title === 'footer');
-
-    // Menyimpan objek-objek yang dipilih dalam state array
+  setTimeout(() => {
     this.setState({
-      selectedObjects: [selectedNavbar, selectedHero, ...selectedContent, selectedFooter],
-    });
-
-    this.handleAuthBuildCompoennt([selectedNavbar, selectedHero, ...selectedContent, selectedFooter])
-
-  }
-  
-  handleAuthBuildCompoennt = (e) => {
-    // Menyimpan semua object ke props HMTL dan Styles
-    this.setState({
-      dataHTML: e,
-      dataStyle: e,
-      dataImages: e,
+      isLoading: true
     })
-  }
+  }, 1000)
+  setTimeout(() => {
+    this.setState({ mode: 'automaticaly' })
+      // Mengambil objek-objek dengan jenisWeb yang sama dengan pilihan user
+      const filteredObjects = jsonData.filter((obj) => obj.type === "premium");
+      
+      // Mengacak array objek
+      const shuffledObjects = this.shuffleArray(filteredObjects);
+
+      // Memilih objek-objek dengan kriteria yang ditentukan
+      const selectedNavbar = shuffledObjects.find((obj) => obj.title === 'navbar');
+      const selectedHero = shuffledObjects.find((obj) => obj.title === 'hero');
+      const selectedContent = shuffledObjects.filter((obj) => obj.title === 'content').slice(0, 3);
+      const selectedFooter = shuffledObjects.find((obj) => obj.title === 'footer');
+
+      // Menyimpan objek-objek yang dipilih dalam state array
+      this.setState({
+        selectedObjects: [selectedNavbar, selectedHero, ...selectedContent, selectedFooter],
+      });
+      
+      this.handleAuthBuildCompoennt([selectedNavbar, selectedHero, ...selectedContent, selectedFooter])
+  }, 1000)
+}
+
+handleAuthBuildCompoennt = (e) => {
+  // Menyimpan semua object ke props HMTL dan Styles
+  this.setState({
+    dataHTML: e,
+    dataStyle: e,
+    dataImages: e,
+  })
+}
 
 
   render() {
     // state dan function yang dikirim ke html
     const { createComponent, handleAutomaticBuild } = this;
     const { selectedObjects } = this.state;
-    const { dataStyle, dataHTML, dataImages } = this.state;
-    console.log('style:', this.state.dataStyle[0])
-    console.log('html', this.state.dataHTML)
-    console.log('images', this.state.dataImages)
-    console.log('selected objects:', this.state.selectedObjects)
+    const { dataStyle, dataHTML, dataImages, isLoading } = this.state;
+
     return (
       this.state.status ? (
         <>
+          {isLoading && (
+            <div className="overlayLoad">
+              <FontAwesomeIcon icon={faSpinner} spin />
+              <p className='text-[16px] mt-4'>Memuat component</p>
+            </div>
+          )}
           {
             // kode untuk menampilkan alert ketika lebar layar dibawah 1240px
             this.state.screen < 1000 ? (
