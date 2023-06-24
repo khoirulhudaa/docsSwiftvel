@@ -158,7 +158,7 @@ return (
             but really need it or they don't have enough time. Then it really works for him
             </h1>
             <h3 className='mt-[40px] text-[18px] 2xl:text-[23px] font-bold'>Muhammad Khoirulhuda</h3>
-            <p data-aos-duration='1000' className='font-normal lg:w-max w-[70%] text-[12px] 2xl:text-[18px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
+            <p data-aos-duration='1000' className='font-normal mt-2 lg:w-max w-[70%] text-[12px] 2xl:text-[18px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
         <section className='w-[100%] overflow-hidden rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] 2xl:mt-[40px] pt-1 lg:pt-4 lg:mt-[100px] pb-[20px] lg:pb-[140px] h-max 2xl:pb-[280px] ml-auto mr-auto bg-[#023430]'>
@@ -180,7 +180,7 @@ return (
 
         <section className='w-full 2xl:h-[560px] h-max pb-2 lg:pb-8 flex mt-[10px] lg:mt-[35px] flex-col justify-center items-center text-center'>
             <h1 className='text-[50px] lg:text-[65px] 2xl:text-[76px] w-[85%] lg:w-[60%] text-center text-black mt-5 mb-4 leading-[1.4em]'>Become a swiftvel premium user</h1>
-            <p className='text-[15px] 2xl:text-[23px] w-[70%] lg:w-max font-normal'>Get more components that are better and varied in design</p>
+            <p className='text-[15px] 2xl:text-[23px] w-[70%] lg:w-max font-normal mb-8'>Get more components that are better and varied in design</p>
             <div onClick={(e) => handlePricing(e)} className='w-[180px] 2xl:scale-[1.4] 2xl:top-[30px] 2xl:relative lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
                 Get now
             </div>
@@ -201,31 +201,51 @@ return (
                 </a>
             </div>
             <div className='relative w-[100%] lg:w-[50%] h-max overflow-hidden lg:h-max mt-[10px] lg:mt-[-40px] flex justify-center items-center'>
-                <div className='z-10 relative rounded-[20px] p-4 mt-[30px] lg:mt-[150px] shadow-lg bg-darkMongo w-[84%] lg:w-[65%] 2xl:h-[650px] h-[100%]'>
-                    <p className='text-lightMongo text-[13px] mb-5 ml-1 lg:ml-3 mt-4 lg:mt-3 font-normal'>Get started with :</p>
-                    <ul className='list-none'>
-                        <li className='list-none 2xl:mb-[90px] mb-[50px] lg:ml-0 ml-[-20px] flex items-center'>
-                            <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
-                            </div>
-                            <p className='text-white ml-4 lg:ml-7 text-white text-[17px] relative top-3 font-normal'>30+ Component</p>
-                        </li>
-                        <li className='list-none 2xl:mb-[90px] mb-[50px] lg:ml-0 ml-[-20px] flex items-center'>
-                            <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
-                            </div>
-                            <p className='text-white ml-4 lg:ml-7 text-white text-[17px] relative top-3 font-normal'>Premium account</p>
-                        </li>
-                        <li className='list-none 2xl:mb-[90px] mb-[50px] lg:ml-0 ml-[-20px] flex items-center'>
-                            <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
-                            </div>
-                            <p className='text-white ml-4 lg:ml-7 text-white text-[17px] relative top-3 font-normal'>Freemium account</p>
-                        </li>
-                        <li className='list-none 2xl:mb-[90px] mb-[50px] lg:ml-0 ml-[-20px] flex items-center'>
-                            <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
-                            </div>
-                            <p className='text-white ml-4 lg:ml-7 text-white text-[17px] relative top-3 font-normal'>Free source code</p>
-                        </li>
-                    </ul>
-                </div>
+            <div className='z-10 overflow-hidden relative rounded-[20px] pl-16 pr-4 pb-4 lg:pl-12 pt-[35px] lg:pt-[45px] lg:mt-[110px] shadow-lg bg-darkMongo w-[90%] lg:w-[65%] h-max lg:h-max'>
+                <p className='text-lightMongo text-[13px] mb-5 ml-[-20px] lg:ml-0 mt-4 lg:mt-3 font-normal'>Get started with :</p>
+                <ul className='list-none'>
+                    <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                        <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                        </div>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Unclocks All Component</p>
+                    </li>
+                    <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                        <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                        </div>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>No component limit</p>
+                    </li>
+                    <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                        <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                        </div>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Customizable</p>
+                    </li>
+                    <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                        <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                        </div>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Automatic build</p>
+                    </li>
+                    <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                        <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                        </div>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Export to PHP or HTML</p>
+                    </li>
+                    <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                        <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                        </div>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Responsive Design</p>
+                    </li>
+                    <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                        <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                        </div>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Free consultation</p>
+                    </li>
+                    <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
+                        <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
+                        </div>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Premium account label</p>
+                    </li>
+                </ul>
+            </div>
             </div>
         </section>
 

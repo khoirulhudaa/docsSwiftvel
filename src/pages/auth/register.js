@@ -181,12 +181,6 @@ const Login = () => {
             }
           </button>
           <br />
-          <a onClick={() => navigate('/forgot-password')} className='no-underline'>
-          <span className='text-white text-[14px] mt-3 2xl:relative 2xl:top-7'>
-              Forgot password? <span className='text-blue-500 cursor-pointer'>Here</span>
-            </span>
-          </a>
-          <br />
           <a onClick={() => navigate('/signIn')} className='inline lg:hidden'>
             <span className='text-white text-[14px]'>
             Already have an account? <span className='text-blue-500 cursor-pointer'>Sign In</span>
