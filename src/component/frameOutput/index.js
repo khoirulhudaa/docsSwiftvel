@@ -1,4 +1,4 @@
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner, faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
 import Data from '../../dataComponent/index.json';
@@ -146,9 +146,16 @@ export default class FrameOutput extends Component {
                 <div className='wrap-ListComponent'>                  
                 {
                 this.props.mode === 'automaticaly' && this.props.dataComponentUsed[0] ? (
-                  <div style={{border: '1px dashed black', borderRadius: '12px', padding: '26px 12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>
-                    <p style={{textAlign: 'center', fontSize: '12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>There is no component list for the <strong>automatic build feature</strong></p>
-                  </div>
+                  <>
+                    <div style={{border: '1px dashed black', borderRadius: '12px', padding: '26px 12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>
+                      <p style={{textAlign: 'center', fontSize: '12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>There is no component list for the <strong>automatic build feature</strong></p>
+                    </div>
+                    <div className='flex relative justify-center ml-auto mr-auto mt-[40px] items-center'>
+                        <div onClick={() => window.location.reload()} className='active:scale-[0.96] w-[40px] p-[10px] border-dashed border-[1px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                            <FontAwesomeIcon icon={faArrowsRotate} /> 
+                        </div>
+                    </div>
+                  </>
                 ) : (
                   this.props.dataComponentUsed.map((data, index) => {
                     if (data.title === 'navbar') {
