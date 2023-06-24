@@ -110,7 +110,7 @@ return (
             <div className='rounded-full text-white text-[15px] mb-[25px] font-normal w-[57%] lg:w-max h-max px-3 py-1 text-center bg-green-500 shadow-lg'>
                 Benefits for you!  
             </div>
-            <h2 className='font-600 text-[36px] lg:text-[50px] 2xl:text-[70px] lg:text-left text-center' data-aos-duration='1000'>Success website</h2>
+            <h2 className='font-600 text-[36px] lg:text-[50px] 2xl:text-[70px] lg:text-left text-center' data-aos-duration='1000'>Our advantages</h2>
             <p data-aos-duration='500' className='text-[14px] 2xl:text-[22px] font-normal w-[88%] 2xl:w-[50%] lg:w-[45%] mt-4 text-center text-slate-500 leading-7 lg:leading-8 2xl:leading-[2.2em]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem ullam cumque iure officia earum minus fugit quas at quidem. Cumque.</p>
             <div className='flex w-screen justify-center items-center mt-4 lg:mt-3'>
                 <div className='w-[90%] lg:w-[86%] 2xl:h-[450px] h-[360px] p-2'>
