@@ -127,8 +127,8 @@ const Pricing = () => {
                                 </span>
                             }
                             </div>
-                            <p className='hidden lg:inline text-red-400 line-through ml-5 text-[16px] relative top-[14px] '>Rp. 99.999</p>
-                            <p className='text-white ml-2 lg:ml-5 text-[16px] lg:text-[22px] relative top-[14px] '>Rp. 49.999/month</p>
+                            <p className='hidden lg:inline text-red-400 line-through ml-5 text-[16px] relative top-[14px] '>Rp. 149.999</p>
+                            <p className='text-white ml-2 lg:ml-5 text-[16px] lg:text-[22px] relative top-[14px] '>Rp. 99.999/month</p>
                         </div>
                     </div>
                     <div className='w-[100%] lg:w-[50%] h-max p-4 flex flex-col items-center justify-center'>
@@ -199,8 +199,8 @@ const Pricing = () => {
                             <div onClick={(e) => handlePayment(e)} className='scale-[0.9] lg:scale-[1] w-[155px] lg:w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-[12px] ml-[-10px] lg:ml-0 lg:py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
                                 Subscribe
                             </div>
-                            <p className='hidden lg:inline text-red-400 line-through ml-5 text-[16px] relative top-[14px] '>Rp. 99.999</p>
-                            <p className='text-white ml-2 lg:ml-5 text-[16px] lg:text-[22px] relative top-[14px] '>Rp. 49.999/month</p>
+                            <p className='hidden lg:inline text-red-400 line-through ml-5 text-[16px] relative top-[14px] '>Rp. 149.999</p>
+                            <p className='text-white ml-2 lg:ml-5 text-[16px] lg:text-[22px] relative top-[14px] '>Rp. 99.999/month</p>
                         </div>
                     </div>
                     <div className='w-[100%] lg:w-[50%] h-max p-4 flex flex-col items-center justify-center'>
