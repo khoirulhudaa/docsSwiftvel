@@ -16,7 +16,7 @@ const currentYear = new Date().getFullYear();
         &copy; {currentYear} Swiftvel. All rights reserved.
         </small>
         <div className='text-white hidden lg:flex items-center'>
-          <p className='text-white font-normal relative top-2 mr-6'>Contributors</p>
+          <p className='text-white font-normal relative mr-6'>Contributors</p>
           <div className='flex items-center'>
               <a href="https://github.com/khoirulhudaa" title="owner swiftvel" target='__blank'>
                   <div className='w-[30px] rounded-full h-[30px] overflow-hidden'>
