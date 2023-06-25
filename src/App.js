@@ -163,7 +163,7 @@ handleAuthBuildCompoennt = (e) => {
           {isLoading && (
             <div className="overlayLoad">
               <FontAwesomeIcon icon={faSpinner} spin />
-              <p className='text-[16px] mt-4'>Memuat component</p>
+              <p className='text-[16px] mt-4'>Loading components</p>
             </div>
           )}
           {/* {

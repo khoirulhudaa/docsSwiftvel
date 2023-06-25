@@ -302,7 +302,7 @@ export default class FrameOutput extends Component {
               this.props.isLoadingBuild === 'run' && (
                 <div className="overlayLoad2">
                   <FontAwesomeIcon icon={faSpinner} spin />
-                  <p className='text-[16px] mt-4'>Merakit component</p>
+                  <p className='text-[16px] mt-4'>Assemble components</p>
                 </div>
               )
             )
