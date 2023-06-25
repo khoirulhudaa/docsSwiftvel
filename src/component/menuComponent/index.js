@@ -36,7 +36,9 @@ componentDidMount = () => {
         data: Data
     })
 
-    const BASE_URL2 = `https://api-dragme.vercel.app/api/users/${this.props.data.email}`  
+    const { data } = this.props;
+
+    const BASE_URL2 = data && data.email ? `https://api-dragme.vercel.app/api/users/${data.email}` : '';
     
     fetch(`${BASE_URL2}`, {
         method: 'GET',
@@ -169,7 +171,7 @@ handleScreen = () => {
 }
 
   render() {
-    const { status } = this.props.data;
+    const { status } = this.props.data || {};
     return (
         <>
             <a href="/">
