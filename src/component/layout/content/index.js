@@ -277,7 +277,7 @@ return (
         <section className='w-screen h-max pt-[40px] lg:pt-[40px] pb-[60px] lg:pb-[100px] px-4 lg:px-6 text-center justify-center flex flex-col items-center'>
             <div className='w-[100vw] lg:w-[90%] relative text-center lg:w-max lg:flex relative z-10 h-max lg:h-max mb-4 mt-4 lg:mt-4 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-6 lg:px-2'>
                <div className='lg:h-max h-max text-center flex flex-col items-center justify-center relative ml-auto mr-auto w-[80vw]'>
-                    <h2 className='w-[90%] 2xl:w-max lg:w-[80%] text-darkMongo font-normal flex items-center text-center text-[40px] lg:text-[70px] 2xl:text-[80px] ml-auto mr-auto leading-[1.4em] lg:leading-[1.6em]'>Automatic build feature</h2>
+                    <h2 className='w-[90%] 2xl:w-max lg:w-max text-darkMongo font-normal flex items-center text-center text-[40px] lg:text-[70px] 2xl:text-[80px] ml-auto mr-auto leading-[1.4em] lg:leading-[1.6em]'>Automatic build feature</h2>
                     <a onClick={() => navigate('/pricing')} className='bg-bgMongo rounded-full px-3 py-2 w-max text-lightMongo mt-3 hover:brightness-[88%] active:scale-[0.98] no-underline'>
                         <p className='text-white w-max cursor-pointer flex items-center'>Only at premium <img src={Right} className='text-indigo-500 w-[26px] p-2 ml-3 bg-white rounded-full flex items-center justify-center' alt="icon" /></p>
                     </a>
