@@ -1,7 +1,7 @@
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Cookies from 'js-cookie';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Wave from '../../../assets/images/png/wave.png';
@@ -18,12 +18,29 @@ import Tutor from '../../../assets/images/svg/tutor.svg';
 import Partner from '../../../assets/images/svg/v.svg';
 import Wave2 from '../../../assets/images/svg/wave.svg';
 import Spin from '../../../assets/images/svg/spin.svg';
+import Video from '../../../assets/video/autovideo.mp4';
+import { faPause, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Contents = () => {
 
     const navigate = useNavigate()
     const [feedback, setFeedback] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isPlay, setIsPlay] = useState(false);
+    const [showButton, setShowButton] = useState(false);
+
+    const videoRef = useRef(null);
+
+    const handlePlay = () => {
+        setIsPlay(true)
+        videoRef.current.play();
+    };
+
+    const handlePause = () => {
+        setIsPlay(false)
+        videoRef.current.pause();
+    }
 
     useEffect(() => {
         Aos.init();
@@ -94,6 +111,14 @@ const Contents = () => {
     const handleChangeFeed = (e) => {
         setFeedback(e.target.value)
     }
+
+    const handleTouchStart = () => {
+        setShowButton(true);
+    };
+    
+    const handleTouchEnd = () => {
+    setShowButton(false);
+    };
     
 return (
     <div className='relative h-max mt-[60px] 2xl:mt-[120px] lg:mt-[70px]'>
@@ -127,7 +152,7 @@ return (
             <div className='w-[90%] mt-2 lg:w-[86%] lg:flex items-center justify-between h-max 2xl:h-[500px] lg:h-[460px] p-2'>
                 <div data-aos-duration='1000' className='h-[100%] lg:mt-0 mt-[20px] relative overflow-hidden w-[100%] lg:w-[49%] bg-[#EDF5FE] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-30px] lg:top-[-14px]'>
-                        <img src={Fast} className='absolute left-8 bottom-[200px] 2xl:bottom-[270px] 2xl:w-[40px] w-[30px]' alt="icon" />
+                        <img src={Fast} className='absolute left-8 bottom-[170px] lg:bottom-[200px] 2xl:bottom-[270px] 2xl:w-[40px] w-[30px]' alt="icon" />
                         <h2 className='text-black text-[32px] lg:text-[44px] 2xl:text-[52px] font-bold mb-3 ml-8 2xl:mt-[180px] mt-[140px]'>Faster</h2>
                         <p className='text-black font-normal 2xl:leading-10 leading-6 ml-8 lg:mt-8 text-[15px] 2xl:text-[18px] w-[80%] lg:w-[65%]'>Be fast in creating your own website, shorten the process of working on your website and start from swiftvel</p>
                     </div>
@@ -135,7 +160,7 @@ return (
                 </div>
                 <div data-aos-duration='1000' className='h-[100%] relative overflow-hidden w-[100%] lg:mt-0 mt-[40px] lg:w-[49%] bg-[#000000] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-30px] lg:top-[-14px]'>
-                        <img src={Flexibel} className='absolute left-8 bottom-[200px] 2xl:bottom-[270px] 2xl:w-[40px] w-[30px]' alt="icon" />
+                        <img src={Flexibel} className='absolute left-8 bottom-[170px] lg:bottom-[200px] 2xl:bottom-[270px] 2xl:w-[40px] w-[30px]' alt="icon" />
                         <h2 className='text-white text-[32px] lg:text-[44px] 2xl:text-[52px] font-bold mb-3 ml-8 2xl:mt-[180px] mt-[140px]'>Flexibel</h2>
                         <p className='text-slate-300 font-normal 2xl:leading-10 leading-6 ml-8 lg:mt-8 text-[15px] 2xl:text-[18px] w-[80%] lg:w-[60%]'>flexible design and components, premium components provide advantages such as being responsive in terms of mobile devices</p>
                     </div>
@@ -161,12 +186,12 @@ return (
             <p data-aos-duration='1000' className='font-normal mt-2 lg:w-max w-[70%] text-[12px] 2xl:text-[18px] lg:text-[16px] ml-auto mr-auto text-center'>Founder & FE at Framework css - Valclass</p>
         </section>
 
-        <section className='w-[100%] overflow-hidden rounded-br-[120px] lg:rounded-br-[200px] relative mt-[60px] 2xl:mt-[40px] pt-1 lg:pt-4 lg:mt-[100px] pb-[20px] lg:pb-[140px] h-max 2xl:pb-[280px] ml-auto mr-auto bg-[#023430]'>
+        <section className='w-[100%] overflow-hidden rounded-br-[70px] lg:rounded-br-[200px] relative mt-[60px] 2xl:mt-[40px] pt-1 lg:pt-4 lg:mt-[100px] pb-[20px] lg:pb-[140px] h-max 2xl:pb-[280px] ml-auto mr-auto bg-[#023430]'>
             <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-max lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
                <div className='lg:h-max w-max h-max relative'>
                     <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[40px] lg:text-[70px] 2xl:text-[80px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>
                     <a href="/swiftvelBuilder" className='w-max text-lightMongo no-underline'>
-                        <p className='text-lightMongo mt-4 w-max cursor-pointer flex items-center'>Try swiftvel now <img src={Right} className='text-indigo-500 w-[14px] ml-3' alt="icon" /></p>
+                        <p className='text-lightMongo mt-4 w-max cursor-pointer flex items-center'>Try swiftvel now <img src={Right} className='text-indigo-500 w-[26px] p-2 ml-3 bg-white rounded-full flex items-center justify-center' alt="icon" /></p>
                     </a>
                     <p className='text-[15px] 2xl:text-[23px] 2xl:leading-[2.2em] leading-[2em] mt-5 w-[25%] lg:w-[45%] font-normal text-slate-200'>It's very easy to use, just choose the components you want and arrange them all into 1 perfect homepage according to the web appearance you want</p>
                </div>
@@ -186,7 +211,7 @@ return (
             </div>
         </section>
 
-        <section className='relative w-full mt-[80px] rounded-tl-[110px] rounded-br-[110px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[30px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
+        <section className='relative w-full mt-[80px] lg:rounded-tl-[110px] rounded-tl-[70px] lg:rounded-br-[110px] rounded-br-[70px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[30px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
             <img src={Wave} className='absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
             <div className='w-[100%] lg:w-[50%] h-max p-[30px] lg:p-[120px] lg:mt-[10px]'>
                 <h1 className='text-[45px] 2xl:text-[80px] lg:text-[55px] text-white w-[90%] leading-[1.4em]'>Get started with swiftvel today</h1>
@@ -249,12 +274,34 @@ return (
             </div>
         </section>
 
-        <section className='w-creen h-max pt-[40px] lg:pt-[80px] pb-[60px] lg:pb-[100px] px-4 lg:px-6 text-center jusitfy-center flex flex-col item-center'>
-            <h1 className='text-[44px] lg:text-[64px] 2xl:text-[76px] w-[90%] lg:w-[50%] ml-auto mr-auto leading-[1.5em]'>Your advice is what we need</h1>
+        <section className='w-screen h-max pt-[40px] lg:pt-[40px] pb-[60px] lg:pb-[100px] px-4 lg:px-6 text-center justify-center flex flex-col items-center'>
+            <div className='w-[100vw] lg:w-[90%] relative text-center lg:w-max lg:flex relative z-10 h-max lg:h-max mb-4 mt-4 lg:mt-4 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-6 lg:px-2'>
+               <div className='lg:h-max h-max text-center flex flex-col items-center justify-center relative ml-auto mr-auto w-[80vw]'>
+                    <h2 className='w-[90%] 2xl:w-max lg:w-[80%] text-darkMongo font-normal flex items-center text-center text-[40px] lg:text-[70px] 2xl:text-[80px] ml-auto mr-auto leading-[1.4em] lg:leading-[1.6em]'>Automatic build feature</h2>
+                    <a onClick={() => navigate('/pricing')} className='bg-bgMongo rounded-full px-3 py-2 w-max text-lightMongo mt-3 hover:brightness-[88%] active:scale-[0.98] no-underline'>
+                        <p className='text-white w-max cursor-pointer flex items-center'>Only at premium <img src={Right} className='text-indigo-500 w-[26px] p-2 ml-3 bg-white rounded-full flex items-center justify-center' alt="icon" /></p>
+                    </a>
+                    <p className='text-[15px] 2xl:text-[23px] 2xl:leading-[2.2em] leading-[2em] mt-5 w-[92vw] lg:w-[70%] font-normal text-slate-400'>Swiftvel will automatically assemble several components into one unit to create a complete website for you quickly and easily</p>
+               </div>
+            </div>
+            <div className='relative ml-auto mr-auto flex lg:inline w-[84%] 2xl:w-max 2xl:top-[0px] flex justify-between'>
+                <div onClick={isPlay ? handlePause : handlePlay} className={`${isPlay ? 'opacity-[0.4]' : 'opacity-[1]'} flex ml-auto left-[46%] lg:left-[44%] mr-auto mt-[70px] lg:mt-[200px] w-[25px] lg:w-[120px] rounded-full h-[25px] lg:h-[120px] items-center justify-center cursor-pointer hover:brightness-[90%] active:scale-[0.96] absolute z-[99999] shadow-lg bg-white`}>
+                    {
+                        isPlay ? (
+                            <FontAwesomeIcon className={`text-[40px] lg:text-[50px] duration-100`} icon={faPause} />
+                        ):
+                            <FontAwesomeIcon className='text-[40px] lg:text-[50px]' icon={faPlayCircle} />
+                    }
+                </div>
+                <video onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} ref={videoRef} src={Video} loop autoplay muted playsinline className='rounded-[20px] border-[1px] border-slate-300'>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <h1 className='text-[44px] lg:text-[64px] 2xl:text-[76px] w-[90%] lg:w-[50%] ml-auto mr-auto leading-[1.5em] mt-[100px]'>Your advice is what we need</h1>
             <div className='w-[90%] lg:w-[45vw] border-[1px] border-slate-400 flex items-center justify-center ml-auto mr-auto 2xl:h-[60px] h-[50px] my-4 rounded-[12px] overflow-hidden bg-white'>
                 <input type="text" name='feedback' onChange={(e) => handleChangeFeed(e)} placeholder='Type in your suggestions...' className='border-none outline-0 w-full h-max py-2 px-3 font-normal 2xl:text-[17px] text-[15px]' />
             </div>
-            <div onClick={(e) => handleFeedback(e)} className='ml-auto mr-auto w-[180px] 2xl:scale-[1.4] 2xl:top-[30px] 2xl:relative lg:w-[160px] h-[58px] font-normal cursor-pointer flex items-center justify-center flex-col text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
+            <div onClick={(e) => handleFeedback(e)} className='ml-auto mr-auto w-[180px] 2xl:scale-[1.4] 2xl:top-[30px] 2xl:relative lg:w-[160px] h-[58px] font-normal cursor-pointer flex items-center justify-center flex-col mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
             {
               isLoading ? (
                 <img src={Spin} className='w-[14px] animate-spin' alt="spin" />

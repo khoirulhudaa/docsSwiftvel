@@ -25,23 +25,23 @@ const ServicePolicy = () => {
             <h2 className='text-[28px] font-bold mt-3 mb-4 text-darkMongo'>Information We Collect</h2>
 
             <p className='text-[14px] w-[94%] lg:w-[90%] lg:text-[16px] mb-4 font-normal leading-[1.5em]'>When you use our web application, we may collect the following types of personal information:</p>
-            <ul>
-            <li className='font-normal list-disc'>Full name</li>
-            <li className='font-normal list-disc'>Email address</li>
-            <li className='font-normal list-disc'>Username and password</li>
-            <li className='font-normal list-disc'>Contact information (e.g., phone number, address)</li>
-            <li className='font-normal list-disc'>Any other information you voluntarily provide</li>
+            <ul className='relative ml-5 mb-4'>
+              <li className='font-normal list-disc'>Full name</li>
+              <li className='font-normal list-disc'>Email address</li>
+              <li className='font-normal list-disc'>Username and password</li>
+              <li className='font-normal list-disc'>Contact information (e.g., phone number, address)</li>
+              <li className='font-normal list-disc'>Any other information you voluntarily provide</li>
             </ul>
             <hr />
             <h2 className='text-[28px] font-bold mt-3 mb-4 text-darkMongo'>Use of Information</h2>
 
             <p className='text-[14px] w-[94%] lg:w-[90%] lg:text-[16px] mb-4 font-normal leading-[1.5em]'>We use the collected information for the following purposes:</p>
-            <ul>
-            <li className='font-normal list-disc'>To provide and maintain our web application</li>
-            <li className='font-normal list-disc'>To personalize your experience and provide tailored content</li>
-            <li className='font-normal list-disc'>To improve our web application and enhance user satisfaction</li>
-            <li className='font-normal list-disc'>To communicate with you and respond to your inquiries</li>
-            <li className='font-normal list-disc'>To send periodic emails and updates related to our services</li>
+            <ul className='relative ml-5 mb-4'>
+              <li className='font-normal list-disc'>To provide and maintain our web application</li>
+              <li className='font-normal list-disc'>To personalize your experience and provide tailored content</li>
+              <li className='font-normal list-disc'>To improve our web application and enhance user satisfaction</li>
+              <li className='font-normal list-disc'>To communicate with you and respond to your inquiries</li>
+              <li className='font-normal list-disc'>To send periodic emails and updates related to our services</li>
             </ul>
             <hr />
             <h2 className='text-[28px] font-bold mt-3 mb-4 text-darkMongo'>Data Security</h2>

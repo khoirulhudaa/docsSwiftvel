@@ -34,7 +34,7 @@ const TermService = () => {
             <h2 className='text-[28px] font-bold mt-3 mb-4 text-darkMongo'>Prohibited Activities</h2>
 
             <p className='text-[14px] w-[94%] lg:w-[90%] lg:text-[16px] mb-4 font-normal leading-[1.5em]'>When using our web application, you agree not to engage in the following activities:</p>
-            <ul>
+            <ul className='relative ml-5 mb-4'>
                 <li className='font-normal list-disc'>Violating any applicable laws or regulations</li>
                 <li className='font-normal list-disc'>Interfering with or disrupting the security or integrity of our web application</li>
                 <li className='font-normal list-disc'>Impersonating any person or entity or falsely stating or otherwise misrepresenting your affiliation with a person or entity</li>
