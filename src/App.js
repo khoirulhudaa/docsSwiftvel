@@ -160,12 +160,12 @@ handleAuthBuildCompoennt = (e) => {
     return (
       this.state.status ? (
         <>
-          {isLoading && (
+          {/* {isLoading && (
             <div className="overlayLoad">
               <FontAwesomeIcon icon={faSpinner} spin />
               <p className='text-[16px] mt-4'>Loading components</p>
             </div>
-          )}
+          )} */}
           {
             // kode untuk menampilkan alert ketika lebar layar dibawah 1240px
             this.state.screen < 1000 ? (
