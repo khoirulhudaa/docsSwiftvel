@@ -18,6 +18,8 @@ import Tutor from '../../../assets/images/svg/tutor.svg';
 import Partner from '../../../assets/images/svg/v.svg';
 import Wave2 from '../../../assets/images/svg/wave.svg';
 import Spin from '../../../assets/images/svg/spin.svg';
+import Linelong from '../../../assets/images/svg/linelong.svg';
+import Lineshort from '../../../assets/images/svg/lineshort.svg';
 import Video from '../../../assets/video/autovideo.mp4';
 import { faPause, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -274,7 +276,7 @@ return (
             </div>
         </section>
 
-        <section className='w-screen h-max pt-[40px] lg:pt-[40px] pb-[60px] lg:pb-[100px] px-4 lg:px-6 text-center justify-center flex flex-col items-center'>
+        <section className='w-screen relative overflow-hidden h-max pt-[40px] lg:pt-[40px] pb-[60px] lg:pb-[100px] px-4 lg:px-6 text-center justify-center flex flex-col items-center'>
             <div className='w-[100vw] lg:w-[90%] relative text-center lg:w-max lg:flex relative z-10 h-max lg:h-max mb-4 mt-4 lg:mt-4 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-6 lg:px-2'>
                <div className='lg:h-max h-max text-center flex flex-col items-center justify-center relative ml-auto mr-auto w-[80vw]'>
                     <h2 className='w-[90%] 2xl:w-max lg:w-max text-darkMongo font-normal flex items-center text-center text-[40px] lg:text-[70px] 2xl:text-[80px] ml-auto mr-auto leading-[1.4em] lg:leading-[1.6em]'>Automatic build feature</h2>
@@ -297,6 +299,7 @@ return (
                     Your browser does not support the video tag.
                 </video>
             </div>
+            <img src={Linelong} alt="lineOfWive" className='relative ml-auto mr-auto flex w-[20%] justify-center items-center my-[20px] opacity-[0.4]' />
             <h1 className='text-[44px] lg:text-[64px] 2xl:text-[76px] w-[90%] lg:w-[50%] ml-auto mr-auto leading-[1.5em] mt-[100px]'>Your advice is what we need</h1>
             <div className='w-[90%] lg:w-[45vw] border-[1px] border-slate-400 flex items-center justify-center ml-auto mr-auto 2xl:h-[60px] h-[50px] my-4 rounded-[12px] overflow-hidden bg-white'>
                 <input type="text" name='feedback' onChange={(e) => handleChangeFeed(e)} placeholder='Type in your suggestions...' className='border-none outline-0 w-full h-max py-2 px-3 font-normal 2xl:text-[17px] text-[15px]' />
