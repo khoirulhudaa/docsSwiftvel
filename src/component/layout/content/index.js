@@ -299,7 +299,6 @@ return (
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <img src={Linelong} alt="lineOfWive" className='relative ml-auto mr-auto flex w-[20%] justify-center items-center my-[20px] opacity-[0.4]' />
             <h1 className='text-[44px] lg:text-[64px] 2xl:text-[76px] w-[90%] lg:w-[50%] ml-auto mr-auto leading-[1.5em] mt-[100px]'>Your advice is what we need</h1>
             <div className='w-[90%] lg:w-[45vw] border-[1px] border-slate-400 flex items-center justify-center ml-auto mr-auto 2xl:h-[60px] h-[50px] my-4 rounded-[12px] overflow-hidden bg-white'>
                 <input type="text" name='feedback' onChange={(e) => handleChangeFeed(e)} placeholder='Type in your suggestions...' className='border-none outline-0 w-full h-max py-2 px-3 font-normal 2xl:text-[17px] text-[15px]' />
