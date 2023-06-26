@@ -35,7 +35,7 @@ const Hero = () => {
         </ul>
       </div>
       <a href="/swiftvelBuilder" className='no-underline text-white font-bold'>
-        <Button text="Try dragme" padding={'lg:px-5 lg:py-3 2xl:py-4 px-3 py-3'} textColor='text-white' width={'lg:w-[190px] w-[50vw] 2xl:w-[220px] lg:mb-0 mb-12'} style={'font-normal mt-2'} />
+        <Button text="Try swiftvel" padding={'lg:px-5 lg:py-3 2xl:py-4 px-3 py-3'} textColor='text-white' width={'lg:w-[190px] w-[50vw] 2xl:w-[220px] lg:mb-0 mb-12'} style={'font-normal mt-2'} />
       </a>
     </div>  
   )
