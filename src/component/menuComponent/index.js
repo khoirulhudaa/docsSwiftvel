@@ -179,66 +179,112 @@ handleScreen = () => {
                     <img src={Right} className='rotate-[180deg] w-[20px] h-[20px]' alt='icon' />
                 </div>
             </a>
-            <div className='flex top-[13px] absolute left-[120px] items-center'>
-                <div onClick={() => this.props.handleAutomaticBuild()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
-                    <FontAwesomeIcon icon={faWandMagicSparkles} /> 
-                </div>
-            </div>
-
-            <div className='flex top-[13px] absolute left-[260px] items-center'>
-                <div onClick={() => window.location.reload()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
-                    <FontAwesomeIcon icon={faArrowsRotate} /> 
-                </div>
-            </div>
-
-            <div className='flex top-[13px] absolute left-[190px] items-center'>
-                {
-                    this.state.screen ? (
-                        <>
-                            <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
-                                <FontAwesomeIcon icon={faCompress} /> 
-                            </div>
-                        </>
-                    ):
-                    <>
-                            <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
-                                <FontAwesomeIcon icon={faExpand} /> 
-                            </div>
-                        </>
-                }
-            </div>
-
-            <a href="/pricing" className='absolute no-underline text-white left-[330px] top-[13px]'>
-                {
-                    status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
-                        <div className='active:scale-[0.96] w-[40.6px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
-                            <img src={Crown} style={{width: '18px', height: '18px'}} alt="icon add" />
+            {
+                this.props.isLoading ? (
+                    <div className='flex top-[13px] absolute left-[120px] items-center'>
+                        <div className='w-[40px] h-[40px] rounded-full bg-gray-300 animate-pulse'></div>
+                    </div>
+                ):
+                    <div className='flex top-[13px] absolute left-[120px] items-center'>
+                        <div onClick={() => this.props.handleAutomaticBuild()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                            <FontAwesomeIcon icon={faWandMagicSparkles} /> 
                         </div>
-                    ):
-                        <></>
-                }
-            </a>
+                    </div>
+            }
+            {
+                this.props.isLoading ? (
+                    <div className='flex top-[13px] absolute left-[260px] items-center'>
+                        <div className='w-[40px] h-[40px] rounded-full bg-gray-300 animate-pulse'></div>
+                    </div>
+                ):
+                    <div className='flex top-[13px] absolute left-[260px] items-center'>
+                        <div onClick={() => window.location.reload()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                            <FontAwesomeIcon icon={faArrowsRotate} /> 
+                        </div>
+                    </div>
+            }
+            {
+                this.props.isLoading ? (
+                    <div className='flex top-[13px] absolute left-[190px] items-center'>
+                        <div className='w-[40px] h-[40px] rounded-full bg-gray-300 animate-pulse'></div>
+                    </div>
+                ):
+                    <div className='flex top-[13px] absolute left-[190px] items-center'>
+                        {
+                            this.state.screen ? (
+                                <>
+                                    <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                                        <FontAwesomeIcon icon={faCompress} /> 
+                                    </div>
+                                </>
+                            ):
+                            <>
+                                    <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                                        <FontAwesomeIcon icon={faExpand} /> 
+                                    </div>
+                                </>
+                        }
+                    </div>
+            }
+            {
+                this.props.isLoading ? (
+                    <div className='flex top-[13px] absolute left-[330px] items-center'>
+                        <div className='w-[40px] h-[40px] rounded-full bg-gray-300 animate-pulse'></div>
+                    </div>
+                ):
+                    <a href="/pricing" className='absolute no-underline text-white left-[330px] top-[13px]'>
+                        {
+                            status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
+                                <div className='active:scale-[0.96] w-[40.6px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                                    <img src={Crown} style={{width: '18px', height: '18px'}} alt="icon add" />
+                                </div>
+                            ):
+                                <></>
+                        }
+                    </a>
+            }
 
             <div className='flex items-center absolute top-3 right-7'>
-                <div className='flex items-center relative ml-1 mr-2 hovetext-[14px]r:text-black'>
-                    <a href="https://saweria.co/dragmeTEam" target='__blank' className='no-underline hover:text-black text-black'>
-                        <div className='rounded-md px-3 flex items-center justify-center py-[6.4px] border border-[1] hover:text-black border-black cursor-pointer active:scale-[0.97] duration-100'>
-                            <img src={Saweria} className='w-[26px] relative top-[-1px]' alt="icon" />
-                            <span className='text-[15px] sawer hover:text-black relative top-[1px] ml-1'>
-                                Saweria
-                            </span>
-                        </div>
-                    </a>
-                </div>
+            {
+                this.props.isLoading ? (
+                    <div className='fflex items-center relative ml-1 mr-2 hovetext-[14px]r:text-black'>
+                        <div className='rounded-md w-[120px] h-[41px] flex items-center justify-center cursor-pointer active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
+                    </div>
+                ):
+                    <div className='flex items-center relative ml-1 mr-2 hovetext-[14px]r:text-black'>
+                        <a href="https://saweria.co/dragmeTEam" target='__blank' className='no-underline hover:text-black text-black'>
+                            <div className='rounded-md px-3 flex items-center justify-center py-[6.4px] border border-[1] hover:text-black border-black cursor-pointer active:scale-[0.97] duration-100'>
+                                <img src={Saweria} className='w-[26px] relative top-[-1px]' alt="icon" />
+                                <span className='text-[15px] sawer hover:text-black relative top-[1px] ml-1'>
+                                    Saweria
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+            }
                 <div className='h-[20px] w-[1px] bg-slate-400 ml-2'></div>
                 <div className='h-[30px] w-[1px] bg-slate-400 mx-2'></div>
                 <div className='h-[20px] w-[1px] bg-slate-400 mr-3'></div>
-                <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor1}] text-${this.state.textColor1} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
-                    <img src={PHP} alt="img" className='bg-white rounded-full w-[20px] px-1 h-[20px] mr-2' /> <p className='text-[14px] mt-0'>PHP language</p>
-                </div>
-                <div onClick={() => this.handleChangeActive('HTML')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor2}] text-${this.state.textColor2} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
-                    <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> <p className='text-[14px] mt-0'>HTML code</p>
-                </div>
+                {
+                this.props.isLoading ? (
+                    <>
+                        <div className='flex items-center relative ml-1 mr-5 hovetext-[14px]r:text-black'>
+                            <div className='rounded-md w-[130px] h-[41px] flex items-center justify-center cursor-pointer active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
+                        </div>
+                        <div className='flex items-center relative ml-1 mr-2 hovetext-[14px]r:text-black'>
+                            <div className='rounded-md w-[130px] h-[41px] flex items-center justify-center cursor-pointer active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
+                        </div>
+                    </>
+                ):
+                   <>
+                    <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor1}] text-${this.state.textColor1} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
+                        <img src={PHP} alt="img" className='bg-white rounded-full w-[20px] px-1 h-[20px] mr-2' /> <p className='text-[14px] mt-0'>PHP language</p>
+                    </div>
+                    <div onClick={() => this.handleChangeActive('HTML')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor2}] text-${this.state.textColor2} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
+                        <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> <p className='text-[14px] mt-0'>HTML code</p>
+                    </div>
+                   </>
+            }
             </div>
             <div className={`${!this.state.screen ? 'menuComponents': 'menuComponentsSide'}`}>
                 <div className="menuAll">
@@ -528,29 +574,76 @@ handleScreen = () => {
                 </div>
                 {
                     status !== 'settlement' || this.state.statusNew !== 'settlement' ? (
-                        <p className='relative bottom-5 flex items-center'>{this.props.limit}/6</p>
+                        <p className='relative bottom-5 mt-[40px] flex items-center'>{this.props.limit}/6</p>
                     ): 
                     <></>
                 }
-                    <div onClick={() => this.download("templateCurrent")} className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
-                    {/* <box-icon type="icon" style={{color: 'white'}} name="download" onClick={() => this.download("templateCurrent")} /> */}
-                    <img src={Download} alt="icon-download" style={{width: '47%'}} />
-                </div>
+                 {
+                    this.props.isLoading ? (
+                        <div className='w-[40px] mb-2 h-max flex flex-col justify-center items-center'>
+                            <div className='w-[45px] h-[45px] rounded-full bg-gray-300 animate-pulse'></div>
+                        </div>
+                    ):
+                        <div onClick={() => this.download("templateCurrent")} className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+                            {/* <box-icon type="icon" style={{color: 'white'}} name="download" onClick={() => this.download("templateCurrent")} /> */}
+                            <img src={Download} alt="icon-download" style={{width: '47%'}} />
+                        </div>
+                }
                 <div className="squareComponents" id='navbar'>
-                    <box-icon type="icon" name="collection" />
-                    <p>Navbar</p>
+                    {
+                        this.props.isLoading ? (
+                            <div className='w-[40px] h-max flex flex-col justify-center items-center'>
+                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse'></div>
+                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse'></div>
+                            </div>
+                        ):
+                            <>
+                                <box-icon type="icon" name="collection" />
+                                <p>Navbar</p>
+                            </>
+                    }
                 </div>
                 <div className="squareComponents" id='heroes'>
-                    <box-icon name='objects-vertical-bottom'></box-icon>
-                    <p>Heroes</p>
+                {
+                        this.props.isLoading ? (
+                            <div className='w-[40px] h-max flex flex-col justify-center items-center'>
+                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse'></div>
+                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse'></div>
+                            </div>
+                        ):
+                            <>
+                                <box-icon name='objects-vertical-bottom'></box-icon>
+                                <p>Heroes</p>
+                            </>
+                    }
                 </div>
                 <div className="squareComponents" id='content'>
-                    <box-icon name='objects-horizontal-center'></box-icon>
-                    <p>Content</p>
+                {
+                        this.props.isLoading ? (
+                            <div className='w-[40px] h-max flex flex-col justify-center items-center'>
+                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse'></div>
+                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse'></div>
+                            </div>
+                        ):
+                            <>
+                                <box-icon name='objects-horizontal-center'></box-icon>
+                                <p>Content</p>
+                            </>
+                    }
                 </div>
                 <div className="squareComponents" id='footer'>
-                    <box-icon name='objects-vertical-top' ></box-icon>
-                    <p>Footer</p>
+                {
+                        this.props.isLoading ? (
+                            <div className='w-[40px] h-max flex flex-col justify-center items-center'>
+                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse'></div>
+                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse'></div>
+                            </div>
+                        ):
+                            <>
+                                <box-icon name='objects-vertical-top' ></box-icon>
+                                <p>Footer</p>
+                            </>
+                    }
                 </div>
             </div>
         </>

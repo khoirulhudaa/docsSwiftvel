@@ -166,7 +166,7 @@ handleAuthBuildCompoennt = (e) => {
               <p className='text-[16px] mt-4'>Loading components</p>
             </div>
           )}
-          {/* {
+          {
             // kode untuk menampilkan alert ketika lebar layar dibawah 1240px
             this.state.screen < 1000 ? (
               <div className="alert-page">
@@ -229,11 +229,11 @@ handleAuthBuildCompoennt = (e) => {
               </div>
             ):
             null
-          } */}
+          }
           <div className="w-screen h-max overflow-x-hidden">
             <div className="col-sm-0 col-12">
               {/* Menu komponent */}
-              <MenuComponent selectedObjects={selectedObjects} handleAutomaticBuild={handleAutomaticBuild} showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
+              <MenuComponent isLoading={this.state.isLoading} selectedObjects={selectedObjects} handleAutomaticBuild={handleAutomaticBuild} showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
             </div>
             <div className='col-sm-12 col-12' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               {/* frame yang akan menampilkan semua component terpilih */}
