@@ -234,42 +234,42 @@ return (
                     <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                         <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                         </div>
-                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Unclocks All Component</p>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>Unclocks All Component</p>
                     </li>
                     <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                         <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                         </div>
-                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>No component limit</p>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>No component limit</p>
                     </li>
                     <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                         <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                         </div>
-                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Customizable</p>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>Customizable</p>
                     </li>
                     <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                         <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                         </div>
-                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Automatic build</p>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>Automatic build</p>
                     </li>
                     <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                         <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                         </div>
-                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Export to PHP or HTML</p>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>Export to React</p>
                     </li>
                     <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                         <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                         </div>
-                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Responsive Design</p>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>Responsive Design</p>
                     </li>
                     <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                         <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                         </div>
-                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Free consultation</p>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>Free consultation</p>
                     </li>
                     <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                         <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                         </div>
-                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-3 font-normal'>Premium account label</p>
+                        <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>Premium account label</p>
                     </li>
                 </ul>
             </div>
