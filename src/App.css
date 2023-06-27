@@ -636,7 +636,7 @@ html {
   width: 100vw;
   height: 90vh;
   bottom: 0;
-  padding-top: 0px;
+  padding-top: 14px;
   overflow: auto;
   padding-bottom: 0px;
   z-index: -4;
