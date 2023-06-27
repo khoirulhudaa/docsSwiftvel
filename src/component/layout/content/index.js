@@ -209,7 +209,7 @@ return (
             <h1 className='text-[50px] lg:text-[65px] 2xl:text-[76px] w-[85%] lg:w-[60%] text-center text-black mt-5 mb-4 leading-[1.4em]'>Become a swiftvel premium user</h1>
             <p className='text-[15px] 2xl:text-[23px] w-[70%] lg:w-max font-normal mb-8'>Get more components that are better and varied in design</p>
             <div onClick={(e) => handlePricing(e)} className='w-max lg:w-[180px] 2xl:scale-[1.4] 2xl:top-[30px] 2xl:relative lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-3 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
-                Get now (Rp 99.999)
+                Get now (Rp. 99.999)
             </div>
         </section>
 
