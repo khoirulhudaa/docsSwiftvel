@@ -16,26 +16,26 @@ const currentYear = new Date().getFullYear();
         &copy; {currentYear} Swiftvel. All rights reserved.
         </small>
         <div className='text-white hidden lg:flex items-center'>
-          <p className='text-white font-normal relative mr-6'>Contributors</p>
+          {/* <p className='text-white font-normal relative mr-6'>Contributors</p> */}
           <div className='flex items-center'>
-              <a href="https://github.com/khoirulhudaa" title="owner swiftvel" target='__blank'>
+              {/* <a href="https://github.com/khoirulhudaa" title="owner swiftvel" target='__blank'>
                   <div className='w-[30px] rounded-full h-[30px] overflow-hidden'>
                       <img src={G2} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
                   </div>
-              </a>
+              </a> */}
               <a href="https://github.com/justnotiyann" target='__blank'>
-                  <div className='w-[30px] rounded-full mx-3 h-[30px] overflow-hidden'>
+                  <div className='w-[30px] rounded-full mx-4 h-[30px] overflow-hidden'>
                       <img src={G3} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
                   </div>
               </a>
               <a href="https://github.com/imzzan" target='__blank'>
-                  <div className='w-[30px] rounded-full h-[30px] overflow-hidden'>
+                  <div className='w-[30px] rounded-full mr-5 h-[30px] overflow-hidden'>
                       <img src={G1} alt="img" className='w-full h-auto cursor-pointer hover:brightness-[90%] active:scale-[0.98]' />
                   </div>
               </a>
           </div>
-          <div className='w-[1px] h-[30px] bg-white mx-[28px]'></div>
-          <small onClick={() => navigate('/contributors')} className='hover:brightness-[90%] cursor-pointer mr-8 font-normal'>Contributors page</small>
+          <small className='hover:brightness-[90%] cursor-pointer mr-8 font-normal'>Contributors components</small>
+          <div className='w-[1px] h-[30px] bg-white mr-[28px]'></div>
           <small onClick={() => navigate('/privacy-policy')} className='hover:brightness-[90%] cursor-pointer mr-8 font-normal'>Privacy policy</small>
           <small onClick={() => navigate('/terms-of-service')} className='hover:brightness-[90%] cursor-pointer font-normal'>Terms of service</small>
         </div>
