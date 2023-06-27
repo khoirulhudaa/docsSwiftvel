@@ -30,14 +30,37 @@ constructor(props) {
     textColor3: 'black',
     username: '',
     screen: false,
+    limitReact: 0
   };
 };
+
+componentDidUpdate = () => {
+    fetch(`https://api-dragme.vercel.app/api/users/${this.props.data.email}`)
+        .then(response => response.json())
+        .then(data => {
+            // Perbarui state limitReact dengan data terbaru
+            this.setState({ limitReact: data.message.limitReact });
+        })
+        .catch(error => {
+            console.log(error);
+    });
+}
 
 componentDidMount = () => {
 
     this.setState({
         data: Data
     })
+
+    fetch(`https://api-dragme.vercel.app/api/users/${this.props.data.email}`)
+        .then(response => response.json())
+        .then(data => {
+            // Perbarui state limitReact dengan data terbaru
+            this.setState({ limitReact: data.message.limitReact });
+        })
+        .catch(error => {
+            console.log(error);
+    });
 
     const { data } = this.props;
 
@@ -154,9 +177,6 @@ download = (e) => {
 
     const codeJS = beautify.js(scriptContents.join('\n\n'));
     
-    console.log('js:', codeJS);
-    
-
     // Mengubah semua kata class menjadi className
     let modifiedHTML = modifiedResult.replace(/class\b/g, 'className');
 
@@ -268,8 +288,28 @@ handleScreen = () => {
     })
 }
 
+handleAddLimit = () => {
+    const { data } = this.props;
+    console.log('email saya:', data.email)
+    const BASE_URL3 = data && data.email ? `https://api-dragme.vercel.app/api/users/updateLimitReact/${data.email}` : '';
+
+    fetch(`${BASE_URL3}`, {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
+
   render() {
-    const { status } = this.props.data || {};
+    const { status, limitReact } = this.props.data || {};
     return (
         <>
             <a href="/">
@@ -378,9 +418,27 @@ handleScreen = () => {
                     {/* <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                         <FontAwesomeIcon icon={faCompress} /> 
                     </div> */}
-                    <div onClick={() => this.handleChangeActive('React')} className={`d-flex items-center justify-center rounded-full border-[1px] bg-[${this.state.bgColor3}] text-${this.state.textColor3} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
-                        <p className='text-[14px] mt-0'>React</p>
-                    </div>
+                    {
+                        status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
+                            limitReact === 2 || this.state.limitReact === 2 ? (
+                                <div className='flex w-max h-max items-center justify-center'>
+                                    Trials react : {this.state.limitReact}/2
+                                    <div className={`d-flex items-center bg-slate-300 text-slate-400 justify-center rounded-full border-[1px] border-slate-300 ml-4 mr-2 w-max h-[41px] px-4 py-1 text-center cursor-not-allowed`}>
+                                        <p className='text-[14px] mt-0'>React</p>
+                                    </div>
+                                </div>
+                            ):
+                                <div className='flex w-max h-max items-center justify-center'>
+                                    Trials react : {this.state.limitReact}/2
+                                    <div onClick={() => this.handleChangeActive('React')} className={`d-flex items-center bg-[${this.state.bgColor3}] text-${this.state.textColor3} justify-center rounded-full border-[1px] border-slate-300 ml-4 mr-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
+                                        <p className='text-[14px] mt-0'>React</p>
+                                    </div>
+                                </div>
+                        ):
+                            <div onClick={() => this.handleChangeActive('React')} className={`d-flex items-center justify-center rounded-full border-[1px] bg-[${this.state.bgColor3}] text-${this.state.textColor3} border-slate-300 ml-4 mr-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
+                                <p className='text-[14px] mt-0'>React</p>
+                            </div>
+                    }
                     <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-full border-[1px] bg-[${this.state.bgColor1}] text-${this.state.textColor1} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
                         <p className='text-[14px] mt-0'>PHP</p>
                     </div>
@@ -688,7 +746,13 @@ handleScreen = () => {
                             <div className='w-[45px] h-[45px] rounded-full bg-gray-300 animate-pulse'></div>
                         </div>
                     ):
-                        <div onClick={() => this.download("templateCurrent")} className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+                        <div onClick={() => {
+                                this.download("templateCurrent");
+                                if(this.state.active === 'React') {
+                                    this.handleAddLimit()   
+                                }
+                            }
+                        } className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
                             {/* <box-icon type="icon" style={{color: 'white'}} name="download" onClick={() => this.download("templateCurrent")} /> */}
                             <img src={Download} alt="icon-download" style={{width: '47%'}} />
                         </div>
