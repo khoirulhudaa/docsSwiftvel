@@ -86,7 +86,7 @@ const Header = () => {
                 valueCookie ? (
                     <>
                         <Button onClick={() => handleLogout()} text={"Logout"} style={"mr-3 2xl:scale-[1.2]"} padding={"py-1 px-4"} textColor='text-mongo' type={"outline"} />
-                        <div className={`w-max cursor-pointer h-max 2xl:ml-8 rounded-lg 2xl:scale-[1.2] px-[19.1px] py-[5px] text-white shadow-lg ${statusNew === 'settlement' ? 'bg-gradient-to-r from-blue-400 to-green-400' : 'bg-bgMongo'}`}>
+                        <div className={`w-max cursor-default h-max 2xl:ml-8 rounded-lg 2xl:scale-[1.2] px-[19.1px] py-[5px] text-white shadow-lg ${statusNew === 'settlement' ? 'bg-gradient-to-r from-blue-400 to-green-400' : 'bg-bgMongo'}`}>
                             {
                                 statusNew === 'settlement' ? (
                                     <>

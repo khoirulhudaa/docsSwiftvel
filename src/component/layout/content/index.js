@@ -152,7 +152,7 @@ return (
                 </div>
             </div>
             <div className='w-[90%] mt-2 lg:w-[86%] lg:flex items-center justify-between h-max 2xl:h-[500px] lg:h-[460px] p-2'>
-                <div data-aos-duration='1000' className='h-[100%] lg:mt-0 mt-[20px] relative overflow-hidden w-[100%] lg:w-[49%] bg-[#EDF5FE] rounded-[20px] p-2'>
+                <div data-aos-duration='1000' className='h-[100%] lg:mt-0 mt-[20px] relative overflow-hidden w-[100%] lg:w-[49%] bg-[#cee5ff] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-30px] lg:top-[-14px]'>
                         <img src={Fast} className='absolute left-8 bottom-[170px] lg:bottom-[200px] 2xl:bottom-[270px] 2xl:w-[40px] w-[30px]' alt="icon" />
                         <h2 className='text-black text-[32px] lg:text-[44px] 2xl:text-[52px] font-bold mb-3 ml-8 2xl:mt-[180px] mt-[140px]'>Faster</h2>
