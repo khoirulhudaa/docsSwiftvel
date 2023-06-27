@@ -13,6 +13,7 @@ import HTML5 from '../../assets/images/svg/html5.svg';
 import PHP from '../../assets/images/svg/php.svg';
 import Right from '../../assets/images/svg/right.svg';
 import Data from '../../dataComponent/index.json';
+import beautify from 'js-beautify';
 
 class MenuComponent extends Component {
 constructor(props) {
@@ -23,8 +24,10 @@ constructor(props) {
     active: 'HTML',
     bgColor1: 'white',
     bgColor2: '#00684A',
+    bgColor3: 'white',
     textColor1: 'black',
     textColor2: 'white',
+    textColor3: 'black',
     username: '',
     screen: false,
   };
@@ -113,25 +116,106 @@ componentDidMount = () => {
 
 download = (e) => {
     const name = e;
-    const header = 
-    `
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Ini adalah deskripsi halaman Anda." />
-    <meta name="keywords" content="kata kunci, yang, relevan, dengan, halaman, Anda" />
-    <meta name="keywords" content="kata kunci, yang, relevan, dengan, halaman, Anda" />
-    <meta name="language" content="en" />
-    <meta name="contributor" content="Nama Penyusun" />
-    <meta name="copyright" content="Tahun Hak Cipta, Pemilik Hak Cipta" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    `
-    const sourceHTML = header + document.querySelector(`.${name}`).innerHTML;
+    console.log('component name:', document.querySelector(`.${name}`))
+    console.log('value codes:', document.querySelector(`.${name}`).innerHTML)
+    console.log('styles codes:', document.querySelector(`.styles`).innerHTML)
+    console.log('template codes:', document.querySelector(`.template`).innerHTML)
+    const header = `
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Ini adalah deskripsi halaman Anda." />
+        <meta name="keywords" content="kata kunci, yang, relevan, dengan, halaman, Anda" />
+        <meta name="keywords" content="kata kunci, yang, relevan, dengan, halaman, Anda" />
+        <meta name="language" content="en" />
+        <meta name="contributor" content="Nama Penyusun" />
+        <meta name="copyright" content="Tahun Hak Cipta, Pemilik Hak Cipta" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    `;
 
-    const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+    
+    // Menghapus tag <script> beserta kontennya dari htmlReact
+    
+    const htmlReact = document.querySelector('.template').innerHTML;
+    
+    // Mencocokkan semua kode yang ada di dalam tag <script>
+    // Mencocokkan semua kode yang ada di dalam tag <script>
+    const scriptRegex = /<script\b[^>]*>([\s\S]*?)<\/script>/gm;
+    const scriptTags = htmlReact.match(scriptRegex);
+    
+    const modifiedResult = htmlReact.replace(scriptRegex, '');
+    // Mengambil konten dari setiap tag <script>
+    const scriptContents = scriptTags
+    ? scriptTags.map((tag) => {
+        // Menghapus tag <script> di awal dan akhir
+        const scriptContent = tag.replace(/<\/?script\b[^>]*>/gm, '');
+        return scriptContent.trim();
+        })
+    : [];
+
+    const codeJS = beautify.js(scriptContents.join('\n\n'));
+    
+    console.log('js:', codeJS);
+    
+
+    // Mengubah semua kata class menjadi className
+    let modifiedHTML = modifiedResult.replace(/class\b/g, 'className');
+
+    // Tambahkan "/" sebelum simbol ">" pada tag <br>
+    modifiedHTML = modifiedHTML.replace(/<br>/g, '<br/>');
+
+    // Tambahkan "/" sebelum simbol ">" pada tag <hr>
+    modifiedHTML = modifiedHTML.replace(/<hr>/g, '<hr/>');
+
+    // Tambahkan "/" sebelum simbol ">" pada tag <img>
+    modifiedHTML = modifiedHTML.replace(/<img(.*?)>/g, '<img$1/>');
+
+    // Menerapkan unminify menggunakan js-beautify
+    const unminifiedCodeHTMLReact = beautify.html(modifiedHTML);
+
+    const codeStylesReact = document.querySelector('.styles').innerHTML;
+
+    // Menerapkan unminify menggunakan js-beautify
+    const unminifiedCodeStylesReact = beautify.css(codeStylesReact);
+
+    const reactCode = `
+import { useEffect } from "react";
+    
+const Swiftvel = () => {
+
+    useEffect(() => {
+        ${codeJS}
+    })
+    
+    const style = 
+    \`${unminifiedCodeStylesReact}\`;
+return (
+    <>
+    <style>
+        {style}
+    </style>
+
+${unminifiedCodeHTMLReact}
+        </>
+    );
+};
+
+export default Swiftvel;
+    `;
+
+    // FOR REACT JS
+
+    const sourceREACT = reactCode;
+
+    // FOR HTML AND PHP
+    const sourceHTML = header + document.querySelector(`.${name}`).innerHTML;
+    // Menerapkan unminify menggunakan js-beautify
+    const beautifiedCode = beautify.html(sourceHTML);
+
+    const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(this.state.active === 'React' ? sourceREACT : beautifiedCode);
     const fileDownload = document.createElement("a");
     document.body.appendChild(fileDownload);
     fileDownload.href = source;
-    fileDownload.download = `index.${this.state.active === 'HTML' ? 'html' : 'php'}`;
+    fileDownload.download = `index.${this.state.active === 'React' ? 'js' : this.state.active === 'HTML' ? 'html' : 'php'}`;
     fileDownload.click();
     document.body.removeChild(fileDownload);
 
@@ -146,19 +230,33 @@ download = (e) => {
 handleChangeActive = (e) => {
     if(e === 'HTML') {
       this.setState({
-        active: e,
-        bgColor1: 'white',
-        bgColor2: '#00684A',
-        textColor1: 'black',
-        textColor2: 'white',
-      })
+          active: e,
+          bgColor1: 'white',
+          bgColor2: '#00684A',
+          bgColor3: 'white',
+          textColor1: 'black',
+          textColor2: 'white',
+          textColor3: 'black',
+    })
+    }else if(e === 'React') {
+        this.setState({
+            active: e,
+            bgColor1: 'white',
+            bgColor2: 'white',
+            bgColor3: '#00684A',
+            textColor1: 'black',
+            textColor2: 'black',
+            textColor3: 'white',
+        })
     }else {
       this.setState({
-        active: e,
-        bgColor1: '#00684A',
-        bgColor2: 'white',
-        textColor1: 'white',
-        textColor2: 'black',
+            active: e,
+            bgColor1: '#00684A',
+            bgColor2: 'white',
+            bgColor3: 'white',
+            textColor1: 'white',
+            textColor2: 'black',
+            textColor3: 'black',
       })
     }
 }
@@ -253,7 +351,7 @@ handleScreen = () => {
                 ):
                     <div className='flex items-center relative ml-1 mr-2 hovetext-[14px]r:text-black'>
                         <a href="https://saweria.co/dragmeTEam" target='__blank' className='no-underline hover:text-black text-black'>
-                            <div className='rounded-md px-3 flex items-center justify-center py-[6.4px] border border-[1] hover:text-black border-black cursor-pointer active:scale-[0.97] duration-100'>
+                            <div className='rounded-full px-3 flex items-center justify-center py-[6.5px] border border-[1] hover:text-black border-black cursor-pointer active:scale-[0.97] duration-100'>
                                 <img src={Saweria} className='w-[26px] relative top-[-1px]' alt="icon" />
                                 <span className='text-[15px] sawer hover:text-black relative top-[1px] ml-1'>
                                     Saweria
@@ -277,11 +375,17 @@ handleScreen = () => {
                     </>
                 ):
                    <>
-                    <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor1}] text-${this.state.textColor1} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
-                        <img src={PHP} alt="img" className='bg-white rounded-full w-[20px] px-1 h-[20px] mr-2' /> <p className='text-[14px] mt-0'>PHP language</p>
+                    {/* <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                        <FontAwesomeIcon icon={faCompress} /> 
+                    </div> */}
+                    <div onClick={() => this.handleChangeActive('React')} className={`d-flex items-center justify-center rounded-full border-[1px] bg-[${this.state.bgColor3}] text-${this.state.textColor3} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
+                        <p className='text-[14px] mt-0'>React</p>
                     </div>
-                    <div onClick={() => this.handleChangeActive('HTML')} className={`d-flex items-center justify-center rounded-md border-[1px] bg-[${this.state.bgColor2}] text-${this.state.textColor2} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
-                        <img src={HTML5} alt="img" className='w-[20px] bg-white rounded-full w-[20px] px-1 py-[0.9px] mr-2' /> <p className='text-[14px] mt-0'>HTML code</p>
+                    <div onClick={() => this.handleChangeActive('PHP')} className={`d-flex items-center justify-center rounded-full border-[1px] bg-[${this.state.bgColor1}] text-${this.state.textColor1} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
+                        <p className='text-[14px] mt-0'>PHP</p>
+                    </div>
+                    <div onClick={() => this.handleChangeActive('HTML')} className={`d-flex items-center justify-center rounded-full border-[1px] bg-[${this.state.bgColor2}] text-${this.state.textColor2} border-slate-300 mx-2 w-max h-[41px] px-4 py-1 text-center cursor-pointer`}>
+                        <p className='text-[14px] mt-0'>HTML</p>
                     </div>
                    </>
             }
