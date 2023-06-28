@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Right from '../../../assets/images/svg/right.svg';
 import { unSetUser } from '../../../redux/authSlice';
 import { Button } from '../../atom';
-import Right from '../../../assets/images/svg/right.svg';
 
 const Header = () => {
 

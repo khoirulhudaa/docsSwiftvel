@@ -1,7 +1,9 @@
+import { faPause, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Cookies from 'js-cookie';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Wave from '../../../assets/images/png/wave.png';
@@ -14,15 +16,11 @@ import Flexibel from '../../../assets/images/svg/flexibel.svg';
 import Petik from '../../../assets/images/svg/petik.svg';
 import Powerful from '../../../assets/images/svg/powerful.svg';
 import Right from '../../../assets/images/svg/right.svg';
+import Spin from '../../../assets/images/svg/spin.svg';
 import Tutor from '../../../assets/images/svg/tutor.svg';
 import Partner from '../../../assets/images/svg/v.svg';
 import Wave2 from '../../../assets/images/svg/wave.svg';
-import Spin from '../../../assets/images/svg/spin.svg';
-import Linelong from '../../../assets/images/svg/linelong.svg';
-import Lineshort from '../../../assets/images/svg/lineshort.svg';
 import Video from '../../../assets/video/autovideo.mp4';
-import { faPause, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Contents = () => {
 

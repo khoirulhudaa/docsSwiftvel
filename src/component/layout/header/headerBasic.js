@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '../../atom';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Right from '../../../assets/images/svg/right.svg';
+import { Button } from '../../atom';
 
 const Header = () => {
 

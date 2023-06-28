@@ -1,6 +1,7 @@
-import { faArrowsRotate, faCompress, faExpand, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faCompress, faExpand, faFont, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
+import beautify from 'js-beautify';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Swal from 'sweetalert2';
@@ -9,11 +10,8 @@ import Padlock from '../../assets/images/png/padlock.png';
 import Saweria from '../../assets/images/png/saweria.png';
 import Add from '../../assets/images/svg/add.svg';
 import Download from '../../assets/images/svg/donlot.svg';
-import HTML5 from '../../assets/images/svg/html5.svg';
-import PHP from '../../assets/images/svg/php.svg';
 import Right from '../../assets/images/svg/right.svg';
 import Data from '../../dataComponent/index.json';
-import beautify from 'js-beautify';
 
 class MenuComponent extends Component {
 constructor(props) {
@@ -30,7 +28,9 @@ constructor(props) {
     textColor3: 'black',
     username: '',
     screen: false,
-    limitReact: 0
+    limitReact: 0,
+    typeFonts: false,
+    selectFont: 'Poppins'
   };
 };
 
@@ -191,8 +191,13 @@ download = (e) => {
 
     // Menerapkan unminify menggunakan js-beautify
     const unminifiedCodeHTMLReact = beautify.html(modifiedHTML);
+    
+    const cssCode = document.querySelector('.styles').innerHTML;
+    const uniqueImportCode = cssCode.replace(/@import[^;]+;/g, (match, offset, str) => {
+        return str.indexOf(match) === offset ? match : '';
+    });
 
-    const codeStylesReact = document.querySelector('.styles').innerHTML;
+    const codeStylesReact = uniqueImportCode;
 
     // Menerapkan unminify menggunakan js-beautify
     const unminifiedCodeStylesReact = beautify.css(codeStylesReact);
@@ -228,10 +233,18 @@ export default Swiftvel;
 
     // FOR HTML AND PHP
     const sourceHTML = header + document.querySelector(`.${name}`).innerHTML;
+    
     // Menerapkan unminify menggunakan js-beautify
     const beautifiedCode = beautify.html(sourceHTML);
+    
+    // Menghapus semua @import yang duplikat
+    let importRegex = /@import url\('https:\/\/fonts\.googleapis\.com\/css2\?family=Poppins:wght@[0-9,;]+&display=swap'\);/g;
+    let uniqueImportCodeHTML = beautifiedCode.replace(importRegex, (match, offset, str) => {
+        return str.indexOf(match) === offset ? match : '';
+    });
 
-    const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(this.state.active === 'React' ? sourceREACT : beautifiedCode);
+    const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(this.state.active === 'React' ? sourceREACT : uniqueImportCodeHTML);
+
     const fileDownload = document.createElement("a");
     document.body.appendChild(fileDownload);
     fileDownload.href = source;
@@ -308,6 +321,31 @@ handleAddLimit = () => {
     })
 }
 
+handleFonts = (e) => {
+    e.preventDefault()
+    this.setState({
+        typeFonts: !this.state.typeFonts
+    })
+}
+
+handleSelectTypeFace = (e) => {
+    const prevSelectFont = this.state.selectFont; 
+    this.props.handlePrevSelectFontGlobalState(this.state.selectFont)
+    this.props.handleChangeFontGlobalState(e)
+    
+    this.setState({
+        selectFont: e,
+        typeFonts: false
+    })
+
+    const fontToReplace = e;
+    const importRegex2 = new RegExp(`@import\\s+url\\('https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=${prevSelectFont}:wght@300;400;500;600;700&display=swap'\\);`, 'g');
+    const importURL = `@import url('https://fonts.googleapis.com/css2?family=${fontToReplace}:wght@300;400;500;600;700&display=swap');`;
+    const uniqueImportCodeHTMLDone = document.querySelector(`.templateCurrent .styles`).innerHTML.replace(importRegex2, importURL);
+    document.querySelector('.templateCurrent .styles').innerHTML = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
+
+}
+
   render() {
     const { status, limitReact } = this.props.data || {};
     return (
@@ -320,7 +358,7 @@ handleAddLimit = () => {
             {
                 this.props.isLoading ? (
                     <div className='flex top-[13px] absolute left-[120px] items-center'>
-                        <div className='w-[40px] h-[40px] rounded-full bg-gray-300 animate-pulse'></div>
+                        <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
                     <div className='flex top-[13px] absolute left-[120px] items-center'>
@@ -332,7 +370,7 @@ handleAddLimit = () => {
             {
                 this.props.isLoading ? (
                     <div className='flex top-[13px] absolute left-[260px] items-center'>
-                        <div className='w-[40px] h-[40px] rounded-full bg-gray-300 animate-pulse'></div>
+                        <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
                     <div className='flex top-[13px] absolute left-[260px] items-center'>
@@ -343,8 +381,60 @@ handleAddLimit = () => {
             }
             {
                 this.props.isLoading ? (
+                    <div className='flex top-[13px] absolute left-[330px] items-center'>
+                        <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
+                    </div>
+                ):
+                    <div className='flex top-[13px] absolute left-[330px] items-center'>
+                        <div onClick={(e) => this.handleFonts(e)} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                            <FontAwesomeIcon icon={faFont} /> 
+                        </div>
+                        <div className={`fixed ${this.state.typeFonts ? 'top-[13%] z-[9999999] left-[0%] opacity-[1] duration-100' : 'top-[50px] left-[-100%] opacity-[0] duration-300'} w-[50vw] h-[84vh] shadow-lg overflow-hidden rounded-br-[60px] rounded-tr-[60px] p-4 bg-white flex flex-col text-justify`}>
+                            <div className='flex w-full h-max justify-center items-center'>
+                                <div className='h-full pt-2 w-[33%] flex flex-col items-center justify-between'>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Poppins')}>Poppins</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Roboto')}>Roboto</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Montserrat')}>Montserrat</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Inter')}>Inter</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Bebas Neue')}>Bebas Neue</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Oxygen')}>Oxygen</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Fasthand')}>Fasthand</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Righteous')}>Righteous</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Anton')}>Anton</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Geologica')}>Geologica</div>
+                                </div>
+                                <div className='h-full pt-2 w-[33%] flex flex-col items-center justify-between'>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Merriweather')}>Merriweather</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Oswald')}>Oswald</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Kanit')}>Kanit</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Inconsolata')}>Inconsolata</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Raleway')}>Raleway</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Mukta')}>Mukta</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Pacifico')}>Pacifico</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Rajdhani')}>Rajdhani</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Kablammo')}>Kablammo</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Orbit')}>Orbit</div>
+                                </div>
+                                <div className='h-full pt-2 w-[33%] flex flex-col items-center justify-between'>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Arvo')}>Arvo</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Caveat')}>Caveat</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Freehand')}>Freehand</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Kalam')}>Kalam</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Vollkorn')}>Vollkorn</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Rowdies')}>Rowdies</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Acme')}>Acme</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Alegreya')}>Alegreya</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Orbitron')}>Orbitron</div>
+                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Cinzel')}>Cinzel</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+            }
+            {
+                this.props.isLoading ? (
                     <div className='flex top-[13px] absolute left-[190px] items-center'>
-                        <div className='w-[40px] h-[40px] rounded-full bg-gray-300 animate-pulse'></div>
+                        <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
                     <div className='flex top-[13px] absolute left-[190px] items-center'>
@@ -367,7 +457,7 @@ handleAddLimit = () => {
             {
                 this.props.isLoading ? (
                     <div className='flex top-[13px] absolute left-[330px] items-center'>
-                        <div className='w-[40px] h-[40px] rounded-full bg-gray-300 animate-pulse'></div>
+                        <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
                     <a href="/pricing" className='absolute no-underline text-white left-[330px] top-[13px]'>
@@ -386,7 +476,7 @@ handleAddLimit = () => {
             {
                 this.props.isLoading ? (
                     <div className='fflex items-center relative ml-1 mr-2 hovetext-[14px]r:text-black'>
-                        <div className='rounded-md w-[120px] h-[41px] flex items-center justify-center cursor-pointer active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
+                        <div className='rounded-full w-[120px] h-[41px] flex items-center justify-center cursor-default active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
                     <div className='flex items-center relative ml-1 mr-2 hovetext-[14px]r:text-black'>
@@ -407,17 +497,17 @@ handleAddLimit = () => {
                 this.props.isLoading ? (
                     <>
                         <div className='flex items-center relative ml-1 mr-5 hovetext-[14px]r:text-black'>
-                            <div className='rounded-md w-[130px] h-[41px] flex items-center justify-center cursor-pointer active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
+                            <div className='rounded-full w-[100px] h-[41px] flex items-center justify-center cursor-default active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
+                        </div>
+                        <div className='flex items-center relative ml-1 mr-5 hovetext-[14px]r:text-black'>
+                            <div className='rounded-full w-[100px] h-[41px] flex items-center justify-center cursor-default active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
                         </div>
                         <div className='flex items-center relative ml-1 mr-2 hovetext-[14px]r:text-black'>
-                            <div className='rounded-md w-[130px] h-[41px] flex items-center justify-center cursor-pointer active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
+                            <div className='rounded-full w-[100px] h-[41px] flex items-center justify-center cursor-default active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
                         </div>
                     </>
                 ):
                    <>
-                    {/* <div onClick={() => this.handleScreen()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
-                        <FontAwesomeIcon icon={faCompress} /> 
-                    </div> */}
                     {
                         status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
                             limitReact === 2 || this.state.limitReact === 2 ? (
@@ -760,9 +850,9 @@ handleAddLimit = () => {
                 <div className="squareComponents" id='navbar'>
                     {
                         this.props.isLoading ? (
-                            <div className='w-[40px] h-max flex flex-col justify-center items-center'>
-                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse'></div>
-                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse'></div>
+                            <div className='w-[40px] h-max flex flex-col justify-center items-center cursor-default'>
+                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
+                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
                             </div>
                         ):
                             <>
@@ -774,9 +864,9 @@ handleAddLimit = () => {
                 <div className="squareComponents" id='heroes'>
                 {
                         this.props.isLoading ? (
-                            <div className='w-[40px] h-max flex flex-col justify-center items-center'>
-                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse'></div>
-                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse'></div>
+                            <div className='w-[40px] h-max flex flex-col justify-center items-center cursor-default'>
+                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
+                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
                             </div>
                         ):
                             <>
@@ -788,9 +878,9 @@ handleAddLimit = () => {
                 <div className="squareComponents" id='content'>
                 {
                         this.props.isLoading ? (
-                            <div className='w-[40px] h-max flex flex-col justify-center items-center'>
-                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse'></div>
-                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse'></div>
+                            <div className='w-[40px] h-max flex flex-col justify-center items-center cursor-default'>
+                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
+                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
                             </div>
                         ):
                             <>
@@ -802,9 +892,9 @@ handleAddLimit = () => {
                 <div className="squareComponents" id='footer'>
                 {
                         this.props.isLoading ? (
-                            <div className='w-[40px] h-max flex flex-col justify-center items-center'>
-                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse'></div>
-                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse'></div>
+                            <div className='w-[40px] h-max flex flex-col justify-center items-center cursor-default'>
+                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
+                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
                             </div>
                         ):
                             <>

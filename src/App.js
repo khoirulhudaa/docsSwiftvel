@@ -25,7 +25,9 @@ class App extends React.Component {
       selectedObjects: [],
       mode: 'manually',
       isLoading: true,
-      isLoadingBuild: 'stop'
+      isLoadingBuild: 'stop',
+      selectFont: 'Poppins',
+      nowSelectFont: 'Poppins',
     };
 
 };
@@ -146,22 +148,28 @@ handleAuthBuildCompoennt = (e) => {
   })
 }
 
+handleChangeFontGlobalState = (e) => {
+  this.setState({
+    nowSelectFont: e
+  })
+}
+
+handlePrevSelectFontGlobalState = (e) => {
+  this.setState({
+    selectFont: e
+  })
+}
+
 
   render() {
     // state dan function yang dikirim ke html
-    const { createComponent, handleAutomaticBuild } = this;
+    const { createComponent, handleAutomaticBuild , handleChangeFontGlobalState, handlePrevSelectFontGlobalState} = this;
     const { selectedObjects } = this.state;
-    const { dataStyle, dataHTML, dataImages, isLoading } = this.state;
+    const { dataStyle, dataHTML, dataImages, selectFontGlobalState, prevSelectFontGlobalState } = this.state;
 
     return (
       this.state.status ? (
         <>
-          {/* {isLoading && (
-            <div className="overlayLoad">
-              <FontAwesomeIcon icon={faSpinner} spin />
-              <p className='text-[16px] mt-4'>Loading components</p>
-            </div>
-          )} */}
           {
             // kode untuk menampilkan alert ketika lebar layar dibawah 1240px
             this.state.screen < 1000 ? (
@@ -229,11 +237,11 @@ handleAuthBuildCompoennt = (e) => {
           <div className="w-screen h-max overflow-x-hidden">
             <div className="col-sm-0 col-12">
               {/* Menu komponent */}
-              <MenuComponent isLoading={this.state.isLoading} selectedObjects={selectedObjects} handleAutomaticBuild={handleAutomaticBuild} showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
+              <MenuComponent handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} selectFont={this.state.selectFont} handleChangeFontGlobalState={(e) => handleChangeFontGlobalState(e)} dataHTML={dataHTML} dataStyle={dataStyle} isLoading={this.state.isLoading} selectedObjects={selectedObjects} handleAutomaticBuild={handleAutomaticBuild} showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
             </div>
             <div className='col-sm-12 col-12' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               {/* frame yang akan menampilkan semua component terpilih */}
-              <FrameOutput isLoadingBuild={this.state.isLoadingBuild} mode={this.state.mode} selectedObjects={selectedObjects} dataStyle={dataStyle} handleMinus={this.handleMinus} dataHTML={dataHTML} dataComponentUsed={dataImages} />
+              <FrameOutput handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} selectFont={this.state.selectFont} nowSelectFont={this.state.nowSelectFont} handleChangeFontGlobalState={handleChangeFontGlobalState} isLoadingBuild={this.state.isLoadingBuild} mode={this.state.mode} selectedObjects={selectedObjects} dataStyle={dataStyle} handleMinus={this.handleMinus} dataHTML={dataHTML} dataComponentUsed={dataImages} />
             </div>
           </div>
         </>

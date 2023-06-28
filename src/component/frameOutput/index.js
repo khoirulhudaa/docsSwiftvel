@@ -1,9 +1,9 @@
-import { faSpinner, faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
 import Data from '../../dataComponent/index.json';
 
-export default class FrameOutput extends Component {
+class FrameOutput extends Component {
   constructor(props) {
     super(props)
   
@@ -36,14 +36,16 @@ export default class FrameOutput extends Component {
     })
   }
 
-  hire = () => {
+  hire = (e) => {
+    e.preventDefault()
     this.setState({
       situation: false,
       situation2: false,
     })
   }
-
-  hire2 = () => {
+  
+  hire2 = (e) => {
+    e.preventDefault()
     this.setState({
       situation: true,
       situation2: true,
@@ -78,223 +80,317 @@ export default class FrameOutput extends Component {
       situation: true,
       situation2: true,
     })
-  }
-  
-  componentDidUpdate = () => {
     let web = '';
     let webStyle = '';
-   
-    if(this.props.mode === 'automaticaly') {
-      if(this.props.isLoadingBuild === 'success') {
+    this.props.dataHTML.forEach(function(data) {
+        web += data;
+    }); 
+    this.props.dataStyle.forEach(function(data2) {
+        webStyle += data2;
+    }); 
+
+    const prevSelectFont = this.props.selectFont; 
+    const fontToReplace = this.props.nowSelectFont; 
+    console.log('FOnt sebelumnya 2:', this.props.selectFont)
+    console.log('FOnt sekarang 2:', this.props.nowSelectFont)
     
-        if(this.props.dataHTML[0]?.html) {
-            for(let i = 0;i < this.props.dataHTML.length;i++) {
-            web += this.props.dataHTML[i]?.html;
-            console.log(this.props.dataHTML[i]?.html)
-          } 
-        }
-        
-        if(this.props.dataStyle[0]?.style) {
-          for(let i = 0;i < this.props.dataStyle.length;i++) {
-            webStyle += this.props.dataStyle[i]?.style;
-            console.log(this.props.dataStyle[i]?.style)
-          } 
-        }
-        document.querySelector('.template').innerHTML = web;
-        document.querySelector('.styles').innerHTML = webStyle;
-  
-      }else {
-         this.props.dataHTML.forEach(function(data) {
-             web += data;
-         }); 
-         this.props.dataStyle.forEach(function(data2) {
-             webStyle += data2;
-         }); 
-         document.querySelector('.template').innerHTML = web;
-         document.querySelector('.styles').innerHTML = webStyle;
-        }
-    }else {
-      this.props.dataHTML.forEach(function(data) {
-          web += data;
-      }); 
-      this.props.dataStyle.forEach(function(data2) {
-          webStyle += data2;
-      }); 
+    const importRegex2 = new RegExp(`@import\\s+url\\('https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=${prevSelectFont}:wght@300;400;500;600;700&display=swap'\\);`, 'g');
+    const importURL = `@import url('https://fonts.googleapis.com/css2?family=${fontToReplace}:wght@300;400;500;600;700&display=swap');`;
+    const uniqueImportCodeHTMLDone = webStyle.replace(importRegex2, importURL);
+    if(uniqueImportCodeHTMLDone) {
+      console.log('MASIH ADA PERUBAHAN')
+      webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
       document.querySelector('.template').innerHTML = web;
       document.querySelector('.styles').innerHTML = webStyle;
+      console.log('css disini2', webStyle)
+    }else {
+      console.log('TIDAK ADA PERUBAHAN')
+      webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
+      document.querySelector('.template').innerHTML = web;
+      document.querySelector('.styles').innerHTML = webStyle;
+      console.log('css disini2', webStyle)
+    }
+  }
+  
+  componentDidUpdate = (prevProps) => {
+    if (this.props.mode !== prevProps.mode || this.props.dataStyle !== prevProps.dataStyle) {
+        let web = '';
+        let webStyle = '';
+      
+        if(this.props.mode === 'automaticaly') {
+          if(this.props.isLoadingBuild === 'success') {
+        
+            if(this.props.dataHTML[0]?.html) {
+                for(let i = 0;i < this.props.dataHTML.length;i++) {
+                web += this.props.dataHTML[i]?.html;
+              } 
+            }
+            
+            if(this.props.dataStyle[0]?.style) {
+              for(let i = 0;i < this.props.dataStyle.length;i++) {
+                webStyle += this.props.dataStyle[i]?.style;
+              } 
+            }
+            console.log('html disini1', web)
+            console.log('css disini1', webStyle)
+
+            
+            const prevSelectFont = this.props.selectFont; 
+            const fontToReplace = this.props.nowSelectFont; 
+            console.log('FOnt sebelumnya 1:', this.props.selectFont)
+            console.log('FOnt sekarang 1:', this.props.nowSelectFont)
+            
+            const importRegex2 = new RegExp(`@import\\s+url\\('https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=${prevSelectFont}:wght@300;400;500;600;700&display=swap'\\);`, 'g');
+            const importURL = `@import url('https://fonts.googleapis.com/css2?family=${fontToReplace}:wght@300;400;500;600;700&display=swap');`;
+            const uniqueImportCodeHTMLDone = webStyle.replace(importRegex2, importURL);
+            if(uniqueImportCodeHTMLDone) {
+              webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
+              document.querySelector('.template').innerHTML = web;
+              document.querySelector('.styles').innerHTML = webStyle;
+            }else {
+              webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
+              document.querySelector('.template').innerHTML = web;
+              document.querySelector('.styles').innerHTML = webStyle;
+            }
+      
+          }else {
+            if(this.props.dataHTML[0]?.html) {
+                for(let i = 0;i < this.props.dataHTML.length;i++) {
+                web += this.props.dataHTML[i]?.html;
+              } 
+            }
+            
+            if(this.props.dataStyle[0]?.style) {
+              for(let i = 0;i < this.props.dataStyle.length;i++) {
+                webStyle += this.props.dataStyle[i]?.style;
+              } 
+            }
+
+            const prevSelectFont = this.props.selectFont; 
+            const fontToReplace = this.props.nowSelectFont; 
+            console.log('FOnt sebelumnya 2:', this.props.selectFont)
+            console.log('FOnt sekarang 2:', this.props.nowSelectFont)
+            
+            const importRegex2 = new RegExp(`@import\\s+url\\('https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=${prevSelectFont}:wght@300;400;500;600;700&display=swap'\\);`, 'g');
+            const importURL = `@import url('https://fonts.googleapis.com/css2?family=${fontToReplace}:wght@300;400;500;600;700&display=swap');`;
+            const uniqueImportCodeHTMLDone = webStyle.replace(importRegex2, importURL);
+            if(uniqueImportCodeHTMLDone) {
+              console.log('MASIH ADA PERUBAHAN')
+              webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
+              document.querySelector('.template').innerHTML = web;
+              document.querySelector('.styles').innerHTML = webStyle;
+              console.log('css disini2', webStyle)
+            }else {
+              console.log('TIDAK ADA PERUBAHAN')
+              webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
+              document.querySelector('.template').innerHTML = web;
+              document.querySelector('.styles').innerHTML = webStyle;
+              console.log('css disini2', webStyle)
+            }
+            }
+        }else {
+          this.props.dataHTML.forEach(function(data) {
+              web += data;
+          }); 
+          this.props.dataStyle.forEach(function(data2) {
+              webStyle += data2;
+          }); 
+
+            const prevSelectFont = this.props.selectFont; 
+            const fontToReplace = this.props.nowSelectFont; 
+            console.log('FOnt sebelumnya 3:', this.props.selectFont)
+            console.log('FOnt sekarang 3:', this.props.nowSelectFont)
+            
+            const importRegex2 = new RegExp(`@import\\s+url\\('https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=${prevSelectFont}:wght@300;400;500;600;700&display=swap'\\);`, 'g');
+            const importURL = `@import url('https://fonts.googleapis.com/css2?family=${fontToReplace}:wght@300;400;500;600;700&display=swap');`;
+            const uniqueImportCodeHTMLDone = webStyle.replace(importRegex2, importURL);
+            if(uniqueImportCodeHTMLDone) {
+              console.log('MASIH ADA PERUBAHAN')
+              webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
+              document.querySelector('.template').innerHTML = web;
+              document.querySelector('.styles').innerHTML = webStyle;
+              console.log('css disini3', webStyle)
+            }else {
+              console.log('TIDAK ADA PERUBAHAN')
+              webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
+              document.querySelector('.template').innerHTML = web;
+              document.querySelector('.styles').innerHTML = webStyle;
+              console.log('css disini3', webStyle)
+            }
+        }
     }
   }
 
   render() {
     return (
       <> 
-      {
-        this.state.situation2 ? (
-          <div className='listComponentUsed listNonUsed'>
-            {
+        {
+          this.state.situation2 ? (
+            <div className='listComponentUsed listNonUsed'>
+              {
 
-            this.state.situation ? (
-              <div className='btn-list' onClick={this.hire}>
-              <i className='fas fa-list-alt'></i>
+              this.state.situation ? (
+                <div className='btn-list' onClick={(e) => this.hire(e)}>
+                <i className='fas fa-list-alt'></i>
+              </div>
+              ):
+              <div className='btn-list' onClick={(e) => this.hire(e)}>
+                <i className='fas fa-list-alt topz'></i>
+              </div>
+              }
+                <div className='wrap-listComponentUsed'>
+                  <div className='wrap-ListComponent'>                  
+                  {
+                  this.props.mode === 'automaticaly' && this.props.dataComponentUsed[0] ? (
+                    <>
+                      <div style={{border: '1px dashed black', borderRadius: '12px', padding: '26px 12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>
+                        <p style={{textAlign: 'center', fontSize: '12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>There is no component list for the <strong>automatic build feature</strong></p>
+                      </div>
+                      <div className='flex relative justify-center ml-auto mr-auto mt-[40px] items-center'>
+                          <div onClick={() => window.location.reload()} className='active:scale-[0.96] w-[40px] p-[10px] border-dashed border-[1px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                              <FontAwesomeIcon icon={faArrowsRotate} /> 
+                          </div>
+                      </div>
+                    </>
+                  ) : (
+                    this.props.dataComponentUsed.map((data, index) => {
+                      if (data.title === 'navbar') {
+                        return (
+                          <div className="cardImage-navbar" key={index}>
+                            <img src={`${data.image}`} alt="img-component" />
+                            <i
+                              className="fas fa-trash"
+                              onClick={() => {
+                                this.remove(index);
+                                this.props.handleMinus(1);
+                              }}
+                            ></i>
+                          </div>
+                        );
+                      } else if (data.title === 'hero') {
+                        return (
+                          <div className="cardImage" key={index}>
+                            <img src={`${data.image}`} alt="img-component" />
+                            <i
+                              className="fas fa-trash"
+                              onClick={() => {
+                                this.remove(index);
+                                this.props.handleMinus(1);
+                              }}
+                            ></i>
+                          </div>
+                        );
+                      } else if (data.title === 'content') {
+                        return (
+                          <div className="cardImage-content" key={index}>
+                            <img src={`${data.image}`} alt="img-component" />
+                            <i
+                              className="fas fa-trash"
+                              onClick={() => {
+                                this.remove(index);
+                                this.props.handleMinus(1);
+                              }}
+                            ></i>
+                          </div>
+                        );
+                      } else if (data.title === 'footer') {
+                        return (
+                          <div className="cardImage-footer" key={index}>
+                            <img src={`${data.image}`} alt="img-component" />
+                            <i
+                              className="fas fa-trash"
+                              onClick={() => {
+                                this.remove(index);
+                                this.props.handleMinus(1);
+                              }}
+                            ></i>
+                          </div>
+                        );
+                      }
+                    })
+                  )
+                }
+                  </div>
+                </div>
             </div>
-            ):
-            <div className='btn-list' onClick={this.hire}>
-              <i className='fas fa-list-alt topz'></i>
-            </div>
-            }
-              <div className='wrap-listComponentUsed'>
-                <div className='wrap-ListComponent'>                  
+          ):
+          <div className='listComponentUsed'>
+            {
+              this.state.situation ? (
+              <div className='btn-list' onClick={(e) => this.hire2(e)}>
+                <i className='fas fa-list-alt'></i>
+              </div>
+              ):
+              <div className='btn-list' onClick={(e) => this.hire2(e)}>
+                <i className='fas fa-list-alt topz'></i>
+              </div>
+              }
+                <div className='wrap-listComponentUsed'>
                 {
-                this.props.mode === 'automaticaly' && this.props.dataComponentUsed[0] ? (
-                  <>
+                  this.props.mode === 'automaticaly' && this.props.dataComponentUsed[0] ? (
                     <div style={{border: '1px dashed black', borderRadius: '12px', padding: '26px 12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>
                       <p style={{textAlign: 'center', fontSize: '12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>There is no component list for the <strong>automatic build feature</strong></p>
                     </div>
-                    <div className='flex relative justify-center ml-auto mr-auto mt-[40px] items-center'>
-                        <div onClick={() => window.location.reload()} className='active:scale-[0.96] w-[40px] p-[10px] border-dashed border-[1px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
-                            <FontAwesomeIcon icon={faArrowsRotate} /> 
-                        </div>
-                    </div>
-                  </>
-                ) : (
-                  this.props.dataComponentUsed.map((data, index) => {
-                    if (data.title === 'navbar') {
-                      return (
-                        <div className="cardImage-navbar" key={index}>
-                          <img src={`${data.image}`} alt="img-component" />
-                          <i
-                            className="fas fa-trash"
-                            onClick={() => {
-                              this.remove(index);
-                              this.props.handleMinus(1);
-                            }}
-                          ></i>
-                        </div>
-                      );
-                    } else if (data.title === 'hero') {
-                      return (
-                        <div className="cardImage" key={index}>
-                          <img src={`${data.image}`} alt="img-component" />
-                          <i
-                            className="fas fa-trash"
-                            onClick={() => {
-                              this.remove(index);
-                              this.props.handleMinus(1);
-                            }}
-                          ></i>
-                        </div>
-                      );
-                    } else if (data.title === 'content') {
-                      return (
-                        <div className="cardImage-content" key={index}>
-                          <img src={`${data.image}`} alt="img-component" />
-                          <i
-                            className="fas fa-trash"
-                            onClick={() => {
-                              this.remove(index);
-                              this.props.handleMinus(1);
-                            }}
-                          ></i>
-                        </div>
-                      );
-                    } else if (data.title === 'footer') {
-                      return (
-                        <div className="cardImage-footer" key={index}>
-                          <img src={`${data.image}`} alt="img-component" />
-                          <i
-                            className="fas fa-trash"
-                            onClick={() => {
-                              this.remove(index);
-                              this.props.handleMinus(1);
-                            }}
-                          ></i>
-                        </div>
-                      );
-                    }
-                  })
-                )
-              }
+                  ) : (
+                    this.props.dataComponentUsed.map((data, index) => {
+                      if (data.title === 'navbar') {
+                        return (
+                          <div className="cardImage-navbar" key={index}>
+                            <img src={`${data.image}`} alt="img-component" />
+                            <i
+                              className="fas fa-trash"
+                              onClick={() => {
+                                this.remove(index);
+                                this.props.handleMinus(1);
+                              }}
+                            ></i>
+                          </div>
+                        );
+                      } else if (data.title === 'hero') {
+                        return (
+                          <div className="cardImage" key={index}>
+                            <img src={`${data.image}`} alt="img-component" />
+                            <i
+                              className="fas fa-trash"
+                              onClick={() => {
+                                this.remove(index);
+                                this.props.handleMinus(1);
+                              }}
+                            ></i>
+                          </div>
+                        );
+                      } else if (data.title === 'content') {
+                        return (
+                          <div className="cardImage-content" key={index}>
+                            <img src={`${data.image}`} alt="img-component" />
+                            <i
+                              className="fas fa-trash"
+                              onClick={() => {
+                                this.remove(index);
+                                this.props.handleMinus(1);
+                              }}
+                            ></i>
+                          </div>
+                        );
+                      } else if (data.title === 'footer') {
+                        return (
+                          <div className="cardImage-footer" key={index}>
+                            <img src={`${data.image}`} alt="img-component" />
+                            <i
+                              className="fas fa-trash"
+                              onClick={() => {
+                                this.remove(index);
+                                this.props.handleMinus(1);
+                              }}
+                            ></i>
+                          </div>
+                        );
+                      }
+                    })
+                  )
+                }
                 </div>
-              </div>
-          </div>
-        ):
-        <div className='listComponentUsed'>
-          {
-            this.state.situation ? (
-            <div className='btn-list' onClick={this.hire2}>
-              <i className='fas fa-list-alt'></i>
             </div>
-            ):
-            <div className='btn-list' onClick={this.hire2}>
-              <i className='fas fa-list-alt topz'></i>
-            </div>
-            }
-              <div className='wrap-listComponentUsed'>
-              {
-                this.props.mode === 'automaticaly' && this.props.dataComponentUsed[0] ? (
-                  <div style={{border: '1px dashed black', borderRadius: '12px', padding: '26px 12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>
-                    <p style={{textAlign: 'center', fontSize: '12px', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>There is no component list for the <strong>automatic build feature</strong></p>
-                  </div>
-                ) : (
-                  this.props.dataComponentUsed.map((data, index) => {
-                    if (data.title === 'navbar') {
-                      return (
-                        <div className="cardImage-navbar" key={index}>
-                          <img src={`${data.image}`} alt="img-component" />
-                          <i
-                            className="fas fa-trash"
-                            onClick={() => {
-                              this.remove(index);
-                              this.props.handleMinus(1);
-                            }}
-                          ></i>
-                        </div>
-                      );
-                    } else if (data.title === 'hero') {
-                      return (
-                        <div className="cardImage" key={index}>
-                          <img src={`${data.image}`} alt="img-component" />
-                          <i
-                            className="fas fa-trash"
-                            onClick={() => {
-                              this.remove(index);
-                              this.props.handleMinus(1);
-                            }}
-                          ></i>
-                        </div>
-                      );
-                    } else if (data.title === 'content') {
-                      return (
-                        <div className="cardImage-content" key={index}>
-                          <img src={`${data.image}`} alt="img-component" />
-                          <i
-                            className="fas fa-trash"
-                            onClick={() => {
-                              this.remove(index);
-                              this.props.handleMinus(1);
-                            }}
-                          ></i>
-                        </div>
-                      );
-                    } else if (data.title === 'footer') {
-                      return (
-                        <div className="cardImage-footer" key={index}>
-                          <img src={`${data.image}`} alt="img-component" />
-                          <i
-                            className="fas fa-trash"
-                            onClick={() => {
-                              this.remove(index);
-                              this.props.handleMinus(1);
-                            }}
-                          ></i>
-                        </div>
-                      );
-                    }
-                  })
-                )
-              }
-              </div>
-          </div>
         }
         <div className='frameOutput'>
           {
@@ -319,3 +415,5 @@ export default class FrameOutput extends Component {
     );
   }
 }
+
+export default React.memo(FrameOutput);
