@@ -118,8 +118,8 @@ html {
 
 .menuAll {
   position: absolute;
-  left: 150px;
-  z-index: 4434;
+  padding-left: 22vw;
+  z-index: -2;
   width: 400px;
   /* background-color: white; */
   height: 100%;

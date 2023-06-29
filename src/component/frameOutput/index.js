@@ -113,7 +113,7 @@ class FrameOutput extends Component {
   }
   
   componentDidUpdate = (prevProps) => {
-    if (this.props.mode !== prevProps.mode || this.props.dataStyle !== prevProps.dataStyle) {
+    if (this.props.nowSelectFont !== prevProps.nowSelectFont || this.props.dataStyle !== prevProps.dataStyle) {
         let web = '';
         let webStyle = '';
       

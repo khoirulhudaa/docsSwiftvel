@@ -329,20 +329,28 @@ handleFonts = (e) => {
 }
 
 handleSelectTypeFace = (e) => {
-    const prevSelectFont = this.state.selectFont; 
-    this.props.handlePrevSelectFontGlobalState(this.state.selectFont)
-    this.props.handleChangeFontGlobalState(e)
+    const prevSelectFont = this.state.selectFont;
+    this.props.handlePrevSelectFontGlobalState(this.state.selectFont);
+    this.props.handleChangeFontGlobalState(e);
     
-    this.setState({
-        selectFont: e,
-        typeFonts: false
-    })
-
     const fontToReplace = e;
     const importRegex2 = new RegExp(`@import\\s+url\\('https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=${prevSelectFont}:wght@300;400;500;600;700&display=swap'\\);`, 'g');
     const importURL = `@import url('https://fonts.googleapis.com/css2?family=${fontToReplace}:wght@300;400;500;600;700&display=swap');`;
-    const uniqueImportCodeHTMLDone = document.querySelector(`.templateCurrent .styles`).innerHTML.replace(importRegex2, importURL);
+    const uniqueImportCodeHTMLDone = document.querySelector('.templateCurrent .styles').innerHTML.replace(importRegex2, importURL);
     document.querySelector('.templateCurrent .styles').innerHTML = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
+    
+    this.setState({ typeFonts: false });
+    // Cek apakah regex menemukan nilai yang sama dengan prevSelectFont
+    if (!importRegex2.test(document.querySelector('.templateCurrent .styles').innerHTML)) {
+        // Jika tidak, ubah nilai prevSelectFont menjadi 'Poppins' atau nilai yang mirip
+        const newFont = 'Poppins';
+        const importRegex2 = new RegExp(`@import\\s+url\\('https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=${newFont}:wght@300;400;500;600;700&display=swap'\\);`, 'g');
+        const importURL = `@import url('https://fonts.googleapis.com/css2?family=${fontToReplace}:wght@300;400;500;600;700&display=swap');`;
+        const uniqueImportCodeHTMLDone = document.querySelector('.templateCurrent .styles').innerHTML.replace(importRegex2, importURL);
+        document.querySelector('.templateCurrent .styles').innerHTML = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${newFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
+        this.props.handlePrevSelectFontGlobalState(this.state.selectFont);
+        this.props.handleChangeFontGlobalState(e);
+    }
 
 }
 
