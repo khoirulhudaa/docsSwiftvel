@@ -101,13 +101,13 @@ class FrameOutput extends Component {
       console.log('MASIH ADA PERUBAHAN')
       webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
       document.querySelector('.template').innerHTML = web;
-      document.querySelector('.styles').innerHTML = webStyle;
+      document.querySelector('.templateCurrent .styles').innerHTML = webStyle;
       console.log('css disini2', webStyle)
     }else {
       console.log('TIDAK ADA PERUBAHAN')
       webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
       document.querySelector('.template').innerHTML = web;
-      document.querySelector('.styles').innerHTML = webStyle;
+      document.querySelector('.templateCurrent .styles').innerHTML = webStyle;
       console.log('css disini2', webStyle)
     }
   }
@@ -146,11 +146,11 @@ class FrameOutput extends Component {
             if(uniqueImportCodeHTMLDone) {
               webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
               document.querySelector('.template').innerHTML = web;
-              document.querySelector('.styles').innerHTML = webStyle;
+              document.querySelector('.templateCurrent .styles').innerHTML = webStyle;
             }else {
               webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
               document.querySelector('.template').innerHTML = web;
-              document.querySelector('.styles').innerHTML = webStyle;
+              document.querySelector('.templateCurrent .styles').innerHTML = webStyle;
             }
       
           }else {
@@ -178,13 +178,13 @@ class FrameOutput extends Component {
               console.log('MASIH ADA PERUBAHAN')
               webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
               document.querySelector('.template').innerHTML = web;
-              document.querySelector('.styles').innerHTML = webStyle;
+              document.querySelector('.templateCurrent .styles').innerHTML = webStyle;
               console.log('css disini2', webStyle)
             }else {
               console.log('TIDAK ADA PERUBAHAN')
               webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
               document.querySelector('.template').innerHTML = web;
-              document.querySelector('.styles').innerHTML = webStyle;
+              document.querySelector('.templateCurrent .styles').innerHTML = webStyle;
               console.log('css disini2', webStyle)
             }
             }
@@ -208,13 +208,13 @@ class FrameOutput extends Component {
               console.log('MASIH ADA PERUBAHAN')
               webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
               document.querySelector('.template').innerHTML = web;
-              document.querySelector('.styles').innerHTML = webStyle;
+              document.querySelector('.templateCurrent .styles').innerHTML = webStyle;
               console.log('css disini3', webStyle)
             }else {
               console.log('TIDAK ADA PERUBAHAN')
               webStyle = uniqueImportCodeHTMLDone.replace(new RegExp(`font-family:\\s*'${prevSelectFont}',\\s*sans-serif;`, 'g'), `font-family: '${fontToReplace}', sans-serif;`);
               document.querySelector('.template').innerHTML = web;
-              document.querySelector('.styles').innerHTML = webStyle;
+              document.querySelector('.templateCurrent .styles').innerHTML = webStyle;
               console.log('css disini3', webStyle)
             }
         }
