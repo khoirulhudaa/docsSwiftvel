@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 import Human1 from '../../assets/images/svg/human1.png'
 import Human2 from '../../assets/images/svg/human2.png'
 import Human3 from '../../assets/images/svg/human3.png'
+import Map from '../../assets/images/png/map.png'
 import Spin from '../../assets/images/svg/spin.svg'
 
 const Login = () => {
@@ -189,6 +190,7 @@ const Login = () => {
         </form>
       </div>
       <div className='w-[70%] hidden lg:inline relative h-[100vh] flex items-center justify-center ml-auto overflow-hidden'>
+        <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-full' />
         <img src={Human1} className='w-[300px] 2xl:w-[  450px] bottom-0 left-[33%] fixed' alt="human" />
         <img src={Human2} className='w-[260px] 2xl:w-[450px] fixed top-0 left-[54.9%] rotate-[180deg]' alt="human" />
         <img src={Human3} className='w-[300px] 2xl:w-[450px] fixed bottom-0 right-[0%]' alt="human" />

@@ -5,6 +5,7 @@ import Particel1 from '../../../assets/images/svg/particel1.svg'
 import Particel2 from '../../../assets/images/svg/particel2.svg'
 import Particel3 from '../../../assets/images/svg/particel3.svg'
 import Particel4 from '../../../assets/images/svg/particel4.svg'
+import Map from '../../../assets/images/png/map.png'
 import { Button } from '../../atom'
 
 const Hero = () => {
@@ -14,7 +15,7 @@ const Hero = () => {
 
   return (
     <div className='text-center bg-[#001E2B] h-max pb-[65px] lg:pb-0 lg:h-[105vh] 2xl:h-[90vh] lg:mb-0 mb-[70px] flex items-center overflow-hidden justify-center flex-col'>
-
+        <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-[112%]' />
         {/* Particels */}
         <img data-aos-duration='1000' className='absolute top-[90px] lg:top-[120px] left-[100px] lg:left-[160px]' src={Particel1} alt="particel-img" />
         <img data-aos-duration='2000' className='absolute top-[90px] lg:top-[120px] right-[100px] lg:right-[160px]' src={Particel2} alt="particel-img" />
@@ -34,7 +35,7 @@ const Hero = () => {
             <li className='list-disc 2xl:text-[17px] text-white mx-10 font-normal'>Support beginners</li>
         </ul>
       </div>
-      <a href="/swiftvelBuilder" className='no-underline text-white font-bold'>
+      <a href="/swiftvelBuilder" className='no-underline text-white font-bold relative z-[3]'>
         <Button text="Try swiftvel" padding={'lg:px-5 lg:py-3 2xl:py-4 px-3 py-3'} textColor='text-white' width={'lg:w-[190px] w-[50vw] 2xl:w-[220px] lg:mb-0 mb-12'} style={'font-normal mt-2'} />
       </a>
     </div>  

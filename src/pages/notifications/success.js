@@ -1,6 +1,7 @@
 import React from 'react'
 import Successs from '../../assets/images/svg/success.svg'
 import Wave from '../../assets/images/png/wave.png'
+import Map from '../../assets/images/png/map.png'
 import { useNavigate } from 'react-router-dom'
 
 const Success = () => {
@@ -9,6 +10,7 @@ const Success = () => {
 
   return (
     <div className='w-screen bg-bgMongo h-max lg:h-[92vh] lg:flex py-[80px] lg:py-3 items-center justify-center'>
+        <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-[112%]' />
         <img src={Wave} className='w-[50%] opacity-[0.4] absolute top-0 hidden lg:inline right-0' alt='img' />
         <img src={Successs} alt="img" className='w-[80%] ml-auto mr-auto lg:w-[500px] mt-[10px] lg:ml-[120px] lg:mr-[200px]' />
         <div className='flex flex-col z-10'>

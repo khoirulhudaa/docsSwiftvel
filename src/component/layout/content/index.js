@@ -7,6 +7,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Wave from '../../../assets/images/png/wave.png';
+import Map from '../../../assets/images/png/map.png';
 import Benefit1 from '../../../assets/images/svg/benefit1.svg';
 import Benefit2 from '../../../assets/images/svg/benefit2.svg';
 import Benefit3 from '../../../assets/images/svg/benefit3.svg';
@@ -188,6 +189,7 @@ return (
         </section>
 
         <section className='w-[100%] overflow-hidden rounded-br-[70px] lg:rounded-br-[200px] relative mt-[60px] 2xl:mt-[40px] pt-1 lg:pt-4 lg:mt-[100px] pb-[20px] lg:pb-[140px] h-max 2xl:pb-[280px] ml-auto mr-auto bg-[#023430]'>
+            <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-full' />
             <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-max lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
                <div className='lg:h-max w-max h-max relative'>
                     <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[40px] lg:text-[70px] 2xl:text-[80px] leading-[1.4em] lg:leading-[1.6em]'>You can change the color of some parts</h2>
@@ -212,7 +214,8 @@ return (
             </div>
         </section>
 
-        <section className='relative w-full mt-[80px] lg:rounded-tl-[110px] rounded-tl-[70px] lg:rounded-br-[110px] rounded-br-[70px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[40px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
+        <section className='relative w-full mt-[80px] lg:rounded-tl-[110px] rounded-tl-[70px] lg:overflow-hidden lg:rounded-br-[110px] rounded-br-[70px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[40px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
+            <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-full' />
             <img src={Wave} className='absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
             <div className='w-[100%] lg:w-[50%] h-max p-[30px] lg:p-[120px] lg:mt-[10px]'>
                 <h1 className='text-[45px] 2xl:text-[80px] lg:text-[55px] text-white w-[90%] leading-[1.4em]'>Get started with swiftvel today</h1>
@@ -220,8 +223,8 @@ return (
                     It's easy to use and will really help you in making websites, 
                     easier than CMS and has affordable prices for premium accounts
                 </p>
-                <a target='__blank' href="https://api.whatsapp.com/send?phone=6289513093406&text=Hallo admin, saya swiftvelers." className='no-underline text-white'>
-                    <div className='w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-5 bg-mongo px-10 py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
+                <a target='__blank' href="https://api.whatsapp.com/send?phone=6289513093406&text=Hallo admin, saya swiftvelers." className='z-[3] relative no-underline text-white'>
+                    <div className='w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-5 bg-mongo px-10 z-[3] py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
                         Call servicer
                     </div>
                 </a>
@@ -315,6 +318,7 @@ return (
         </section>
 
         <section className='w-[100%] overflow-hidden rounded-tr-[70px] lg:rounded-tr-[200px] relative mt-[60px] 2xl:mt-[40px] pt-1 lg:pt-4 lg:mt-[0px] pb-[20px] lg:pb-[100px] h-max 2xl:pb-[280px] ml-auto mr-auto bg-[#023430]'>
+            <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-full' />
             <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-max lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
                <div className='lg:h-max w-max h-max relative'>
                     <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[40px] lg:text-[70px] 2xl:text-[80px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>

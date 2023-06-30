@@ -10,7 +10,7 @@ const Footer = () => {
 const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='w-full lg:flex items-center px-10 justify-between text-center h-max py-8 bg-darkMongo'>
+    <footer className='w-full lg:flex items-center z-[5555] relative px-10 justify-between text-center h-max py-8 bg-darkMongo'>
         <small className='font-normal text-white text-center'>
         &copy; {currentYear} Swiftvel. All rights reserved.
         </small>
