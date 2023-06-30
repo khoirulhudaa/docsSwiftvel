@@ -18,6 +18,7 @@ import Powerful from '../../../assets/images/svg/powerful.svg';
 import Right from '../../../assets/images/svg/right.svg';
 import Spin from '../../../assets/images/svg/spin.svg';
 import Tutor from '../../../assets/images/svg/tutor.svg';
+import Colors from '../../../assets/images/svg/colors.svg';
 import Partner from '../../../assets/images/svg/v.svg';
 import Wave2 from '../../../assets/images/svg/wave.svg';
 import Video from '../../../assets/video/autovideo.mp4';
@@ -189,16 +190,16 @@ return (
         <section className='w-[100%] overflow-hidden rounded-br-[70px] lg:rounded-br-[200px] relative mt-[60px] 2xl:mt-[40px] pt-1 lg:pt-4 lg:mt-[100px] pb-[20px] lg:pb-[140px] h-max 2xl:pb-[280px] ml-auto mr-auto bg-[#023430]'>
             <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-max lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
                <div className='lg:h-max w-max h-max relative'>
-                    <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[40px] lg:text-[70px] 2xl:text-[80px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>
+                    <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[40px] lg:text-[70px] 2xl:text-[80px] leading-[1.4em] lg:leading-[1.6em]'>You can change the color of some parts</h2>
                     <a href="/swiftvelBuilder" className='w-max text-lightMongo no-underline'>
                         <p className='text-lightMongo mt-4 w-max cursor-pointer flex items-center'>Try swiftvel now <img src={Right} className='text-indigo-500 w-[26px] p-2 ml-3 bg-white rounded-full flex items-center justify-center' alt="icon" /></p>
                     </a>
-                    <p className='text-[15px] 2xl:text-[23px] 2xl:leading-[2.2em] leading-[2em] mt-5 w-[25%] lg:w-[45%] font-normal text-slate-200'>It's very easy to use, just choose the components you want and arrange them all into 1 perfect homepage according to the web appearance you want</p>
+                    <p className='text-[15px] 2xl:text-[23px] 2xl:leading-[2.2em] leading-[2em] mt-5 w-[25%] lg:w-[45%] font-normal text-slate-200'>Changes all or some of the same colors you choose to your desired color in realtime in Swiftvel to determine the best taste for the website</p>
                </div>
             </div>
             <div className='relative ml-auto mr-auto hidden lg:inline w-[84%] 2xl:top-[120px] flex justify-between'>
                <div className='w-[100%] lg:w-[84%] 2xl:w-[88%] overflow-hidden mt-4 ml-auto mr-auto rounded-[30px] border-solid border-[12px] border-[#023430]'>
-                    <img src={Tutor} className='w-[102%]' alt="img" />
+                    <img src={Colors} className='w-[102%]' alt="img" />
                </div>
             </div>
         </section>
@@ -211,7 +212,7 @@ return (
             </div>
         </section>
 
-        <section className='relative w-full mt-[80px] lg:rounded-tl-[110px] rounded-tl-[70px] lg:rounded-br-[110px] rounded-br-[70px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[30px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
+        <section className='relative w-full mt-[80px] lg:rounded-tl-[110px] rounded-tl-[70px] lg:rounded-br-[110px] rounded-br-[70px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[40px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
             <img src={Wave} className='absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
             <div className='w-[100%] lg:w-[50%] h-max p-[30px] lg:p-[120px] lg:mt-[10px]'>
                 <h1 className='text-[45px] 2xl:text-[80px] lg:text-[55px] text-white w-[90%] leading-[1.4em]'>Get started with swiftvel today</h1>
@@ -310,6 +311,23 @@ return (
                 Send now
               </span>
             }
+            </div>
+        </section>
+
+        <section className='w-[100%] overflow-hidden rounded-tr-[70px] lg:rounded-tr-[200px] relative mt-[60px] 2xl:mt-[40px] pt-1 lg:pt-4 lg:mt-[0px] pb-[20px] lg:pb-[100px] h-max 2xl:pb-[280px] ml-auto mr-auto bg-[#023430]'>
+            <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-max lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
+               <div className='lg:h-max w-max h-max relative'>
+                    <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[40px] lg:text-[70px] 2xl:text-[80px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>
+                    <a href="/swiftvelBuilder" className='w-max text-lightMongo no-underline'>
+                        <p className='text-lightMongo mt-4 w-max cursor-pointer flex items-center'>Try swiftvel now <img src={Right} className='text-indigo-500 w-[26px] p-2 ml-3 bg-white rounded-full flex items-center justify-center' alt="icon" /></p>
+                    </a>
+                    <p className='text-[15px] 2xl:text-[23px] 2xl:leading-[2.2em] leading-[2em] mt-5 w-[25%] lg:w-[45%] font-normal text-slate-200'>It's very easy to use, just choose the components you want and arrange them all into 1 perfect homepage according to the web appearance you want</p>
+               </div>
+            </div>
+            <div className='relative ml-auto mr-auto hidden lg:inline w-[84%] 2xl:top-[120px] flex justify-between'>
+               <div className='w-[100%] lg:w-[84%] 2xl:w-[88%] overflow-hidden mt-4 ml-auto mr-auto rounded-[30px] border-solid border-[12px] border-[#023430]'>
+                    <img src={Tutor} className='w-[102%]' alt="img" />
+               </div>
             </div>
         </section>
 
