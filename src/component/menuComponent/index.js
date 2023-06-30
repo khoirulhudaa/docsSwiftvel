@@ -541,7 +541,7 @@ handleSelectTypeFace = (e) => {
                                 </div>
                            </div>
                            <div className='w-max px-3 py-2'>
-                            <p className='font-bold mb-3'>Pallete colors</p>
+                            <p className='font-bold mb-3'>Color palettes</p>
                                <div className='w-max h-full flex'>
                                     <div className='w-[50px] h-max flex flex-col items-center justify-center'>
                                             <div onClick={() => {
