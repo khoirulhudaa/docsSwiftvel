@@ -547,7 +547,7 @@ handleChangeColorPicker = (selectedColor) => {
                                                 <div key={i} onClick={() => this.setState({ activeColorComponent: e })} style={{ backgroundColor: e }} className={`${this.state.activeColorComponent === e ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} w-[40px] m-[4px] h-[40px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] border border-[1px] border-slate-500`}></div>
                                             ))
                                         ):
-                                            <div onClick={(e) => this.handleNavbar(e)} className='w-[40px] flex items-center justify-center m-[4px] h-[40px] cursor-pointer hover:scale-[0.98] active:scale-[0.97] text-[24px] border-dashed border-[1px] border-slate-500 rounded-lg'>
+                                            <div onClick={this.props.mode === 'automaticaly' ? null : (e) => this.handleNavbar(e)} className={`w-[40px] flex items-center justify-center m-[4px] h-[40px] ${this.props.mode === 'automaticaly' ? 'cursor-not-allowed bg-slate-300 text-slate-400 hover:scale-[1] active:scale-[1]' : 'cursor-pointer hover:scale-[0.98] active:scale-[0.97]'} text-[24px] border-dashed border-[1px] border-slate-500 rounded-lg`}>
                                                 <p className='relative bottom-[-1.8px]'>
                                                     +
                                                 </p>
@@ -834,7 +834,12 @@ handleChangeColorPicker = (selectedColor) => {
                                 <div className='relative top-[55px]'>
                                     <ChromePicker color={this.state.activeColor2} onChange={this.handleChangeColorPicker} />
                                 </div>
-                                <div onClick={(e) => this.handleChange(e)} className='w-max h-[40px] px-3 items-center justify-center flex rounded-lg bg-bgMongo text-white text-center cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>Change</div>
+                                {
+                                    this.props.mode === 'automaticaly' ? (
+                                        <div className='w-max h-[40px] px-3 items-center justify-center flex rounded-lg bg-slate-300 text-slate-400 text-center cursor-not-allowed'>Change</div>
+                                    ):
+                                        <div onClick={(e) => this.handleChange(e)} className='w-max h-[40px] px-3 items-center justify-center flex rounded-lg bg-bgMongo text-white text-center cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>Change</div>
+                                }
                            </div>
                         </div>
                     </div>  
