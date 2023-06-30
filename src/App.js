@@ -30,6 +30,11 @@ class App extends React.Component {
       isLoadingBuild: 'stop',
       selectFont: 'Poppins',
       nowSelectFont: 'Poppins',
+      typeColor: '',
+      dataColors:[],
+      activeColor: '',
+      activeColor2: '',
+      activeColorComponent: '',
     };
 
 };

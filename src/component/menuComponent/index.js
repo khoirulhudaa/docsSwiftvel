@@ -1,4 +1,4 @@
-import { faArrowsRotate, faCompress, faExpand, faFont, faPaintBrush, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faAdd, faArrowsRotate, faCompress, faExpand, faFont, faPaintBrush, faPlus, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
 import beautify from 'js-beautify';
@@ -115,7 +115,7 @@ componentDidMount = () => {
         document.querySelector('.menu4').classList.remove('show4')
         document.querySelector('.menu5').classList.remove('show5')
     })
-
+    
     document.getElementById('heroes').addEventListener('click', () => {
         document.querySelector('.menu1').classList.remove('show1')
         document.querySelector('.menu2').classList.add('show2')
@@ -372,6 +372,17 @@ handleChange = (e) => {
     })
 }
   
+handleNavbar = (e) => {
+    e.preventDefault()
+    this.setState({
+        typeColor: false
+    })
+    document.querySelector('.menu1').classList.add('show1')
+    document.querySelector('.menu2').classList.remove('show2')
+    document.querySelector('.menu3').classList.remove('show3')
+    document.querySelector('.menu4').classList.remove('show4')
+    document.querySelector('.menu5').classList.remove('show5')
+}
 
 handleSelectTypeFace = (e) => {
     const prevSelectFont = this.state.selectFont;
@@ -498,16 +509,22 @@ handleSelectTypeFace = (e) => {
                         </div>
                         <div className={`fixed font-mono ${this.state.typeColor ? 'top-[13%] z-[9999999] opacity-[1] duration-100' : 'top-[50px] opacity-[0] duration-100'} w-[400px] p-2 flex justify-between h-max shadow-lg overflow-hidden rounded-[20px] bg-white text-justify`}>
                            <div className='w-[35%] h-full p-2 flex flex-wrap items-center'>
+                            <p className='font-bold mb-4'>Components</p>
                             {
                                 this.state.dataColors.length > 0 ? (
                                     this.state.dataColors.map((e, i) => (
                                         <div key={i} onClick={() => this.setState({ activeColorComponent: e })} style={{ backgroundColor: e }} className={`${this.state.activeColorComponent === e ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} w-[40px] m-[4px] h-[40px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] border border-[1px] border-slate-500`}></div>
                                     ))
                                 ):
-                                    <div className='w-[40px] m-[4px] h-[40px] border-dashed border-[1px] border-slate-500 rounded-lg'></div>
+                                    <div onClick={(e) => this.handleNavbar(e)} className='w-[40px] flex items-center justify-center m-[4px] h-[40px] cursor-pointer hover:scale-[0.98] active:scale-[0.97] text-[24px] border-dashed border-[1px] border-slate-500 rounded-lg'>
+                                        <p className='relative bottom-[-1.8px]'>
+                                            +
+                                        </p>
+                                    </div>
                             }
                            </div>
                            <div className='w-[35%] h-full p-2 flex flex-wrap items-center'>
+                               <p className='font-bold mb-4'>Pallete colors</p>
                                 <div onClick={() => {
                                     this.setState({ activeColor: 'color1' })
                                     this.setState({ activeColor2: '#3B82F6' })
