@@ -93,6 +93,7 @@ class FrameOutput extends Component {
     const fontToReplace = this.props.nowSelectFont; 
     console.log('FOnt sebelumnya 2:', this.props.selectFont)
     console.log('FOnt sekarang 2:', this.props.nowSelectFont)
+    webStyle = webStyle.replace(new RegExp(this.props.activeColorComponent, 'g'), this.props.activeColor2);
     
     const importRegex2 = new RegExp(`@import\\s+url\\('https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=${prevSelectFont}:wght@300;400;500;600;700&display=swap'\\);`, 'g');
     const importURL = `@import url('https://fonts.googleapis.com/css2?family=${fontToReplace}:wght@300;400;500;600;700&display=swap');`;
@@ -113,7 +114,12 @@ class FrameOutput extends Component {
   }
   
   componentDidUpdate = (prevProps) => {
-    if (this.props.nowSelectFont !== prevProps.nowSelectFont || this.props.dataStyle !== prevProps.dataStyle) {
+    document.addEventListener('click', function(event) {
+        var target = event.target;
+        var style = window.getComputedStyle(target);
+        console.log(style.cssText);
+    });
+    if (this.props.nowSelectFont !== prevProps.nowSelectFont || this.props.dataHTML !== prevProps.dataHTML) {
         let web = '';
         let webStyle = '';
       
@@ -139,7 +145,9 @@ class FrameOutput extends Component {
             const fontToReplace = this.props.nowSelectFont; 
             console.log('FOnt sebelumnya 1:', this.props.selectFont)
             console.log('FOnt sekarang 1:', this.props.nowSelectFont)
-            
+           
+            webStyle = webStyle.replace(new RegExp(this.props.activeColorComponent, 'g'), this.props.activeColor2);
+
             const importRegex2 = new RegExp(`@import\\s+url\\('https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=${prevSelectFont}:wght@300;400;500;600;700&display=swap'\\);`, 'g');
             const importURL = `@import url('https://fonts.googleapis.com/css2?family=${fontToReplace}:wght@300;400;500;600;700&display=swap');`;
             const uniqueImportCodeHTMLDone = webStyle.replace(importRegex2, importURL);
@@ -170,7 +178,9 @@ class FrameOutput extends Component {
             const fontToReplace = this.props.nowSelectFont; 
             console.log('FOnt sebelumnya 2:', this.props.selectFont)
             console.log('FOnt sekarang 2:', this.props.nowSelectFont)
-            
+           
+            webStyle = webStyle.replace(new RegExp(this.props.activeColorComponent, 'g'), this.props.activeColor2);
+
             const importRegex2 = new RegExp(`@import\\s+url\\('https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=${prevSelectFont}:wght@300;400;500;600;700&display=swap'\\);`, 'g');
             const importURL = `@import url('https://fonts.googleapis.com/css2?family=${fontToReplace}:wght@300;400;500;600;700&display=swap');`;
             const uniqueImportCodeHTMLDone = webStyle.replace(importRegex2, importURL);
@@ -200,7 +210,9 @@ class FrameOutput extends Component {
             const fontToReplace = this.props.nowSelectFont; 
             console.log('FOnt sebelumnya 3:', this.props.selectFont)
             console.log('FOnt sekarang 3:', this.props.nowSelectFont)
-            
+           
+            webStyle = webStyle.replace(new RegExp(this.props.activeColorComponent, 'g'), this.props.activeColor2);
+
             const importRegex2 = new RegExp(`@import\\s+url\\('https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=${prevSelectFont}:wght@300;400;500;600;700&display=swap'\\);`, 'g');
             const importURL = `@import url('https://fonts.googleapis.com/css2?family=${fontToReplace}:wght@300;400;500;600;700&display=swap');`;
             const uniqueImportCodeHTMLDone = webStyle.replace(importRegex2, importURL);

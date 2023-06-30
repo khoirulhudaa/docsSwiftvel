@@ -7,7 +7,6 @@ import Water from './assets/images/png/water.png';
 import FrameOutput from './component/frameOutput';
 import MenuComponent from './component/menuComponent';
 import jsonData from './dataComponent/index.json';
-import listColorComponents from './utils';
 
 
 class App extends React.Component {
@@ -32,7 +31,6 @@ class App extends React.Component {
       nowSelectFont: 'Poppins',
       typeColor: '',
       dataColors:[],
-      activeColor: '',
       activeColor2: '',
       activeColorComponent: '',
     };
@@ -166,13 +164,29 @@ handlePrevSelectFontGlobalState = (e) => {
   })
 }
 
+handleUpdateStateColors = (e) => {
+  console.log('BISA:', e)
+  console.log('BISA:', e.activeColor2)
+  console.log('BISA:', e.activeColorComponent)
+  this.setState({
+    activeColorComponent: e.activeColorComponent,
+    activeColor2: e.activeColor2
+  })
+}
+
+handleChangeColorState = () => {
+  const updatedColors = this.state.dataStyle.map((color) => {
+    return color.replace(new RegExp(this.state.activeColorComponent, 'g'), this.state.activeColor2);
+  });
+
+  this.setState({ dataStyle: updatedColors });
+}
 
   render() {
     // state dan function yang dikirim ke html
     const { createComponent, handleAutomaticBuild , handleChangeFontGlobalState, handlePrevSelectFontGlobalState} = this;
     const { selectedObjects } = this.state;
-    const { dataStyle, dataHTML, dataImages, selectFontGlobalState, prevSelectFontGlobalState } = this.state;
-
+    const { dataStyle, dataHTML, dataImages } = this.state;
     return (
       this.state.status ? (
         <>
@@ -243,11 +257,11 @@ handlePrevSelectFontGlobalState = (e) => {
           <div className="w-screen h-max overflow-x-hidden">
             <div className="col-sm-0 col-12">
               {/* Menu komponent */}
-              <MenuComponent handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} selectFont={this.state.selectFont} handleChangeFontGlobalState={(e) => handleChangeFontGlobalState(e)} dataHTML={dataHTML} dataStyle={dataStyle} isLoading={this.state.isLoading} selectedObjects={selectedObjects} handleAutomaticBuild={handleAutomaticBuild} showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
+              <MenuComponent handleChangeColorState={(e) => this.handleChangeColorState(e)} handleUpdateStateColors={(e) => this.handleUpdateStateColors(e)} handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} dataStyle={dataStyle} selectFont={this.state.selectFont} handleChangeFontGlobalState={(e) => handleChangeFontGlobalState(e)} dataHTML={dataHTML} isLoading={this.state.isLoading} selectedObjects={selectedObjects} handleAutomaticBuild={handleAutomaticBuild} showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
             </div>
             <div className='col-sm-12 col-12' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               {/* frame yang akan menampilkan semua component terpilih */}
-              <FrameOutput handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} selectFont={this.state.selectFont} nowSelectFont={this.state.nowSelectFont} handleChangeFontGlobalState={handleChangeFontGlobalState} isLoadingBuild={this.state.isLoadingBuild} mode={this.state.mode} selectedObjects={selectedObjects} dataStyle={dataStyle} handleMinus={this.handleMinus} dataHTML={dataHTML} dataComponentUsed={dataImages} />
+              <FrameOutput activeColor2={this.state.activeColor2} activeColorComponent={this.state.activeColorComponent} handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} selectFont={this.state.selectFont} nowSelectFont={this.state.nowSelectFont} handleChangeFontGlobalState={handleChangeFontGlobalState} isLoadingBuild={this.state.isLoadingBuild} mode={this.state.mode} selectedObjects={selectedObjects} dataStyle={dataStyle} handleMinus={this.handleMinus} dataHTML={dataHTML} dataComponentUsed={dataImages} />
             </div>
           </div>
         </>
