@@ -1,4 +1,4 @@
-import { faArrowsRotate, faCompress, faExpand, faFont, faPaintBrush, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faBucket, faCompress, faExpand, faFont, faPaintBrush, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
 import beautify from 'js-beautify';
@@ -12,6 +12,7 @@ import Add from '../../assets/images/svg/add.svg';
 import Download from '../../assets/images/svg/donlot.svg';
 import Right from '../../assets/images/svg/right.svg';
 import Data from '../../dataComponent/index.json';
+import { ChromePicker } from 'react-color';
 
 class MenuComponent extends Component {
 constructor(props) {
@@ -36,6 +37,7 @@ constructor(props) {
     activeColor: '',
     activeColor2: '',
     activeColorComponent: '',
+    colorPicker: false
   };
 };
 
@@ -425,6 +427,19 @@ handleSelectTypeFace = (e) => {
 
 }
 
+handlePicker = (e) => {
+    e.preventDefault()
+    this.setState({
+        colorPicker: !this.state.colorPicker
+    })
+}
+
+handleChangeColorPicker = (selectedColor) => {
+    this.setState({
+        activeColor2: selectedColor.hex
+    })
+}
+
   render() {
     const { status, limitReact } = this.props.data || {};
     console.log('acticeColorCOmponent', this.state.activeColorComponent)
@@ -522,7 +537,7 @@ handleSelectTypeFace = (e) => {
                         <div onClick={(e) => this.handleColor(e)} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                             <FontAwesomeIcon icon={faPaintBrush} /> 
                         </div>
-                        <div className={`fixed font-mono ${this.state.typeColor ? 'top-[13%] z-[9999999] opacity-[1] duration-100' : 'top-[50px] opacity-[0] duration-100'} w-max p-2 flex h-max shadow-lg overflow-hidden rounded-[20px] bg-white text-justify`}>
+                        <div className={`fixed ml-[-100px] font-mono ${this.state.typeColor ? 'top-[13%] z-[9999999] opacity-[1] duration-100' : 'top-[50px] opacity-[0] duration-100'} w-max pl-2 py-2 pr-3 flex h-max shadow-lg overflow-hidden rounded-[20px] bg-white text-justify`}>
                            <div className='w-[135px] min-h-[340px] border-r border-r-solid-black p-2'>
                                 <p className='font-bold mb-3'>Components</p>
                                 <div className='w-full h-max flex flex-wrap'>
@@ -815,8 +830,11 @@ handleSelectTypeFace = (e) => {
                                     </div>
                                </div>
                            </div>
-                           <div onClick={(e) => this.handleChange(e)} className='w-max px-2 flex flex-col justify-end items-center pb-[11.5px]'>
-                                <div className='w-max h-[40px] px-3 items-center justify-center flex rounded-lg bg-bgMongo text-white text-center cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>Change</div>
+                           <div className='w-max pl-1 pr-2 flex flex-col justify-between items-end pb-[11.5px]'>
+                                <div className='relative top-[55px]'>
+                                    <ChromePicker color={this.state.activeColor2} onChange={this.handleChangeColorPicker} />
+                                </div>
+                                <div onClick={(e) => this.handleChange(e)} className='w-max h-[40px] px-3 items-center justify-center flex rounded-lg bg-bgMongo text-white text-center cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>Change</div>
                            </div>
                         </div>
                     </div>  
