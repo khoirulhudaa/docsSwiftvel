@@ -537,14 +537,14 @@ handleChangeColorPicker = (selectedColor) => {
                         <div onClick={(e) => this.handleColor(e)} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                             <FontAwesomeIcon icon={faPaintBrush} /> 
                         </div>
-                        <div className={`fixed ml-[-100px] font-mono ${this.state.typeColor ? 'top-[13%] z-[9999999] opacity-[1] duration-100' : 'top-[50px] opacity-[0] duration-100'} w-max pl-2 py-2 pr-3 flex h-max shadow-lg overflow-hidden rounded-[20px] bg-white text-justify`}>
-                           <div className='w-[135px] min-h-[340px] border-r border-r-solid-black p-2'>
+                        <div className={`fixed ml-[-100px] font-mono ${this.state.typeColor ? 'top-[13%] z-[9999999] opacity-[1] duration-100' : 'top-[11%] z-[-2222] opacity-[0] duration-200'} w-max pl-2 py-2 pr-3 flex h-max shadow-lg overflow-hidden rounded-[20px] bg-white text-justify`}>
+                           <div className='w-[165px] min-h-[340px] border-r border-r-solid-black p-2'>
                                 <p className='font-bold mb-3'>Components</p>
                                 <div className='w-full h-max flex flex-wrap'>
                                     {
                                         this.state.dataColors.length > 0 ? (
                                             this.state.dataColors.map((e, i) => (
-                                                <div key={i} onClick={() => this.setState({ activeColorComponent: e })} style={{ backgroundColor: e }} className={`${this.state.activeColorComponent === e ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} w-[40px] m-[4px] h-[40px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] border border-[1px] border-slate-500`}></div>
+                                                <div key={i} onClick={() => this.setState({ activeColorComponent: e })} style={{ backgroundColor: e }} className={`${this.state.activeColorComponent === e ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} w-[40px] ml-[4px] mt-[6px] mb-[12px] mr-[20px] h-[40px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] border border-[1px] border-[black] shadow-lg`}></div>
                                             ))
                                         ):
                                             <div onClick={this.props.mode === 'automaticaly' ? null : (e) => this.handleNavbar(e)} className={`w-[40px] flex items-center justify-center m-[4px] h-[40px] ${this.props.mode === 'automaticaly' ? 'cursor-not-allowed bg-slate-300 text-slate-400 hover:scale-[1] active:scale-[1]' : 'cursor-pointer hover:scale-[0.98] active:scale-[0.97]'} text-[24px] border-dashed border-[1px] border-slate-500 rounded-lg`}>
