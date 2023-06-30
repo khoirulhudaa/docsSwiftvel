@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Chevron from '../../assets/images/svg/chevron.svg';
 import { Contents, Footer, Header, HeaderBasic, Hero } from '../../component/layout';
 import Cookies from 'js-cookie';
+import dataComponents from '../../dataComponent';
 
 const Homepage = () => {
 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    console.log('data', dataComponents)
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);

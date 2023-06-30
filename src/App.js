@@ -7,6 +7,8 @@ import Water from './assets/images/png/water.png';
 import FrameOutput from './component/frameOutput';
 import MenuComponent from './component/menuComponent';
 import jsonData from './dataComponent/index.json';
+import listColorComponents from './utils';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -33,7 +35,6 @@ class App extends React.Component {
 };
   
 componentDidMount = () => {
-  
   this.setState({
     status: Cookies.get('status')
   })

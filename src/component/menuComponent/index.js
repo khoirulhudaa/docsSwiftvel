@@ -1,4 +1,4 @@
-import { faArrowsRotate, faCompress, faExpand, faFont, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faCompress, faExpand, faFont, faPaintBrush, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
 import beautify from 'js-beautify';
@@ -30,7 +30,12 @@ constructor(props) {
     screen: false,
     limitReact: 0,
     typeFonts: false,
-    selectFont: 'Poppins'
+    selectFont: 'Poppins',
+    typeColor: '',
+    dataColors:[],
+    activeColor: '',
+    activeColor2: '',
+    activeColorComponent: '',
   };
 };
 
@@ -324,9 +329,49 @@ handleAddLimit = () => {
 handleFonts = (e) => {
     e.preventDefault()
     this.setState({
-        typeFonts: !this.state.typeFonts
+        typeFonts: !this.state.typeFonts,
+        typeColor: false
     })
 }
+
+handleColor = (e) => {
+    e.preventDefault()
+    this.setState({
+        typeColor: !this.state.typeColor,
+        typeFonts: false
+    })
+}
+
+handleChangeColor = (e) => {
+    const { dataColors } = this.state;
+
+    if (!dataColors.includes(e)) {
+        this.setState((prevState) => ({
+            dataColors: [...prevState.dataColors, e],
+        }));
+    }
+}
+
+handleChange = (e) => {
+    e.preventDefault()
+    const updatedColors = this.state.dataColors.map((color) => {
+        if (color === this.state.activeColorComponent) {
+            return this.state.activeColor2; // Mengganti nilai #FFFFF menjadi #GGGGG
+        }
+        return color; // Menjaga nilai yang tidak perlu diganti
+    });
+
+    this.setState({ dataColors: updatedColors });
+    const activeColorComponents = new RegExp(this.state.activeColorComponent, 'g');
+    const activeColors2 = this.state.activeColor2;
+    const result = document.querySelector('.templateCurrent .styles').innerHTML.replace(activeColorComponents, activeColors2);
+    document.querySelector('.templateCurrent .styles').innerHTML = result
+    this.setState({
+        typeColor: !this.state.typeColor,
+        typeFonts: false
+    })
+}
+  
 
 handleSelectTypeFace = (e) => {
     const prevSelectFont = this.state.selectFont;
@@ -356,6 +401,8 @@ handleSelectTypeFace = (e) => {
 
   render() {
     const { status, limitReact } = this.props.data || {};
+    console.log('acticeColorCOmponent', this.state.activeColorComponent)
+    console.log('acticeColor2', this.state.activeColor2)
     return (
         <>
             <a href="/">
@@ -436,6 +483,95 @@ handleSelectTypeFace = (e) => {
                                     <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Cinzel')}><p>Cinzel</p></div>
                                 </div>
                             </div>
+                        </div>
+                    </div>  
+            }
+            {
+                this.props.isLoading ? (
+                    <div className='flex top-[13px] absolute left-[400px] items-center'>
+                        <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
+                    </div>
+                ):
+                    <div className='flex top-[13px] absolute left-[400px] items-center'>
+                        <div onClick={(e) => this.handleColor(e)} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                            <FontAwesomeIcon icon={faPaintBrush} /> 
+                        </div>
+                        <div className={`fixed font-mono ${this.state.typeColor ? 'top-[13%] z-[9999999] opacity-[1] duration-100' : 'top-[50px] opacity-[0] duration-100'} w-[400px] p-2 flex justify-between h-max shadow-lg overflow-hidden rounded-[20px] bg-white text-justify`}>
+                           <div className='w-[35%] h-full p-2 flex flex-wrap items-center'>
+                            {
+                                this.state.dataColors.length > 0 ? (
+                                    this.state.dataColors.map((e, i) => (
+                                        <div key={i} onClick={() => this.setState({ activeColorComponent: e })} style={{ backgroundColor: e }} className={`${this.state.activeColorComponent === e ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} w-[40px] m-[4px] h-[40px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] border border-[1px] border-slate-500`}></div>
+                                    ))
+                                ):
+                                    <div className='w-[40px] m-[4px] h-[40px] border-dashed border-[1px] border-slate-500 rounded-lg'></div>
+                            }
+                           </div>
+                           <div className='w-[35%] h-full p-2 flex flex-wrap items-center'>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color1' })
+                                    this.setState({ activeColor2: '#3B82F6' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color1' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-blue-500`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color2' })
+                                    this.setState({ activeColor2: '#EF4444' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-red-500`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color3' })
+                                    this.setState({ activeColor2: '#F97316' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color3' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-orange-500`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color4' })
+                                    this.setState({ activeColor2: '#22C55E' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color4' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-green-500`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color5' })
+                                    this.setState({ activeColor2: '#10B981' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color5' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-emerald-500`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color6' })
+                                    this.setState({ activeColor2: '#A855F7' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-purple-500`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color7' })
+                                    this.setState({ activeColor2: '#EC4899' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color7' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-pink-500`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color8' })
+                                    this.setState({ activeColor2: '#EAB308' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color8' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-yellow-500`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color9' })
+                                    this.setState({ activeColor2: '#000000' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color9' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-black`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color10' })
+                                    this.setState({ activeColor2: '#00FFDD' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color10' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00ffdd]`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color11' })
+                                    this.setState({ activeColor2: '#003380' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color11' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#003380]`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color12' })
+                                    this.setState({ activeColor2: '#4B1D1D' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color12' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#4b1d1d]`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color13' })
+                                    this.setState({ activeColor2: '#BBFF00' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color13' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#bbff00]`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color14' })
+                                    this.setState({ activeColor2: '#F700FF' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color14' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#f700ff]`}></div>
+                                <div onClick={() => {
+                                    this.setState({ activeColor: 'color15' })
+                                    this.setState({ activeColor2: '#5A5A5A' })
+                                }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color15' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#5a5a5a]`}></div>
+                           </div>
+                           <div onClick={(e) => this.handleChange(e)} className='w-[30%] flex flex-col justify-end items-center pb-[11.5px]'>
+                                <div className='w-[90%] h-[40px] items-center justify-center flex rounded-lg bg-blue-500 text-white text-center cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>Change</div>
+                           </div>
                         </div>
                     </div>  
             }
@@ -559,6 +695,7 @@ handleSelectTypeFace = (e) => {
                                             if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
                                                 if (this.props.limit !== 6 && data.type !== 'premium') {
                                                     this.props.handleAdd(1);
+                                                    this.handleChangeColor(data.colorMain)
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
                                                 }else if(this.props.limit === 6 && data.type !== 'premium') {
                                                     this.props.showModal()
@@ -566,6 +703,7 @@ handleSelectTypeFace = (e) => {
                                             }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
                                                 this.props.handleAdd(1);
                                                 if (this.props.limit !== 100) {
+                                                    this.handleChangeColor(data.colorMain)
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
                                                 }
                                             }
@@ -624,6 +762,7 @@ handleSelectTypeFace = (e) => {
                                              if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
                                                  if (this.props.limit !== 6 && data.type !== 'premium') {
                                                     this.props.handleAdd(1);
+                                                    this.handleChangeColor(data.colorMain)
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
                                                 }else if(this.props.limit === 6 && data.type !== 'premium') {
                                                     this.props.showModal()
@@ -631,6 +770,7 @@ handleSelectTypeFace = (e) => {
                                             }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
                                                 this.props.handleAdd(1);
                                                 if (this.props.limit !== 100) {
+                                                    this.handleChangeColor(data.colorMain)
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
                                                 }
                                             }
@@ -689,6 +829,7 @@ handleSelectTypeFace = (e) => {
                                              if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
                                                  if (this.props.limit !== 6 && data.type !== 'premium') {
                                                     this.props.handleAdd(1);
+                                                    this.handleChangeColor(data.colorMain)
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
                                                 }else if(this.props.limit === 6 && data.type !== 'premium') {
                                                     this.props.showModal()
@@ -696,6 +837,7 @@ handleSelectTypeFace = (e) => {
                                             }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
                                                 this.props.handleAdd(1);
                                                 if (this.props.limit !== 100) {
+                                                    this.handleChangeColor(data.colorMain)
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
                                                 }
                                             }
@@ -754,6 +896,7 @@ handleSelectTypeFace = (e) => {
                                              if (status !== 'settlement' || this.state.statusNew !== 'settlement') {
                                                  if (this.props.limit !== 6 && data.type !== 'premium') {
                                                     this.props.handleAdd(1);
+                                                    this.handleChangeColor(data.colorMain)
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
                                                 }else if(this.props.limit === 6 && data.type !== 'premium') {
                                                     this.props.showModal()
@@ -761,6 +904,7 @@ handleSelectTypeFace = (e) => {
                                             }else if (status === 'settlement' || this.state.statusNew === 'settlement') {
                                                 this.props.handleAdd(1);
                                                 if (this.props.limit !== 100) {
+                                                    this.handleChangeColor(data.colorMain)
                                                     this.props.createComponent(data.title, data.img, data.html, data.style);
                                                 }
                                             }
