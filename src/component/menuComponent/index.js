@@ -601,33 +601,33 @@ handleSelectTypeFace = (e) => {
                                </div>
                                <div className='w-[50px] h-max flex flex-col items-center justify-center'>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color1' })
+                                        this.setState({ activeColor: 'color6a' })
                                         this.setState({ activeColor2: '#ff0000' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color1' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#ff0000]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6a' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#ff0000]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6b' })
                                         this.setState({ activeColor2: '#df0000' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#df0000]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6b' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#df0000]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6c' })
                                         this.setState({ activeColor2: '#c00000' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#c00000]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6c' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#c00000]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6d' })
                                         this.setState({ activeColor2: '#a50000' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#a50000]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6d' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#a50000]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6e' })
                                         this.setState({ activeColor2: '#830000' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#830000]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6e' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#830000]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6f' })
                                         this.setState({ activeColor2: '#6d0000' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#6d0000]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6f' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#6d0000]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6g' })
                                         this.setState({ activeColor2: '#530000' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#530000]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6g' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#530000]`}></div>
                                </div>
                                <div className='w-[50px] h-max flex flex-col items-center justify-center'>
                                     <div onClick={() => {
@@ -691,123 +691,123 @@ handleSelectTypeFace = (e) => {
                                </div>
                                <div className='w-[50px] h-max flex flex-col items-center justify-center'>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color1' })
+                                        this.setState({ activeColor: 'color6a' })
                                         this.setState({ activeColor2: '#0000ff' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color1' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#0000ff]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6a' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#0000ff]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6b' })
                                         this.setState({ activeColor2: '#0000e0' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#0000e0]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6b' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#0000e0]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6c' })
                                         this.setState({ activeColor2: '#0000b9' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#0000b9]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6c' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#0000b9]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6d' })
                                         this.setState({ activeColor2: '#00009b' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00009b]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6d' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00009b]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6e' })
                                         this.setState({ activeColor2: '#00006d' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00006d]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6e' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00006d]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6f' })
                                         this.setState({ activeColor2: '#000055' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#000055]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6f' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#000055]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color6g' })
                                         this.setState({ activeColor2: '#00003b' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00003b]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color6g' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00003b]`}></div>
                                </div>
                                <div className='w-[50px] h-max flex flex-col items-center justify-center'>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color1' })
+                                        this.setState({ activeColor: 'color7a' })
                                         this.setState({ activeColor2: '#00ff00' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color1' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00ff00]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color7a' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00ff00]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color7b' })
                                         this.setState({ activeColor2: '#00db00' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00db00]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color7b' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00db00]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color7c' })
                                         this.setState({ activeColor2: '#00c000' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00c000]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color7c' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00c000]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color7d' })
                                         this.setState({ activeColor2: '#00ac00' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00ac00]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color7d' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00ac00]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color7e' })
                                         this.setState({ activeColor2: '#009200' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#009200]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color7e' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#009200]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color7f' })
                                         this.setState({ activeColor2: '#007200' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#007200]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color7f' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#007200]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color7g' })
                                         this.setState({ activeColor2: '#004d00' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#004d00]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color7g' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#004d00]`}></div>
                                </div>
                                <div className='w-[50px] h-max flex flex-col items-center justify-center'>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color1' })
+                                        this.setState({ activeColor: 'color8a' })
                                         this.setState({ activeColor2: '#b700ff' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color1' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#b700ff]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color8a' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#b700ff]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color8b' })
                                         this.setState({ activeColor2: '#9d00db' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#9d00db]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color8b' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#9d00db]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color8c' })
                                         this.setState({ activeColor2: '#8400b8' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#8400b8]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color8c' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#8400b8]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color8d' })
                                         this.setState({ activeColor2: '#6e0099' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#6e0099]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color8d' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#6e0099]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color8e' })
                                         this.setState({ activeColor2: '#540075' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#540075]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color8e' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#540075]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color8f' })
                                         this.setState({ activeColor2: '#41005a' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#41005a]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color8f' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#41005a]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color8g' })
                                         this.setState({ activeColor2: '#2d003f' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#2d003f]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color8g' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#2d003f]`}></div>
                                </div>
                                <div className='w-[50px] h-max flex flex-col items-center justify-center'>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color1' })
+                                        this.setState({ activeColor: 'color9a' })
                                         this.setState({ activeColor2: '#00fff2' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color1' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00fff2]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color9a' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00fff2]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color9b' })
                                         this.setState({ activeColor2: '#00dfd3' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00dfd3]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color9b' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00dfd3]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color9c' })
                                         this.setState({ activeColor2: '#00c4ba' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00c4ba]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color9c' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00c4ba]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color9d' })
                                         this.setState({ activeColor2: '#00ada5' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00ada5]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color9d' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00ada5]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color9e' })
                                         this.setState({ activeColor2: '#00928b' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00928b]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color9e' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00928b]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color9f' })
                                         this.setState({ activeColor2: '#01726c' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#01726c]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color9f' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#01726c]`}></div>
                                     <div onClick={() => {
-                                        this.setState({ activeColor: 'color2' })
+                                        this.setState({ activeColor: 'color9g' })
                                         this.setState({ activeColor2: '#00534f' })
-                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color2' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00534f]`}></div>
+                                    }} className={`w-[40px] h-[40px] m-[4px] cursor-pointer hover:brightness-[90%] active:scale-[0.96] ${this.state.activeColor === 'color9g' ? 'rounded-full scale-[0.8]' : 'rounded-lg scale-[1]'} bg-[#00534f]`}></div>
                                </div>
                            </div>
                            <div onClick={(e) => this.handleChange(e)} className='w-max px-2 flex flex-col justify-start items-center pt-[11.5px]'>
