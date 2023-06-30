@@ -523,7 +523,7 @@ handleSelectTypeFace = (e) => {
                             <FontAwesomeIcon icon={faPaintBrush} /> 
                         </div>
                         <div className={`fixed font-mono ${this.state.typeColor ? 'top-[13%] z-[9999999] opacity-[1] duration-100' : 'top-[50px] opacity-[0] duration-100'} w-max p-2 flex h-max shadow-lg overflow-hidden rounded-[20px] bg-white text-justify`}>
-                           <div className='w-[135px] min-h-[385px] border-r border-r-solid-black p-2'>
+                           <div className='w-[135px] min-h-[340px] border-r border-r-solid-black p-2'>
                                 <p className='font-bold mb-3'>Components</p>
                                 <div className='w-full h-max flex flex-wrap'>
                                     {
