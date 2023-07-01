@@ -22,6 +22,7 @@ import Tutor from '../../../assets/images/svg/tutor.svg';
 import Colors from '../../../assets/images/svg/colors.svg';
 import Partner from '../../../assets/images/svg/v.svg';
 import Wave2 from '../../../assets/images/svg/wave.svg';
+import ReactIcon from '../../../assets/images/svg/react.svg';
 import Video from '../../../assets/video/autovideo.mp4';
 
 const Contents = () => {
@@ -331,6 +332,23 @@ return (
             <div className='relative ml-auto mr-auto hidden lg:inline w-[84%] 2xl:top-[120px] flex justify-between'>
                <div className='w-[100%] lg:w-[84%] 2xl:w-[88%] overflow-hidden mt-4 ml-auto mr-auto rounded-[30px] border-solid border-[12px] border-[#023430]'>
                     <img src={Tutor} className='w-[102%]' alt="img" />
+               </div>
+            </div>
+        </section>
+
+        <section className='w-screen relative overflow-hidden h-max pt-[40px] lg:pt-[30px] pb-[60px] lg:pb-[30px] px-4 lg:px-6 text-center justify-center flex flex-col items-center'>
+            <div className='absolute lg:opacity-[1] opacity-[0.5] left-[14%] lg:mt-[0] mt-8 rounded-full w-[20px] h-[20px] bg-mongo shadow-lg'></div>
+            <div className='absolute lg:opacity-[1] opacity-[0.5] left-[22%] rounded-full bottom-[18%] w-[30px] h-[30px] bg-mongo shadow-lg'></div>
+            <div className='absolute lg:opacity-[1] opacity-[0.5] right-[25%] rounded-full bottom-[20%] w-[20px] h-[20px] bg-mongo shadow-lg'></div>
+            <div className='absolute lg:opacity-[1] opacity-[0.5] right-[16%] rounded-full lg:mt-[0] mt-8 bottom-[45%] w-[40px] h-[40px] bg-mongo shadow-lg'></div>
+            <div className='w-[100vw] lg:w-[90%] relative text-center lg:w-max lg:flex relative z-10 h-max lg:h-max mb-4 mt-4 lg:mt-4 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-6 lg:px-2'>
+               <div className='lg:h-max h-max text-center flex flex-col items-center justify-center relative ml-auto mr-auto w-[80vw]'>
+                    <h2 className='w-[90%] 2xl:w-max lg:w-max text-darkMongo font-normal flex items-center text-center text-[40px] lg:text-[70px] 2xl:text-[80px] ml-auto mr-auto leading-[1.4em] lg:leading-[1.6em]'>Effortlessly React</h2>
+                    <a onClick={() => navigate('/swiftvelbuilder')} className='bg-bgMongo rounded-full px-3 py-2 w-max text-lightMongo mt-3 hover:brightness-[88%] active:scale-[0.98] no-underline'>
+                        <p className='text-white w-max cursor-pointer flex items-center'>Try this feature<img src={Right} className='text-indigo-500 w-[26px] p-2 ml-3 bg-white rounded-full flex items-center justify-center' alt="icon" /></p>
+                    </a>
+                    <p className='text-[15px] 2xl:text-[23px] 2xl:leading-[2.2em] leading-[2em] mt-5 w-[92vw] lg:w-[70%] font-normal text-slate-400'>Unlock the Power of RapidReact: Easily generate React Code from swiftvel to accelerate your React Projects with RapidReact</p>
+                    <img src={ReactIcon} alt="react-icon" className='iconReact' />
                </div>
             </div>
         </section>

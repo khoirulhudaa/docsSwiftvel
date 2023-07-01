@@ -46,38 +46,21 @@ html {
   --tw-ring-shadow: 0 0 transparent;
 }
 
-
-
-
-
-
-.testing {
-  color: #00fff2;
-  color: #00dfd3;
-  color: #00c4ba;
-  color: #00ada5;
-  color: #00928b;
-  color: #01726c;
-  color: #00534f;
+.iconReact {
+  width: 40%;
+  animation: reactt 17s linear infinite;
+  opacity: 0.1;
+  margin-top: 40px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@keyframes reactt {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 .overlayLoad {
   width: 100vw;
