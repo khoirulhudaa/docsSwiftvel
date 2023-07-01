@@ -28,7 +28,7 @@ const currentYear = new Date().getFullYear();
                   </div>
               </a>
           </div>
-          <small className='hover:brightness-[90%] cursor-pointer mr-8 font-normal'>Contributors components</small>
+          <small className='cursor-default mr-8 font-normal'>Contributors components</small>
           <div className='w-[1px] h-[30px] bg-white mr-[28px]'></div>
           <small onClick={() => navigate('/privacy-policy')} className='hover:brightness-[90%] cursor-pointer mr-8 font-normal'>Privacy policy</small>
           <small onClick={() => navigate('/terms-of-service')} className='hover:brightness-[90%] cursor-pointer font-normal'>Terms of service</small>
