@@ -155,7 +155,7 @@ return (
             <div className='w-[90%] mt-2 lg:w-[86%] lg:flex items-center justify-between h-max 2xl:h-[500px] lg:h-[460px] p-2'>
                 <div data-aos-duration='1000' className='h-[100%] lg:mt-0 mt-[20px] relative overflow-hidden w-[100%] lg:w-[49%] bg-[#cee5ff] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-30px] lg:top-[-14px]'>
-                        <img src={Fast} className='absolute left-8 bottom-[170px] lg:bottom-[200px] 2xl:bottom-[270px] 2xl:w-[40px] w-[30px]' alt="icon" />
+                        <img src={Fast} className='absolute left-8 bottom-[190px] sm:bottom-[140px] lg:bottom-[200px] 2xl:bottom-[270px] 2xl:w-[40px] w-[30px]' alt="icon" />
                         <h2 className='text-black text-[32px] lg:text-[44px] 2xl:text-[52px] font-bold mb-3 ml-8 2xl:mt-[180px] mt-[140px]'>Faster</h2>
                         <p className='text-black font-normal 2xl:leading-10 leading-6 ml-8 lg:mt-8 text-[15px] 2xl:text-[18px] w-[80%] lg:w-[65%]'>Be fast in creating your own website, shorten the process of working on your website and start from swiftvel</p>
                     </div>
@@ -163,7 +163,7 @@ return (
                 </div>
                 <div data-aos-duration='1000' className='h-[100%] relative overflow-hidden w-[100%] lg:mt-0 mt-[40px] lg:w-[49%] bg-[#000000] rounded-[20px] p-2'>
                     <div className='relative lg:left-[30px] top-[-30px] lg:top-[-14px]'>
-                        <img src={Flexibel} className='absolute left-8 bottom-[170px] lg:bottom-[200px] 2xl:bottom-[270px] 2xl:w-[40px] w-[30px]' alt="icon" />
+                        <img src={Flexibel} className='absolute left-8 bottom-[240px] sm:bottom-[165px] lg:bottom-[200px] 2xl:bottom-[270px] 2xl:w-[40px] w-[30px]' alt="icon" />
                         <h2 className='text-white text-[32px] lg:text-[44px] 2xl:text-[52px] font-bold mb-3 ml-8 2xl:mt-[180px] mt-[140px]'>Flexibel</h2>
                         <p className='text-slate-300 font-normal 2xl:leading-10 leading-6 ml-8 lg:mt-8 text-[15px] 2xl:text-[18px] w-[80%] lg:w-[60%]'>flexible design and components, premium components provide advantages such as being responsive in terms of mobile devices</p>
                     </div>
@@ -190,7 +190,7 @@ return (
         </section>
 
         <section className='w-[100%] overflow-hidden rounded-br-[70px] lg:rounded-br-[200px] relative mt-[60px] 2xl:mt-[40px] pt-1 lg:pt-4 lg:mt-[100px] pb-[20px] lg:pb-[140px] h-max 2xl:pb-[280px] ml-auto mr-auto bg-[#023430]'>
-            <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-full' />
+            <img src={Map} alt="map" className='hidden lg:inline absolute right-0 top-0 w-full opacity-[0.1] h-full' />
             <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-max lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
                <div className='lg:h-max w-max h-max relative'>
                     <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[40px] lg:text-[70px] 2xl:text-[80px] leading-[1.4em] lg:leading-[1.6em]'>You can change the color of some parts</h2>
@@ -216,8 +216,8 @@ return (
         </section>
 
         <section className='relative w-full mt-[80px] lg:rounded-tl-[110px] rounded-tl-[70px] lg:overflow-hidden lg:rounded-br-[110px] rounded-br-[70px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[0] lg:pb-[40px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
-            <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-full' />
-            <img src={Wave} className='absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
+            <img src={Map} alt="map" className='hidden lg:inline absolute right-0 top-0 w-full opacity-[0.1] h-full' />
+            <img src={Wave} className='hidden lg:inline absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
             <div className='w-[100%] lg:w-[50%] h-max p-[30px] lg:p-[120px] lg:mt-[10px]'>
                 <h1 className='text-[45px] 2xl:text-[80px] lg:text-[55px] text-white w-[90%] leading-[1.4em]'>Get started with swiftvel today</h1>
                 <p className='w-[100%] font-normal 2xl:text-[23px] text-slate-200 2xl:leading-[2.2em] leading-[2em] mt-4'>
@@ -319,7 +319,7 @@ return (
         </section>
 
         <section className='w-[100%] overflow-hidden rounded-tr-[70px] lg:rounded-tr-[200px] relative mt-[60px] 2xl:mt-[40px] pt-1 lg:pt-4 lg:mt-[0px] pb-[20px] lg:pb-[100px] h-max 2xl:pb-[280px] ml-auto mr-auto bg-[#023430]'>
-            <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-full' />
+            <img src={Map} alt="map" className='hidden lg:inline absolute right-0 top-0 w-full opacity-[0.1] h-full' />
             <div className='w-[90%] relative lg:w-max lg:flex relative z-10 h-max lg:h-[460px] ml-[0px] lg:ml-[120px] mt-4 lg:mt-5 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-10 lg:px-2'>
                <div className='lg:h-max w-max h-max relative'>
                     <h2 className='w-[25%] lg:w-[60%] text-white font-normal text-[40px] lg:text-[70px] 2xl:text-[80px] leading-[1.4em] lg:leading-[1.6em]'>easy-to-use resources and language modes</h2>
@@ -340,7 +340,7 @@ return (
             <div className='absolute lg:opacity-[1] opacity-[0.5] left-[14%] lg:mt-[0] mt-8 rounded-full w-[20px] h-[20px] bg-mongo shadow-lg'></div>
             <div className='absolute lg:opacity-[1] opacity-[0.5] left-[22%] rounded-full bottom-[18%] w-[30px] h-[30px] bg-mongo shadow-lg'></div>
             <div className='absolute lg:opacity-[1] opacity-[0.5] right-[25%] rounded-full bottom-[20%] w-[20px] h-[20px] bg-mongo shadow-lg'></div>
-            <div className='absolute lg:opacity-[1] opacity-[0.5] right-[16%] rounded-full lg:mt-[0] mt-8 bottom-[45%] w-[40px] h-[40px] bg-mongo shadow-lg'></div>
+            <div className='absolute lg:opacity-[1] opacity-[0.5] right-[16%] rounded-full lg:mt-[0] mt-8   bottom-[45%] w-[40px] h-[40px] bg-mongo shadow-lg'></div>
             <div className='w-[100vw] lg:w-[90%] relative text-center lg:w-max lg:flex relative z-10 h-max lg:h-max mb-4 mt-4 lg:mt-4 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-6 lg:px-2'>
                <div className='lg:h-max h-max text-center flex flex-col items-center justify-center relative ml-auto mr-auto w-[80vw]'>
                     <h2 className='w-[90%] 2xl:w-max lg:w-max text-darkMongo font-normal flex items-center text-center text-[40px] lg:text-[70px] 2xl:text-[80px] ml-auto mr-auto leading-[1.4em] lg:leading-[1.6em]'>Effortlessly React</h2>

@@ -106,7 +106,7 @@ const Pricing = () => {
     {
        statusNew === 'standar' || statusNew === 'expire' ? (
             <>
-                <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-[112%]' />
+                <img src={Map} alt="map" className='hidden lg:inline absolute right-0 top-0 w-full opacity-[0.1] h-[112%]' />
                 <div className='w-full lg:flex h-max pt-6 lg:pt-10 pb-12 overflow-hidden relative items-center justify-center bg-[#023430]'>
                     <a href="/" className='text-mongo lg:text-white'> 
                         <div className='absolute right-6 z-[30] lg:left-[120px] active:scale-[0.96] bg-mongo top-8 lg:top-16 w-max p-[10px] border border-[1] border-black cursor-pointer hover:brightness-[95%] duration-100 h-max rounded-full flex items-center justify-center'>
@@ -187,7 +187,7 @@ const Pricing = () => {
         ): statusNew === 'cancel' ? (
             <>
                 <div className='w-full lg:flex h-max pt-6 lg:pt-10 pb-12 overflow-hidden relative items-center justify-center bg-[#023430]'>
-                    <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-full' />
+                    <img src={Map} alt="map" className='hidden lg:inline absolute right-0 top-0 w-full opacity-[0.1] h-full' />
                     <a href="/" className='text-mongo lg:text-white'> 
                         <div className='absolute right-6 z-[30] lg:left-[120px] active:scale-[0.96] bg-mongo top-8 lg:top-16 w-max p-[10px] border border-[1] border-black cursor-pointer hover:brightness-[95%] duration-100 h-max rounded-full flex items-center justify-center'>
                             <FontAwesomeIcon icon={faArrowRight} className='rotate-[180deg] w-[20px] h-[20px]' />

@@ -149,7 +149,7 @@ const Login = () => {
 
   return (
     <div className='relative w-screen bg-darkMongo h-max lg:min-h-[100vh] flex items-center justify-center overflow-y-auto overflow-x-hidden'>
-      <div className='w-[100%] lg:w-[30%] h-max overflow-y-auto lg:min-h-screen pb-12 lg:min-pb-0 lg:max-pb-[20px] bg-[#00684A] px-5 pt-5 overflow-hidden rounded-tr-[80px] shadow-lg'>
+      <div className='w-[100%] lg:w-[30%] h-max overflow-y-auto lg:min-h-screen pb-12 lg:min-pb-0 lg:max-pb-[20px] bg-[#00684A] px-5 pt-5 overflow-hidden lg:rounded-tr-[80px] shadow-lg'>
         <div onClick={() => navigate('/')} className='lg:hidden absolute right-5 lg:left-8 top-5 lg:top-8 bg-white rounded-full p-2 w-[40px] h-[40px] shadow-lg cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>
           <box-icon name='home-alt'></box-icon>
         </div>
@@ -190,7 +190,7 @@ const Login = () => {
         </form>
       </div>
       <div className='w-[70%] hidden lg:inline relative h-[100vh] flex items-center justify-center ml-auto overflow-hidden'>
-        <img src={Map} alt="map" className='absolute right-0 top-0 w-full opacity-[0.1] h-full' />
+        <img src={Map} alt="map" className='hidden lg:inline absolute right-0 top-0 w-full opacity-[0.1] h-full' />
         <img src={Human1} className='w-[300px] 2xl:w-[  450px] bottom-0 left-[33%] fixed' alt="human" />
         <img src={Human2} className='w-[260px] 2xl:w-[450px] fixed top-0 left-[54.9%] rotate-[180deg]' alt="human" />
         <img src={Human3} className='w-[300px] 2xl:w-[450px] fixed bottom-0 right-[0%]' alt="human" />
