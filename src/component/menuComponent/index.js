@@ -147,7 +147,9 @@ componentDidMount = () => {
 handleDownload = (e) => {
     e.preventDefault()
     this.setState({
-    activeDownload: !this.state.activeDownload
+        typeColor: false,
+        typeFonts: false,
+        activeDownload: !this.state.activeDownload
     })
 }
 
@@ -388,7 +390,8 @@ handleFonts = (e) => {
     e.preventDefault()
     this.setState({
         typeFonts: !this.state.typeFonts,
-        typeColor: false
+        typeColor: false,
+        activeDownload: false
     })
 }
 
@@ -396,7 +399,8 @@ handleColor = (e) => {
     e.preventDefault()
     this.setState({
         typeColor: !this.state.typeColor,
-        typeFonts: false
+        typeFonts: false,
+        activeDownload: false
     })
 }
 
@@ -1027,75 +1031,77 @@ handleAnimate = () => {
             }
             </div>
             <div className={`w-[600px] ${this.state.activeDownload ? 'left-[10%] opacity-[1] z-[122222] duration-200' : 'opacity-[0.1] duration-[0.2s] left-[10%] z-[-22]'} flex items-center justify-center h-[360px] rounded-[20px] bg-white shadow-lg p-1 fixed duration-100 top-[14%]`}>
-                <div className='w-[48%] h-[96%] bg-slate-200 flex flex-wrap rounded-lg mx-1 relative overflow-hidden flex justify-center items-center'>
-                    <div className='ml-auto mr-auto relative w-full h-max flex flex-wrap items-center justify-center p-2'>
-                        <div className='overflow-hidden w-[50%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
-                        <div className='overflow-hidden w-[40%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
-                        <div className='overflow-hidden w-[20%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
-                        <div className='overflow-hidden w-[70%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
-                        <div className='overflow-hidden w-[70%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
-                        <div className='overflow-hidden w-[20%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
-                        <div className='overflow-hidden w-[40%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
-                        <div className='overflow-hidden w-[50%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
-                        <div className='overflow-hidden w-[20%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
-                        <div className='overflow-hidden w-[70%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
+                <div className='w-[48%] h-[96%] bg-white flex flex-wrap rounded-lg mx-2 relative overflow-hidden flex'>
+                    <div className='ml-auto mr-auto relative w-full h-max flex flex-col items-center justify-center p-2'>
+                       <div className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[20px]'></div>
+                       <div className='flex w-[70%] flex-wrap h-max mb-2 items-center justify-center'>
+                        <div className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                        <div className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 ml-1'></div>
+                        <div className='w-[33%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                        <div className='w-[33%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                        <div className='w-[25%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                        <div className='w-[25%] h-[6px] bg-slate-400 rounded-full mb-1 ml-1'></div>
+                       </div>
+                       <div className='flex w-[70%] items-center justify-center my-1'>
+                        <div className='w-[25%] mr-1 h-[13px] bg-slate-400 rounded-lg mb-2'></div>
+                        <div className='w-[25%] ml-1 h-[13px] bg-slate-400 rounded-lg mb-2'></div>
+                       </div>
+                       <div className='flex w-[80%] items-center justify-between my-2'>
+                        <div className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
+                        <div className='w-[50%]'>
+                            <div className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
+                            <div className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            <div className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            <div className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                        </div>
+                       </div>
+                       <div className='flex w-[80%] items-center justify-between my-2'>
+                        <div className='w-[50%]'>
+                            <div className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
+                            <div className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            <div className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            <div className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                        </div>
+                        <div className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
+                       </div>
                     </div>
                     <div onClick={(e) => this.download('templateCurrent')} className='absolute bottom-0 ml-auto mr-auto py-[10px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
                         Without animate
                     </div>
                 </div>
-                <div className='w-[48%] h-[96%] bg-slate-200 flex flex-wrap rounded-lg mx-1 relative overflow-hidden flex'>
-                    <div className='ml-auto mr-auto relative w-full h-max flex flex-wrap items-center justify-center p-2'>
-                        <div className='overflow-hidden w-[50%] h-[60px] mx-1 my-1'>
-                            <div id='blck1' className='w-full h-full bg-slate-500 rounded-lg'>
-
-                            </div>
+                <div className='w-[48%] h-[96%] bg-white flex flex-wrap rounded-lg mx-2 relative overflow-hidden flex'>
+                    <div className='ml-auto mr-auto relative w-full h-max flex flex-col items-center justify-center p-2'>
+                       <div id='blck2' className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[20px]'></div>
+                       <div className='flex w-[70%] flex-wrap h-max mb-2 items-center justify-center'>
+                        <div id='blck2' className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                        <div id='blck2' className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 ml-1'></div>
+                        <div id='blck2' className='w-[33%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                        <div id='blck2' className='w-[33%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                        <div id='blck2' className='w-[25%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                        <div id='blck2' className='w-[25%] h-[6px] bg-slate-400 rounded-full mb-1 ml-1'></div>
+                       </div>
+                       <div className='flex w-[70%] items-center justify-center my-1'>
+                        <div id='blck2' className='w-[25%] mr-1 h-[13px] bg-slate-400 rounded-lg mb-2'></div>
+                        <div id='blck2' className='w-[25%] ml-1 h-[13px] bg-slate-400 rounded-lg mb-2'></div>
+                       </div>
+                       <div className='flex w-[80%] items-center justify-between my-2'>
+                        <div id='blck2' className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
+                        <div className='w-[50%]'>
+                            <div id='blck2' className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
+                            <div id='blck2' className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            <div id='blck2' className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            <div id='blck2' className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
                         </div>
-                        <div className='overflow-hidden w-[40%] h-[60px] mx-1 my-1'>
-                            <div id='blck2' className='w-full h-full bg-slate-400 rounded-lg'>
-
-                            </div>
+                       </div>
+                       <div className='flex w-[80%] items-center justify-between my-2'>
+                        <div className='w-[50%]'>
+                            <div id='blck2' className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
+                            <div id='blck2' className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            <div id='blck2' className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            <div id='blck2' className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
                         </div>
-                        <div className='overflow-hidden w-[20%] h-[60px] mx-1 my-1'>
-                            <div id='blck3' className='w-full h-full bg-slate-400 rounded-lg'>
-
-                            </div>
-                        </div>
-                        <div className='overflow-hidden w-[70%] h-[60px] mx-1 my-1'>
-                            <div id='blck4' className='w-full h-full bg-slate-400 rounded-lg'>
-
-                            </div>
-                        </div>
-                        <div className='overflow-hidden w-[60%] h-[60px] mx-1 my-1'>
-                            <div id='blck5' className='w-full h-full bg-slate-400 rounded-lg'>
-
-                            </div>
-                        </div>
-                        <div className='overflow-hidden w-[30%] h-[60px] mx-1 my-1'>
-                            <div id='blck6' className='w-full h-full bg-slate-500 rounded-lg'>
-
-                            </div>
-                        </div>
-                        <div className='overflow-hidden w-[40%] h-[60px] mx-1 my-1'>
-                            <div id='blck7' className='w-full h-full bg-slate-500 rounded-lg'>
-
-                            </div>
-                        </div>
-                        <div className='overflow-hidden w-[50%] h-[60px] mx-1 my-1'>
-                            <div id='blck8' className='w-full h-full bg-slate-400 rounded-lg'>
-
-                            </div>
-                        </div>
-                        <div className='overflow-hidden w-[20%] h-[60px] mx-1 my-1'>
-                            <div id='blck9' className='w-full h-full bg-slate-400 rounded-lg'>
-
-                            </div>
-                        </div>
-                        <div className='overflow-hidden w-[70%] h-[60px] mx-1 my-1'>
-                            <div id='blck10' className='w-full h-full bg-slate-400 rounded-lg'>
-
-                            </div>
-                        </div>
+                        <div id='blck2' className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
+                       </div>
                     </div>
                     <div onClick={(e) => this.downloadAnimate('templateCurrent')} className='absolute bottom-0 ml-auto mr-auto py-[10px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
                         With animate
