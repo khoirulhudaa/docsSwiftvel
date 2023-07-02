@@ -1,4 +1,4 @@
-import { faArrowsRotate, faBucket, faCompress, faExpand, faFont, faPaintBrush, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faBucket, faCompress, faExpand, faFile, faFileImage, faFont, faPaintBrush, faSpinner, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
 import beautify from 'js-beautify';
@@ -37,7 +37,8 @@ constructor(props) {
     activeColor: '',
     activeColor2: '',
     activeColorComponent: '',
-    colorPicker: false
+    colorPicker: false,
+    activeDownload: false
   };
 };
 
@@ -143,6 +144,13 @@ componentDidMount = () => {
     })
 }
 
+handleDownload = (e) => {
+    e.preventDefault()
+    this.setState({
+    activeDownload: !this.state.activeDownload
+    })
+}
+
 
 download = (e) => {
     const name = e;
@@ -160,6 +168,7 @@ download = (e) => {
         <meta name="contributor" content="Nama Penyusun" />
         <meta name="copyright" content="Tahun Hak Cipta, Pemilik Hak Cipta" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     `;
 
     
@@ -210,13 +219,45 @@ download = (e) => {
     const unminifiedCodeStylesReact = beautify.css(codeStylesReact);
 
     const reactCode = `
-import { useEffect } from "react";
+import { React, useEffect } from "react";
     
 const Swiftvel = () => {
 
     useEffect(() => {
         ${codeJS}
-    })
+
+        const linkElement = document.createElement('link');
+        linkElement.rel = 'stylesheet';
+        linkElement.href = 'https://unpkg.com/aos@next/dist/aos.css';
+    
+        // Tambahkan elemen link ke elemen head
+        document.head.appendChild(linkElement);
+    
+        // Buat elemen script
+        const scriptElement = document.createElement('script');
+        scriptElement.src = 'https://unpkg.com/aos@next/dist/aos.js';
+    
+        // Tambahkan elemen script ke elemen head
+        document.head.appendChild(scriptElement);
+
+        // Tambahkan kode script langsung
+        const inlineScriptElement = document.createElement('script');
+        inlineScriptElement.innerHTML = "AOS.init();';
+    
+        // Tambahkan elemen script langsung ke elemen head
+        document.head.appendChild(inlineScriptElement);
+    
+        return () => {
+          // Hapus elemen link saat komponen di-unmount
+          document.head.removeChild(linkElement);
+    
+          // Hapus elemen script saat komponen di-unmount
+          document.head.removeChild(scriptElement);
+          
+          // Hapus elemen script langsung saat komponen di-unmount
+          document.head.removeChild(inlineScriptElement);
+        };
+      }, []);
     
     const style = 
     \`${unminifiedCodeStylesReact}\`;
@@ -239,7 +280,15 @@ export default Swiftvel;
     const sourceREACT = reactCode;
 
     // FOR HTML AND PHP
-    const sourceHTML = header + document.querySelector(`.${name}`).innerHTML;
+
+
+    const footerAOS = `
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+    `
+    const sourceHTML = header + document.querySelector(`.${name}`).innerHTML + footerAOS;
     
     // Menerapkan unminify menggunakan js-beautify
     const beautifiedCode = beautify.html(sourceHTML);
@@ -265,6 +314,13 @@ export default Swiftvel;
         title: "Download Successfully", 
         showConfirmButton: false 
     });
+}
+
+downloadAnimate = (e) => {
+   this.handleAnimate()
+   setTimeout(() => {
+       this.download(e)
+   }, 200)
 }
 
 handleChangeActive = (e) => {
@@ -438,6 +494,10 @@ handleChangeColorPicker = (selectedColor) => {
     this.setState({
         activeColor2: selectedColor.hex
     })
+}
+
+handleAnimate = () => {
+    this.props.handleAnimate()
 }
 
   render() {
@@ -849,6 +909,18 @@ handleChangeColorPicker = (selectedColor) => {
             }
             {
                 this.props.isLoading ? (
+                    <div className='flex top-[13px] absolute left-[470px] items-center'>
+                        <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
+                    </div>
+                ):
+                    <div className='flex top-[13px] absolute left-[470px] items-center'>
+                        <div onClick={(e) => this.handleFonts(e)} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                            <FontAwesomeIcon icon={faFileImage} /> 
+                        </div>
+                    </div>  
+            }
+            {
+                this.props.isLoading ? (
                     <div className='flex top-[13px] absolute left-[190px] items-center'>
                         <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
@@ -953,6 +1025,82 @@ handleChangeColorPicker = (selectedColor) => {
                     </div>
                    </>
             }
+            </div>
+            <div className={`w-[600px] ${this.state.activeDownload ? 'left-[10%] opacity-[1] z-[122222] duration-200' : 'opacity-[0.1] duration-[0.2s] left-[10%] z-[-22]'} flex items-center justify-center h-[360px] rounded-[20px] bg-white shadow-lg p-1 fixed duration-100 top-[14%]`}>
+                <div className='w-[48%] h-[96%] bg-slate-200 flex flex-wrap rounded-lg mx-1 relative overflow-hidden flex justify-center items-center'>
+                    <div className='ml-auto mr-auto relative w-full h-max flex flex-wrap items-center justify-center p-2'>
+                        <div className='overflow-hidden w-[50%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
+                        <div className='overflow-hidden w-[40%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
+                        <div className='overflow-hidden w-[20%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
+                        <div className='overflow-hidden w-[70%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
+                        <div className='overflow-hidden w-[70%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
+                        <div className='overflow-hidden w-[20%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
+                        <div className='overflow-hidden w-[40%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
+                        <div className='overflow-hidden w-[50%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
+                        <div className='overflow-hidden w-[20%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
+                        <div className='overflow-hidden w-[70%] h-[60px] bg-slate-400 rounded-lg mx-1 my-1'></div>
+                    </div>
+                    <div onClick={(e) => this.download('templateCurrent')} className='absolute bottom-0 ml-auto mr-auto py-[10px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
+                        Without animate
+                    </div>
+                </div>
+                <div className='w-[48%] h-[96%] bg-slate-200 flex flex-wrap rounded-lg mx-1 relative overflow-hidden flex'>
+                    <div className='ml-auto mr-auto relative w-full h-max flex flex-wrap items-center justify-center p-2'>
+                        <div className='overflow-hidden w-[50%] h-[60px] mx-1 my-1'>
+                            <div id='blck1' className='w-full h-full bg-slate-500 rounded-lg'>
+
+                            </div>
+                        </div>
+                        <div className='overflow-hidden w-[40%] h-[60px] mx-1 my-1'>
+                            <div id='blck2' className='w-full h-full bg-slate-400 rounded-lg'>
+
+                            </div>
+                        </div>
+                        <div className='overflow-hidden w-[20%] h-[60px] mx-1 my-1'>
+                            <div id='blck3' className='w-full h-full bg-slate-400 rounded-lg'>
+
+                            </div>
+                        </div>
+                        <div className='overflow-hidden w-[70%] h-[60px] mx-1 my-1'>
+                            <div id='blck4' className='w-full h-full bg-slate-400 rounded-lg'>
+
+                            </div>
+                        </div>
+                        <div className='overflow-hidden w-[60%] h-[60px] mx-1 my-1'>
+                            <div id='blck5' className='w-full h-full bg-slate-400 rounded-lg'>
+
+                            </div>
+                        </div>
+                        <div className='overflow-hidden w-[30%] h-[60px] mx-1 my-1'>
+                            <div id='blck6' className='w-full h-full bg-slate-500 rounded-lg'>
+
+                            </div>
+                        </div>
+                        <div className='overflow-hidden w-[40%] h-[60px] mx-1 my-1'>
+                            <div id='blck7' className='w-full h-full bg-slate-500 rounded-lg'>
+
+                            </div>
+                        </div>
+                        <div className='overflow-hidden w-[50%] h-[60px] mx-1 my-1'>
+                            <div id='blck8' className='w-full h-full bg-slate-400 rounded-lg'>
+
+                            </div>
+                        </div>
+                        <div className='overflow-hidden w-[20%] h-[60px] mx-1 my-1'>
+                            <div id='blck9' className='w-full h-full bg-slate-400 rounded-lg'>
+
+                            </div>
+                        </div>
+                        <div className='overflow-hidden w-[70%] h-[60px] mx-1 my-1'>
+                            <div id='blck10' className='w-full h-full bg-slate-400 rounded-lg'>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div onClick={(e) => this.downloadAnimate('templateCurrent')} className='absolute bottom-0 ml-auto mr-auto py-[10px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
+                        With animate
+                    </div>
+                </div>
             </div>
             <div className={`${!this.state.screen ? 'menuComponents': 'menuComponentsSide'}`}>
                 <div className="menuAll">
@@ -1260,8 +1408,8 @@ handleChangeColorPicker = (selectedColor) => {
                             <div className='w-[45px] h-[45px] rounded-full bg-gray-300 animate-pulse'></div>
                         </div>
                     ):
-                        <div onClick={() => {
-                                this.download("templateCurrent");
+                        <div onClick={(e) => {
+                                this.handleDownload(e);
                                 if(this.state.active === 'React') {
                                     this.handleAddLimit()   
                                 }

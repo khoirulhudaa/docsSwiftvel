@@ -46,6 +46,246 @@ html {
   --tw-ring-shadow: 0 0 transparent;
 }
 
+#blck1 {
+  position: relative;
+  bottom: 0;
+  animation: blck1 4s ease-in infinite; 
+}
+
+#blck2 {
+  position: relative;
+  bottom: 0;
+  animation: blck2 4s ease-in infinite; 
+}
+
+#blck3 {
+  position: relative;
+  bottom: 0;
+  animation: blck3 4s ease-in infinite; 
+}
+
+#blck4 {
+  position: relative;
+  bottom: 0;
+  animation: blck4 4s ease-in infinite; 
+}
+
+#blck5 {
+  position: relative;
+  bottom: 0;
+  animation: blck5 4s ease-in infinite; 
+}
+
+#blck6 {
+  position: relative;
+  bottom: 0;
+  animation: blck6 4s ease-in infinite; 
+}
+
+#blck7 {
+  position: relative;
+  bottom: 0;
+  animation: blck7 4s ease-in infinite; 
+}
+
+#blck8 {
+  position: relative;
+  bottom: 0;
+  animation: blck8 4s ease-in infinite; 
+}
+
+#blck9 {
+  position: relative;
+  bottom: 0;
+  animation: blck9 4s ease-in infinite; 
+}
+
+#blck10 {
+  position: relative;
+  bottom: 0;
+  animation: blck10 4s ease-in infinite; 
+}
+
+@keyframes blck1 {
+  0% {
+    opacity: 0.7;
+    position: relative;
+    transform: scale(0.88);
+  } 
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+  }
+  100% {
+    transform: scale(0.88);
+    opacity: 1;
+    position: relative;
+  } 
+}
+
+@keyframes blck2 {
+  0% {
+    opacity: 0.7;
+    position: relative;
+    transform: scale(0.88);
+  } 
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+  }
+  100% {
+    transform: scale(0.88);
+    opacity: 1;
+    position: relative;
+  } 
+}
+
+@keyframes blck3 {
+  0% {
+    opacity: 0.7;
+    position: relative;
+    transform: scale(0.88);
+  } 
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+  }
+  100% {
+    transform: scale(0.88);
+    opacity: 1;
+    position: relative;
+  } 
+}
+
+@keyframes blck4 {
+  0% {
+    opacity: 0.7;
+    position: relative;
+    transform: scale(0.88);
+  } 
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+  }
+  100% {
+    transform: scale(0.88);
+    opacity: 1;
+    position: relative;
+  } 
+}
+
+@keyframes blck5 {
+  0% {
+    opacity: 0.7;
+    position: relative;
+    transform: scale(0.88);
+  } 
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+  }
+  100% {
+    transform: scale(0.88);
+    opacity: 1;
+    position: relative;
+  } 
+}
+
+@keyframes blck6 {
+  0% {
+    opacity: 0.7;
+    position: relative;
+    transform: scale(0.88);
+  } 
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+  }
+  100% {
+    transform: scale(0.88);
+    opacity: 1;
+    position: relative;
+  } 
+}
+
+@keyframes blck7 {
+  0% {
+    opacity: 0.7;
+    position: relative;
+    transform: scale(0.88);
+  } 
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+  }
+  100% {
+    transform: scale(0.88);
+    opacity: 1;
+    position: relative;
+  } 
+}
+
+@keyframes blck8 {
+  0% {
+    opacity: 0.7;
+    position: relative;
+    transform: scale(0.88);
+  } 
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+  }
+  100% {
+    transform: scale(0.88);
+    opacity: 1;
+    position: relative;
+  } 
+}
+
+@keyframes blck9 {
+  0% {
+    opacity: 0.7;
+    position: relative;
+    transform: scale(0.88);
+  } 
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+  }
+  100% {
+    transform: scale(0.88);
+    opacity: 1;
+    position: relative;
+  } 
+}
+
+@keyframes blck10 {
+  0% {
+    opacity: 0.7;
+    position: relative;
+    transform: scale(0.88);
+  } 
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+  }
+  100% {
+    transform: scale(0.88);
+    opacity: 1;
+    position: relative;
+  } 
+}
+
 .iconReact {
   width: 40%;
   animation: reactt 17s linear infinite;

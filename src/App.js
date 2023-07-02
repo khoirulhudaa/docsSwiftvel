@@ -33,6 +33,7 @@ class App extends React.Component {
       dataColors:[],
       activeColor2: '',
       activeColorComponent: '',
+      activeAnimate: false
     };
 
 };
@@ -182,6 +183,13 @@ handleChangeColorState = () => {
   this.setState({ dataStyle: updatedColors });
 }
 
+handleAnimate = () => {
+    this.setState({
+      activeAnimate: !this.state.activeAnimate
+    })
+}
+
+
   render() {
     // state dan function yang dikirim ke html
     const { createComponent, handleAutomaticBuild , handleChangeFontGlobalState, handlePrevSelectFontGlobalState} = this;
@@ -257,11 +265,11 @@ handleChangeColorState = () => {
           <div className="w-screen h-max overflow-x-hidden">
             <div className="col-sm-0 col-12">
               {/* Menu komponent */}
-              <MenuComponent mode={this.state.mode} handleChangeColorState={(e) => this.handleChangeColorState(e)} handleUpdateStateColors={(e) => this.handleUpdateStateColors(e)} handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} dataStyle={dataStyle} selectFont={this.state.selectFont} handleChangeFontGlobalState={(e) => handleChangeFontGlobalState(e)} dataHTML={dataHTML} isLoading={this.state.isLoading} selectedObjects={selectedObjects} handleAutomaticBuild={handleAutomaticBuild} showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
+              <MenuComponent handleAnimate={this.handleAnimate} mode={this.state.mode} handleChangeColorState={(e) => this.handleChangeColorState(e)} handleUpdateStateColors={(e) => this.handleUpdateStateColors(e)} handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} dataStyle={dataStyle} selectFont={this.state.selectFont} handleChangeFontGlobalState={(e) => handleChangeFontGlobalState(e)} dataHTML={dataHTML} isLoading={this.state.isLoading} selectedObjects={selectedObjects} handleAutomaticBuild={handleAutomaticBuild} showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
             </div>
             <div className='col-sm-12 col-12' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               {/* frame yang akan menampilkan semua component terpilih */}
-              <FrameOutput activeColor2={this.state.activeColor2} activeColorComponent={this.state.activeColorComponent} handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} selectFont={this.state.selectFont} nowSelectFont={this.state.nowSelectFont} handleChangeFontGlobalState={handleChangeFontGlobalState} isLoadingBuild={this.state.isLoadingBuild} mode={this.state.mode} selectedObjects={selectedObjects} dataStyle={dataStyle} handleMinus={this.handleMinus} dataHTML={dataHTML} dataComponentUsed={dataImages} />
+              <FrameOutput activeAnimate={this.state.activeAnimate} activeColor2={this.state.activeColor2} activeColorComponent={this.state.activeColorComponent} handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} selectFont={this.state.selectFont} nowSelectFont={this.state.nowSelectFont} handleChangeFontGlobalState={handleChangeFontGlobalState} isLoadingBuild={this.state.isLoadingBuild} mode={this.state.mode} selectedObjects={selectedObjects} dataStyle={dataStyle} handleMinus={this.handleMinus} dataHTML={dataHTML} dataComponentUsed={dataImages} />
             </div>
           </div>
         </>

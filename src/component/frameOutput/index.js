@@ -113,12 +113,37 @@ class FrameOutput extends Component {
     }
   }
   
-  componentDidUpdate = (prevProps) => {
-    document.addEventListener('click', function(event) {
-        var target = event.target;
-        var style = window.getComputedStyle(target);
-        console.log(style.cssText);
-    });
+componentDidUpdate = (prevProps) => {
+    if(this.props.activeAnimate) {
+      let htmlCode = document.querySelector('.template').innerHTML;
+
+      // Tambahkan atribut data-aos="fade-up" ke tag p
+      htmlCode = htmlCode.replace(/<p\b/g, '<p data-aos="fade-up"');
+
+      // Tambahkan atribut data-aos="fade-up" ke tag h2
+      htmlCode = htmlCode.replace(/<h1\b/g, '<h1 data-aos="fade-up"');
+
+      // Tambahkan atribut data-aos="fade-up" ke tag h2
+      htmlCode = htmlCode.replace(/<h2\b/g, '<h2 data-aos="fade-up"');
+
+      // Tambahkan atribut data-aos="fade-up" ke tag h3
+      htmlCode = htmlCode.replace(/<h3\b/g, '<h3 data-aos="fade-up"');
+      
+      // Tambahkan atribut data-aos="fade-up" ke tag small
+      htmlCode = htmlCode.replace(/<small\b/g, '<small data-aos="fade-up"');
+
+      // Tambahkan atribut data-aos="fade-up" ke tag img
+      htmlCode = htmlCode.replace(/<img\b/g, '<img data-aos="fade-up"');
+
+      // Tambahkan atribut data-aos="fade-up" ke tag button
+      htmlCode = htmlCode.replace(/<button\b((?!(data-aos="fade-up")).)*\bclass\s*=\s*['"]([^'"]*\bbtn\b[^'"]*)['"]/g, '<button $& data-aos="fade-up"');
+
+      // Tambahkan atribut data-aos="fade-up" ke tag div
+      htmlCode = htmlCode.replace(/<div\b((?!(data-aos="fade-up")).)*\bclass\s*=\s*['"]([^'"]*\bbtn\b[^'"]*)['"]/g, '<div $& data-aos="fade-up"');
+      
+      document.querySelector('.template').innerHTML = htmlCode;
+    }
+
     if (this.props.nowSelectFont !== prevProps.nowSelectFont || this.props.dataHTML !== prevProps.dataHTML) {
         let web = '';
         let webStyle = '';
@@ -234,6 +259,7 @@ class FrameOutput extends Component {
   }
 
   render() {
+    console.log(document.querySelector('.template'))
     return (
       <> 
         {
