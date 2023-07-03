@@ -353,7 +353,7 @@ return (
             </div>
         </section>
 
-        <section className='relative w-full mt-[80px] lg:rounded-tl-[110px] rounded-tl-[70px] lg:overflow-hidden lg:rounded-tr-[110px] rounded-tr-[70px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[30px] lg:pb-[70px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
+        <section className='relative w-full mt-[80px] lg:rounded-tl-[110px] rounded-tl-[70px] lg:overflow-hidden lg:rounded-tr-[110px] rounded-tr-[70px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[30px] 2xl:pt-[70px] lg:pb-[70px] bg-[#023430] 2xl:h-[100vh] h-max lg:flex'>
             <img src={Map} alt="map" className='hidden lg:inline absolute right-0 top-0 w-full opacity-[0.1] h-full' />
             <img src={Wave} className='hidden lg:inline absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
             <div className='w-[100%] lg:w-[63%] h-max p-[30px] flex flex-col lg:pl-[100px] lg:py-[50px] lg:mt-[10px]'>
@@ -368,8 +368,8 @@ return (
                 </a>
             </div>
             <div className='relative w-[100%] lg:w-[37%] h-max overflow-hidden lg:h-max mt-[0] lg:mt-[-40px] flex justify-center items-center'>
-            <div className={`w-[90%] flex flex-col items-center justify-center h-max rounded-[20px] shadow-lg p-1 relative duration-100 mt-[14%]`}>
-                    <div data-aos='fade-up' data-aos-duration="1000" className='w-[92%] lg:w-[70%] h-[360px] bg-white flex flex-wrap rounded-lg mx-2 mb-[30px] relative overflow-hidden flex'>
+                <div className={`w-[90%] flex flex-col items-center justify-center h-max rounded-[20px] shadow-lg p-1 relative duration-100 mt-[14%]`}>
+                    <div data-aos='fade-up' data-aos-duration="1000" className='w-[92%] 2xl:e-[68%] lg:w-[70%] h-[400px] bg-white flex flex-wrap rounded-lg mx-2 mb-[50px] relative overflow-hidden flex'>
                         <div className='ml-auto mr-auto relative w-full h-max flex flex-col items-center justify-center p-2'>
                         <div className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[20px]'></div>
                         <div className='flex w-[70%] flex-wrap h-max mb-2 items-center justify-center'>
@@ -407,7 +407,7 @@ return (
                             Without animate
                         </div>
                     </div>
-                    <div data-aos='fade-up' data-aos-duration="1000" className='w-[92%] lg:w-[70%] h-[360px] bg-white flex flex-wrap rounded-lg mx-2 relative overflow-hidden flex'>
+                    <div data-aos='fade-up' data-aos-duration="1000" className='w-[92%] 2xl:e-[68%] lg:w-[70%] h-[400px] bg-white flex flex-wrap rounded-lg mx-2 relative overflow-hidden flex'>
                         <div className='ml-auto mr-auto relative w-full h-max flex flex-col items-center justify-center p-2'>
                         <div id='blck2' className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[20px]'></div>
                         <div className='flex w-[70%] flex-wrap h-max mb-2 items-center justify-center'>
