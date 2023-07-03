@@ -1,9 +1,8 @@
-import { faArrowsRotate, faCompress, faExpand, faFileImage, faFont, faPaintBrush, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faBucket, faCompress, faExpand, faFile, faFileImage, faFont, faPaintBrush, faSpinner, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
 import beautify from 'js-beautify';
 import React, { Component } from 'react';
-import { ChromePicker } from 'react-color';
 import { connect } from 'react-redux';
 import Swal from 'sweetalert2';
 import Crown from '../../assets/images/png/crown.png';
@@ -13,6 +12,7 @@ import Add from '../../assets/images/svg/add.svg';
 import Download from '../../assets/images/svg/donlot.svg';
 import Right from '../../assets/images/svg/right.svg';
 import Data from '../../dataComponent/index.json';
+import { ChromePicker } from 'react-color';
 
 class MenuComponent extends Component {
 constructor(props) {
@@ -911,18 +911,6 @@ handleAnimate = () => {
                         </div>
                     </div>  
             }
-            {/* {
-                this.props.isLoading ? (
-                    <div className='flex top-[13px] absolute left-[470px] items-center'>
-                        <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
-                    </div>
-                ):
-                    <div className='flex top-[13px] absolute left-[470px] items-center'>
-                        <div onClick={(e) => this.handleFonts(e)} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
-                            <FontAwesomeIcon icon={faFileImage} /> 
-                        </div>
-                    </div>  
-            } */}
             {
                 this.props.isLoading ? (
                     <div className='flex top-[13px] absolute left-[190px] items-center'>

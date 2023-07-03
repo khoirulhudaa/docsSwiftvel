@@ -132,7 +132,7 @@ handleAutomaticBuild = () => {
       // Memilih objek-objek dengan kriteria yang ditentukan
       const selectedNavbar = shuffledObjects.find((obj) => obj.title === 'navbar');
       const selectedHero = shuffledObjects.find((obj) => obj.title === 'hero');
-      const selectedContent = shuffledObjects.filter((obj) => obj.title === 'content').slice(0, 3);
+      const selectedContent = shuffledObjects.filter((obj) => obj.title === 'content').slice(0, 4);
       const selectedFooter = shuffledObjects.find((obj) => obj.title === 'footer');
 
       // Menyimpan objek-objek yang dipilih dalam state array
