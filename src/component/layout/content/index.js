@@ -283,7 +283,7 @@ return (
             <div className='w-[100vw] lg:w-[90%] relative text-center lg:w-max lg:flex relative z-10 h-max lg:h-max mb-4 mt-4 lg:mt-4 rounded-md px-8 pb-8 lg:pb-8 pt-8 lg:pt-6 lg:px-2'>
                <div className='lg:h-max h-max text-center flex flex-col items-center justify-center relative ml-auto mr-auto w-[80vw]'>
                     <h2 className='w-[90%] 2xl:w-max lg:w-max text-darkMongo font-normal flex items-center text-center text-[40px] lg:text-[70px] 2xl:text-[80px] ml-auto mr-auto leading-[1.4em] lg:leading-[1.6em]'>Automatic build feature</h2>
-                    <a onClick={() => navigate('/pricing')} className='bg-bgMongo rounded-full px-3 py-2 w-max text-lightMongo mt-3 hover:brightness-[88%] active:scale-[0.98] no-underline'>
+                    <a onClick={() => this.navigate('/pricing')} className='bg-bgMongo rounded-full px-3 py-2 w-max text-lightMongo mt-3 hover:brightness-[88%] active:scale-[0.98] no-underline'>
                         <p className='text-white w-max cursor-pointer flex items-center'>Only at premium <img src={Right} className='text-indigo-500 w-[26px] p-2 ml-3 bg-white rounded-full flex items-center justify-center' alt="icon" /></p>
                     </a>
                     <p className='text-[15px] 2xl:text-[23px] 2xl:leading-[2.2em] leading-[2em] mt-5 w-[92vw] lg:w-[70%] font-normal text-slate-400'>Swiftvel will automatically assemble several components into one unit to create a complete website for you quickly and easily</p>
@@ -302,7 +302,7 @@ return (
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <h1 className='text-[44px] lg:text-[64px] 2xl:text-[76px] w-[90%] lg:w-[50%] ml-auto mr-auto leading-[1.5em] mt-[100px]'>Your advice is what we need</h1>
+            {/* <h1 className='text-[44px] lg:text-[64px] 2xl:text-[76px] w-[90%] lg:w-[50%] ml-auto mr-auto leading-[1.5em] mt-[100px]'>Your advice is what we need</h1>
             <div className='w-[90%] lg:w-[45vw] border-[1px] border-slate-400 flex items-center justify-center ml-auto mr-auto 2xl:h-[60px] h-[50px] my-4 rounded-[12px] overflow-hidden bg-white'>
                 <input type="text" name='feedback' onChange={(e) => handleChangeFeed(e)} placeholder='Type in your suggestions...' className='border-none outline-0 w-full h-max py-2 px-3 font-normal 2xl:text-[17px] text-[15px]' />
             </div>
@@ -315,7 +315,7 @@ return (
                 Send now
               </span>
             }
-            </div>
+            </div> */}
         </section>
 
         <section className='w-[100%] overflow-hidden rounded-tr-[70px] lg:rounded-tr-[200px] relative mt-[60px] 2xl:mt-[40px] pt-1 lg:pt-4 lg:mt-[0px] pb-[20px] lg:pb-[100px] h-max 2xl:pb-[280px] ml-auto mr-auto bg-[#023430]'>
@@ -350,6 +350,102 @@ return (
                     <p className='text-[15px] 2xl:text-[23px] 2xl:leading-[2.2em] leading-[2em] mt-5 w-[92vw] lg:w-[70%] font-normal text-slate-400'>Unlock the Power of RapidReact: Easily generate React Code from swiftvel to accelerate your React Projects with RapidReact</p>
                     <img src={ReactIcon} alt="react-icon" className='iconReact' />
                </div>
+            </div>
+        </section>
+
+        <section className='relative w-full mt-[80px] lg:rounded-tl-[110px] rounded-tl-[70px] lg:overflow-hidden lg:rounded-tr-[110px] rounded-tr-[70px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[30px] lg:pb-[70px] bg-[#023430] 2xl:h-[850px] h-max lg:flex'>
+            <img src={Map} alt="map" className='hidden lg:inline absolute right-0 top-0 w-full opacity-[0.1] h-full' />
+            <img src={Wave} className='hidden lg:inline absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
+            <div className='w-[100%] lg:w-[63%] h-max p-[30px] flex flex-col lg:pl-[100px] lg:py-[50px] lg:mt-[10px]'>
+                <h1 className='text-[32px] 2xl:text-[80px] flex flex-wrap items-center lg:text-[65px] text-white w-[90%] leading-[1.6em]'>Build web with <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>scroll</h1> animatios <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>instantly</h1> and can <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>version</h1> without <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>animatios</h1></h1>
+                <p className='w-[94%] lg:w-[86%] font-normal text-[14px] 2xl:text-[23px] text-slate-200 2xl:leading-[2.2em] leading-[2em] mt-4'>
+                    Make your website interactive with interesting scroll animations and make your website from now on look different from some other websites
+                </p>
+                <a data-aos='fade-up' data-aos-duration="1000" target='__blank' onClick={() => navigate('/swiftvelbuilder')} className='z-[3] relative no-underline text-white'>
+                    <div className='w-[180px] lg:w-max h-max font-normal cursor-pointer text-darkMongo mt-5 bg-mongo px-10 z-[3] py-3 hover:brightness-[94%] text-center border-[#001E2B] border-[1px]'>
+                        Try swiftvel
+                    </div>
+                </a>
+            </div>
+            <div className='relative w-[100%] lg:w-[37%] h-max overflow-hidden lg:h-max mt-[0] lg:mt-[-40px] flex justify-center items-center'>
+            <div className={`w-[90%] flex flex-col items-center justify-center h-max rounded-[20px] shadow-lg p-1 relative duration-100 mt-[14%]`}>
+                    <div data-aos='fade-up' data-aos-duration="1000" className='w-[92%] lg:w-[70%] h-[360px] bg-white flex flex-wrap rounded-lg mx-2 mb-[30px] relative overflow-hidden flex'>
+                        <div className='ml-auto mr-auto relative w-full h-max flex flex-col items-center justify-center p-2'>
+                        <div className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[20px]'></div>
+                        <div className='flex w-[70%] flex-wrap h-max mb-2 items-center justify-center'>
+                            <div className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                            <div className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 ml-1'></div>
+                            <div className='w-[33%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                            <div className='w-[33%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                            <div className='w-[25%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                            <div className='w-[25%] h-[6px] bg-slate-400 rounded-full mb-1 ml-1'></div>
+                        </div>
+                        <div className='flex w-[70%] items-center justify-center my-1'>
+                            <div className='w-[25%] mr-1 h-[13px] bg-slate-400 rounded-lg mb-2'></div>
+                            <div className='w-[25%] ml-1 h-[13px] bg-slate-400 rounded-lg mb-2'></div>
+                        </div>
+                        <div className='flex w-[80%] items-center justify-between my-2'>
+                            <div className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
+                            <div className='w-[50%]'>
+                                <div className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
+                                <div className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            </div>
+                        </div>
+                        <div className='flex w-[80%] items-center justify-between my-2'>
+                            <div className='w-[50%]'>
+                                <div className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
+                                <div className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            </div>
+                            <div className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
+                        </div>
+                        </div>
+                        <div className='absolute bottom-0 ml-auto mr-auto py-[10px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
+                            Without animate
+                        </div>
+                    </div>
+                    <div data-aos='fade-up' data-aos-duration="1000" className='w-[92%] lg:w-[70%] h-[360px] bg-white flex flex-wrap rounded-lg mx-2 relative overflow-hidden flex'>
+                        <div className='ml-auto mr-auto relative w-full h-max flex flex-col items-center justify-center p-2'>
+                        <div id='blck2' className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[20px]'></div>
+                        <div className='flex w-[70%] flex-wrap h-max mb-2 items-center justify-center'>
+                            <div id='blck2' className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                            <div id='blck2' className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 ml-1'></div>
+                            <div id='blck2' className='w-[33%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                            <div id='blck2' className='w-[33%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                            <div id='blck2' className='w-[25%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
+                            <div id='blck2' className='w-[25%] h-[6px] bg-slate-400 rounded-full mb-1 ml-1'></div>
+                        </div>
+                        <div className='flex w-[70%] items-center justify-center my-1'>
+                            <div id='blck2' className='w-[25%] mr-1 h-[13px] bg-slate-400 rounded-lg mb-2'></div>
+                            <div id='blck2' className='w-[25%] ml-1 h-[13px] bg-slate-400 rounded-lg mb-2'></div>
+                        </div>
+                        <div className='flex w-[80%] items-center justify-between my-2'>
+                            <div id='blck2' className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
+                            <div className='w-[50%]'>
+                                <div id='blck2' className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
+                                <div id='blck2' className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div id='blck2' className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div id='blck2' className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            </div>
+                        </div>
+                        <div className='flex w-[80%] items-center justify-between my-2'>
+                            <div className='w-[50%]'>
+                                <div id='blck2' className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
+                                <div id='blck2' className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div id='blck2' className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div id='blck2' className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            </div>
+                            <div id='blck2' className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
+                        </div>
+                        </div>
+                        <div className='absolute bottom-0 ml-auto mr-auto py-[10px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
+                            With animate
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
