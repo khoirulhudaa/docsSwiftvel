@@ -356,8 +356,8 @@ return (
         <section className='relative w-full mt-[80px] lg:rounded-tl-[110px] rounded-tl-[70px] lg:overflow-hidden lg:rounded-tr-[110px] rounded-tr-[70px] lg:mt-[110px] pb-[70px] pt-8 lg:pt-[30px] 2xl:pt-[70px] lg:pb-[70px] bg-[#023430] 2xl:h-[100vh] h-max lg:flex'>
             <img src={Map} alt="map" className='hidden lg:inline absolute right-0 top-0 w-full opacity-[0.1] h-full' />
             <img src={Wave} className='hidden lg:inline absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
-            <div className='w-[100%] lg:w-[63%] h-max p-[30px] flex flex-col lg:pl-[100px] lg:py-[50px] lg:mt-[10px]'>
-                <h1 className='text-[32px] 2xl:text-[80px] flex flex-wrap items-center lg:text-[65px] text-white w-[90%] leading-[1.6em]'>Build web with <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>scroll</h1> animatios <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>instantly</h1> and can <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>version</h1> without <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>animatios</h1></h1>
+            <div className='w-[100%] lg:w-[55%] h-max p-[30px] flex flex-col lg:pl-[100px] lg:py-[50px] lg:mt-[10px]'>
+                <h1 className='text-[32px] 2xl:text-[80px] flex flex-wrap items-center lg:text-[65px] text-white w-[90%] leading-[1.6em]'>Build web with <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>scroll</h1> animatios <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>instantly</h1></h1>
                 <p className='w-[94%] lg:w-[86%] font-normal text-[14px] 2xl:text-[23px] text-slate-200 2xl:leading-[2.2em] leading-[2em] mt-4'>
                     Make your website interactive with interesting scroll animations and make your website from now on look different from some other websites
                 </p>
@@ -367,47 +367,9 @@ return (
                     </div>
                 </a>
             </div>
-            <div className='relative w-[100%] lg:w-[37%] h-max overflow-hidden lg:h-max mt-[0] lg:mt-[-40px] flex justify-center items-center'>
+            <div className='relative w-[100%] lg:w-[45%] h-max overflow-hidden lg:h-max mt-[0] lg:mt-[-40px] flex justify-center items-center'>
                 <div className={`w-[90%] flex flex-col items-center justify-center h-max rounded-[20px] shadow-lg p-1 relative duration-100 mt-[14%]`}>
-                    <div data-aos='fade-up' data-aos-duration="1000" className='w-[92%] 2xl:e-[68%] lg:w-[70%] h-[400px] bg-white flex flex-wrap rounded-lg mx-2 mb-[50px] relative overflow-hidden flex'>
-                        <div className='ml-auto mr-auto relative w-full h-max flex flex-col items-center justify-center p-2'>
-                        <div className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[20px]'></div>
-                        <div className='flex w-[70%] flex-wrap h-max mb-2 items-center justify-center'>
-                            <div className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
-                            <div className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 ml-1'></div>
-                            <div className='w-[33%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
-                            <div className='w-[33%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
-                            <div className='w-[25%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
-                            <div className='w-[25%] h-[6px] bg-slate-400 rounded-full mb-1 ml-1'></div>
-                        </div>
-                        <div className='flex w-[70%] items-center justify-center my-1'>
-                            <div className='w-[25%] mr-1 h-[13px] bg-slate-400 rounded-lg mb-2'></div>
-                            <div className='w-[25%] ml-1 h-[13px] bg-slate-400 rounded-lg mb-2'></div>
-                        </div>
-                        <div className='flex w-[80%] items-center justify-between my-2'>
-                            <div className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
-                            <div className='w-[50%]'>
-                                <div className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
-                                <div className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
-                                <div className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
-                                <div className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
-                            </div>
-                        </div>
-                        <div className='flex w-[80%] items-center justify-between my-2'>
-                            <div className='w-[50%]'>
-                                <div className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
-                                <div className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
-                                <div className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
-                                <div className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
-                            </div>
-                            <div className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
-                        </div>
-                        </div>
-                        <div className='absolute bottom-0 ml-auto mr-auto py-[10px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
-                            Without animate
-                        </div>
-                    </div>
-                    <div data-aos='fade-up' data-aos-duration="1000" className='w-[92%] 2xl:e-[68%] lg:w-[70%] h-[400px] bg-white flex flex-wrap rounded-lg mx-2 relative overflow-hidden flex'>
+                    <div data-aos='fade-up' data-aos-duration="1000" className='w-[92%] 2xl:e-[68%] lg:w-[70%] h-[495px] bg-white flex flex-wrap rounded-lg mx-2 relative overflow-hidden flex'>
                         <div className='ml-auto mr-auto relative w-full h-max flex flex-col items-center justify-center p-2'>
                         <div id='blck2' className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[20px]'></div>
                         <div className='flex w-[70%] flex-wrap h-max mb-2 items-center justify-center'>
@@ -440,8 +402,26 @@ return (
                             </div>
                             <div id='blck2' className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
                         </div>
+                        <div className='flex w-[80%] items-center justify-between my-2'>
+                            <div id='blck2' className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
+                            <div className='w-[50%]'>
+                                <div id='blck2' className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
+                                <div id='blck2' className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div id='blck2' className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div id='blck2' className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            </div>
                         </div>
-                        <div className='absolute bottom-0 ml-auto mr-auto py-[10px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
+                        <div className='flex w-[80%] items-center justify-between my-2'>
+                            <div className='w-[50%]'>
+                                <div id='blck2' className='w-[70%] ml-2 h-[10px] bg-slate-400 rounded-full mb-2'></div>
+                                <div id='blck2' className='w-[70%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div id='blck2' className='w-[50%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                                <div id='blck2' className='w-[40%] ml-2 h-[6px] bg-slate-400 rounded-full mb-1'></div>
+                            </div>
+                            <div id='blck2' className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
+                        </div>
+                        </div>
+                        <div className='absolute bottom-0 ml-auto mr-auto py-[14px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
                             With animate
                         </div>
                     </div>
