@@ -247,12 +247,12 @@ handleAnimate = () => {
                           <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                               <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                               </div>
-                              <p className='text-mongo ml-4 lg:ml-7 text-[15px] lg:text-[17px] relative top-1 font-normal'>Responsive Design</p>
+                              <p className='text-mongo ml-4 lg:ml-7 text-[15px] lg:text-[17px] relative top-1 font-normal'>Full features</p>
                           </li>
                           <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                               <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                               </div>
-                              <p className='text-mongo ml-4 lg:ml-7 text-[15px] lg:text-[17px] relative top-1 font-normal'>Premium account label</p>
+                              <p className='text-mongo ml-4 lg:ml-7 text-[15px] lg:text-[17px] relative top-1 font-normal'>Export to React</p>
                           </li>
                       </ul>
                   </div>
