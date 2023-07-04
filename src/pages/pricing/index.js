@@ -150,7 +150,7 @@ const Pricing = () => {
                                 <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                                     <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                                     </div>
-                                    <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>Customizable</p>
+                                    <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>Animation scroll web</p>
                                 </li>
                                 <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                                     <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
@@ -223,7 +223,7 @@ const Pricing = () => {
                                 <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                                     <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
                                     </div>
-                                    <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>Customizable</p>
+                                    <p className='text-white ml-4 lg:ml-7 text-white text-[15px] lg:text-[17px] relative top-1 font-normal'>Animation scroll web</p>
                                 </li>
                                 <li className='list-none mb-[40px] lg:mb-[30px] lg:ml-0 ml-[-20px] flex items-center'>
                                     <div className='h-[15px] w-[25px] border-[#00ED64] rotate-[-45deg] border-l-[4px] border-b-[4px]'>
