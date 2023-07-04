@@ -45,6 +45,8 @@ const Header = () => {
         // Kirim permintaan ke endpoint logout di server
         dispatch(unSetUser({payload: ""}));
         Cookies.remove('status');
+        Cookies.remove('intro', 1);
+        Cookies.remove('introDone', true);
         navigate('/signIn')
     } catch (error) {
     // Handling jika logout gagal

@@ -12,6 +12,7 @@ import Crown from '../../assets/images/png/crown.png';
 import Padlock from '../../assets/images/png/padlock.png';
 import Saweria from '../../assets/images/png/saweria.png';
 import Add from '../../assets/images/svg/add.svg';
+import Cookies from 'js-cookie';
 import Download from '../../assets/images/svg/donlot.svg';
 import Right from '../../assets/images/svg/right.svg';
 import Data from '../../dataComponent/index.json';
@@ -41,7 +42,8 @@ constructor(props) {
     activeColor2: '',
     activeColorComponent: '',
     colorPicker: false,
-    activeDownload: false
+    activeDownload: false,
+    intro: 0
   };
 };
 
@@ -50,7 +52,10 @@ componentDidUpdate = () => {
         .then(response => response.json())
         .then(data => {
             // Perbarui state limitReact dengan data terbaru
-            this.setState({ limitReact: data.message.limitReact });
+            this.setState({ 
+                limitReact: data.message.limitReact,
+                intro: data.message.intro
+            });
         })
         .catch(error => {
             console.log(error);
@@ -71,6 +76,18 @@ componentDidMount = () => {
         })
         .catch(error => {
             console.log(error);
+    });
+
+    fetch(`https://api-dragme.vercel.app/api/users/initialIntro/${this.props.data.email}`)
+        .then(response => response.json())
+        .then(data => {
+            // Perbarui state limitReact dengan data terbaru
+            this.setState({ intro: data.message.intro });
+            console.log('hasil initial', data)
+        })
+        .catch(error => {
+            console.log(error);
+            console.log('hasil initial', error)
     });
 
     const { data } = this.props;
@@ -145,67 +162,83 @@ componentDidMount = () => {
         document.querySelector('.menu4').classList.add('show4')
         document.querySelector('.menu5').classList.remove('show5')
     })
-
-    this.startIntro();
+    
+    this.startIntro()
+    this.handleIntro()
 }
 
 startIntro = () => {
-    introJs()
-      .setOptions({
-        steps: [
-          {
-            element: '#Component',
-            tooltipClass: 'custom-tooltip',
-            intro: 'Welcome to Swiftvel. Continue to learn about tools in Swiftvel',
-          },
-          {
-            element: '#download',
-            intro: 'Get the code for the built web',
-          },
-          {
-            element: '#navbar',
-            intro: 'Choice of various navbar components navbar',
-          },
-          {
-            element: '#heroes',
-            intro: 'Choice of various navbar components heroes',
-          },
-          {
-            element: '#content',
-            intro: 'Choice of various navbar components content',
-          },
-          {
-            element: '#footer',
-            intro: 'Choice of various navbar components footer',
-          },
-          {
-            element: '#automatic',
-            intro: 'Create your website automatically',
-          },
-          {
-            element: '#frame',
-            intro: 'Broaden your view of the frame',
-          },
-          {
-            element: '#reload',
-            intro: 'Reload this page',
-          },
-          {
-            element: '#fonts',
-            intro: 'Customize fonts with web themes',
-          },
-          {
-            element: '#color',
-            intro: 'Change the color of some parts of the web',
-          },
-          {
-            element: '#language',
-            intro: 'Select the type of code you want to get',
-          },
-        ],
-      })
-      .start();
-  };
+    const valueIntro = Cookies.get('intro');
+        window.addEventListener('load', () => {
+            if (valueIntro === '0' || valueIntro === 0) {
+            introJs()
+            .setOptions({
+                steps: [
+                {
+                    element: '#Component',
+                    tooltipClass: 'custom-tooltip',
+                    intro: 'Welcome to Swiftvel. Continue to learn about tools in Swiftvel',
+                },
+                {
+                    element: '#download',
+                    intro: 'Get the code for the built web',
+                },
+                {
+                    element: '#navbar',
+                    intro: 'Choice of various navbar components navbar',
+                },
+                {
+                    element: '#heroes',
+                    intro: 'Choice of various navbar components heroes',
+                },
+                {
+                    element: '#content',
+                    intro: 'Choice of various navbar components content',
+                },
+                {
+                    element: '#footer',
+                    intro: 'Choice of various navbar components footer',
+                },
+                {
+                    element: '#automatic',
+                    intro: 'Create your website automatically',
+                },
+                {
+                    element: '#frame',
+                    intro: 'Broaden your view of the frame',
+                },
+                {
+                    element: '#reload',
+                    intro: 'Reload this page',
+                },
+                {
+                    element: '#fonts',
+                    intro: 'Customize fonts with web themes',
+                },
+                {
+                    element: '#color',
+                    intro: 'Change the color of some parts of the web',
+                },
+                {
+                    element: '#language',
+                    intro: 'Select the type of code you want to get',
+                },
+                ],
+            })
+            .start()
+        }
+    })
+}
+
+handleIntro = () => {
+    const currentValue = parseInt(Cookies.get('intro'), 10) || 0;
+    
+    // Menyimpan nilai yang ditingkatkan ke dalam cookie jika belum berubah
+    if(currentValue === 0) {
+        Cookies.set('intro', 1);
+        Cookies.set('introDone', true);
+    }
+}
 
 handleDownload = (e) => {
     e.preventDefault()
@@ -999,11 +1032,11 @@ handleAnimate = () => {
             }
             {
                 this.props.isLoading ? (
-                    <div className='flex top-[13px] absolute left-[330px] items-center'>
+                    <div className='flex top-[13px] absolute left-[469px] items-center'>
                         <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
-                    <a href="/pricing" className='absolute no-underline text-white left-[330px] top-[13px]'>
+                    <a href="/pricing" className='absolute no-underline text-white left-[469px] top-[13px]'>
                         {
                             status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
                                 <div className='active:scale-[0.96] w-[40.6px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>

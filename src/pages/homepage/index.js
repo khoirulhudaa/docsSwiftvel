@@ -9,7 +9,11 @@ const Homepage = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    console.log('data', dataComponents)
+    if(Cookies.get('introDone')) {
+      Cookies.set('intro', 1)
+    }else {
+      Cookies.set('intro', 0)
+    }
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
