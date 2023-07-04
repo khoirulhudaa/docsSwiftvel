@@ -69,6 +69,10 @@ html {
   } 
 }
 
+.custom-tooltip {
+  width: 400px;
+}
+
 #blck2 {
   position: relative;
   animation: blck2 2.5s linear infinite; 

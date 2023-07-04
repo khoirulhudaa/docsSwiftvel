@@ -17,6 +17,7 @@
     "bootstrap": "^5.2.3",
     "boxicons": "^2.1.4",
     "install": "^0.13.0",
+    "intro.js": "^7.0.1",
     "js-beautify": "^1.14.8",
     "js-cookie": "^3.0.5",
     "npm": "^9.6.7",

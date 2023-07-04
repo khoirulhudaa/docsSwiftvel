@@ -1,8 +1,11 @@
-import { faArrowsRotate, faBucket, faCompress, faExpand, faFile, faFileImage, faFont, faPaintBrush, faSpinner, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faCompress, faExpand, faFont, faPaintBrush, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
+import introJs from 'intro.js';
+import 'intro.js/minified/introjs.min.css';
 import beautify from 'js-beautify';
 import React, { Component } from 'react';
+import { ChromePicker } from 'react-color';
 import { connect } from 'react-redux';
 import Swal from 'sweetalert2';
 import Crown from '../../assets/images/png/crown.png';
@@ -12,7 +15,7 @@ import Add from '../../assets/images/svg/add.svg';
 import Download from '../../assets/images/svg/donlot.svg';
 import Right from '../../assets/images/svg/right.svg';
 import Data from '../../dataComponent/index.json';
-import { ChromePicker } from 'react-color';
+
 
 class MenuComponent extends Component {
 constructor(props) {
@@ -142,7 +145,67 @@ componentDidMount = () => {
         document.querySelector('.menu4').classList.add('show4')
         document.querySelector('.menu5').classList.remove('show5')
     })
+
+    this.startIntro();
 }
+
+startIntro = () => {
+    introJs()
+      .setOptions({
+        steps: [
+          {
+            element: '#Component',
+            tooltipClass: 'custom-tooltip',
+            intro: 'Welcome to Swiftvel. Continue to learn about tools in Swiftvel',
+          },
+          {
+            element: '#download',
+            intro: 'Get the code for the built web',
+          },
+          {
+            element: '#navbar',
+            intro: 'Choice of various navbar components navbar',
+          },
+          {
+            element: '#heroes',
+            intro: 'Choice of various navbar components heroes',
+          },
+          {
+            element: '#content',
+            intro: 'Choice of various navbar components content',
+          },
+          {
+            element: '#footer',
+            intro: 'Choice of various navbar components footer',
+          },
+          {
+            element: '#automatic',
+            intro: 'Create your website automatically',
+          },
+          {
+            element: '#frame',
+            intro: 'Broaden your view of the frame',
+          },
+          {
+            element: '#reload',
+            intro: 'Reload this page',
+          },
+          {
+            element: '#fonts',
+            intro: 'Customize fonts with web themes',
+          },
+          {
+            element: '#color',
+            intro: 'Change the color of some parts of the web',
+          },
+          {
+            element: '#language',
+            intro: 'Select the type of code you want to get',
+          },
+        ],
+      })
+      .start();
+  };
 
 handleDownload = (e) => {
     e.preventDefault()
@@ -517,7 +580,7 @@ handleAnimate = () => {
             </a>
             {
                 this.props.isLoading ? (
-                    <div className='flex top-[13px] absolute left-[120px] items-center'>
+                    <div className='flex top-[13px] absolute left-[120px] items-center' id='automatic'>
                         <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
@@ -532,7 +595,7 @@ handleAnimate = () => {
             }
             {
                 this.props.isLoading ? (
-                    <div className='flex top-[13px] absolute left-[260px] items-center'>
+                    <div className='flex top-[13px] absolute left-[260px] items-center' id='reload'>
                         <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
@@ -544,7 +607,7 @@ handleAnimate = () => {
             }
             {
                 this.props.isLoading ? (
-                    <div className='flex top-[13px] absolute left-[330px] items-center'>
+                    <div className='flex top-[13px] absolute left-[330px] items-center' id='fonts'>
                         <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
@@ -596,7 +659,7 @@ handleAnimate = () => {
             }
             {
                 this.props.isLoading ? (
-                    <div className='flex top-[13px] absolute left-[400px] items-center'>
+                    <div className='flex top-[13px] absolute left-[400px] items-center' id='color'>
                         <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
@@ -913,7 +976,7 @@ handleAnimate = () => {
             }
             {
                 this.props.isLoading ? (
-                    <div className='flex top-[13px] absolute left-[190px] items-center'>
+                    <div className='flex top-[13px] absolute left-[190px] items-center' id='frame'>
                         <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
@@ -976,7 +1039,7 @@ handleAnimate = () => {
                 {
                 this.props.isLoading ? (
                     <>
-                        <div className='flex items-center relative ml-1 mr-5 hovetext-[14px]r:text-black'>
+                        <div className='flex items-center relative ml-1 mr-5 hovetext-[14px]r:text-black' id='language'>
                             <div className='rounded-full w-[100px] h-[41px] flex items-center justify-center cursor-default active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
                         </div>
                         <div className='flex items-center relative ml-1 mr-5 hovetext-[14px]r:text-black'>
@@ -1398,7 +1461,7 @@ handleAnimate = () => {
                 }
                  {
                     this.props.isLoading ? (
-                        <div className='w-[40px] mb-2 h-max flex flex-col justify-center items-center'>
+                        <div className='w-[40px] mb-2 h-max flex flex-col justify-center items-center' id='download'>
                             <div className='w-[45px] h-[45px] rounded-full bg-gray-300 animate-pulse'></div>
                         </div>
                     ):
@@ -1409,22 +1472,21 @@ handleAnimate = () => {
                                 }
                             }
                         } className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
-                            {/* <box-icon type="icon" style={{color: 'white'}} name="download" onClick={() => this.download("templateCurrent")} /> */}
                             <img src={Download} alt="icon-download" style={{width: '47%'}} />
                         </div>
                 }
                 <div className="squareComponents" id='navbar'>
                     {
                         this.props.isLoading ? (
-                            <div className='w-[40px] h-max flex flex-col justify-center items-center cursor-default'>
-                                <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
-                                <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
-                            </div>
-                        ):
-                            <>
-                                <box-icon type="icon" name="collection" />
-                                <p>Navbar</p>
-                            </>
+                                <div className='w-[40px] h-max flex flex-col justify-center items-center cursor-default'>
+                                    <div className='w-[35px] h-[35px] rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
+                                    <div className='w-[60px] h-[10px] mt-2 rounded-lg bg-gray-300 animate-pulse cursor-default'></div>
+                                </div>
+                            ):
+                                <>
+                                    <box-icon type="icon" name="collection" id='navbar2' />
+                                    <p>Navbar</p>
+                                </>
                     }
                 </div>
                 <div className="squareComponents" id='heroes'>
