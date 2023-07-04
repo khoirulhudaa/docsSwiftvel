@@ -1,4 +1,4 @@
-import { faArrowsRotate, faCompress, faExpand, faFont, faPaintBrush, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faCompress, faExpand, faFont, faPaintBrush, faTimes, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
 import introJs from 'intro.js';
@@ -618,10 +618,11 @@ handleAnimate = () => {
                     </div>
                 ):
                     <div className='flex top-[13px] absolute left-[120px] items-center'>
-                        <div onClick={() => {
+                        <div onClick={
+                            status == 'settlement' && this.state.statusNew == 'settlement' ? () => {
                             this.props.handleAutomaticBuild()
                             this.setState({ typeColor: false })
-                        }} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                        }: null} className={`w-[40px] p-[10px] border border-[2px] ${status == 'settlement' && this.state.statusNew == 'settlement' ? 'bg-transparent hover:brightness-[95%] active:scale-[0.96] cursor-pointer' : 'bg-slate-200 cursor-not-allowed hover:brightnes-[100%] active:scale-[1]'} border-black duration-100 h-[40px] rounded-full flex items-center justify-center`}>
                             <FontAwesomeIcon icon={faWandMagicSparkles} /> 
                         </div>
                     </div>
@@ -645,11 +646,14 @@ handleAnimate = () => {
                     </div>
                 ):
                     <div className='flex top-[13px] absolute left-[330px] items-center'>
-                        <div onClick={(e) => this.handleFonts(e)} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                        <div onClick={(e) => this.handleFonts(e)} className={`active:scale-[0.96] w-[40px] p-[10px] border border-[2px] ${this.state.typeFonts ? 'bg-bgMongo text-white hover:brightness-[90%]' : 'bg-transparent'} border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center`}>
                             <FontAwesomeIcon icon={faFont} /> 
                         </div>
-                        <div className={`fixed font-mono ${this.state.typeFonts ? 'top-[13%] z-[9999999] left-[0%] opacity-[1] duration-100' : 'top-[50px] left-[-100%] opacity-[0] duration-300'} w-[50vw] h-[84vh] shadow-lg overflow-hidden rounded-br-[60px] rounded-tr-[60px] p-4 bg-white flex flex-col text-justify`}>
+                        <div className={`fixed font-mono ${this.state.typeFonts ? 'top-[13%] z-[9999999] left-[15%] opacity-[1] duration-100' : 'top-[10%] left-[15%] opacity-[0] z-[-3333] duration-[0.2s]'} w-[50vw] h-[84vh] shadow-lg overflow-hidden rounded-[30px] p-4 bg-white flex flex-col text-justify`}>
                             <div className='flex font-mono w-full h-max justify-center items-center'>
+                                <div onClick={() => this.setState({ typeFonts: false })} className='absolute w-[35px] flex items-center justify-center h-[35px] bg-[red] text-white shadow-lg rounded-full right-8 top-8 z-[3333] cursor-pointer hover:brightness-[90%] active:scale-[0.98]'>
+                                    <FontAwesomeIcon icon={faTimes} />
+                                </div>
                                 <div className='h-ful font-monol pt-2 w-[33%] flex flex-col items-center justify-between'>
                                     <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Poppins')}><p>Poppins</p></div>
                                     <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Roboto')}><p>Roboto</p></div>
@@ -697,11 +701,11 @@ handleAnimate = () => {
                     </div>
                 ):
                     <div className='flex top-[13px] absolute left-[400px] items-center'>
-                        <div onClick={(e) => this.handleColor(e)} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                        <div onClick={(e) => this.handleColor(e)} className={`active:scale-[0.96] w-[40px] p-[10px] border border-[2px] ${this.state.typeColor ? 'bg-bgMongo text-white hover:brightness-[90%]' : 'bg-transparent'} border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center`}>
                             <FontAwesomeIcon icon={faPaintBrush} /> 
                         </div>
-                        <div className={`fixed ml-[-100px] font-mono ${this.state.typeColor ? 'top-[13%] z-[9999999] opacity-[1] duration-100' : 'top-[11%] z-[-2222] opacity-[0] duration-200'} w-max pl-2 py-2 pr-3 flex h-max shadow-lg overflow-hidden rounded-[20px] bg-white text-justify`}>
-                           <div className='w-[165px] min-h-[340px] border-r border-r-solid-black p-2'>
+                        <div className={`fixed ml-[-160px] font-mono ${this.state.typeColor ? 'top-[13%] z-[9999999] opacity-[1] duration-100' : 'top-[11%] z-[-2222] opacity-[0] duration-200'} w-max pl-2 py-2 pr-3 flex h-max shadow-lg overflow-hidden rounded-[20px] bg-white text-justify`}>
+                           <div className='w-[165px] relative min-h-[340px] border-r border-r-solid-black p-2'>
                                 <p className='font-bold mb-3'>Components</p>
                                 <div className='w-full h-max flex flex-wrap'>
                                     {
@@ -719,6 +723,9 @@ handleAnimate = () => {
                                 </div>
                            </div>
                            <div className='w-max px-3 py-2'>
+                            <div onClick={() => this.setState({ typeColor: false })} className='absolute w-[30px] flex items-center justify-center h-[30px] bg-[red] text-white shadow-lg rounded-full right-6 top-1 z-[3333] cursor-pointer right-4 top-4 hover:brightness-[90%] active:scale-[0.98]'>
+                                <FontAwesomeIcon icon={faTimes} />
+                            </div>
                             <p className='font-bold mb-3'>Color palettes</p>
                                <div className='w-max h-full flex'>
                                 <div className='w-[50px] h-max flex flex-col items-center justify-center'>
@@ -994,8 +1001,20 @@ handleAnimate = () => {
                                </div>
                            </div>
                            <div className='w-max pl-1 pr-2 flex flex-col justify-between items-end pb-[11.5px]'>
-                                <div className='relative top-[55px]'>
-                                    <ChromePicker color={this.state.activeColor2} onChange={this.handleChangeColorPicker} />
+                                <div className='relative top-[55px] w-[max] h-max'>
+                                    {
+                                        status !== 'settlement' && this.state.statusNew !== 'settlement' && (
+                                            <div className='w-full h-full bg-[#ffffffe1] z-[4444] cursor-not-allowed absolute flex items-center justify-center'>
+                                                <div className="w-[40px] h-[39px] border-[1px] bg-white z-[333] border-slate-400 absolute mr-[35%] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px]">
+                                                    <img src={Crown} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                </div>
+                                                <div className="w-[40px] h-[39px] border-[1px] bg-white z-[333] border-slate-400 absolute ml-[35%] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px]">
+                                                    <img src={Padlock} style={{width: '20px', height: '20px'}} alt="icon add" />
+                                                </div>
+                                            </div>
+                                        )
+                                    }
+                                        <ChromePicker color={this.state.activeColor2} onChange={this.handleChangeColorPicker} />
                                 </div>
                                 {
                                     this.props.mode === 'automaticaly' ? (
@@ -1032,11 +1051,11 @@ handleAnimate = () => {
             }
             {
                 this.props.isLoading ? (
-                    <div className='flex top-[13px] absolute left-[469px] items-center'>
+                    <div className='flex top-[13px] absolute left-[470px] items-center'>
                         <div className='w-[40px] h-[40px] cursor-default rounded-full bg-gray-300 animate-pulse'></div>
                     </div>
                 ):
-                    <a href="/pricing" className='absolute no-underline text-white left-[469px] top-[13px]'>
+                    <a href="/pricing" className='absolute no-underline text-white left-[470px] top-[13px]'>
                         {
                             status !== 'settlement' && this.state.statusNew !== 'settlement' ? (
                                 <div className='active:scale-[0.96] w-[40.6px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
@@ -1115,8 +1134,11 @@ handleAnimate = () => {
             }
             </div>
             <div className={`w-[600px] ${this.state.activeDownload ? 'left-[10%] opacity-[1] z-[122222] duration-200' : 'opacity-[0.1] duration-[0.2s] left-[10%] z-[-22]'} flex items-center justify-center h-[360px] rounded-[20px] bg-white shadow-lg p-1 fixed duration-100 top-[14%]`}>
+                <div onClick={() => this.setState({ activeDownload: false })} className='absolute w-[35px] flex items-center justify-center h-[35px] bg-[red] text-white shadow-lg rounded-full -right-12 top-1 z-[3333] cursor-pointer hover:brightness-[90%] active:scale-[0.98]'>
+                    <FontAwesomeIcon icon={faTimes} />
+                </div>
                 <div className='w-[48%] h-[96%] bg-white flex flex-wrap rounded-lg mx-2 relative overflow-hidden flex'>
-                    <div className='ml-auto mr-auto relative w-full h-max flex flex-col items-center justify-center p-2'>
+                    <div className='ml-auto mr-auto border border-slate-500 relative rounded-lg w-full h-max flex flex-col items-center justify-center px-2 pt-2'>
                        <div className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[20px]'></div>
                        <div className='flex w-[70%] flex-wrap h-max mb-2 items-center justify-center'>
                         <div className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
@@ -1154,7 +1176,7 @@ handleAnimate = () => {
                     </div>
                 </div>
                 <div className='w-[48%] h-[96%] bg-white flex flex-wrap rounded-lg mx-2 relative overflow-hidden flex'>
-                    <div className='ml-auto mr-auto relative w-full h-max flex flex-col items-center justify-center p-2'>
+                    <div className='ml-auto mr-auto border border-slate-500 relative w-full rounded-lg h-max flex flex-col items-center justify-center px-2 pt-2'>
                        <div id='blck2' className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[20px]'></div>
                        <div className='flex w-[70%] flex-wrap h-max mb-2 items-center justify-center'>
                         <div id='blck2' className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
@@ -1187,7 +1209,22 @@ handleAnimate = () => {
                         <div id='blck2' className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
                        </div>
                     </div>
-                    <div onClick={(e) => this.downloadAnimate('templateCurrent')} className='absolute bottom-0 ml-auto mr-auto py-[10px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
+                    <div onClick={
+                        status == 'settlement' && this.state.statusNew == 'settlement' ? 
+                        (e) => this.downloadAnimate('templateCurrent') : null
+                        } className={`absolute bottom-0 ml-auto mr-auto py-[10px] ${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'bg-slate-300 text-slate-500 cursor-not-allowed' : 'bg-bgMongo text-white cursor-pointer active:scale-[0.98] hover:brightness-[84%]'} w-full px-[20px] h-max flex items-center justify-center`}>
+                        {
+                            status !== 'settlement' && this.state.statusNew !== 'settlement' && (
+                                <div className='w-full h-full z-[4444] absolute flex items-center justify-between'>
+                                    <div className="w-[30px] h-[30px] left-0 border-[1px] bg-white z-[333] border-slate-400 absolute left-[10%] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px]">
+                                        <img src={Crown} style={{width: '158x', height: '18px'}} alt="icon add" />
+                                    </div>
+                                    <div className="w-[30px] h-[30px] right-0 border-[1px] bg-white z-[333] border-slate-400 absolute right-[10%] rounded-[99px] flex items-center justify-center cursor-not-allowed p-[4px]">
+                                        <img src={Padlock} style={{width:'18px', height:'18px'}} alt="icon add" />
+                                    </div>
+                                </div>
+                            )
+                        }
                         With animate
                     </div>
                 </div>
