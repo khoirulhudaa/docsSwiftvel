@@ -371,7 +371,7 @@ return (
                 <div className={`w-[90%] flex flex-col items-center justify-center h-max rounded-[20px] p-1 relative duration-100 mt-[14%]`}>
                     <div data-aos='fade-up' data-aos-duration="1000" className='w-[92%] 2xl:e-[68%] lg:w-[70%] h-[495px] bg-white flex flex-wrap rounded-lg mx-2 relative overflow-hidden flex'>
                         <div className='ml-auto mr-auto relative w-full h-max flex flex-col items-center justify-center p-2'>
-                        <div id='blck2' className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[20px]'></div>
+                        <div id='blck2' className='w-[50%] h-[10px] bg-slate-400 rounded-full mb-2 mt-[12px]'></div>
                         <div className='flex w-[70%] flex-wrap h-max mb-2 items-center justify-center'>
                             <div id='blck2' className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 mr-1'></div>
                             <div id='blck2' className='w-[35%] h-[6px] bg-slate-400 rounded-full mb-1 ml-1'></div>
