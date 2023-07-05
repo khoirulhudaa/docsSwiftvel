@@ -1021,7 +1021,12 @@ handleAnimate = () => {
                                     this.props.mode === 'automaticaly' ? (
                                         <div className='w-max h-[40px] px-3 items-center justify-center flex rounded-lg bg-slate-300 text-slate-400 text-center cursor-not-allowed'>Change</div>
                                     ):
-                                        <div onClick={(e) => this.handleChange(e)} className='w-max h-[40px] px-3 items-center justify-center flex rounded-lg bg-bgMongo text-white text-center cursor-pointer hover:brightness-[90%] active:scale-[0.97]'>Change</div>
+                                        <div onClick={
+                                            this.state.activeColorComponent !== '' ? (
+                                                (e) => this.handleChange(e)
+                                            ):
+                                            null
+                                        } className={`w-max h-[40px] px-3 items-center justify-center flex rounded-lg ${this.state.activeColorComponent !== '' ? 'bg-bgMongo cursor-pointer hover:brightness-[90%] active:scale-[0.97]' : 'bg-slate-300 text-slate-400 cursor-not-allowed'} text-white text-center`}>Change</div>
                                 }
                            </div>
                         </div>
