@@ -4,15 +4,14 @@ import 'boxicons';
 import introJs from 'intro.js';
 import 'intro.js/minified/introjs.min.css';
 import beautify from 'js-beautify';
+import Cookies from 'js-cookie';
 import React, { Component } from 'react';
 import { ChromePicker } from 'react-color';
 import { connect } from 'react-redux';
 import Swal from 'sweetalert2';
 import Crown from '../../assets/images/png/crown.png';
 import Padlock from '../../assets/images/png/padlock.png';
-import Saweria from '../../assets/images/png/saweria.png';
 import Add from '../../assets/images/svg/add.svg';
-import Cookies from 'js-cookie';
 import Download from '../../assets/images/svg/donlot.svg';
 import Right from '../../assets/images/svg/right.svg';
 import Data from '../../dataComponent/index.json';
@@ -43,8 +42,8 @@ constructor(props) {
     activeColorComponent: '',
     colorPicker: false,
     activeDownload: false,
-    intro: 0
-  };
+    intro: 0,
+ };
 };
 
 componentDidUpdate = () => {
@@ -1073,29 +1072,9 @@ handleAnimate = () => {
                     </a>
 
             <div className='flex items-center absolute top-3 right-7'>
-            {/* {
-                this.props.isLoading ? (
-                    <div className='fflex items-center relative ml-1 mr-2 hovetext-[14px]r:text-black'>
-                        <div className='rounded-full w-[120px] h-[41px] flex items-center justify-center cursor-default active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
-                    </div>
-                ):
-            } */}
-                <div className='flex items-center relative ml-1 mr-2 hovetext-[14px]r:text-black'>
-                    <a href="https://saweria.co/dragmeTEam" target='__blank' className='no-underline hover:text-black text-black'>
-                        <div className='rounded-full px-3 flex items-center justify-center py-[6.5px] border border-[1] hover:text-black border-black cursor-pointer active:scale-[0.97] duration-100'>
-                            <img src={Saweria} className='w-[26px] relative top-[-1px]' alt="icon" />
-                            <span className='text-[15px] sawer hover:text-black relative top-[1px] ml-1'>
-                                Saweria
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div className='h-[20px] w-[1px] bg-slate-400 ml-2'></div>
-                <div className='h-[30px] w-[1px] bg-slate-400 mx-2'></div>
-                <div className='h-[20px] w-[1px] bg-slate-400 mr-3'></div>
                 {/* {
                 this.props.isLoading ? (
-                    <>
+                    <>  
                         <div className='flex items-center relative ml-1 mr-5 hovetext-[14px]r:text-black' id='language'>
                             <div className='rounded-full w-[100px] h-[41px] flex items-center justify-center cursor-default active:scale-[0.97] duration-100 bg-gray-300 animate-pulse'></div>
                         </div>
@@ -1176,7 +1155,11 @@ handleAnimate = () => {
                         <div className='w-[50%] mr-2 h-[60px] bg-slate-400 rounded-[6px] mb-2'></div>
                        </div>
                     </div>
-                    <div onClick={(e) => this.download('templateCurrent')} className='absolute bottom-0 ml-auto mr-auto py-[10px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
+                    <div onClick={(e) => {
+                        this.download('templateCurrent')
+                        this.setState({ activeDownload: false })      
+                    }} 
+                        className='absolute bottom-0 ml-auto mr-auto py-[10px] cursor-pointer hover:brightness-[84%] active:scale-[0.98] w-full px-[20px] h-max bg-bgMongo text-white flex items-center justify-center'>
                         Without animate
                     </div>
                 </div>
@@ -1216,7 +1199,10 @@ handleAnimate = () => {
                     </div>
                     <div onClick={
                         status == 'settlement' && this.state.statusNew == 'settlement' ? 
-                        (e) => this.downloadAnimate('templateCurrent') : null
+                        (e) => {
+                            this.download('templateCurrent')
+                            this.setState({ activeDownload: false })      
+                        } : null
                         } className={`absolute bottom-0 ml-auto mr-auto py-[10px] ${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'bg-slate-300 text-slate-500 cursor-not-allowed' : 'bg-bgMongo text-white cursor-pointer active:scale-[0.98] hover:brightness-[84%]'} w-full px-[20px] h-max flex items-center justify-center`}>
                         {
                             status !== 'settlement' && this.state.statusNew !== 'settlement' && (
