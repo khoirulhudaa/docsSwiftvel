@@ -655,7 +655,7 @@ handleAnimate = () => {
                 this.state.activeRating ? (
                     <div className='z-[99999999999999999999999] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[260px] h-[200px] rounded-[20px] bg-white shadow-lg flex flex-col items-center justify-center'>
                         <div>{this.renderStars()}</div>
-                        <div className='w-max h-max px-4 py-2 mt-3 rounded-lg border border-slate-300 flex items-center justify-center cursor-pointer hover:brightness-[88%] active:scale-[0.97]' onClick={() => this.handleCloseRating()}>Give now</div>
+                        <div className='w-max h-max px-4 py-2 mt-3 rounded-lg bg-bgMongo text-white flex items-center justify-center cursor-pointer hover:brightness-[88%] active:scale-[0.97]' onClick={() => this.handleCloseRating()}>Give now</div>
                     </div>
                 ):
                     <></>
