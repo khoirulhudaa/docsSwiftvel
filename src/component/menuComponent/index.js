@@ -1542,7 +1542,7 @@ handleAnimate = () => {
                                     this.handleAddLimit()   
                                 }
                             }
-                        } className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+                        } className='btn-downloadsss shadow-lg hover' style={{borderRadius: 90, backgroundColor: '#00684A', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}} id='download'>
                             <img src={Download} alt="icon-download" style={{width: '47%'}} />
                         </div>
                 <div className="squareComponents" id='navbar'>

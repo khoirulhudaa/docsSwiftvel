@@ -202,7 +202,7 @@ handleAnimate = () => {
             // kode untuk menampilkan alert ketika lebar layar dibawah 1240px
             this.state.screen < 1000 ? (
               <div className="alert-page">
-                <img src={Alert1} alt="alert-logo" />
+                <img src={Water} alt="alert-logo" />
                 <h1>Open in laptop/pc or desktop mode</h1>
                 <p>can only be accessed on screen widths above 1000px, while those below that size cannot access including mobile phones</p>
               </div>

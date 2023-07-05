@@ -924,7 +924,7 @@ html {
 }
 
 .alert-page img {
-  width: 400px;
+  width: 300px;
   margin-bottom: 50px;
 }
 
@@ -938,12 +938,13 @@ html {
   opacity: 0.8;
   font-size: 16px;
   text-align: center; 
+  margin-top: 12px;
   width: 50vw;
 }
 
 @media screen and (max-width: 650px) {
   .alert-page img {
-    width: 89vw;
+    width: 60vw;
   }
 
   .alert-page h1 {
