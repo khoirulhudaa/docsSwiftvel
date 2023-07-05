@@ -1,4 +1,4 @@
-import { faArrowsRotate, faCompress, faExpand, faFont, faPaintBrush, faTimes, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faStar, faCompress, faExpand, faFont, faPaintBrush, faTimes, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'boxicons';
 import introJs from 'intro.js';
@@ -43,9 +43,43 @@ constructor(props) {
     colorPicker: false,
     activeDownload: false,
     intro: 0,
-    fontNow: 'Poppins'
+    fontNow: 'Poppins',
+    rating: 4,
+    activeRating: false
  };
 };
+
+handleRatingClick = (value) => {
+    this.setState({
+      rating: value,
+    });
+  };
+
+  renderStars = () => {
+    const { rating } = this.state;
+    const stars = [];
+
+    for (let i = 1; i <= 5; i++) {
+      const starColor = i <= rating ? 'rgb(245, 228, 0)' : 'gray';
+
+      stars.push(
+        <FontAwesomeIcon
+          key={i}
+          icon={faStar}
+          style={{ color: starColor, cursor: 'pointer', fontSize: '36px', marginBottom: '20px' }}
+          onClick={() => this.handleRatingClick(i)}
+        />
+      );
+    }
+
+    return stars;
+  };
+
+  handleCloseRating = () => {
+    this.setState({ 
+        activeRating: false
+     })
+  }
 
 componentDidUpdate = () => {
     fetch(`https://api-dragme.vercel.app/api/users/${this.props.data.email}`)
@@ -412,6 +446,16 @@ export default Swiftvel;
         title: "Download Successfully", 
         showConfirmButton: false 
     });
+    setTimeout(() => {
+        this.setState({ 
+            activeRating: true
+        })
+    }, 1300)
+    this.setState({ 
+        dataColors: [],
+        activeColorComponent: '',
+    })
+    this.props.handleClear()
 }
 
 downloadAnimate = (e) => {
@@ -607,6 +651,15 @@ handleAnimate = () => {
     console.log('acticeColor2', this.state.activeColor2)
     return (
         <>
+            {
+                this.state.activeRating ? (
+                    <div className='z-[99999999999999999999999] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[260px] h-[200px] rounded-[20px] bg-white shadow-lg flex flex-col items-center justify-center'>
+                        <div>{this.renderStars()}</div>
+                        <div className='w-max h-max px-4 py-2 mt-3 rounded-lg border border-slate-300 flex items-center justify-center cursor-pointer hover:brightness-[88%] active:scale-[0.97]' onClick={() => this.handleCloseRating()}>Give now</div>
+                    </div>
+                ):
+                    <></>
+            }
             <a href="/">
                 <div className='absolute left-12 active:scale-[0.96] bg-white top-3 w-max p-[10px] border border-[1] border-black cursor-pointer hover:brightness-[95%] duration-100 h-max rounded-full flex items-center justify-center'>
                     <img src={Right} className='rotate-[180deg] w-[20px] h-[20px]' alt='icon' />
@@ -1202,7 +1255,7 @@ handleAnimate = () => {
                     <div onClick={
                         status == 'settlement' && this.state.statusNew == 'settlement' ? 
                         (e) => {
-                            this.download('templateCurrent')
+                            this.downloadAnimate('templateCurrent')
                             this.setState({ activeDownload: false })      
                         } : null
                         } className={`absolute bottom-0 ml-auto mr-auto py-[10px] ${status !== 'settlement' && this.state.statusNew !== 'settlement' ? 'bg-slate-300 text-slate-500 cursor-not-allowed' : 'bg-bgMongo text-white cursor-pointer active:scale-[0.98] hover:brightness-[84%]'} w-full px-[20px] h-max flex items-center justify-center`}>

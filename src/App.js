@@ -189,6 +189,14 @@ handleAnimate = () => {
     })
 }
 
+handleClear = () => {
+  this.setState({ 
+    dataHTML: [],
+    dataStyle: [],
+    dataImages: [],
+   })
+}
+
 
   render() {
     // state dan function yang dikirim ke html
@@ -265,7 +273,7 @@ handleAnimate = () => {
           <div className="w-screen h-max overflow-x-hidden">
             <div className="col-sm-0 col-12">
               {/* Menu komponent */}
-              <MenuComponent handleAnimate={this.handleAnimate} mode={this.state.mode} handleChangeColorState={(e) => this.handleChangeColorState(e)} handleUpdateStateColors={(e) => this.handleUpdateStateColors(e)} handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} dataStyle={dataStyle} selectFont={this.state.selectFont} handleChangeFontGlobalState={(e) => handleChangeFontGlobalState(e)} dataHTML={dataHTML} isLoading={this.state.isLoading} selectedObjects={selectedObjects} handleAutomaticBuild={handleAutomaticBuild} showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
+              <MenuComponent handleClear={this.handleClear} handleAnimate={this.handleAnimate} mode={this.state.mode} handleChangeColorState={(e) => this.handleChangeColorState(e)} handleUpdateStateColors={(e) => this.handleUpdateStateColors(e)} handlePrevSelectFontGlobalState={(e) => handlePrevSelectFontGlobalState(e)} dataStyle={dataStyle} selectFont={this.state.selectFont} handleChangeFontGlobalState={(e) => handleChangeFontGlobalState(e)} dataHTML={dataHTML} isLoading={this.state.isLoading} selectedObjects={selectedObjects} handleAutomaticBuild={handleAutomaticBuild} showModal={this.showModal} closeModal={this.closeModal} limit={this.state.limit} handleAdd={this.handleAdd} createComponent ={createComponent}/>
             </div>
             <div className='col-sm-12 col-12' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               {/* frame yang akan menampilkan semua component terpilih */}
