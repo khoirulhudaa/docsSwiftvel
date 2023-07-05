@@ -43,6 +43,7 @@ constructor(props) {
     colorPicker: false,
     activeDownload: false,
     intro: 0,
+    fontNow: 'Poppins'
  };
 };
 
@@ -557,6 +558,7 @@ handleNavbar = (e) => {
 }
 
 handleSelectTypeFace = (e) => {
+    this.setState({ fontNow: e })
     const prevSelectFont = this.state.selectFont;
     this.props.handlePrevSelectFontGlobalState(this.state.selectFont);
     this.props.handleChangeFontGlobalState(e);
@@ -655,40 +657,40 @@ handleAnimate = () => {
                                     <FontAwesomeIcon icon={faTimes} />
                                 </div>
                                 <div className='h-ful font-monol pt-2 w-[33%] flex flex-col items-center justify-between'>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Poppins')}><p>Poppins</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Roboto')}><p>Roboto</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Montserrat')}><p>Montserrat</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Inter')}><p>Inter</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Bebas Neue')}><p>Bebas Neue</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Oxygen')}><p>Oxygen</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Fasthand')}><p>Fasthand</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Righteous')}><p>Righteous</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Anton')}><p>Anton</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Geologica')}><p>Geologica</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Poppins' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Poppins')}><p>Poppins</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Roboto' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Roboto')}><p>Roboto</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Montserrat' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Montserrat')}><p>Montserrat</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Inter' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Inter')}><p>Inter</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Bebas Neue' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Bebas Neue')}><p>Bebas Neue</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Oxygen' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Oxygen')}><p>Oxygen</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Fasthand' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Fasthand')}><p>Fasthand</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Righteous' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Righteous')}><p>Righteous</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Anton' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Anton')}><p>Anton</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Geologica' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Geologica')}><p>Geologica</p></div>
                                 </div>
                                 <div className='h-full pt-2 w-[33%] flex flex-col items-center justify-between'>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Merriweather')}><p>Merriweather</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Oswald')}><p>Oswald</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Kanit')}><p>Kanit</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Inconsolata')}><p>Inconsolata</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Raleway')}><p>Raleway</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Mukta')}><p>Mukta</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Pacifico')}><p>Pacifico</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Rajdhani')}><p>Rajdhani</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Kablammo')}><p>Kablammo</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Orbit')}><p>Orbit</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Merriweather' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Merriweather')}><p>Merriweather</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Oswald' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Oswald')}><p>Oswald</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Kanit' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Kanit')}><p>Kanit</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Inconsolata' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Inconsolata')}><p>Inconsolata</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Raleway' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Raleway')}><p>Raleway</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Mukta' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Mukta')}><p>Mukta</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Pacifico' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Pacifico')}><p>Pacifico</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Rajdhani' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Rajdhani')}><p>Rajdhani</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Kablammo' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Kablammo')}><p>Kablammo</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Orbit' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Orbit')}><p>Orbit</p></div>
                                 </div>
                                 <div className='h-full pt-2 w-[33%] flex flex-col items-center justify-between'>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Arvo')}><p>Arvo</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Caveat')}><p>Caveat</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Freehand')}><p>Freehand</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Kalam')}><p>Kalam</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Vollkorn')}><p>Vollkorn</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Rowdies')}><p>Rowdies</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Acme')}><p>Acme</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Alegreya')}><p>Alegreya</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Orbitron')}><p>Orbitron</p></div>
-                                    <div className='w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg bg-[white] hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify' onClick={() => this.handleSelectTypeFace('Cinzel')}><p>Cinzel</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Arvo' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Arvo')}><p>Arvo</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Caveat' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Caveat')}><p>Caveat</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Freehand' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Freehand')}><p>Freehand</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Kalam' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Kalam')}><p>Kalam</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Vollkorn' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Vollkorn')}><p>Vollkorn</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Rowdies' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Rowdies')}><p>Rowdies</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Acme' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Acme')}><p>Acme</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Alegreya' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Alegreya')}><p>Alegreya</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Orbitron' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Orbitron')}><p>Orbitron</p></div>
+                                    <div className={`w-[100%] py-2 px-1 mb-2 z-[2] h-[42.5px] rounded-lg ${this.state.fontNow === 'Cinzel' ? 'bg-slate-100' : 'bg-[white]'} hover:bg-slate-100 px-3 cursor-pointer active:scale-[0.98] duration-100 text-justify`} onClick={() => this.handleSelectTypeFace('Cinzel')}><p>Cinzel</p></div>
                                 </div>
                             </div>
                         </div>
@@ -706,7 +708,7 @@ handleAnimate = () => {
                         </div>
                         <div className={`fixed ml-[-160px] font-mono ${this.state.typeColor ? 'top-[13%] z-[9999999] opacity-[1] duration-100' : 'top-[11%] z-[-2222] opacity-[0] duration-200'} w-max pl-2 py-2 pr-3 flex h-max shadow-lg overflow-hidden rounded-[20px] bg-white text-justify`}>
                            <div className='w-[165px] relative min-h-[340px] border-r border-r-solid-black p-2'>
-                                <p className='font-bold mb-3'>Components</p>
+                                <p className='font-bold mb-3 ml-1'>From</p>
                                 <div className='w-full h-max flex flex-wrap'>
                                     {
                                         this.state.dataColors.length > 0 ? (
@@ -726,7 +728,7 @@ handleAnimate = () => {
                             <div onClick={() => this.setState({ typeColor: false })} className='absolute w-[30px] flex items-center justify-center h-[30px] bg-[red] text-white shadow-lg rounded-full right-6 top-1 z-[3333] cursor-pointer right-4 top-4 hover:brightness-[90%] active:scale-[0.98]'>
                                 <FontAwesomeIcon icon={faTimes} />
                             </div>
-                            <p className='font-bold mb-3'>Color palettes</p>
+                            <p className='font-bold mb-3 ml-1'>To</p>
                                <div className='w-max h-full flex'>
                                 <div className='w-[50px] h-max flex flex-col items-center justify-center'>
                                         <div onClick={() => {
@@ -1021,11 +1023,11 @@ handleAnimate = () => {
                                         <div className='w-max h-[40px] px-3 items-center justify-center flex rounded-lg bg-slate-300 text-slate-400 text-center cursor-not-allowed'>Change</div>
                                     ):
                                         <div onClick={
-                                            this.state.activeColorComponent !== '' ? (
+                                            this.state.activeColorComponent !== '' && this.state.activeColor2 !== '' ? (
                                                 (e) => this.handleChange(e)
                                             ):
                                             null
-                                        } className={`w-max h-[40px] px-3 items-center justify-center flex rounded-lg ${this.state.activeColorComponent !== '' ? 'bg-bgMongo cursor-pointer hover:brightness-[90%] active:scale-[0.97]' : 'bg-slate-300 text-slate-400 cursor-not-allowed'} text-white text-center`}>Change</div>
+                                        } className={`w-max h-[40px] px-3 items-center justify-center flex rounded-lg ${this.state.activeColorComponent !== '' && this.state.activeColor2 !== '' ? 'bg-bgMongo cursor-pointer hover:brightness-[90%] active:scale-[0.97]' : 'bg-slate-300 text-slate-400 cursor-not-allowed'} text-white text-center`}>Change</div>
                                 }
                            </div>
                         </div>
