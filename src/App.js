@@ -194,6 +194,7 @@ handleClear = () => {
     dataHTML: [],
     dataStyle: [],
     dataImages: [],
+    limit: 0,
    })
 }
 

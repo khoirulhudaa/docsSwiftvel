@@ -1,11 +1,11 @@
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import React, { useEffect } from 'react'
+import Map from '../../../assets/images/png/map.png'
 import Particel1 from '../../../assets/images/svg/particel1.svg'
 import Particel2 from '../../../assets/images/svg/particel2.svg'
 import Particel3 from '../../../assets/images/svg/particel3.svg'
 import Particel4 from '../../../assets/images/svg/particel4.svg'
-import Map from '../../../assets/images/png/map.png'
 import { Button } from '../../atom'
 
 const Hero = () => {
@@ -22,7 +22,6 @@ const Hero = () => {
         <img data-aos-duration='2500' className='absolute bottom-[220px] lg:inline hidden w-[180px] right-[100px]' src={Particel3} alt="particel-img" />
         <img data-aos-duration='3000' className='absolute top-[45%] w-[170px] left-[100px] lg:inline hidden' src={Particel4} alt="particel-img" />
         {/* End Particels */}
-
       <h1 className='overflow-hidden text-[44px] 2xl:text-[90px] text-white lg:text-[86px] w-[90%] lg:mt-[-40px] 2xl:mt-[0px] mt-[130px] lg:w-[80%] leading-[1.5em]'>Brings <span className='text-[#00ED64] font-normal'>Speed</span> ​​in <span className='text-[#00ED64] font-normal'>creating</span> your <span className='text-[#00ED64] font-normal'>website.</span></h1>
       <p data-aos-duration='1500' className='font-normal w-[80%] lg:w-[50%] 2xl-[70%] text-[14px] lg:text-[17px] 2xl:text-[19px] text-white leading-6 2xl:leading-[2.2em] lg:leading-8 mt-6 lg:mt-8'>Enjoy your time and don't have to spend a lot of effort in building a design display that is tailored to your best taste at all times and affairs</p>
       <div className='flex mt-[14px] mb-[14px] 2xl:mt-[100px] lg:mt-[50px] lg:mb-[40px] items-center justify-between px-8'>
