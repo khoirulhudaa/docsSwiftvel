@@ -5,6 +5,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
 
+/* @keyframes movingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.moving-gradient {
+  background: linear-gradient(to right, #001E2B, #033527);
+  background-size: 200% 200%;
+  animation: movingGradient 10s ease-in-out infinite;
+} */
+
 *{
   margin: 0;
   padding: 0;
