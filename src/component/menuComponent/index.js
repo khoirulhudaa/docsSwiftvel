@@ -690,7 +690,7 @@ handleAnimate = () => {
                 ):
             } */}
                     <div className='flex top-[13px] absolute left-[260px] items-center' id='reload'>
-                        <div onClick={() => window.location.reload()} className='active:scale-[0.96] w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
+                        <div onClick={() => window.location.reload()} className='active:scale-[0.96] active:rotate-[180deg] duration-300 w-[40px] p-[10px] border border-[2px] border-black cursor-pointer hover:brightness-[95%] duration-100 h-[40px] rounded-full flex items-center justify-center'>
                             <FontAwesomeIcon icon={faArrowsRotate} /> 
                         </div>
                     </div>
