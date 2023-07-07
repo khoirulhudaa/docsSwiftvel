@@ -129,7 +129,7 @@ return (
         <section className='lg:flex h-max relative overflow-hidden lg:min-h-[300px] mb-[70px] lg:px-[120px] lg:ml-6 w-screen lg:w-full items-center mt-0 lg:mt-14 justify-between'>
             <img src={Powerful} className='w-[55%] 2xl:w-[320px] flex ml-auto mr-auto lg:ml-0 lg:mr-0 lg:w-[280px] rotate-[-10deg]' alt="icon" />
             <div data-aos-duration='1000' className='relative bottom-2 hidden lg:block lg:ml-[40px] lg:mr-0 ml-auto mr-auto w-[90%] lg:w-[65%] lg:mt-0 mt-[40px] items-center h-max overflow-hidden lg:h-[270px] 2xl:h-[340px] pl-10 pr-4 py-7'>
-                <h1 className='text-[44px] 2xl:text-[62px] leading-[1.5em] w-[100%] text-black'>Many components and there is a choice of code language</h1>
+                <h1 className='text-[44px] 2xl:text-[62px] leading-[1.5em] w-[100%] text-black relative bottom-3'>Many components and there is a choice of code language</h1>
                 <p className='text-slate-500 leading-[2em] lg:ml-1 text-[15px] 2xl:text-[22px] font-normal w-[70%] 2xl:w-[90%] mt-4'>We make it easy for anyone to create a website in order to meet the needs of every business. And we want to spoil those who are not very good at making web</p>
             </div>
         </section>

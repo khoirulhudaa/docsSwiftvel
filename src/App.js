@@ -33,7 +33,7 @@ class App extends React.Component {
       dataColors:[],
       activeColor2: '',
       activeColorComponent: '',
-      activeAnimate: false
+      activeAnimate: false,
     };
 
 };

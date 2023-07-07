@@ -94,6 +94,7 @@ componentDidUpdate = () => {
         .catch(error => {
             console.log(error);
     });
+
 }
 
 componentDidMount = () => {
