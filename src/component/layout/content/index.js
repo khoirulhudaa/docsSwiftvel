@@ -357,7 +357,7 @@ return (
             <img src={Map} alt="map" className='hidden lg:inline absolute right-0 top-0 w-full opacity-[0.1] h-full' />
             <img src={Wave} className='hidden lg:inline absolute w-[70px] lg:w-[400px] top-0 right-0' alt="img" />
             <div className='w-[100%] lg:w-[55%] h-max p-[30px] flex flex-col lg:pl-[100px] lg:py-[50px] lg:mt-[10px]'>
-                <h1 className='text-[32px] 2xl:text-[80px] flex flex-wrap items-center lg:text-[65px] text-white w-[90%] leading-[1.6em]'>Build <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>web</h1> with <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>scroll</h1> animatios <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>instantly</h1></h1>
+                <h1 className='text-[32px] 2xl:text-[80px] flex flex-wrap items-center lg:text-[65px] text-white w-[90%] leading-[1.6em]'>Build <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-4'>web</h1> with <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-0'>scroll</h1> animatios <h1 data-aos='fade-up' data-aos-duration="1000" className='mr-4 lg:ml-2'>instantly</h1></h1>
                 <p className='w-[94%] lg:w-[86%] font-normal text-[14px] 2xl:text-[23px] text-slate-200 2xl:leading-[2.2em] leading-[2em] mt-4'>
                     Make your website interactive with interesting scroll animations and make your website from now on look different from some other websites
                 </p>
